@@ -73,7 +73,6 @@ body {
 
 .puzzle__head,
 .tells,
-.note,
 .picker__card,
 .stamp,
 .clue__btn,
@@ -83,7 +82,6 @@ body {
 
 .puzzle__head,
 .tells,
-.note,
 .picker__card {
   background-color: var(--newsprint);
 }
@@ -100,7 +98,6 @@ body {
 
 .puzzle__head::after,
 .tells::after,
-.note::after,
 .picker__card::after,
 .stamp:hover::after,
 .stamp:active::after,
@@ -851,9 +848,9 @@ body {
   body { background: #fff; padding: 0; }
   .sheet { box-shadow: none; max-width: none; padding: 0; }
   .sheet::before, .sheet::after { display: none; }
-  .puzzle__head::after, .tells::after, .note::after, .picker__card::after,
+  .puzzle__head::after, .tells::after, .picker__card::after,
   .clue.is-active::after, .clue.is-crossing::after { display: none; }
-  .puzzle__head, .tells, .note, .picker__card, .clue { background-color: #fff; }
+  .puzzle__head, .tells, .picker__card, .clue { background-color: #fff; }
   .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel,
   .progress, .puzzle__toggle { display: none !important; }
   /* A folded head prints open; paper has no buttons. */

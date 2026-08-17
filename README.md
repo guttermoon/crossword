@@ -123,7 +123,7 @@ body is set in a typewriter face and the instruction blocks and labels in a
 grotesque, after the way the printed page set Helvetica Bold against typewriter
 copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
 
-Panels — the puzzle heads, the intro card, the notes and the picker cards — sit
+Panels — the puzzle heads, the intro card and the picker cards — sit
 on `--newsprint` under a scan texture: a 64px greyscale tile inlined as a data
 URI in `--scan`, scaled up 3× and drawn with `image-rendering: pixelated` so the
 grain resolves into pixels. The tile is mostly per-pixel noise with a little
@@ -133,7 +133,8 @@ standing out as a speck. It is laid over the
 panel's contents by a shared `::after`, which is what makes it read as a scan;
 printing drops it and returns the panels to white. Every hover and highlight —
 the toolbar buttons, the per-clue buttons, the active and crossing clues — takes
-the same greys and the same grain.
+the same greys and the same grain. A note carries no fill of its own, so the
+state of the clue it belongs to runs through it.
 
 Each puzzle's head folds away behind a **Hide** button in its top right corner,
 leaving a single bar of number and title, so a solver who has read the blurb

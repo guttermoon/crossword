@@ -1,0 +1,348 @@
+/* Page furniture: paper, masthead, article layout, story column, note box,
+ * riddle, colophon. Everything grid-related lives in puzzle.css.
+ */
+
+:root {
+  --paper: #f0eade;
+  --paper-deep: #e6dfcd;
+  --ink: #1b1714;
+  --ink-soft: #4a4239;
+  --red: #c33a2b;
+  --red-deep: #9d2c20;
+  --wash: #ede0b4;
+  --wash-strong: #f0c64b;
+  --block: #16130f;
+  --desk: #3b352b;
+
+  --font-display: 'Shrikhand', 'Bookman Old Style', Georgia, serif;
+  --font-cond: 'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --font-body: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+
+  --rule: 1px solid var(--ink);
+  --sheet-pad: clamp(18px, 3.5vw, 54px);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: clamp(0px, 3vw, 40px) clamp(0px, 3vw, 40px) 0;
+  background: var(--desk);
+  background-image: radial-gradient(circle at 50% 0%, #4a4234 0%, #2c281f 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ------------------------------------------------------------------- the page */
+
+.sheet {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--sheet-pad) var(--sheet-pad) calc(var(--sheet-pad) * 0.6);
+  background: var(--paper);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+/* Paper grain and the slight darkening toward the gutter. */
+.sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.sheet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(90, 74, 46, 0.16) 0%, rgba(90, 74, 46, 0) 5%),
+    linear-gradient(-90deg, rgba(90, 74, 46, 0.12) 0%, rgba(90, 74, 46, 0) 4%);
+}
+
+.sheet > * { position: relative; z-index: 3; }
+
+/* --------------------------------------------------------------------- masthead */
+
+.masthead {
+  border-bottom: 3px double var(--ink);
+  padding-bottom: 14px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.masthead__kicker {
+  margin: 0 0 6px;
+  font-family: var(--font-cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.masthead__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(38px, 7vw, 68px);
+  line-height: 0.95;
+  color: var(--red);
+  text-shadow: 2px 2px 0 var(--paper), 4px 4px 0 var(--ink);
+}
+
+.masthead__sub {
+  margin: 16px 0 0;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------------- article */
+
+.puzzle { margin: 0 0 8px; }
+
+.puzzle__head {
+  display: grid;
+  grid-template-columns: minmax(0, 34fr) minmax(0, 66fr);
+  gap: clamp(18px, 3vw, 34px);
+  align-items: start;
+}
+
+.puzzle__title {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1;
+  color: var(--red);
+  text-shadow: 1px 1px 0 var(--paper), 3px 3px 0 var(--ink);
+}
+
+.puzzle__title-line { display: inline-block; }
+
+.story p {
+  margin: 0 0 0.75em;
+  font-size: 13px;
+  line-height: 1.42;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.story p:first-child::first-letter {
+  font-family: var(--font-display);
+  font-size: 2.6em;
+  line-height: 0.8;
+  float: left;
+  margin: 0.06em 0.08em 0 0;
+  color: var(--red);
+}
+
+.puzzle__gridwrap {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+
+.credit {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  justify-self: start;
+  align-self: end;
+  font-family: var(--font-cond);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------- section heading */
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 26px 0 14px;
+  font-family: var(--font-cond);
+  font-size: clamp(15px, 2.2vw, 19px);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--red);
+  text-transform: none;
+}
+
+.section-head::before,
+.section-head::after {
+  content: "";
+  flex: 1;
+  height: 0;
+  border-top: 1px solid var(--red);
+}
+
+.notebox {
+  border: var(--rule);
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  background: linear-gradient(var(--paper), var(--paper-deep));
+}
+
+.notebox p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------- riddle */
+
+.riddle {
+  margin: 22px 0 0;
+  padding-top: 12px;
+  border-top: var(--rule);
+  max-width: 46em;
+}
+
+.riddle__q {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.riddle__scramble {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.riddle__scramble b { letter-spacing: 0.12em; font-style: normal; }
+
+.riddle__answer {
+  margin: 0 0 8px;
+  font-family: var(--font-cond);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--red-deep);
+  visibility: hidden;
+}
+
+.puzzle.is-solved .riddle__answer,
+.puzzle.is-peeking .riddle__answer { visibility: visible; }
+
+.riddle__peek {
+  border: var(--rule);
+  background: var(--paper);
+  font-family: var(--font-cond);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.riddle__peek:hover { background: var(--wash); }
+
+.riddle__note {
+  margin: 8px 0 0;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* -------------------------------------------------------------------- dividers */
+
+.dinkus {
+  margin: 34px 0;
+  text-align: center;
+  color: var(--red);
+  font-size: 13px;
+  letter-spacing: 0.4em;
+}
+
+.dinkus:empty { margin: 18px 0 0; }
+
+.dinkus:not(:empty)::before,
+.dinkus:not(:empty)::after {
+  content: "";
+  display: inline-block;
+  width: 22%;
+  vertical-align: middle;
+  border-top: 1px solid var(--ink);
+  margin: 0 12px;
+}
+
+.colophon {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 3px double var(--ink);
+  padding-top: 8px;
+  font-family: var(--font-cond);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.errorbox {
+  border: 2px solid var(--red);
+  background: #fbeeea;
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.errorbox ul { margin: 6px 0 0; padding-left: 20px; }
+
+/* ------------------------------------------------------------------ responsive */
+
+@media (max-width: 860px) {
+  .puzzle__head { grid-template-columns: minmax(0, 1fr); }
+  .credit {
+    writing-mode: horizontal-tb;
+    transform: none;
+    justify-self: start;
+  }
+  .puzzle__gridwrap { grid-template-columns: minmax(0, 1fr); }
+  body { padding-bottom: 74px; }
+}
+
+@media (max-width: 520px) {
+  .story p:first-child::first-letter { font-size: 2.2em; }
+  .sheet { box-shadow: none; }
+}
+
+/* ----------------------------------------------------------------------- print */
+
+@media print {
+  body { background: #fff; padding: 0; }
+  .sheet { box-shadow: none; max-width: none; padding: 0; }
+  .sheet::before, .sheet::after { display: none; }
+  .toolbar, .cluebar, .riddle__peek { display: none !important; }
+  .puzzle { break-after: page; }
+  .puzzle:last-of-type { break-after: auto; }
+  .riddle__answer { visibility: hidden !important; }
+}

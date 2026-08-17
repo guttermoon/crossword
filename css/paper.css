@@ -33,12 +33,12 @@
   --radius: 10px;
   --sheet-pad: clamp(18px, 3.5vw, 54px);
 
-  /* A 64px greyscale tile of smoothed noise — broad blotches with a little fine
-     grain on top — scaled up and rendered with hard edges, so it reads as the
-     mottling of an old scan resolved into pixels rather than as sparse specks.
-     Neighbouring pixels differ by about two levels, which is what makes them
-     fade into one another instead of standing out singly. */
-  --scan: url("data:image/png;base64,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");
+  /* A 64px greyscale tile, scaled up and rendered with hard edges so every
+     tile pixel lands as a square block. It is mostly per-pixel grain with a
+     little low-frequency drift under it — pixels evenly spread rather than
+     clouds — and the whole tile sits in a narrow dark band, so neighbours
+     differ in tone without any one of them standing out as a speck. */
+  --scan: url("data:image/png;base64,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");
 }
 
 * { box-sizing: border-box; }
@@ -487,7 +487,8 @@ body {
 /* The title, blurb and hero words run the full width above the puzzle. */
 .puzzle__head {
   display: grid;
-  grid-template-columns: minmax(0, 30%) minmax(0, 1fr);
+  /* Title, blurb, and a narrow lane on the right for the fold control. */
+  grid-template-columns: minmax(0, 30%) minmax(0, 1fr) auto;
   gap: clamp(16px, 3vw, 34px);
   align-items: start;
   margin-bottom: 22px;
@@ -496,22 +497,38 @@ body {
   border-radius: var(--radius);
 }
 
-.puzzle__headline { min-width: 0; }
-.puzzle__intro { min-width: 0; }
+/* Placed rather than flowed, so the control keeps the top right corner and the
+   blurb keeps the middle column whatever is showing. */
+.puzzle__headline { min-width: 0; grid-column: 1; grid-row: 1; }
+.puzzle__intro { min-width: 0; grid-column: 2; grid-row: 1; }
 
-/* Folded away, the head keeps its title and its button and nothing else. */
+/* Folded away, the head is a single bar: number, title, button. */
 .puzzle__head.is-collapsed {
-  grid-template-columns: minmax(0, 1fr);
-  padding-bottom: 14px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  padding: 8px 12px 9px;
 }
 
 .puzzle__head.is-collapsed .puzzle__intro,
 .puzzle__head.is-collapsed .heroes { display: none; }
 
-.puzzle__head.is-collapsed .puzzle__title { margin-bottom: 8px; }
+.puzzle__head.is-collapsed .puzzle__headline {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.puzzle__head.is-collapsed .puzzle__issue { margin: 0; }
+
+.puzzle__head.is-collapsed .puzzle__title {
+  margin: 0;
+  font-size: 21px;
+}
 
 .puzzle__toggle {
-  margin-top: 2px;
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
   padding: 3px 11px;
   border: var(--rule-thick);
   border-radius: 999px;
@@ -536,6 +553,7 @@ body {
   vertical-align: 1px;
 }
 
+.puzzle__head.is-collapsed .puzzle__toggle { grid-column: 2; }
 .puzzle__head.is-collapsed .puzzle__toggle::after { content: "▼"; }
 
 /* Clues beside the grid, changing sides puzzle to puzzle. */
@@ -805,7 +823,10 @@ body {
 
 @media (max-width: 860px) {
   .brief { grid-template-columns: minmax(0, 1fr); }
-  .puzzle__head { grid-template-columns: minmax(0, 1fr); }
+  /* The blurb drops below the title, but the control keeps its corner. */
+  .puzzle__head { grid-template-columns: minmax(0, 1fr) auto; gap: 14px; }
+  .puzzle__toggle { grid-column: 2; }
+  .puzzle__intro { grid-column: 1 / -1; grid-row: auto; }
   .puzzle--grid-right .puzzle__play,
   .puzzle--grid-left .puzzle__play { grid-template-columns: minmax(0, 1fr); }
   .puzzle--grid-left .puzzle__clues,

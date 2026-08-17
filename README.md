@@ -126,17 +126,19 @@ copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
 Panels — the puzzle heads, the intro card, the notes and the picker cards — sit
 on `--newsprint` under a scan texture: a 64px greyscale tile inlined as a data
 URI in `--scan`, scaled up 3× and drawn with `image-rendering: pixelated` so the
-grain resolves into pixels. The tile is smoothed noise — broad blotches with a
-little fine grain on top, so neighbouring pixels differ by only a few levels and
-fade into one another rather than standing out as specks. It is laid over the
+grain resolves into pixels. The tile is mostly per-pixel noise with a little
+low-frequency drift under it — pixels spread evenly rather than clouds — held
+inside a narrow dark band, so neighbours differ in tone without any one of them
+standing out as a speck. It is laid over the
 panel's contents by a shared `::after`, which is what makes it read as a scan;
 printing drops it and returns the panels to white. Every hover and highlight —
 the toolbar buttons, the per-clue buttons, the active and crossing clues — takes
 the same greys and the same grain.
 
-Each puzzle's head folds away behind a **Hide** button, so a solver who has read
-the blurb once can put the grid and its clues back at the top of the screen. It
-prints open; paper has no buttons.
+Each puzzle's head folds away behind a **Hide** button in its top right corner,
+leaving a single bar of number and title, so a solver who has read the blurb
+once can put the grid and its clues back at the top of the screen. It prints
+open; paper has no buttons.
 
 The **Pick a puzzle** strip pins itself to the top once scrolled past, shrunk to
 a row of chips. A 1px sentinel above it drives the state, and it checks the

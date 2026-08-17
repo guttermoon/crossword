@@ -142,12 +142,12 @@
 
   /* The head of an article folds away, so a solver who has read it once can
    * put the grid and its clues back at the top of the screen. */
-  function makeCollapsible(head, headline, label) {
+  function makeCollapsible(head, label) {
     var button = el('button', 'puzzle__toggle', 'Hide');
     button.type = 'button';
     button.setAttribute('aria-expanded', 'true');
     button.setAttribute('aria-label', 'Hide the introduction to ' + label);
-    headline.appendChild(button);
+    head.appendChild(button);
 
     button.addEventListener('click', function () {
       var collapsed = head.classList.toggle('is-collapsed');
@@ -179,7 +179,7 @@
     title.appendChild(el('span', 'puzzle__title-line', puzzle.title));
     headline.appendChild(title);
     head.appendChild(headline);
-    makeCollapsible(head, headline, puzzle.title);
+    makeCollapsible(head, puzzle.title);
 
     var intro = el('div', 'puzzle__intro');
     if (puzzle.blurb) intro.appendChild(rich('p', 'puzzle__blurb', puzzle.blurb));

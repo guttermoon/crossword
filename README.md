@@ -1,7 +1,7 @@
 # The Slop Gazette — How to Spot a Robot
 
 Three interactive crosswords about the habits of machine-written English: the
-words, the sentence shapes, and the chatbot manners it forgot to delete. 120
+words, the sentence shapes, and the chatbot manners it forgot to delete. 76
 clues, each carrying a footnote — what the habit is, what it sounds like, what a
 person would have written instead, and the research where it exists.
 
@@ -108,7 +108,7 @@ css/puzzle.css      grid, cursor states, toolbar, clue lists, footnotes, clue ba
 js/grid.js          numbering and word spans derived from the grid; validation
 js/crossword.js     the engine: cursor, keyboard, check/reveal, footnotes, autosave
 js/app.js           builds the page from GAZETTE and PUZZLES
-data/puzzles.js     puzzle content — 3 puzzles, 120 clues, 120 footnotes
+data/puzzles.js     puzzle content — 3 puzzles, 76 clues, 76 footnotes
 data/gazette.js     front matter and sources
 fonts/              Shrikhand, Inter, Courier Prime (SIL OFL — see fonts/README.md)
 ```
@@ -119,6 +119,11 @@ grotesque, after the way the printed page set Helvetica Bold against typewriter
 copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
 
 Each article sets its text column beside the grid, as the printed page did. The
-grids run from 23 to 30 squares wide, so `Crossword.fitCell` measures the column
+grids run from 15 to 20 squares wide, so `Crossword.fitCell` measures the column
 and sets the `--cell` size to suit — capped at 30px, floored at 17px, below
 which the wrapper scrolls sideways instead. Empty squares are drawn black.
+
+Entries are deliberately one-per-habit: a trope's sibling phrases live in that
+entry's footnote rather than becoming entries of their own. Adding or removing a
+word means rebuilding the grid, since the survivors lose the crossings that held
+them.

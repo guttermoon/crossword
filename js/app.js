@@ -68,9 +68,69 @@
     return section;
   }
 
+  function countClues(puzzle) {
+    var clues = puzzle.clues || {};
+    return Object.keys(clues.across || {}).length + Object.keys(clues.down || {}).length;
+  }
+
+  /* Anchor links down to each puzzle. The current card is marked as you scroll,
+   * so the strip doubles as a place marker on a long page. */
+  function buildPicker(puzzles) {
+    var nav = el('nav', 'picker');
+    nav.setAttribute('aria-label', 'Pick a puzzle');
+    nav.appendChild(el('p', 'picker__label', 'Pick a puzzle'));
+
+    var row = el('div', 'picker__row');
+    puzzles.forEach(function (puzzle) {
+      var card = el('a', 'picker__card');
+      card.href = '#puzzle-' + puzzle.id;
+      card.dataset.for = 'puzzle-' + puzzle.id;
+      card.appendChild(el('span', 'picker__issue', puzzle.issue || ''));
+      card.appendChild(el('span', 'picker__title', puzzle.title));
+      card.appendChild(el('span', 'picker__count', countClues(puzzle) + ' clues'));
+      row.appendChild(card);
+    });
+    nav.appendChild(row);
+    return nav;
+  }
+
+  function trackCurrent(nav) {
+    var cards = {};
+    nav.querySelectorAll('.picker__card').forEach(function (card) {
+      cards[card.dataset.for] = card;
+    });
+
+    if (!global.IntersectionObserver) return;
+
+    var seen = {};
+    var observer = new global.IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        seen[entry.target.id] = entry.isIntersecting ? entry.intersectionRatio : 0;
+      });
+      var best = null;
+      Object.keys(seen).forEach(function (id) {
+        if (seen[id] > 0 && (!best || seen[id] > seen[best])) best = id;
+      });
+      Object.keys(cards).forEach(function (id) {
+        cards[id].classList.toggle('is-current', id === best);
+        if (id === best) cards[id].setAttribute('aria-current', 'true');
+        else cards[id].removeAttribute('aria-current');
+      });
+    }, { threshold: [0, 0.15, 0.4, 0.75] });
+
+    Object.keys(cards).forEach(function (id) {
+      var article = document.getElementById(id);
+      if (article) observer.observe(article);
+    });
+  }
+
   function buildArticle(puzzle, position, total, explainer) {
     var article = el('article', 'puzzle');
     article.id = 'puzzle-' + puzzle.id;
+
+    // Controls and progress sit at the top of the article, not below the grid.
+    var toolbarMount = el('div', 'toolbar-mount');
+    article.appendChild(toolbarMount);
 
     var body = el('div', 'puzzle__body');
 
@@ -103,9 +163,6 @@
     body.appendChild(gridwrap);
 
     article.appendChild(body);
-
-    var toolbarMount = el('div', 'toolbar-mount');
-    article.appendChild(toolbarMount);
 
     var sectionHead = el('h3', 'section-head');
     sectionHead.appendChild(el('span', null, 'Clues and footnotes'));
@@ -192,6 +249,12 @@
       document.title = gazette.brand + ' — ' + gazette.title;
     }
 
+    var picker = null;
+    if (puzzles.length > 1) {
+      picker = buildPicker(puzzles);
+      sheet.insertBefore(picker, mount);
+    }
+
     var clueBar = buildClueBar(function () {
       return active;
     });
@@ -226,6 +289,8 @@
       var colophon = sheet.querySelector('.colophon');
       sheet.insertBefore(buildSources(gazette), colophon);
     }
+
+    if (picker) trackCurrent(picker);
   }
 
   if (document.readyState === 'loading') {

@@ -31,7 +31,9 @@ how many entries are solved, a bar, and how many footnotes you have read. A
 wrong letter found by **Check** gets a red pencil slash, which clears as soon as
 you retype it. A letter given away by **Reveal** keeps a small red corner.
 Filling a grid correctly stamps it SOLVED. Every clue also has its own
-**Reveal** beside it.
+**Reveal** beside it. **Start Over** sends a late edition spinning off the press
+— WIPE THE GRID! — and waits for a yes or a no; Escape, or a click off the
+paper, means no.
 
 A **Pick a puzzle** strip links down to each grid and marks whichever one you
 are looking at.
@@ -108,6 +110,7 @@ css/fonts.css       @font-face for the self-hosted families
 css/paper.css       paper, grain, masthead, intro panels, article, sources, print
 css/puzzle.css      grid, cursor states, toolbar, clue lists, footnotes, clue bar
 js/grid.js          numbering and word spans derived from the grid; validation
+js/askpaper.js      the spinning-newspaper confirm used by Start Over
 js/crossword.js     the engine: cursor, keyboard, check/reveal, footnotes, autosave
 js/app.js           builds the page from GAZETTE and PUZZLES
 data/puzzles.js     puzzle content — 3 puzzles, 76 clues, 76 footnotes

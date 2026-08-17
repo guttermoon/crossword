@@ -9,9 +9,7 @@
 .grid-scroll {
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 10px;
-  border: var(--rule-thick);
-  border-radius: var(--radius);
+  padding-bottom: 4px;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -22,9 +20,13 @@
   grid-template-columns: repeat(var(--cols), var(--cell));
   width: max-content;
   margin: 0 auto;
-  padding: 1px;
+  /* The field carries the rounded corners itself, with no frame around it. The
+     padding keeps the outermost squares clear of the corner arc, so a square in
+     a corner is never clipped — puzzles 1 and 3 both have one. Raise the radius
+     and this has to rise with it. */
+  padding: 5px;
+  border-radius: var(--radius);
   background: var(--block);
-  border: var(--rule-thick);
   --cell: 28px;
 }
 

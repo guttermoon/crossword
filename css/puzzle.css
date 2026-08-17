@@ -387,7 +387,7 @@
 
 .note__pair {
   display: grid;
-  grid-template-columns: minmax(0, 8.5em) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 7.5em) minmax(0, 1fr);
   gap: 8px;
 }
 
@@ -403,12 +403,11 @@
 
 .note__quote { font-style: italic; }
 
-.note__data {
-  padding-top: 6px;
-  border-top: 1px dotted var(--ink-soft);
-}
 
 .note__source {
+  margin-top: 9px;
+  padding-top: 7px;
+  border-top: 1px dotted var(--ink-soft);
   font-family: var(--font-cond);
   font-size: 11px;
   letter-spacing: 0.04em;

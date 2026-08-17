@@ -36,9 +36,12 @@ Filling a grid correctly stamps it SOLVED. Every clue also has its own
 A **Pick a puzzle** strip links down to each grid and marks whichever one you
 are looking at.
 
-**Footnotes** open by themselves the moment an entry is filled in correctly, so
-solving teaches as you go; **Why?** opens one early without giving the answer
-away. Printing the page prints every footnote, open or not.
+**Notes** live in their own section below each puzzle, labelled by clue
+reference and linked back to the clue. One opens by itself the moment its entry
+is filled in correctly, so solving teaches as you go, and **Why?** opens one
+early — without giving the answer away — and scrolls you to it. Notes
+accumulate rather than toggling, so each puzzle builds into one continuous piece
+you can read or print. Printing prints every note, opened or not.
 
 Progress and elapsed time are saved to `localStorage` per puzzle, so a reload
 picks up where you left off; **Start Over** clears that puzzle alone. Everything
@@ -118,10 +121,13 @@ body is set in a typewriter face and the instruction blocks and labels in a
 grotesque, after the way the printed page set Helvetica Bold against typewriter
 copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
 
-Each article sets its text column beside the grid, as the printed page did. The
-grids run from 15 to 20 squares wide, so `Crossword.fitCell` measures the column
-and sets the `--cell` size to suit — capped at 30px, floored at 17px, below
-which the wrapper scrolls sideways instead. Empty squares are drawn black.
+Each article runs its title, blurb and hero words full width, then sets the
+clues beside the grid — and the grid changes sides puzzle to puzzle, the way a
+magazine alternates a spread. `Crossword.claimWidth` gives the grid column only
+the width its squares need and hands the rest to the clues; `Crossword.fitCell`
+then measures that column and sets `--cell` to suit, capped at 30px and floored
+at 17px, below which the wrapper scrolls sideways. Empty squares are drawn
+black.
 
 Entries are deliberately one-per-habit: a trope's sibling phrases live in that
 entry's footnote rather than becoming entries of their own. Adding or removing a

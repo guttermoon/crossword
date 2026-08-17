@@ -80,9 +80,10 @@ body {
   position: relative;
 }
 
+/* The two standing panels are filled; everything else takes the fill and the
+   grain only while it is hovered, active or current. */
 .puzzle__head,
-.tells,
-.picker__card {
+.tells {
   background-color: var(--newsprint);
 }
 
@@ -98,7 +99,8 @@ body {
 
 .puzzle__head::after,
 .tells::after,
-.picker__card::after,
+.picker__card:hover::after,
+.picker__card.is-current::after,
 .stamp:hover::after,
 .stamp:active::after,
 .clue__btn:hover::after,
@@ -849,6 +851,7 @@ body {
   .sheet { box-shadow: none; max-width: none; padding: 0; }
   .sheet::before, .sheet::after { display: none; }
   .puzzle__head::after, .tells::after, .picker__card::after,
+  .picker__card:hover::after, .picker__card.is-current::after,
   .clue.is-active::after, .clue.is-crossing::after { display: none; }
   .puzzle__head, .tells, .picker__card, .clue { background-color: #fff; }
   .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel,

@@ -123,18 +123,22 @@ body is set in a typewriter face and the instruction blocks and labels in a
 grotesque, after the way the printed page set Helvetica Bold against typewriter
 copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
 
-Panels — the puzzle heads, the intro card and the picker cards — sit
-on `--newsprint` under a scan texture: a 64px greyscale tile inlined as a data
-URI in `--scan`, scaled up 3× and drawn with `image-rendering: pixelated` so the
+The two standing panels — the puzzle heads and the intro card — sit on
+`--newsprint` under a scan texture: a 64px greyscale tile inlined as a data URI
+in `--scan`, scaled up 3× and drawn with `image-rendering: pixelated` so the
 grain resolves into pixels. The tile is mostly per-pixel noise with a little
 low-frequency drift under it — pixels spread evenly rather than clouds — held
 inside a narrow dark band, so neighbours differ in tone without any one of them
-standing out as a speck. It is laid over the
-panel's contents by a shared `::after`, which is what makes it read as a scan;
-printing drops it and returns the panels to white. Every hover and highlight —
-the toolbar buttons, the per-clue buttons, the active and crossing clues — takes
-the same greys and the same grain. A note carries no fill of its own, so the
-state of the clue it belongs to runs through it.
+standing out as a speck. It is laid over the panel's contents by a shared
+`::after`, which is what makes it read as a scan; printing drops it and returns
+the panels to white.
+
+Everything else stays unfilled until it is doing something. A picker card is
+transparent at rest, takes the light grey and the grain on hover, and turns dark
+grey while it is the puzzle you are looking at — where multiplied grain would be
+invisible, so that one lifts with `screen` instead. The toolbar buttons, the
+per-clue buttons and the active and crossing clues work the same way. A note
+carries no fill at all, so the state of the clue it belongs to runs through it.
 
 Each puzzle's head folds away behind a **Hide** button in its top right corner,
 leaving a single bar of number and title, so a solver who has read the blurb

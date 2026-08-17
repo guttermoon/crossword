@@ -394,22 +394,11 @@
       human.appendChild(el('span', 'note__quote', note.human));
       body.appendChild(human);
     }
-    // note.data — the trailing paragraph of numbers and tests — is deliberately
-    // not shown. It is still in data/puzzles.js if it is ever wanted back.
+    // Two fields are deliberately not rendered: note.data, the trailing
+    // paragraph of numbers and tests, and note.source/note.url, the citation.
+    // Both are still in data/puzzles.js, and every study cited there is listed
+    // under "Where the numbers come from" at the foot of the page.
 
-    if (note.source) {
-      var cite = el('p', 'note__source');
-      if (note.url) {
-        var link = el('a', null, note.source);
-        link.href = note.url;
-        link.rel = 'noopener noreferrer';
-        link.target = '_blank';
-        cite.appendChild(link);
-      } else {
-        cite.appendChild(document.createTextNode(note.source));
-      }
-      body.appendChild(cite);
-    }
     return panel;
   };
 

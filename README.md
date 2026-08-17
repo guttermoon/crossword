@@ -95,8 +95,8 @@ ragged rows, stray characters, an entry with no clue, a clue with no entry, and
 — most usefully while editing squares — **an `answer` that no longer matches
 what the grid spells**.
 
-**`data/gazette.js`** — the masthead, standfirst, the two intro panels, the
-"how to read these" explainer and the source list. These strings carry inline
+**`data/gazette.js`** — the title, standfirst, the two intro panels and the
+source list. These strings carry inline
 markup (`<em>`, `<strong>`, `<a>`) and are inserted as HTML, so treat the file
 as first-party copy: do not paste anything into it that you did not write.
 
@@ -121,11 +121,19 @@ grotesque, after the way the printed page set Helvetica Bold against typewriter
 copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
 
 Panels — the puzzle heads, the intro card, the notes and the picker cards — sit
-on `--newsprint` under a scan texture: a 64px greyscale noise tile inlined as a
-data URI in `--scan`, scaled up and drawn with `image-rendering: pixelated` so
-the grain reads as pixels from an old scan rather than a smooth gradient. It is
-laid over the panel's contents by a shared `::after`, which is what makes it
-read as a scan; printing drops it and returns the panels to white.
+on `--newsprint` under a scan texture: a 64px greyscale tile inlined as a data
+URI in `--scan`, scaled up 3× and drawn with `image-rendering: pixelated` so the
+grain resolves into pixels. The tile is smoothed noise — broad blotches with a
+little fine grain on top, so neighbouring pixels differ by only a few levels and
+fade into one another rather than standing out as specks. It is laid over the
+panel's contents by a shared `::after`, which is what makes it read as a scan;
+printing drops it and returns the panels to white. Every hover and highlight —
+the toolbar buttons, the per-clue buttons, the active and crossing clues — takes
+the same greys and the same grain.
+
+Each puzzle's head folds away behind a **Hide** button, so a solver who has read
+the blurb once can put the grid and its clues back at the top of the screen. It
+prints open; paper has no buttons.
 
 The **Pick a puzzle** strip pins itself to the top once scrolled past, shrunk to
 a row of chips. A 1px sentinel above it drives the state, and it checks the

@@ -466,7 +466,7 @@ window.PUZZLES = [
      "clue": "Two words (9 letters) promising that the best or worst part is still coming, generally before a fairly ordinary number (9)",
      "answer": "THEKICKER",
      "note": {
-      "what": "The phrase does the work a good fact would have done. It instructs the reader to be startled by whatever follows, which means the writer either does not trust the material or has not checked whether it is startling. Its relatives run to a dozen: “here's the deal”, “here's where it gets interesting”, “here's what most people miss”, “and it gets worse”, “but wait”.",
+      "what": "The phrase does the work a good fact would have done. It instructs the reader to be startled by whatever follows, which means the writer either does not trust the material or has not checked whether it is startling. Its relatives run to a dozen: “here's the deal”, “here's where it gets interesting”, “here's what most people miss”, “here's the uncomfortable part”, “and it gets worse”, “but wait”.",
       "sounds": "“Costs rose 4% last year. And here's the kicker: nobody noticed.”",
       "human": "“Costs rose 4% and it took eleven months for anyone to raise it.”",
       "data": "Deletion test again, with a twist: cut the announcement and see whether the following sentence still lands. If it does, the announcement was stealing its credit; if it does not, the sentence was never a kicker.",

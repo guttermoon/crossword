@@ -132,14 +132,24 @@
     var toolbarMount = el('div', 'toolbar-mount');
     article.appendChild(toolbarMount);
 
-    var body = el('div', 'puzzle__body');
+    // The grid changes sides puzzle to puzzle, the way a magazine alternates a
+    // spread so two facing pages do not repeat the same block of type.
+    article.classList.add(position % 2 ? 'puzzle--grid-left' : 'puzzle--grid-right');
 
+    // Full width above the puzzle: the title, the blurb and the hero words.
     var head = el('header', 'puzzle__head');
-    head.appendChild(el('p', 'puzzle__issue', puzzle.issue || ''));
+
+    var headline = el('div', 'puzzle__headline');
+    headline.appendChild(el('p', 'puzzle__issue', puzzle.issue || ''));
     var title = el('h2', 'puzzle__title');
     title.appendChild(el('span', 'puzzle__title-line', puzzle.title));
-    head.appendChild(title);
-    if (puzzle.blurb) head.appendChild(rich('p', 'puzzle__blurb', puzzle.blurb));
+    headline.appendChild(title);
+    head.appendChild(headline);
+
+    var intro = el('div', 'puzzle__intro');
+    if (puzzle.blurb) intro.appendChild(rich('p', 'puzzle__blurb', puzzle.blurb));
+    if (explainer) intro.appendChild(rich('p', 'puzzle__explainer', explainer));
+    head.appendChild(intro);
 
     if (puzzle.heroes && puzzle.heroes.length) {
       var heroes = el('div', 'heroes');
@@ -151,8 +161,18 @@
       heroes.appendChild(chips);
       head.appendChild(heroes);
     }
+    article.appendChild(head);
 
-    body.appendChild(head);
+    // Clues beside the grid; which side depends on the puzzle.
+    var play = el('div', 'puzzle__play');
+
+    var cluesCol = el('div', 'puzzle__clues');
+    var cluesHead = el('h3', 'section-head');
+    cluesHead.appendChild(el('span', null, 'Clues'));
+    cluesCol.appendChild(cluesHead);
+    var cluesMount = el('div', 'clues-mount');
+    cluesCol.appendChild(cluesMount);
+    play.appendChild(cluesCol);
 
     var gridwrap = el('div', 'puzzle__gridwrap');
     gridwrap.appendChild(el('div', 'credit', (puzzle.issue || '') + ' — ' + puzzle.title));
@@ -160,22 +180,15 @@
     var gridMount = el('div', 'grid-mount');
     scroll.appendChild(gridMount);
     gridwrap.appendChild(scroll);
-    body.appendChild(gridwrap);
+    play.appendChild(gridwrap);
 
-    article.appendChild(body);
+    article.appendChild(play);
 
-    var sectionHead = el('h3', 'section-head');
-    sectionHead.appendChild(el('span', null, 'Clues and footnotes'));
-    article.appendChild(sectionHead);
-
-    if (explainer) {
-      var note = el('div', 'notebox');
-      note.appendChild(rich('p', null, explainer));
-      article.appendChild(note);
-    }
-
-    var cluesMount = el('div', 'clues-mount');
-    article.appendChild(cluesMount);
+    var notesHead = el('h3', 'section-head');
+    notesHead.appendChild(el('span', null, 'Notes'));
+    article.appendChild(notesHead);
+    var notesMount = el('div', 'notes-mount');
+    article.appendChild(notesMount);
 
     article.appendChild(el('div', 'dinkus', position < total - 1 ? '❖' : ''));
 
@@ -183,6 +196,7 @@
       article: article,
       gridMount: gridMount,
       cluesMount: cluesMount,
+      notesMount: notesMount,
       toolbarMount: toolbarMount,
     };
   }
@@ -275,6 +289,7 @@
         root: parts.article,
         gridMount: parts.gridMount,
         cluesMount: parts.cluesMount,
+        notesMount: parts.notesMount,
         toolbarMount: parts.toolbarMount,
         onActive: function (instance) {
           active = instance;

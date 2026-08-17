@@ -138,9 +138,12 @@ the panels to white.
 Everything else stays unfilled until it is doing something. A picker card is
 transparent at rest, takes the light grey and the grain on hover, and turns dark
 grey while it is the puzzle you are looking at — where multiplied grain would be
-invisible, so that one lifts with `screen` instead. The toolbar buttons, the
-per-clue buttons and the active and crossing clues work the same way. A note
-carries no fill at all, so the state of the clue it belongs to runs through it.
+invisible, so that one lifts with `screen` instead. The toolbar and per-clue
+buttons work the same way. The clue rows take the greys but never the grain: a
+clue is a line of type, and pixels crawling under it make it harder to read
+rather than older. A note has no fill and no edge of its own — the clue above it
+already carries the red bar — so it reads as part of the clue rather than as a
+panel dropped inside it.
 
 Each puzzle's head folds away behind a **Hide** button in its top right corner,
 leaving a single bar of number and title, so a solver who has read the blurb

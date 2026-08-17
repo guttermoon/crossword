@@ -337,12 +337,12 @@ body {
 }
 
 .puzzle__blurb::first-letter {
-  font-family: var(--font-display);
-  font-size: 2.6em;
-  line-height: 0.8;
+  font-weight: 700;
+  font-size: 2.4em;
+  line-height: 0.9;
   float: left;
-  margin: 0.06em 0.09em 0 0;
-  color: var(--red);
+  margin: 0.1em 0.06em 0 0;
+  color: var(--ink);
 }
 
 /* A sidebar under the blurb, filling the column beside a tall grid. */

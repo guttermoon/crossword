@@ -1,9 +1,9 @@
 # The Slop Gazette — How to Spot a Robot
 
-Three interactive crosswords about the habits of machine-written English: the
+Three interactive crosswords about the habits of AI-written English: the
 words, the sentence shapes, and the chatbot manners it forgot to delete. 76
 clues, each carrying a footnote — what the habit is, what it sounds like, what a
-person would have written instead, and the research where it exists.
+person writes instead, and the study it comes from.
 
 Laid out as a newspaper puzzle page: cream stock, a groovy red masthead, ruled
 intro panels, freeform grids and dense clue columns.
@@ -38,7 +38,9 @@ paper, means no.
 A **Pick a puzzle** strip links down to each grid and marks whichever one you
 are looking at.
 
-**Notes** open directly under the clue that references them. One opens by
+**Notes** open directly under the clue that references them, each one saying
+what the habit is, what it **sounds like**, what a person writes **instead of**
+it, and the study behind it. One opens by
 itself the moment its entry is filled in correctly, so solving teaches as you
 go, and **Why?** opens one early without giving the answer away. Nothing else on
 the page moves — the clue stays put and the list simply grows under it.
@@ -61,7 +63,7 @@ Two data files, and nothing else needs touching.
   id: 'p1',                             // unique; also the localStorage key
   issue: 'No. 1',
   title: 'The Words',
-  blurb: 'The vocabulary machines cannot put down…',
+  blurb: 'The vocabulary AI cannot put down…',
   heroes: ['DELVE', 'LOADBEARING'],     // chips listed under the toolbar
   grid: [                               // equal-length rows, '.' = empty square
     '.B.U...',
@@ -73,10 +75,10 @@ Two data files, and nothing else needs touching.
         clue: "A glass display cabinet in a museum, drafted in as a verb…",
         answer: 'SHOWCASE',             // checked against the grid on load
         note: {
-          what:   'Why machines do this and why it reads as machine-written.',
+          what:   'Why AI does this and why it reads as AI-written.',
           sounds: '“This report showcases our commitment to sustainability.”',
           human:  '“This report shows what we did about our emissions.”',
-          data:   'Optional number, or a test the reader can apply.',
+          data:   'Kept but not shown — a number, or a test the reader can apply.',
           source: 'Kobak et al., Science Advances',   // null if uncited
           url:    'https://…',                        // null if uncited
         },
@@ -123,25 +125,34 @@ body is set in a typewriter face and the instruction blocks and labels in a
 grotesque, after the way the printed page set Helvetica Bold against typewriter
 copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
 
-Panels — the puzzle heads, the intro card, the notes and the picker cards — sit
-on `--newsprint` under a scan texture: a 64px greyscale tile inlined as a data
-URI in `--scan`, scaled up 3× and drawn with `image-rendering: pixelated` so the
-grain resolves into pixels. The tile is smoothed noise — broad blotches with a
-little fine grain on top, so neighbouring pixels differ by only a few levels and
-fade into one another rather than standing out as specks. It is laid over the
-panel's contents by a shared `::after`, which is what makes it read as a scan;
-printing drops it and returns the panels to white. Every hover and highlight —
-the toolbar buttons, the per-clue buttons, the active and crossing clues — takes
-the same greys and the same grain.
+The two standing panels — the puzzle heads and the intro card — sit on
+`--newsprint` under a scan texture: a 64px greyscale tile inlined as a data URI
+in `--scan`, scaled up 3× and drawn with `image-rendering: pixelated` so the
+grain resolves into pixels. The tile is mostly per-pixel noise with a little
+low-frequency drift under it — pixels spread evenly rather than clouds — held
+inside a narrow dark band, so neighbours differ in tone without any one of them
+standing out as a speck. It is laid over the panel's contents by a shared
+`::after`, which is what makes it read as a scan; printing drops it and returns
+the panels to white.
 
-Each puzzle's head folds away behind a **Hide** button, so a solver who has read
-the blurb once can put the grid and its clues back at the top of the screen. It
-prints open; paper has no buttons.
+Everything else stays unfilled until it is doing something. A picker card is
+transparent at rest, takes the light grey and the grain on hover, and turns dark
+grey while it is the puzzle you are looking at — where multiplied grain would be
+invisible, so that one lifts with `screen` instead. The toolbar buttons, the
+per-clue buttons and the active and crossing clues work the same way. A note
+carries no fill at all, so the state of the clue it belongs to runs through it.
 
-The **Pick a puzzle** strip pins itself to the top once scrolled past, shrunk to
-a row of chips. A 1px sentinel above it drives the state, and it checks the
-sentinel is above the viewport rather than merely out of it — otherwise the
-strip would pin itself before you had even reached it.
+Each puzzle's head folds away behind a **Hide** button in its top right corner,
+leaving a single bar of number and title, so a solver who has read the blurb
+once can put the grid and its clues back at the top of the screen. It prints
+open; paper has no buttons.
+
+The **Pick a puzzle** strip pins itself to the top once you are past it, shrunk
+to a row of chips. A 1px sentinel above it marks where it sits unpinned, and the
+strip pins whenever that sentinel is above the top of the viewport — checked
+once a frame while scrolling. It is deliberately not an IntersectionObserver:
+an observer reports crossings rather than positions, so following a link in the
+strip, which jumps clean over the sentinel, never reports at all.
 
 Each article runs its title, blurb and hero words full width, then sets the
 clues beside the grid — and the grid changes sides puzzle to puzzle, the way a

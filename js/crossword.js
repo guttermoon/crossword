@@ -275,10 +275,23 @@
     var clear = el('button', 'stamp stamp--warn', 'Start Over');
     clear.type = 'button';
     clear.addEventListener('click', function () {
-      if (global.confirm('Erase everything you have filled in for this puzzle?')) {
+      var ask = global.AskPaper ? global.AskPaper.open : null;
+      function wipe() {
         self.clearAll();
         self.input.focus();
       }
+      if (!ask) {
+        if (global.confirm('Erase everything you have filled in for this puzzle?')) wipe();
+        return;
+      }
+      ask({
+        brand: (self.puzzle.issue ? self.puzzle.issue + ' · ' : '') + 'Late Edition',
+        headline: 'Wipe the grid!',
+        question: 'Erase everything you have filled in for this puzzle?',
+        byline: self.puzzle.title,
+        yes: 'Yes, wipe it',
+        no: 'No, leave it',
+      }, wipe);
     });
     extras.appendChild(clear);
     bar.appendChild(extras);

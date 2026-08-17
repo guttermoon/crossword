@@ -68,7 +68,7 @@ Two data files, and nothing else needs touching.
   clues: {
     across: {
       6: {
-        clue: "A glass display cabinet in a museum, drafted in as a verb… (8)",
+        clue: "A glass display cabinet in a museum, drafted in as a verb…",
         answer: 'SHOWCASE',             // checked against the grid on load
         note: {
           what:   'Why machines do this and why it reads as machine-written.',

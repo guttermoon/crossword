@@ -22,8 +22,9 @@
 
   function buildMasthead(g) {
     var head = el('header', 'masthead');
-    head.appendChild(el('p', 'masthead__brand', g.brand));
-    head.appendChild(rich('p', 'masthead__kicker', g.kicker));
+    // The publication line lives in the browser title and the colophon; up here
+    // a rule opens the page instead.
+    head.appendChild(el('div', 'masthead__rule'));
     head.appendChild(el('h1', 'masthead__title', g.title));
     head.appendChild(rich('p', 'masthead__sub', g.standfirst));
     return head;
@@ -139,7 +140,25 @@
     });
   }
 
-  function buildArticle(puzzle, position, total, explainer) {
+  /* The head of an article folds away, so a solver who has read it once can
+   * put the grid and its clues back at the top of the screen. */
+  function makeCollapsible(head, headline, label) {
+    var button = el('button', 'puzzle__toggle', 'Hide');
+    button.type = 'button';
+    button.setAttribute('aria-expanded', 'true');
+    button.setAttribute('aria-label', 'Hide the introduction to ' + label);
+    headline.appendChild(button);
+
+    button.addEventListener('click', function () {
+      var collapsed = head.classList.toggle('is-collapsed');
+      button.textContent = collapsed ? 'Show' : 'Hide';
+      button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      button.setAttribute('aria-label',
+        (collapsed ? 'Show' : 'Hide') + ' the introduction to ' + label);
+    });
+  }
+
+  function buildArticle(puzzle, position, total) {
     var article = el('article', 'puzzle');
     article.id = 'puzzle-' + puzzle.id;
 
@@ -160,10 +179,10 @@
     title.appendChild(el('span', 'puzzle__title-line', puzzle.title));
     headline.appendChild(title);
     head.appendChild(headline);
+    makeCollapsible(head, headline, puzzle.title);
 
     var intro = el('div', 'puzzle__intro');
     if (puzzle.blurb) intro.appendChild(rich('p', 'puzzle__blurb', puzzle.blurb));
-    if (explainer) intro.appendChild(rich('p', 'puzzle__explainer', explainer));
     head.appendChild(intro);
 
     if (puzzle.heroes && puzzle.heroes.length) {
@@ -288,8 +307,7 @@
         return;
       }
 
-      var parts = buildArticle(puzzle, position, puzzles.length,
-        gazette && position === 0 ? gazette.explainer : '');
+      var parts = buildArticle(puzzle, position, puzzles.length);
       mount.appendChild(parts.article);
 
       new global.Crossword({

@@ -12,9 +12,11 @@
   --wash: #ede0b4;
   --wash-strong: #f0c64b;
   --block: #16130f;
-  /* Faded newsprint, for the panels that would otherwise be white on white. */
+  /* Faded newsprint, for the panels that would otherwise be white on white, and
+     for every hover and highlight that used to be tan. */
   --newsprint: #e2e0d8;
   --newsprint-light: #eeece5;
+  --newsprint-pale: #f2f0ea;
   --newsprint-dark: #4b4945;
   --grid-line: #1b1714d9;
   --desk: #fffffd;
@@ -31,9 +33,12 @@
   --radius: 10px;
   --sheet-pad: clamp(18px, 3.5vw, 54px);
 
-  /* A 64px greyscale noise tile, scaled up and rendered with hard edges so the
-     grain reads as pixels from an old scan rather than a smooth gradient. */
-  --scan: url("data:image/png;base64,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");
+  /* A 64px greyscale tile of smoothed noise — broad blotches with a little fine
+     grain on top — scaled up and rendered with hard edges, so it reads as the
+     mottling of an old scan resolved into pixels rather than as sparse specks.
+     Neighbouring pixels differ by about two levels, which is what makes them
+     fade into one another instead of standing out singly. */
+  --scan: url("data:image/png;base64,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");
 }
 
 * { box-sizing: border-box; }
@@ -69,25 +74,59 @@ body {
 .puzzle__head,
 .tells,
 .note,
-.picker__card {
+.picker__card,
+.stamp,
+.clue__btn,
+.clue {
   position: relative;
+}
+
+.puzzle__head,
+.tells,
+.note,
+.picker__card {
   background-color: var(--newsprint);
 }
+
+/* Everything that used to be tan is now the same paper, one shade lighter. */
+.stamp:hover,
+.clue__btn:hover,
+.clue.is-active {
+  background-color: var(--newsprint-light);
+}
+
+.stamp:active { background-color: var(--newsprint); }
+.clue.is-crossing { background-color: var(--newsprint-pale); }
 
 .puzzle__head::after,
 .tells::after,
 .note::after,
-.picker__card::after {
+.picker__card::after,
+.stamp:hover::after,
+.stamp:active::after,
+.clue__btn:hover::after,
+.clue.is-active::after,
+.clue.is-crossing::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
   background-image: var(--scan);
-  background-size: 168px 168px;
+  /* Three screen pixels per tile pixel, so the grain reads as pixels. */
+  background-size: 192px 192px;
   image-rendering: pixelated;
   mix-blend-mode: multiply;
-  opacity: 0.34;
+  opacity: 0.45;
+}
+
+/* Small surfaces take less of it — at full strength a button goes muddy. */
+.stamp:hover::after,
+.stamp:active::after,
+.clue__btn:hover::after,
+.clue.is-active::after,
+.clue.is-crossing::after {
+  opacity: 0.3;
 }
 
 /* ------------------------------------------------------------------- the page */
@@ -123,23 +162,10 @@ body {
   text-align: center;
 }
 
-.masthead__brand {
-  margin: 0 0 10px;
-  font-family: var(--font-cond);
-  font-size: clamp(13px, 2vw, 16px);
-  font-weight: 600;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-}
-
-.masthead__kicker {
-  margin: 0 0 6px;
-  font-family: var(--font-cond);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
+/* A rule opens the page where the publication line used to sit. */
+.masthead__rule {
+  border-top: var(--rule-double);
+  margin: 0 0 20px;
 }
 
 .masthead__title {
@@ -151,13 +177,17 @@ body {
   color: var(--red);
 }
 
+/* Set in the grotesque and centred, so every line falls where the words end
+   rather than being stretched out to a common width. */
 .masthead__sub {
-  max-width: 62ch;
-  margin: 16px auto 0;
-  font-size: 13.5px;
-  line-height: 1.65;
+  max-width: 56ch;
+  margin: 18px auto 0;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--ink-soft);
-  text-align: left;
+  text-align: center;
 }
 
 .masthead__sub em { color: var(--ink); }
@@ -408,16 +438,6 @@ body {
   line-height: 1.6;
 }
 
-.puzzle__explainer {
-  margin: 12px 0 0;
-  padding-top: 11px;
-  border-top: 1px solid var(--ink-soft);
-  font-family: var(--font-cond);
-  font-weight: 700;
-  font-size: 12.5px;
-  line-height: 1.5;
-}
-
 .puzzle__blurb::first-letter {
   font-weight: 700;
   font-size: 2.4em;
@@ -478,6 +498,45 @@ body {
 
 .puzzle__headline { min-width: 0; }
 .puzzle__intro { min-width: 0; }
+
+/* Folded away, the head keeps its title and its button and nothing else. */
+.puzzle__head.is-collapsed {
+  grid-template-columns: minmax(0, 1fr);
+  padding-bottom: 14px;
+}
+
+.puzzle__head.is-collapsed .puzzle__intro,
+.puzzle__head.is-collapsed .heroes { display: none; }
+
+.puzzle__head.is-collapsed .puzzle__title { margin-bottom: 8px; }
+
+.puzzle__toggle {
+  margin-top: 2px;
+  padding: 3px 11px;
+  border: var(--rule-thick);
+  border-radius: 999px;
+  background: var(--paper);
+  font-family: var(--font-cond);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.puzzle__toggle:hover { background: var(--newsprint-light); }
+.puzzle__toggle:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+/* The arrow points the way the panel will move. */
+.puzzle__toggle::after {
+  content: "▲";
+  margin-left: 7px;
+  font-size: 8px;
+  vertical-align: 1px;
+}
+
+.puzzle__head.is-collapsed .puzzle__toggle::after { content: "▼"; }
 
 /* Clues beside the grid, changing sides puzzle to puzzle. */
 .puzzle__play {
@@ -625,9 +684,15 @@ body {
   body { background: #fff; padding: 0; }
   .sheet { box-shadow: none; max-width: none; padding: 0; }
   .sheet::before, .sheet::after { display: none; }
-  .puzzle__head::after, .tells::after, .note::after, .picker__card::after { display: none; }
-  .puzzle__head, .tells, .note, .picker__card { background-color: #fff; }
-  .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel, .progress { display: none !important; }
+  .puzzle__head::after, .tells::after, .note::after, .picker__card::after,
+  .clue.is-active::after, .clue.is-crossing::after { display: none; }
+  .puzzle__head, .tells, .note, .picker__card, .clue { background-color: #fff; }
+  .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel,
+  .progress, .puzzle__toggle { display: none !important; }
+  /* A folded head prints open; paper has no buttons. */
+  .puzzle__head.is-collapsed { grid-template-columns: minmax(0, 30%) minmax(0, 1fr); }
+  .puzzle__head.is-collapsed .puzzle__intro { display: block; }
+  .puzzle__head.is-collapsed .heroes { display: block; }
   .puzzle { break-after: page; }
   .puzzle:last-of-type { break-after: auto; }
   /* Footnotes are the point of the page, so print them all. */

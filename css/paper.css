@@ -1,5 +1,5 @@
 /* Page furniture: paper, masthead, article layout, story column, note box,
- * riddle, colophon. Everything grid-related lives in puzzle.css.
+ * intro panels, sources. Everything grid-related lives in puzzle.css.
  */
 
 :root {
@@ -12,6 +12,7 @@
   --wash: #ede0b4;
   --wash-strong: #f0c64b;
   --block: #16130f;
+  --grid-line: #b9b1998f;
   --desk: #3b352b;
 
   --font-display: 'Shrikhand', 'Bookman Old Style', Georgia, serif;
@@ -92,6 +93,15 @@ body {
   text-align: center;
 }
 
+.masthead__brand {
+  margin: 0 0 10px;
+  font-family: var(--font-cond);
+  font-size: clamp(13px, 2vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
 .masthead__kicker {
   margin: 0 0 6px;
   font-family: var(--font-cond);
@@ -113,22 +123,179 @@ body {
 }
 
 .masthead__sub {
-  margin: 16px 0 0;
-  font-style: italic;
-  font-size: 14px;
+  max-width: 62ch;
+  margin: 16px auto 0;
+  font-size: 14.5px;
+  line-height: 1.55;
   color: var(--ink-soft);
+  text-align: left;
+}
+
+.masthead__sub em { color: var(--ink); }
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: 12px;
+  top: 12px;
+  z-index: 40;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 8px 14px;
+}
+
+/* ------------------------------------------------------- the two intro panels */
+
+.brief {
+  display: grid;
+  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  gap: clamp(20px, 3vw, 38px);
+  align-items: start;
+  padding-bottom: 26px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.brief__head,
+.tells__head {
+  margin: 0 0 10px;
+  font-family: var(--font-cond);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.brief__col p {
+  margin: 0 0 0.8em;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.brief__col strong { color: var(--ink); }
+
+.tells {
+  padding: 16px 18px;
+  background: var(--paper-deep);
+  border: var(--rule);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.tells__list {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.tells__list li { margin-bottom: 0.7em; }
+.tells__list li::marker { color: var(--red); font-weight: 700; }
+.tells__list .tell-name { font-weight: 700; color: var(--ink); }
+
+.tells__list .tell-ref {
+  display: inline-block;
+  margin-left: 4px;
+  font-family: var(--font-cond);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red-deep);
+}
+
+.tells__note {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed var(--ink-soft);
+  font-style: italic;
+  font-size: 13px;
+}
+
+.tells__aside {
+  margin: 8px 0 0;
+  font-size: 11.5px;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ----------------------------------------------------------------- the sources */
+
+.sources { margin-top: 34px; }
+
+.sources__list {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.sources__list li { margin-bottom: 0.5em; }
+.sources__list a { color: var(--red-deep); }
+
+.sources__colophon {
+  margin: 14px 0 24px;
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------------------- puzzle head */
+
+.puzzle__issue {
+  margin: 0 0 2px;
+  font-family: var(--font-cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.puzzle__blurb {
+  max-width: 66ch;
+  margin: 8px 0 18px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.heroes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  margin: 14px 0 0;
+}
+
+.heroes__label {
+  font-family: var(--font-cond);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-right: 2px;
+}
+
+.heroes__chip {
+  padding: 1px 7px;
+  border: 1px solid var(--ink-soft);
+  border-radius: 2px;
+  font-family: var(--font-cond);
+  font-size: 11px;
+  letter-spacing: 0.06em;
 }
 
 /* ---------------------------------------------------------------------- article */
 
 .puzzle { margin: 0 0 8px; }
 
-.puzzle__head {
-  display: grid;
-  grid-template-columns: minmax(0, 34fr) minmax(0, 66fr);
-  gap: clamp(18px, 3vw, 34px);
-  align-items: start;
-}
+.puzzle__head { margin-bottom: 6px; }
 
 .puzzle__title {
   margin: 0 0 10px;
@@ -142,28 +309,12 @@ body {
 
 .puzzle__title-line { display: inline-block; }
 
-.story p {
-  margin: 0 0 0.75em;
-  font-size: 13px;
-  line-height: 1.42;
-  text-align: justify;
-  hyphens: auto;
-}
-
-.story p:first-child::first-letter {
-  font-family: var(--font-display);
-  font-size: 2.6em;
-  line-height: 0.8;
-  float: left;
-  margin: 0.06em 0.08em 0 0;
-  color: var(--red);
-}
-
 .puzzle__gridwrap {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 8px;
-  align-items: start;
+  align-items: stretch;
+  margin-bottom: 18px;
 }
 
 .credit {
@@ -215,64 +366,6 @@ body {
   line-height: 1.5;
 }
 
-/* --------------------------------------------------------------------- riddle */
-
-.riddle {
-  margin: 22px 0 0;
-  padding-top: 12px;
-  border-top: var(--rule);
-  max-width: 46em;
-}
-
-.riddle__q {
-  margin: 0 0 4px;
-  font-weight: 700;
-  font-style: italic;
-  font-size: 15px;
-}
-
-.riddle__scramble {
-  margin: 0 0 8px;
-  font-size: 13px;
-  font-style: italic;
-}
-
-.riddle__scramble b { letter-spacing: 0.12em; font-style: normal; }
-
-.riddle__answer {
-  margin: 0 0 8px;
-  font-family: var(--font-cond);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: var(--red-deep);
-  visibility: hidden;
-}
-
-.puzzle.is-solved .riddle__answer,
-.puzzle.is-peeking .riddle__answer { visibility: visible; }
-
-.riddle__peek {
-  border: var(--rule);
-  background: var(--paper);
-  font-family: var(--font-cond);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  cursor: pointer;
-  color: var(--ink);
-}
-
-.riddle__peek:hover { background: var(--wash); }
-
-.riddle__note {
-  margin: 8px 0 0;
-  font-size: 11px;
-  font-style: italic;
-  color: var(--ink-soft);
-}
-
 /* -------------------------------------------------------------------- dividers */
 
 .dinkus {
@@ -320,7 +413,7 @@ body {
 /* ------------------------------------------------------------------ responsive */
 
 @media (max-width: 860px) {
-  .puzzle__head { grid-template-columns: minmax(0, 1fr); }
+  .brief { grid-template-columns: minmax(0, 1fr); }
   .credit {
     writing-mode: horizontal-tb;
     transform: none;
@@ -331,7 +424,6 @@ body {
 }
 
 @media (max-width: 520px) {
-  .story p:first-child::first-letter { font-size: 2.2em; }
   .sheet { box-shadow: none; }
 }
 
@@ -341,8 +433,10 @@ body {
   body { background: #fff; padding: 0; }
   .sheet { box-shadow: none; max-width: none; padding: 0; }
   .sheet::before, .sheet::after { display: none; }
-  .toolbar, .cluebar, .riddle__peek { display: none !important; }
+  .toolbar, .cluebar, .clue__why, .skip { display: none !important; }
   .puzzle { break-after: page; }
   .puzzle:last-of-type { break-after: auto; }
-  .riddle__answer { visibility: hidden !important; }
+  /* Footnotes are the point of the page, so print them all. */
+  .note { display: block !important; }
+  .note, .clue { break-inside: avoid; }
 }

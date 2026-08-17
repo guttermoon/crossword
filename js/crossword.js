@@ -31,7 +31,6 @@
     this.gridMount = options.gridMount;
     this.cluesMount = options.cluesMount;
     this.toolbarMount = options.toolbarMount;
-    this.riddleMount = options.riddleMount || null;
     this.onActive = options.onActive || function () {};
     this.onClueChange = options.onClueChange || function () {};
 
@@ -50,12 +49,14 @@
 
     this.cellNodes = [];
     this.clueNodes = {};
+    this.noteNodes = {};
 
     this.restore();
     this.renderGrid();
     this.renderClues();
     this.renderToolbar();
     this.paint();
+    this.syncNotes();
 
     var firstOpen = this.layout.cells.find(function (cell) {
       return !cell.block;
@@ -173,10 +174,30 @@
           var item = el('li', 'clue');
           item.dataset.id = entry.id;
           item.appendChild(el('b', 'clue__num', entry.number + '.'));
-          item.appendChild(el('span', 'clue__text', self.clueText(entry)));
-          item.addEventListener('click', function () {
+
+          var body = el('div', 'clue__body');
+          var text = el('span', 'clue__text', self.clueText(entry));
+          text.addEventListener('click', function () {
             self.select(entry.cells[0], entry.direction);
           });
+          body.appendChild(text);
+
+          var note = self.clueData(entry).note;
+          if (note && note.what) {
+            var why = el('button', 'clue__why', 'Why?');
+            why.type = 'button';
+            why.setAttribute('aria-expanded', 'false');
+            var panel = self.buildNote(entry, note);
+            why.setAttribute('aria-controls', panel.id);
+            why.addEventListener('click', function () {
+              self.toggleNote(entry.id, panel.hidden);
+            });
+            body.appendChild(why);
+            body.appendChild(panel);
+            self.noteNodes[entry.id] = { button: why, panel: panel };
+          }
+
+          item.appendChild(body);
           list.appendChild(item);
           self.clueNodes[entry.id] = item;
         });
@@ -238,9 +259,76 @@
     this.renderTimer();
   };
 
-  Crossword.prototype.clueText = function (entry) {
+  /* A clue may be a plain string or a { clue, answer, note } record. */
+  Crossword.prototype.clueData = function (entry) {
     var side = (this.puzzle.clues && this.puzzle.clues[entry.direction]) || {};
-    return side[entry.number] || '(clue missing)';
+    var value = side[entry.number];
+    if (typeof value === 'string') return { clue: value };
+    return value || { clue: '(clue missing)' };
+  };
+
+  Crossword.prototype.clueText = function (entry) {
+    return this.clueData(entry).clue || '(clue missing)';
+  };
+
+  /* The footnote under a clue: what the habit is, how it sounds, what a person
+   * would have written, and the research where it exists. */
+  Crossword.prototype.buildNote = function (entry, note) {
+    var panel = el('div', 'note');
+    panel.id = 'note-' + this.puzzle.id + '-' + entry.id;
+    panel.hidden = true;
+
+    panel.appendChild(el('p', 'note__what', note.what));
+
+    if (note.sounds) {
+      var sounds = el('p', 'note__pair');
+      sounds.appendChild(el('span', 'note__label', 'Sounds like'));
+      sounds.appendChild(el('span', 'note__quote', note.sounds));
+      panel.appendChild(sounds);
+    }
+    if (note.human) {
+      var human = el('p', 'note__pair');
+      human.appendChild(el('span', 'note__label', 'A person would write'));
+      human.appendChild(el('span', 'note__quote', note.human));
+      panel.appendChild(human);
+    }
+    if (note.data) panel.appendChild(el('p', 'note__data', note.data));
+
+    if (note.source) {
+      var cite = el('p', 'note__source');
+      if (note.url) {
+        var link = el('a', null, note.source);
+        link.href = note.url;
+        link.rel = 'noopener noreferrer';
+        link.target = '_blank';
+        cite.appendChild(link);
+      } else {
+        cite.appendChild(document.createTextNode(note.source));
+      }
+      panel.appendChild(cite);
+    }
+    return panel;
+  };
+
+  Crossword.prototype.toggleNote = function (id, open) {
+    var pair = this.noteNodes[id];
+    if (!pair) return;
+    pair.panel.hidden = !open;
+    pair.button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    pair.button.textContent = open ? 'Close' : 'Why?';
+    if (this.clueNodes[id]) this.clueNodes[id].classList.toggle('has-note-open', !!open);
+  };
+
+  /* A correctly filled entry earns its footnote without the reader asking. */
+  Crossword.prototype.syncNotes = function () {
+    var self = this;
+    this.layout.entries.forEach(function (entry) {
+      if (!self.noteNodes[entry.id] || !self.noteNodes[entry.id].panel.hidden) return;
+      var done = entry.cells.every(function (index) {
+        return self.fill[index] === self.layout.cells[index].solution;
+      });
+      if (done) self.toggleNote(entry.id, true);
+    });
   };
 
   /* ------------------------------------------------------------------ cursor */
@@ -397,6 +485,7 @@
     delete this.wrong[index];
     if (letter === '') delete this.revealed[index];
     this.paint();
+    this.syncNotes();
     this.scheduleSave();
     this.checkSolved();
   };
@@ -455,6 +544,7 @@
       delete self.wrong[index];
     });
     this.paint();
+    this.syncNotes();
     this.scheduleSave();
     this.checkSolved();
   };
@@ -494,7 +584,7 @@
   Crossword.prototype.markSolved = function (options) {
     this.root.classList.add('is-solved');
     if (!options.silent && this.announcer) {
-      this.announcer.textContent = 'Puzzle solved. The answer to the riddle is now shown.';
+      this.announcer.textContent = 'Puzzle solved.';
     }
   };
 

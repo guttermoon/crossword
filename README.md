@@ -31,7 +31,9 @@ how many entries are solved, a bar, and how many footnotes you have read. A
 wrong letter found by **Check** gets a red pencil slash, which clears as soon as
 you retype it. A letter given away by **Reveal** keeps a small red corner.
 Filling a grid correctly stamps it SOLVED. Every clue also has its own
-**Reveal** beside it.
+**Reveal** beside it. **Start Over** sends a late edition spinning off the press
+— WIPE THE GRID! — and waits for a yes or a no; Escape, or a click off the
+paper, means no.
 
 A **Pick a puzzle** strip links down to each grid and marks whichever one you
 are looking at.
@@ -95,8 +97,8 @@ ragged rows, stray characters, an entry with no clue, a clue with no entry, and
 — most usefully while editing squares — **an `answer` that no longer matches
 what the grid spells**.
 
-**`data/gazette.js`** — the masthead, standfirst, the two intro panels, the
-"how to read these" explainer and the source list. These strings carry inline
+**`data/gazette.js`** — the title, standfirst, the two intro panels and the
+source list. These strings carry inline
 markup (`<em>`, `<strong>`, `<a>`) and are inserted as HTML, so treat the file
 as first-party copy: do not paste anything into it that you did not write.
 
@@ -108,6 +110,7 @@ css/fonts.css       @font-face for the self-hosted families
 css/paper.css       paper, grain, masthead, intro panels, article, sources, print
 css/puzzle.css      grid, cursor states, toolbar, clue lists, footnotes, clue bar
 js/grid.js          numbering and word spans derived from the grid; validation
+js/askpaper.js      the spinning-newspaper confirm used by Start Over
 js/crossword.js     the engine: cursor, keyboard, check/reveal, footnotes, autosave
 js/app.js           builds the page from GAZETTE and PUZZLES
 data/puzzles.js     puzzle content — 3 puzzles, 76 clues, 76 footnotes
@@ -119,6 +122,26 @@ Colours and fonts are CSS custom properties at the top of `css/paper.css`. The
 body is set in a typewriter face and the instruction blocks and labels in a
 grotesque, after the way the printed page set Helvetica Bold against typewriter
 copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
+
+Panels — the puzzle heads, the intro card, the notes and the picker cards — sit
+on `--newsprint` under a scan texture: a 64px greyscale tile inlined as a data
+URI in `--scan`, scaled up 3× and drawn with `image-rendering: pixelated` so the
+grain resolves into pixels. The tile is smoothed noise — broad blotches with a
+little fine grain on top, so neighbouring pixels differ by only a few levels and
+fade into one another rather than standing out as specks. It is laid over the
+panel's contents by a shared `::after`, which is what makes it read as a scan;
+printing drops it and returns the panels to white. Every hover and highlight —
+the toolbar buttons, the per-clue buttons, the active and crossing clues — takes
+the same greys and the same grain.
+
+Each puzzle's head folds away behind a **Hide** button, so a solver who has read
+the blurb once can put the grid and its clues back at the top of the screen. It
+prints open; paper has no buttons.
+
+The **Pick a puzzle** strip pins itself to the top once scrolled past, shrunk to
+a row of chips. A 1px sentinel above it drives the state, and it checks the
+sentinel is above the viewport rather than merely out of it — otherwise the
+strip would pin itself before you had even reached it.
 
 Each article runs its title, blurb and hero words full width, then sets the
 clues beside the grid — and the grid changes sides puzzle to puzzle, the way a

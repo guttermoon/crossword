@@ -1,9 +1,9 @@
 # The Slop Gazette — How to Spot a Robot
 
-Three interactive crosswords about the habits of machine-written English: the
+Three interactive crosswords about the habits of AI-written English: the
 words, the sentence shapes, and the chatbot manners it forgot to delete. 76
 clues, each carrying a footnote — what the habit is, what it sounds like, what a
-person would have written instead, and the research where it exists.
+person writes instead, and the study it comes from.
 
 Laid out as a newspaper puzzle page: cream stock, a groovy red masthead, ruled
 intro panels, freeform grids and dense clue columns.
@@ -38,7 +38,9 @@ paper, means no.
 A **Pick a puzzle** strip links down to each grid and marks whichever one you
 are looking at.
 
-**Notes** open directly under the clue that references them. One opens by
+**Notes** open directly under the clue that references them, each one saying
+what the habit is, what it **sounds like**, what a person writes **instead of**
+it, and the study behind it. One opens by
 itself the moment its entry is filled in correctly, so solving teaches as you
 go, and **Why?** opens one early without giving the answer away. Nothing else on
 the page moves — the clue stays put and the list simply grows under it.
@@ -61,7 +63,7 @@ Two data files, and nothing else needs touching.
   id: 'p1',                             // unique; also the localStorage key
   issue: 'No. 1',
   title: 'The Words',
-  blurb: 'The vocabulary machines cannot put down…',
+  blurb: 'The vocabulary AI cannot put down…',
   heroes: ['DELVE', 'LOADBEARING'],     // chips listed under the toolbar
   grid: [                               // equal-length rows, '.' = empty square
     '.B.U...',
@@ -73,10 +75,10 @@ Two data files, and nothing else needs touching.
         clue: "A glass display cabinet in a museum, drafted in as a verb…",
         answer: 'SHOWCASE',             // checked against the grid on load
         note: {
-          what:   'Why machines do this and why it reads as machine-written.',
+          what:   'Why AI does this and why it reads as AI-written.',
           sounds: '“This report showcases our commitment to sustainability.”',
           human:  '“This report shows what we did about our emissions.”',
-          data:   'Optional number, or a test the reader can apply.',
+          data:   'Kept but not shown — a number, or a test the reader can apply.',
           source: 'Kobak et al., Science Advances',   // null if uncited
           url:    'https://…',                        // null if uncited
         },

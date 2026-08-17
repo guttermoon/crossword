@@ -369,8 +369,8 @@
     return 'note-' + this.puzzle.id + '-' + entry.id;
   };
 
-  /* The note on a clue: what the habit is, how it sounds, what a person would
-   * have written, and the research where it exists. It opens directly under the
+  /* The note on a clue: what the habit is, how it sounds, what a person writes
+   * instead, and the research where it exists. It opens directly under the
    * clue that references it. */
   Crossword.prototype.buildNote = function (entry, note) {
     var panel = el('div', 'note');
@@ -390,11 +390,12 @@
     }
     if (note.human) {
       var human = el('p', 'note__pair');
-      human.appendChild(el('span', 'note__label', 'A person would write'));
+      human.appendChild(el('span', 'note__label', 'Instead of'));
       human.appendChild(el('span', 'note__quote', note.human));
       body.appendChild(human);
     }
-    if (note.data) body.appendChild(el('p', 'note__data', note.data));
+    // note.data — the trailing paragraph of numbers and tests — is deliberately
+    // not shown. It is still in data/puzzles.js if it is ever wanted back.
 
     if (note.source) {
       var cite = el('p', 'note__source');

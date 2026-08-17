@@ -118,10 +118,25 @@
 
     layout.entries.forEach(function (entry) {
       var side = clues[entry.direction] || {};
-      if (!side[entry.number]) {
+      var clue = side[entry.number];
+      if (!clue) {
         problems.push(
           label + ': no ' + entry.direction + ' clue for ' + entry.number +
             ' (' + entry.answer + ')'
+        );
+        return;
+      }
+      if (typeof clue === 'object' && !clue.clue) {
+        problems.push(
+          label + ': ' + entry.direction + ' ' + entry.number + ' has no clue text'
+        );
+      }
+      // The stored answer is only a convenience copy, so it is the thing most
+      // likely to go stale when squares are edited. Catch that here.
+      if (typeof clue === 'object' && clue.answer && clue.answer !== entry.answer) {
+        problems.push(
+          label + ': ' + entry.direction + ' ' + entry.number + ' is written as "' +
+            clue.answer + '" but the grid spells "' + entry.answer + '"'
         );
       }
     });

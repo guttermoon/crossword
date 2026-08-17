@@ -1,5 +1,6 @@
-/* Builds one magazine "article" per puzzle in window.PUZZLES and wires up the
- * shared clue bar that follows whichever grid you are typing in.
+/* Builds the page: the masthead and the two intro panels from window.GAZETTE,
+ * one article per entry in window.PUZZLES, the source list, and the shared clue
+ * bar that follows whichever grid you are typing in.
  */
 (function (global) {
   'use strict';
@@ -11,78 +12,114 @@
     return node;
   }
 
-  function buildArticle(puzzle, position) {
+  /* GAZETTE strings are first-party copy carrying inline <em>/<strong>/<a>. */
+  function rich(tag, className, html) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    node.innerHTML = html || '';
+    return node;
+  }
+
+  function buildMasthead(g) {
+    var head = el('header', 'masthead');
+    head.appendChild(el('p', 'masthead__brand', g.brand));
+    head.appendChild(rich('p', 'masthead__kicker', g.kicker));
+    head.appendChild(el('h1', 'masthead__title', g.title));
+    head.appendChild(rich('p', 'masthead__sub', g.standfirst));
+    return head;
+  }
+
+  function buildBrief(g) {
+    var wrap = el('section', 'brief');
+
+    var col = el('div', 'brief__col');
+    col.appendChild(el('h2', 'brief__head', g.brief.heading));
+    g.brief.paragraphs.forEach(function (paragraph) {
+      col.appendChild(rich('p', null, paragraph));
+    });
+    wrap.appendChild(col);
+
+    var card = el('aside', 'tells');
+    card.appendChild(el('h3', 'tells__head', g.tells.heading));
+    var list = el('ol', 'tells__list');
+    g.tells.items.forEach(function (item) {
+      list.appendChild(rich('li', null, item));
+    });
+    card.appendChild(list);
+    if (g.tells.footnote) card.appendChild(rich('p', 'tells__note', g.tells.footnote));
+    if (g.tells.selfaware) card.appendChild(rich('p', 'tells__aside', g.tells.selfaware));
+    wrap.appendChild(card);
+
+    return wrap;
+  }
+
+  function buildSources(g) {
+    var section = el('section', 'sources');
+    var head = el('h2', 'section-head');
+    head.appendChild(el('span', null, g.sources.heading));
+    section.appendChild(head);
+
+    var list = el('ul', 'sources__list');
+    g.sources.items.forEach(function (item) {
+      list.appendChild(rich('li', null, item));
+    });
+    section.appendChild(list);
+    if (g.sources.colophon) section.appendChild(rich('p', 'sources__colophon', g.sources.colophon));
+    return section;
+  }
+
+  function buildArticle(puzzle, position, total, explainer) {
     var article = el('article', 'puzzle');
     article.id = 'puzzle-' + puzzle.id;
 
-    var head = el('div', 'puzzle__head');
-
-    var storyCol = el('div', 'puzzle__story');
+    var head = el('header', 'puzzle__head');
+    head.appendChild(el('p', 'puzzle__issue', puzzle.issue || ''));
     var title = el('h2', 'puzzle__title');
     title.appendChild(el('span', 'puzzle__title-line', puzzle.title));
-    storyCol.appendChild(title);
-    var story = el('div', 'story');
-    (puzzle.story || []).forEach(function (paragraph) {
-      story.appendChild(el('p', null, paragraph));
-    });
-    storyCol.appendChild(story);
-
-    var gridCol = el('div', 'puzzle__gridwrap');
-    gridCol.appendChild(el('div', 'credit', puzzle.credit || ''));
-    var gridMount = el('div', 'grid-mount');
-    gridCol.appendChild(gridMount);
-
-    head.appendChild(storyCol);
-    head.appendChild(gridCol);
+    head.appendChild(title);
+    if (puzzle.blurb) head.appendChild(rich('p', 'puzzle__blurb', puzzle.blurb));
     article.appendChild(head);
 
-    var sectionHead = el('h3', 'section-head');
-    sectionHead.appendChild(el('span', null, puzzle.heading || puzzle.title));
-    article.appendChild(sectionHead);
-
-    var note = el('div', 'notebox');
-    note.appendChild(el('p', null, puzzle.note || ''));
-    article.appendChild(note);
+    var gridwrap = el('div', 'puzzle__gridwrap');
+    gridwrap.appendChild(el('div', 'credit', (puzzle.issue || '') + ' — ' + puzzle.title));
+    var scroll = el('div', 'grid-scroll');
+    var gridMount = el('div', 'grid-mount');
+    scroll.appendChild(gridMount);
+    gridwrap.appendChild(scroll);
+    article.appendChild(gridwrap);
 
     var toolbarMount = el('div', 'toolbar-mount');
     article.appendChild(toolbarMount);
 
+    if (puzzle.heroes && puzzle.heroes.length) {
+      var heroes = el('p', 'heroes');
+      heroes.appendChild(el('span', 'heroes__label', 'Famous ones in here'));
+      puzzle.heroes.forEach(function (word) {
+        heroes.appendChild(el('span', 'heroes__chip', word));
+      });
+      article.appendChild(heroes);
+    }
+
+    var sectionHead = el('h3', 'section-head');
+    sectionHead.appendChild(el('span', null, 'Clues and footnotes'));
+    article.appendChild(sectionHead);
+
+    if (explainer) {
+      var note = el('div', 'notebox');
+      note.appendChild(rich('p', null, explainer));
+      article.appendChild(note);
+    }
+
     var cluesMount = el('div', 'clues-mount');
     article.appendChild(cluesMount);
 
-    var riddleMount = null;
-    if (puzzle.riddle) {
-      var riddle = el('div', 'riddle');
-      riddle.appendChild(el('p', 'riddle__q', puzzle.riddle.question));
-      var scramble = el('p', 'riddle__scramble');
-      scramble.appendChild(document.createTextNode('For an extra clue, unscramble these words: '));
-      scramble.appendChild(el('b', null, puzzle.riddle.scramble));
-      riddle.appendChild(scramble);
-
-      var answer = el('p', 'riddle__answer');
-      answer.appendChild(el('span', null, puzzle.riddle.answer));
-      riddle.appendChild(answer);
-
-      var peek = el('button', 'riddle__peek', 'Show the solution');
-      peek.type = 'button';
-      peek.addEventListener('click', function () {
-        var shown = article.classList.toggle('is-peeking');
-        peek.textContent = shown ? 'Hide the solution' : 'Show the solution';
-      });
-      riddle.appendChild(peek);
-      riddle.appendChild(el('p', 'riddle__note', '(Solution in Teacher’s Edition.)'));
-      article.appendChild(riddle);
-      riddleMount = riddle;
-    }
-
-    article.appendChild(el('div', 'dinkus', position < global.PUZZLES.length - 1 ? '❖' : ''));
+    article.appendChild(el('div', 'dinkus', position < total - 1 ? '❖' : ''));
 
     return {
       article: article,
       gridMount: gridMount,
       cluesMount: cluesMount,
       toolbarMount: toolbarMount,
-      riddleMount: riddleMount,
     };
   }
 
@@ -117,10 +154,8 @@
     document.body.appendChild(bar);
 
     return {
-      node: bar,
       set: function (text) {
         label.textContent = text;
-        bar.classList.add('is-live');
       },
     };
   }
@@ -138,9 +173,17 @@
   }
 
   function init() {
-    var mount = document.getElementById('puzzles');
+    var gazette = global.GAZETTE || null;
     var puzzles = global.PUZZLES || [];
+    var sheet = document.querySelector('.sheet');
+    var mount = document.getElementById('puzzles');
     var active = null;
+
+    if (gazette) {
+      sheet.insertBefore(buildMasthead(gazette), mount);
+      sheet.insertBefore(buildBrief(gazette), mount);
+      document.title = gazette.brand + ' — ' + gazette.title;
+    }
 
     var clueBar = buildClueBar(function () {
       return active;
@@ -153,7 +196,8 @@
         return;
       }
 
-      var parts = buildArticle(puzzle, position);
+      var parts = buildArticle(puzzle, position, puzzles.length,
+        gazette && position === 0 ? gazette.explainer : '');
       mount.appendChild(parts.article);
 
       new global.Crossword({
@@ -162,7 +206,6 @@
         gridMount: parts.gridMount,
         cluesMount: parts.cluesMount,
         toolbarMount: parts.toolbarMount,
-        riddleMount: parts.riddleMount,
         onActive: function (instance) {
           active = instance;
         },
@@ -171,6 +214,11 @@
         },
       });
     });
+
+    if (gazette) {
+      var colophon = sheet.querySelector('.colophon');
+      sheet.insertBefore(buildSources(gazette), colophon);
+    }
   }
 
   if (document.readyState === 'loading') {

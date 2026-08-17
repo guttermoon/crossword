@@ -10,42 +10,37 @@
   src: url('../fonts/shrikhand-400.woff2') format('woff2');
 }
 
-@font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 200 700;
-  font-display: swap;
-  src: url('../fonts/oswald-var.woff2') format('woff2');
-}
+/* Typewriter body, and a grotesque standing in for the Helvetica Bold the
+ * printed page set its instruction blocks in. */
 
 @font-face {
-  font-family: 'Zilla Slab';
+  font-family: 'Courier Prime';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/zillaslab-400.woff2') format('woff2');
+  src: url('../fonts/courierprime-400.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Zilla Slab';
+  font-family: 'Courier Prime';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('../fonts/zillaslab-700.woff2') format('woff2');
+  src: url('../fonts/courierprime-700.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Zilla Slab';
+  font-family: 'Courier Prime';
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/zillaslab-400i.woff2') format('woff2');
+  src: url('../fonts/courierprime-400i.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Zilla Slab';
-  font-style: italic;
-  font-weight: 700;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
   font-display: swap;
-  src: url('../fonts/zillaslab-700i.woff2') format('woff2');
+  src: url('../fonts/inter-var.woff2') format('woff2');
 }

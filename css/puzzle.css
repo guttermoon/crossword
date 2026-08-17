@@ -9,7 +9,9 @@
 .grid-scroll {
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 4px;
+  padding: 10px;
+  border: var(--rule-thick);
+  border-radius: var(--radius);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -22,7 +24,7 @@
   margin: 0 auto;
   padding: 1px;
   background: var(--block);
-  border: 2px solid var(--ink);
+  border: var(--rule-thick);
   --cell: 28px;
 }
 
@@ -93,7 +95,7 @@
   border-left: 7px solid transparent;
 }
 
-.puzzle.is-focused .grid { box-shadow: 0 0 0 3px rgba(195, 58, 43, 0.35); }
+.puzzle.is-focused .grid { outline: 3px solid rgba(196, 91, 68, 0.45); outline-offset: 2px; }
 
 .grid__input {
   position: absolute;
@@ -128,7 +130,7 @@
   border: 0.06em solid var(--red);
   border-radius: 0.1em;
   padding: 0.08em 0.3em;
-  background: rgba(240, 234, 222, 0.72);
+  background: rgba(255, 255, 253, 0.75);
   opacity: 0;
   pointer-events: none;
   z-index: 4;
@@ -150,15 +152,96 @@
 
 /* -------------------------------------------------------------------- toolbar */
 
+/* Progress and controls sit at the head of each article. */
+.progress {
+  display: grid;
+  grid-template-columns: auto minmax(90px, 200px) auto;
+  align-items: baseline;
+  column-gap: 14px;
+  row-gap: 2px;
+  padding: 12px 0 9px;
+  border-top: var(--rule-double);
+}
+
+.progress__label {
+  grid-column: 1 / -1;
+  margin: 0 0 4px;
+  font-family: var(--font-cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.progress__count {
+  margin: 0;
+  font-family: var(--font-cond);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress__of {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.progress__word {
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.progress__track {
+  height: 9px;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  width: 0;
+  background: var(--red);
+  transition: width 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress__fill { transition: none; }
+}
+
+.progress__read {
+  margin: 0;
+  font-family: var(--font-cond);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 18px;
-  margin: 0 0 16px;
-  padding: 8px 0;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  margin: 0 0 20px;
+  padding: 9px 0;
+  border-top: var(--rule-thick);
+  border-bottom: var(--rule-thick);
+}
+
+@media (max-width: 620px) {
+  .progress {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .progress__track { margin: 6px 0; }
 }
 
 .toolbar__group {
@@ -183,9 +266,9 @@
   text-transform: uppercase;
   color: var(--ink);
   background: var(--paper);
-  border: 1px solid var(--ink);
-  border-radius: 2px;
-  padding: 3px 9px;
+  border: var(--rule-thick);
+  border-radius: 8px;
+  padding: 3px 11px;
   cursor: pointer;
 }
 
@@ -213,7 +296,7 @@
 }
 
 .clues__col + .clues__col {
-  border-left: 1px solid var(--ink);
+  border-left: var(--rule-thick);
   padding-left: 26px;
 }
 
@@ -225,8 +308,8 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--red);
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 3px;
+  border-bottom: var(--rule-thick);
+  padding-bottom: 4px;
 }
 
 .clues__list {
@@ -238,9 +321,9 @@
 .clue {
   display: flex;
   gap: 7px;
-  padding: 3px 5px;
-  font-size: 13px;
-  line-height: 1.4;
+  padding: 4px 5px;
+  font-size: 12px;
+  line-height: 1.55;
 }
 
 .clue__num {
@@ -254,7 +337,7 @@
 
 @media (min-width: 1000px) {
   .clues__list { columns: 2; column-gap: 20px; }
-  .clue { break-inside: avoid; font-size: 12px; }
+  .clue { break-inside: avoid; font-size: 11.5px; }
   /* An open footnote is too tall to balance across columns, so its clue drops
      out of the column flow and spans the pair. */
   .clue.has-note-open { column-span: all; break-inside: avoid; }
@@ -262,24 +345,30 @@
 
 .clue__text { cursor: pointer; }
 
-.clue__why {
-  margin-left: 6px;
-  padding: 0 5px;
+.clue__actions {
+  display: inline-flex;
+  gap: 5px;
+  margin-left: 7px;
+  vertical-align: 1px;
+}
+
+.clue__btn {
+  padding: 1px 8px;
   border: 1px solid var(--ink-soft);
-  border-radius: 2px;
+  border-radius: 8px;
   background: transparent;
   font-family: var(--font-cond);
   font-size: 10px;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-soft);
   cursor: pointer;
   white-space: nowrap;
-  vertical-align: 1px;
 }
 
-.clue__why:hover { background: var(--wash); color: var(--ink); }
-.clue__why:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
+.clue__btn:hover { background: var(--wash); color: var(--ink); }
+.clue__btn:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
 
 .clue:hover { background: rgba(195, 58, 43, 0.07); }
 .clue.is-crossing { background: rgba(237, 224, 180, 0.55); }
@@ -290,10 +379,12 @@
 .note {
   margin: 7px 0 12px;
   padding: 9px 12px;
-  border-left: 2px solid var(--red);
+  border: 1px solid var(--ink-soft);
+  border-left: 3px solid var(--red);
+  border-radius: 8px;
   background: var(--paper-deep);
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 11.5px;
+  line-height: 1.6;
 }
 
 .note p { margin: 0 0 6px; }
@@ -344,8 +435,7 @@
     display: flex;
     align-items: stretch;
     background: var(--paper);
-    border-top: 2px solid var(--ink);
-    box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.25);
+    border-top: var(--rule-thick);
   }
 
   .cluebar__text {

@@ -3,23 +3,28 @@
  */
 
 :root {
-  --paper: #f0eade;
-  --paper-deep: #e6dfcd;
+  --paper: #fffffd;
+  --paper-deep: #f4f2ec;
   --ink: #1b1714;
   --ink-soft: #4a4239;
-  --red: #c33a2b;
-  --red-deep: #9d2c20;
+  --red: #c45b44;
+  --red-deep: #9d3f2c;
   --wash: #ede0b4;
   --wash-strong: #f0c64b;
   --block: #16130f;
   --grid-line: #1b1714d9;
-  --desk: #3b352b;
+  --desk: #fffffd;
 
   --font-display: 'Shrikhand', 'Bookman Old Style', Georgia, serif;
-  --font-cond: 'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif;
-  --font-body: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+  /* The instruction blocks and every label are set in the grotesque, the way
+     the printed page used Helvetica Bold against its typewriter body. */
+  --font-cond: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Courier Prime', 'Courier New', Courier, monospace;
 
   --rule: 1px solid var(--ink);
+  --rule-thick: 2px solid var(--ink);
+  --rule-double: 7px double var(--ink);
+  --radius: 10px;
   --sheet-pad: clamp(18px, 3.5vw, 54px);
 }
 
@@ -27,15 +32,18 @@
 
 html { -webkit-text-size-adjust: 100%; }
 
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 body {
   margin: 0;
   padding: clamp(0px, 3vw, 40px) clamp(0px, 3vw, 40px) 0;
   background: var(--desk);
-  background-image: radial-gradient(circle at 50% 0%, #4a4234 0%, #2c281f 100%);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .sr-only {
@@ -56,7 +64,6 @@ body {
   margin: 0 auto;
   padding: var(--sheet-pad) var(--sheet-pad) calc(var(--sheet-pad) * 0.6);
   background: var(--paper);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
 
 /* Paper grain and the slight darkening toward the gutter. */
@@ -66,20 +73,9 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 2;
-  opacity: 0.055;
+  opacity: 0.03;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-.sheet::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(90, 74, 46, 0.16) 0%, rgba(90, 74, 46, 0) 5%),
-    linear-gradient(-90deg, rgba(90, 74, 46, 0.12) 0%, rgba(90, 74, 46, 0) 4%);
 }
 
 .sheet > * { position: relative; z-index: 3; }
@@ -87,8 +83,8 @@ body {
 /* --------------------------------------------------------------------- masthead */
 
 .masthead {
-  border-bottom: 3px double var(--ink);
-  padding-bottom: 14px;
+  border-bottom: var(--rule-double);
+  padding-bottom: 16px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -119,14 +115,13 @@ body {
   font-size: clamp(38px, 7vw, 68px);
   line-height: 0.95;
   color: var(--red);
-  text-shadow: 2px 2px 0 var(--paper), 4px 4px 0 var(--ink);
 }
 
 .masthead__sub {
   max-width: 62ch;
   margin: 16px auto 0;
-  font-size: 14.5px;
-  line-height: 1.55;
+  font-size: 13.5px;
+  line-height: 1.65;
   color: var(--ink-soft);
   text-align: left;
 }
@@ -156,7 +151,7 @@ body {
   align-items: start;
   padding-bottom: 26px;
   margin-bottom: 30px;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: var(--rule-double);
 }
 
 .brief__head,
@@ -172,8 +167,8 @@ body {
 
 .brief__col p {
   margin: 0 0 0.8em;
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.65;
   color: var(--ink-soft);
 }
 
@@ -182,15 +177,15 @@ body {
 .tells {
   padding: 16px 18px;
   background: var(--paper-deep);
-  border: var(--rule);
-  box-shadow: 4px 4px 0 var(--ink);
+  border: var(--rule-thick);
+  border-radius: var(--radius);
 }
 
 .tells__list {
   margin: 0;
   padding-left: 1.1em;
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 12.5px;
+  line-height: 1.6;
   color: var(--ink-soft);
 }
 
@@ -230,8 +225,8 @@ body {
 .sources__list {
   margin: 0;
   padding-left: 1.2em;
-  font-size: 12.5px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.6;
   color: var(--ink-soft);
 }
 
@@ -243,6 +238,83 @@ body {
   font-style: italic;
   font-size: 13px;
 }
+
+/* ------------------------------------------------------------------- picker */
+
+.picker {
+  margin: 0 0 34px;
+}
+
+.picker__label {
+  margin: 0 0 10px;
+  font-family: var(--font-cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.picker__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.picker__card {
+  display: block;
+  padding: 14px 16px 12px;
+  background: var(--paper);
+  border: var(--rule-thick);
+  border-radius: var(--radius);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.12s;
+}
+
+.picker__card:hover { background: var(--wash); }
+
+.picker__card:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+.picker__issue {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.picker__title {
+  display: block;
+  margin: 5px 0 4px;
+  font-size: 21px;
+  line-height: 1.1;
+}
+
+.picker__count {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Marks where you are on a page that holds all three. */
+.picker__card.is-current {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.picker__card.is-current:hover { background: var(--ink); }
+
+.picker__card.is-current .picker__count { color: #b6ad9b; }
+
+/* The anchor should land above the article, not flush against the viewport. */
+.puzzle { scroll-margin-top: 18px; }
 
 /* ---------------------------------------------------------------- puzzle head */
 
@@ -260,10 +332,8 @@ body {
    text block set beside the grid, opening on a drop cap. */
 .puzzle__blurb {
   margin: 8px 0 0;
-  font-size: 13px;
-  line-height: 1.45;
-  text-align: justify;
-  hyphens: auto;
+  font-size: 12.5px;
+  line-height: 1.6;
 }
 
 .puzzle__blurb::first-letter {
@@ -321,7 +391,12 @@ body {
   margin-bottom: 18px;
 }
 
-.puzzle__head { min-width: 0; }
+.puzzle__head {
+  min-width: 0;
+  padding: 14px 16px 16px;
+  border: var(--rule-thick);
+  border-radius: var(--radius);
+}
 
 .puzzle__title {
   margin: 0 0 10px;
@@ -330,7 +405,6 @@ body {
   font-size: clamp(28px, 4vw, 40px);
   line-height: 1;
   color: var(--red);
-  text-shadow: 1px 1px 0 var(--paper), 3px 3px 0 var(--ink);
 }
 
 .puzzle__title-line { display: inline-block; }
@@ -359,36 +433,31 @@ body {
 /* ------------------------------------------------------------- section heading */
 
 .section-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 26px 0 14px;
+  margin: 28px 0 16px;
+  padding: 7px 0;
+  border-top: 4px solid var(--ink);
+  border-bottom: 4px solid var(--ink);
   font-family: var(--font-cond);
   font-size: clamp(15px, 2.2vw, 19px);
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--red);
-  text-transform: none;
-}
-
-.section-head::before,
-.section-head::after {
-  content: "";
-  flex: 1;
-  height: 0;
-  border-top: 1px solid var(--red);
+  text-align: center;
 }
 
 .notebox {
-  border: var(--rule);
-  padding: 12px 16px;
+  border: var(--rule-thick);
+  border-radius: var(--radius);
+  padding: 13px 17px;
   margin-bottom: 18px;
   background: linear-gradient(var(--paper), var(--paper-deep));
 }
 
 .notebox p {
   margin: 0;
-  font-size: 13px;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 13.5px;
   line-height: 1.5;
 }
 
@@ -418,8 +487,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-top: 3px double var(--ink);
-  padding-top: 8px;
+  border-top: var(--rule-double);
+  padding-top: 10px;
   font-family: var(--font-cond);
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -428,6 +497,7 @@ body {
 
 .errorbox {
   border: 2px solid var(--red);
+  border-radius: var(--radius);
   background: #fbeeea;
   padding: 12px 16px;
   margin-bottom: 24px;
@@ -460,7 +530,7 @@ body {
   body { background: #fff; padding: 0; }
   .sheet { box-shadow: none; max-width: none; padding: 0; }
   .sheet::before, .sheet::after { display: none; }
-  .toolbar, .cluebar, .clue__why, .skip { display: none !important; }
+  .toolbar, .cluebar, .clue__actions, .skip, .picker, .progress { display: none !important; }
   .puzzle { break-after: page; }
   .puzzle:last-of-type { break-after: auto; }
   /* Footnotes are the point of the page, so print them all. */

@@ -367,7 +367,9 @@
 
 /* ------------------------------------------------------------------ the note */
 
-/* It opens under the clue that references it, inside the clue column. */
+/* It opens under the clue that references it, inside the clue column. The fill
+   is left transparent so the clue's own state — the hover wash, the active
+   highlight — carries through the note as one block. */
 .note {
   margin: 8px 0 10px;
   padding: 10px 12px;

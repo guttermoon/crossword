@@ -7,6 +7,17 @@
   var STORAGE_PREFIX = 'crossword/v1/';
   var SAVE_DELAY = 400;
 
+  /* Identifies the grid a save belongs to, so replacing a puzzle's content while
+   * keeping its id discards the old fill instead of restoring it into new squares. */
+  function signature(rows) {
+    var text = rows.join('|');
+    var hash = 0;
+    for (var i = 0; i < text.length; i++) {
+      hash = (hash * 31 + text.charCodeAt(i)) | 0;
+    }
+    return String(hash);
+  }
+
   function el(tag, className, text) {
     var node = document.createElement(tag);
     if (className) node.className = className;
@@ -596,6 +607,7 @@
       global.localStorage.setItem(
         this.storageKey(),
         JSON.stringify({
+          sig: signature(this.puzzle.grid),
           fill: this.fill.map(function (letter) {
             return letter == null ? '.' : letter || ' ';
           }).join(''),
@@ -625,6 +637,7 @@
       return;
     }
     if (!saved || typeof saved.fill !== 'string' || saved.fill.length !== this.fill.length) return;
+    if (saved.sig !== signature(this.puzzle.grid)) return;
 
     for (var i = 0; i < saved.fill.length; i++) {
       if (this.fill[i] == null) continue;

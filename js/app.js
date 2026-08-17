@@ -96,18 +96,37 @@
   }
 
   /* Once the strip scrolls off the top it pins itself, shrunk to a row of
-   * chips, so the three puzzles stay reachable from anywhere on the page. */
+   * chips, so the three puzzles stay reachable from anywhere on the page.
+   *
+   * A 1px sentinel above the strip marks where it sits when it is not pinned,
+   * and we compare that against the top of the viewport. This was an
+   * IntersectionObserver, which is the usual way to do it and is wrong here:
+   * the observer only reports when the sentinel crosses in or out of view, and
+   * following a picker link from the top of the page jumps clean over it —
+   * never intersecting, so never reported. You landed on puzzle 3 with the full
+   * strip sitting across the page. Reading the position once a frame while
+   * scrolling is one rect on one element and cannot miss a jump. */
   function stickWhenPassed(nav) {
-    if (!global.IntersectionObserver) return;
     var sentinel = el('div', 'picker__sentinel');
     nav.parentNode.insertBefore(sentinel, nav);
-    new global.IntersectionObserver(function (entries) {
-      var entry = entries[0];
-      // Out of view above means scrolled past; out of view below just means we
-      // have not reached it yet, which is not the same thing.
-      nav.classList.toggle('is-stuck',
-        !entry.isIntersecting && entry.boundingClientRect.top < 0);
-    }, { threshold: 0 }).observe(sentinel);
+
+    var waiting = false;
+
+    function measure() {
+      waiting = false;
+      nav.classList.toggle('is-stuck', sentinel.getBoundingClientRect().top < 0);
+    }
+
+    function onScroll() {
+      if (waiting) return;
+      waiting = true;
+      if (global.requestAnimationFrame) global.requestAnimationFrame(measure);
+      else measure();
+    }
+
+    global.addEventListener('scroll', onScroll, { passive: true });
+    global.addEventListener('resize', onScroll);
+    measure();
   }
 
   function trackCurrent(nav) {
@@ -142,12 +161,12 @@
 
   /* The head of an article folds away, so a solver who has read it once can
    * put the grid and its clues back at the top of the screen. */
-  function makeCollapsible(head, headline, label) {
+  function makeCollapsible(head, label) {
     var button = el('button', 'puzzle__toggle', 'Hide');
     button.type = 'button';
     button.setAttribute('aria-expanded', 'true');
     button.setAttribute('aria-label', 'Hide the introduction to ' + label);
-    headline.appendChild(button);
+    head.appendChild(button);
 
     button.addEventListener('click', function () {
       var collapsed = head.classList.toggle('is-collapsed');
@@ -179,7 +198,7 @@
     title.appendChild(el('span', 'puzzle__title-line', puzzle.title));
     headline.appendChild(title);
     head.appendChild(headline);
-    makeCollapsible(head, headline, puzzle.title);
+    makeCollapsible(head, puzzle.title);
 
     var intro = el('div', 'puzzle__intro');
     if (puzzle.blurb) intro.appendChild(rich('p', 'puzzle__blurb', puzzle.blurb));

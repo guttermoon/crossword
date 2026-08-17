@@ -14,7 +14,7 @@ window.PUZZLES = [
   "id": "p1",
   "issue": "No. 1",
   "title": "The Words",
-  "blurb": "The vocabulary machines cannot put down — the adverbs, the ornate nouns, the corporate verbs, and the travel-brochure adjectives that arrive when nobody looked at the thing being described.",
+  "blurb": "The vocabulary AI cannot put down — the adverbs, the ornate nouns, the corporate verbs, and the travel-brochure adjectives that arrive when nobody looked at the thing being described.",
   "heroes": [
    "DELVE",
    "LOADBEARING",
@@ -59,7 +59,7 @@ window.PUZZLES = [
      "clue": "Formal verb whose entire purpose is to be longer than 'use'",
      "answer": "UTILISE",
      "note": {
-      "what": "Here is the clearest evidence anywhere of why machines write like this, and it is not because they were trained on management consultants. Models are tuned by showing paid raters two answers and keeping whichever they prefer. Raters preferred the version that sounded educated, so the longer word won thousands of small contests and became the default. The tic was not learned from the web; it was rewarded into place afterwards.",
+      "what": "Here is the clearest evidence anywhere of why AI writes like this, and it is not because it was trained on management consultants. Models are tuned by showing paid raters two answers and keeping whichever they prefer. Raters preferred the version that sounded educated, so the longer word won thousands of small contests and became the default. The tic was not learned from the web; it was rewarded into place afterwards.",
       "sounds": "“Please utilise the attached template to facilitate the process.”",
       "human": "“Use the form attached. It takes two minutes.”",
       "data": "The causal test: an untuned Llama 2-Base model was about equally surprised by human and AI text (entropy 1.616 against 1.633). Once tuned on human ratings, Llama 2-Chat found AI text containing these words far less surprising (0.886) than human text (1.051) — the fingerprint of raters' taste being trained in.",
@@ -71,7 +71,7 @@ window.PUZZLES = [
      "clue": "Word for two things working better together than apart, and the most mocked term in business English",
      "answer": "SYNERGY",
      "note": {
-      "what": "The interesting fault is not that it is a cliche but that it names a result while hiding the mechanism. Nobody can dispute that combining two things produced extra value, because no figure was offered. Machines produce it freely for the same reason they produce 'ecosystem' and 'holistic': the training data is thick with press releases, and press releases are written to be unarguable.",
+      "what": "The interesting fault is not that it is a cliche but that it names a result while hiding the mechanism. Nobody can dispute that combining two things produced extra value, because no figure was offered. AI produces it freely for the same reason it produces 'ecosystem' and 'holistic': the training data is thick with press releases, and press releases are written to be unarguable.",
       "sounds": "“The merger will unlock powerful synergies across both organisations.”",
       "human": "“They'll share one warehouse and close the smaller one.”",
       "data": null,
@@ -80,7 +80,7 @@ window.PUZZLES = [
      }
     },
     "7": {
-     "clue": "A woven wall hanging. Machines drape this one over culture, history and 'the human experience' whenever they want to sound profound",
+     "clue": "A woven wall hanging. AI drapes this one over culture, history and 'the human experience' whenever it wants to sound profound",
      "answer": "TAPESTRY",
      "note": {
       "what": "The classic ornate noun for a simple idea. A tapestry is a specific object made of thread; used as a metaphor for society it says only 'lots of different things', which is why it can be dropped from any sentence without loss.",
@@ -119,7 +119,7 @@ window.PUZZLES = [
      "clue": "Two words: the attribution that borrows a laboratory's authority while naming no laboratory, no date and no sample",
      "answer": "STUDIESSHOW",
      "note": {
-      "what": "The most consequential habit in this puzzle, because it is where fluent writing becomes misinformation. Five things are missing every time: who did the work, when, how many people were in it, what method was used, and what the authors said the limits were. Machines produce the phrase because the shape of a citation is easy to generate and an actual citation is not. Its family includes 'experts argue', 'research suggests' and 'industry reports indicate'.",
+      "what": "The most consequential habit in this puzzle, because it is where fluent writing becomes misinformation. Five things are missing every time: who did the work, when, how many people were in it, what method was used, and what the authors said the limits were. AI produces the phrase because the shape of a citation is easy to generate and an actual citation is not. Its family includes 'experts argue', 'research suggests' and 'industry reports indicate'.",
       "sounds": "“Studies show that this approach improves outcomes.”",
       "human": "“A 2019 trial of 240 patients in Leeds found a small improvement, and nobody has repeated it since.”",
       "data": "For comparison, here is what a real attribution looks like: Kousha and Thelwall, working across more than 2.4 million PubMed Central full texts, found the use of 'underscore' rising roughly 1,000% between 2022 and 2024. Named authors, named corpus, stated size, checkable claim.",
@@ -152,7 +152,7 @@ window.PUZZLES = [
      }
     },
     "18": {
-     "clue": "Building-trade adjective for a wall that holds the roof up. A machine will apply it to a paragraph, a code comment, a decision or your feelings",
+     "clue": "Building-trade adjective for a wall that holds the roof up. AI will apply it to a paragraph, a code comment, a decision or your feelings",
      "answer": "LOADBEARING",
      "note": {
       "what": "The signature tell of 2026, associated above all with Anthropic's Claude. It asserts structural importance in one hyphenated word without having to argue for it, which is exactly why models like it and why banning the phrase alone does not help — they simply switch to 'carries the argument' or 'does the real work here'.",
@@ -188,7 +188,7 @@ window.PUZZLES = [
      }
     },
     "24": {
-     "clue": "Verb meaning to brag. Machines use it to mean nothing more than 'has': the hotel ___ 47 rooms",
+     "clue": "Verb meaning to brag. AI uses it to mean nothing more than 'has': the hotel ___ 47 rooms",
      "answer": "BOASTS",
      "note": {
       "what": "Estate agents started this and models industrialised it. Note what has happened grammatically: a building is now doing the bragging, which is the same misplaced agency that makes 'load-bearing' and 'harness' odd. It is also on the strongest evidence list in the field, because it both rose sharply in human writing after 2020 and is provably over-produced by ChatGPT.",
@@ -203,7 +203,7 @@ window.PUZZLES = [
      "clue": "Adjective meaning sturdy, applied indiscriminately to frameworks, findings, systems and debate",
      "answer": "ROBUST",
      "note": {
-      "what": "Vague strength. It signals that you should feel reassured while offering no measurement. Machines use it because it reads as technical and is almost impossible to contradict.",
+      "what": "Vague strength. It signals that you should feel reassured while offering no measurement. AI uses it because it reads as technical and is almost impossible to contradict.",
       "sounds": "“We have implemented robust safeguards and a robust review process.”",
       "human": "“Two people check every file, and we keep a log for a year.”",
       "data": "Watch for the same adjective twice in one sentence, as in the example. Human writers instinctively vary; models reach for the highest-probability word again and again, which is why repetition within a paragraph is a stronger signal than any single word.",
@@ -214,7 +214,7 @@ window.PUZZLES = [
    },
    "down": {
     "1": {
-     "clue": "Adverb meaning without noise. Machines use it to make an ordinary fact sound like a secret you have just been let in on",
+     "clue": "Adverb meaning without noise. AI uses it to make an ordinary fact sound like a secret you have just been let in on",
      "answer": "QUIETLY",
      "note": {
       "what": "A magic adverb. It smuggles in significance for nothing: 'the app quietly became essential.' Quietly compared with what? Nothing was ever loud. Delete the word and no information is lost, which is the test.",
@@ -241,8 +241,8 @@ window.PUZZLES = [
      "clue": "A group of things close together — and the number of these habits you need before saying anything out loud",
      "answer": "CLUSTER",
      "note": {
-      "what": "The single most important idea in this puzzle. One tell is a coincidence. Three in the same paragraph is a machine. This is not a rule of thumb invented for comfort; it is what the measurements actually support.",
-      "sounds": "“Let's delve into the intricate tapestry of this pivotal moment, which underscores a truly transformative shift.” Five tells, one sentence. That is a machine.",
+      "what": "The single most important idea in this puzzle. One tell is a coincidence. Three in the same paragraph is AI. This is not a rule of thumb invented for comfort; it is what the measurements actually support.",
+      "sounds": "“Let's delve into the intricate tapestry of this pivotal moment, which underscores a truly transformative shift.” Five tells, one sentence. That is AI.",
       "human": "One 'delve' in an otherwise ordinary email is one word. Leave it.",
       "data": "Before ChatGPT these words appeared independently of one another. The statistical link between 'underscore' and 'pivotal' was 0.03 in 2022 and 0.45 by 2024; between 'underscore' and 'delve', 0.02 to 0.31. The words did not just get more common — they started travelling together.",
       "source": "Kousha & Thelwall",
@@ -250,7 +250,7 @@ window.PUZZLES = [
      }
     },
     "6": {
-     "clue": "Verb meaning to give someone authority. In practice the word that ends a thousand machine-written conclusions",
+     "clue": "Verb meaning to give someone authority. In practice the word that ends a thousand AI-written conclusions",
      "answer": "EMPOWER",
      "note": {
       "what": "The sign-off verb. It appears in the last paragraph, aimed at the reader, promising agency without describing any. If a piece of writing finishes by empowering you to embrace something, ask who wrote it.",
@@ -265,7 +265,7 @@ window.PUZZLES = [
      "clue": "Two words standing in for plain 'is', so that a building no longer is a reminder of anything but performs the reminding as a duty",
      "answer": "SERVESAS",
      "note": {
-      "what": "The copula gets promoted. 'Is' states a fact and stops; this phrasing dresses the same fact in a job title, and its cousins do the same work — 'stands as', 'represents', 'marks', 'acts as', 'functions as'. Machines reach for it because it sounds considered while committing to nothing, and because encyclopaedia and press-release prose, which the models read a great deal of, is full of it. Unlike 'boasts' or 'showcase' it is not a rare word, so it slips past readers who are only watching for exotic vocabulary. The noun form does the same job: “a testament to”, which means “proof of” and costs three extra words to say so.",
+      "what": "The copula gets promoted. 'Is' states a fact and stops; this phrasing dresses the same fact in a job title, and its cousins do the same work — 'stands as', 'represents', 'marks', 'acts as', 'functions as'. AI reaches for it because it sounds considered while committing to nothing, and because encyclopaedia and press-release prose, which the models read a great deal of, is full of it. Unlike 'boasts' or 'showcase' it is not a rare word, so it slips past readers who are only watching for exotic vocabulary. The noun form does the same job: “a testament to”, which means “proof of” and costs three extra words to say so.",
       "sounds": "“The new wing serves as a reminder of the school’s commitment to the arts.”",
       "human": "“The new wing is named after Mrs Ellery, who taught art here for thirty-one years.”",
       "data": "The test is substitution rather than deletion: put 'is' back and read it again. 'The building is a reminder' loses nothing, which means the longer phrase was carrying no meaning, only ceremony. Where 'serves as' is doing real work — a room that genuinely doubles as something else — the swap fails and you will hear it fail.",
@@ -277,7 +277,7 @@ window.PUZZLES = [
      "clue": "Borrowed from finance and mechanics, where it means gaining force from a fulcrum. Three syllables standing in for the one-syllable word 'use'",
      "answer": "LEVERAGE",
      "note": {
-      "what": "Corporate vocabulary that machines picked up wholesale. It belongs with 'utilise', 'harness' and 'operationalise' — a family whose only function is to make a sentence sound more expensive than it is.",
+      "what": "Corporate vocabulary that AI picked up wholesale. It belongs with 'utilise', 'harness' and 'operationalise' — a family whose only function is to make a sentence sound more expensive than it is.",
       "sounds": "“We leverage AI to optimise workflows.”",
       "human": "“We use AI to speed up scheduling.”",
       "data": "Useful editing habit: replace it with 'use' and see whether the meaning changes. It never does. If it never does, the longer word was doing no work — the same test that catches 'load-bearing'.",
@@ -289,7 +289,7 @@ window.PUZZLES = [
      "clue": "Verb meaning to emphasise or draw attention to. Rose roughly 1,000% in academic writing after 2022, and now travels in a pack with 'delve' and 'pivotal'",
      "answer": "UNDERSCORE",
      "note": {
-      "what": "A perfectly good word that machines reach for instead of 'shows', 'proves' or 'means'. It belongs to a family of what you might call significance verbs — underscores, highlights, demonstrates, exemplifies, showcases — all used to avoid the plain word 'is'.",
+      "what": "A perfectly good word that AI reaches for instead of 'shows', 'proves' or 'means'. It belongs to a family of what you might call significance verbs — underscores, highlights, demonstrates, exemplifies, showcases — all used to avoid the plain word 'is'.",
       "sounds": "“These findings underscore the importance of early intervention.”",
       "human": "“This shows early treatment matters.”",
       "data": "Use of 'underscore' rose about 1,000% between 2022 and 2024. The number of papers using it six or more times rose by over 10,000% between 2022 and 2025 — which is the real tell: not the word, but the repetition.",
@@ -304,7 +304,7 @@ window.PUZZLES = [
       "what": "A borrowed-physics word. You harness an ox or a waterfall — something with real pulling force. Applied to 'the power of data' or 'the potential of your team', the machinery is imaginary.",
       "sounds": "“Harness the power of your data to unlock new insights.”",
       "human": "“Look at your sales figures and you may spot something useful.”",
-      "data": "This is the same fault as 'load-bearing', and it points at something deeper than word choice: machines routinely hand physical force and agency to things that have none. One programmer collected examples from code reviews — 'the lateral rides the index', 'the query hit 19 seconds', 'adoption moved out'.",
+      "data": "This is the same fault as 'load-bearing', and it points at something deeper than word choice: AI routinely hands physical force and agency to things that have none. One programmer collected examples from code reviews — 'the lateral rides the index', 'the query hit 19 seconds', 'adoption moved out'.",
       "source": "Jesse Duffield, AI-isms go deeper",
       "url": "https://jesseduffield.com/AI-isms-go-deeper/"
      }
@@ -316,16 +316,16 @@ window.PUZZLES = [
       "what": "A promotion handed out with no committee. 'More importantly' claims a comparison has been made between two things and settled, when the writer has merely moved on. There is a caution attached to this whole family, though, and it is worth carrying into the rest of the puzzle: some of the phrases that spiked after 2022 are utterly bland ones, so a single flat signpost convicts nobody.",
       "sounds": "“More importantly, this underscores our ongoing commitment to excellence.”",
       "human": "“The bit that matters is the deadline. It moved to 3 October.”",
-      "data": "In a study of 27.5 million medical records, 103 of 135 candidate AI-influenced terms cleared the statistical threshold in 2024 — but so did supposedly neutral control phrases such as 'further research' and 'aim to'. Some of the rise is machines and some is fashion.",
+      "data": "In a study of 27.5 million medical records, 103 of 135 candidate AI-influenced terms cleared the statistical threshold in 2024 — but so did supposedly neutral control phrases such as 'further research' and 'aim to'. Some of the rise is AI and some is fashion.",
       "source": "Matsui, Perspectives on Medical Education",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12679996/"
      }
     },
     "19": {
-     "clue": "Cosy verb for how a village sits in a valley. In machine prose, nothing is ever merely located",
+     "clue": "Cosy verb for how a village sits in a valley. In AI prose, nothing is ever merely located",
      "answer": "NESTLED",
      "note": {
-      "what": "Geography becomes affectionate. Towns are nestled, cottages are tucked away, restaurants are hidden gems. It is a small, harmless, extremely consistent habit — which is what makes it useful. The fixed phrase to watch is “in the heart of”, which machine travel copy attaches to every cafe, market and hotel on earth.",
+      "what": "Geography becomes affectionate. Towns are nestled, cottages are tucked away, restaurants are hidden gems. It is a small, harmless, extremely consistent habit — which is what makes it useful. The fixed phrase to watch is “in the heart of”, which AI travel copy attaches to every cafe, market and hotel on earth.",
       "sounds": "“Nestled in the rolling hills of Devon lies a charming village.”",
       "human": "“The village is twenty minutes off the A38, down a lane with no passing places.”",
       "data": "Also watch the sentence shape here, not just the words: starting with the scene-setting phrase and putting the subject at the end ('Nestled in X lies Y') is a construction models produce far more often than people do.",
@@ -337,7 +337,7 @@ window.PUZZLES = [
      "clue": "Adjective meaning full of energy, applied to every city, market and community on earth",
      "answer": "VIBRANT",
      "note": {
-      "what": "A travel-brochure word. It means the writer has not been there. A person names the specific street, the smell, the price of the coffee; a machine reaches for the energy level, because that is what descriptions of places statistically contain.",
+      "what": "A travel-brochure word. It means the writer has not been there. A person names the specific street, the smell, the price of the coffee; AI reaches for the energy level, because that is what descriptions of places statistically contain.",
       "sounds": "“The vibrant city of Bristol boasts a bustling harbour.”",
       "human": "“Bristol's harbour is full of boats and about six competing coffee stands.”",
       "data": "The brochure family — vibrant, bustling, nestled, picturesque, charming, breathtaking, renowned, a hidden gem, in the heart of — clusters so tightly that finding three of them in a paragraph is close to conclusive. 'Boasts' is on the verified spike list.",
@@ -406,7 +406,7 @@ window.PUZZLES = [
   "clues": {
    "across": {
     "1": {
-     "clue": "Small adverb that turns the most cited machine sentence into its most cited variant: “not ___ X, but Y”",
+     "clue": "Small adverb that turns the most cited AI sentence into its most cited variant: “not ___ X, but Y”",
      "answer": "JUST",
      "note": {
       "what": "One word is doing a surprising amount of work here. Inserting it converts an outright denial into a modest upgrade, which is safer and therefore commoner: the model no longer has to reject X, only to promise something better. This variant is why the tell is so often missed by people watching for the plain negation.",
@@ -424,7 +424,7 @@ window.PUZZLES = [
       "what": "The shortest way to fake momentum. A real writer earns a reveal by building to it; this device skips the building and keeps the reveal. Because it is so cheap, models produce it constantly, and it is the easiest tell to teach someone in one sentence. It comes as a stock of question fragments — “The result?”, “The reality?”, “The catch?”, “The truth?”, “The worst part?” — and in a longer form that parks an empty question-word phrase in front of the real subject: “What this really means is …”.",
       "sounds": "“The catch? There isn't one. The best part? It's free.”",
       "human": "“There's no catch, and it costs nothing.”",
-      "data": "Full sentences are the fix and the test: if you can restore the question fragment to an ordinary sentence with no loss ('the result was devastating'), the fragment was decoration. That single rewrite removes a large fraction of machine cadence.",
+      "data": "Full sentences are the fix and the test: if you can restore the question fragment to an ordinary sentence with no loss ('the result was devastating'), the fragment was decoration. That single rewrite removes a large fraction of AI cadence.",
       "source": null,
       "url": null
      }
@@ -445,10 +445,10 @@ window.PUZZLES = [
      "clue": "Small slip of the fingers. Two thousand words of informal writing without a single one is a weak signal — and a cruel thing to accuse anyone over",
      "answer": "TYPO",
      "note": {
-      "what": "Real informal writing carries traces of being made: a repeated word, a sentence that changes direction halfway, a comma in the wrong place, an abandoned clause. Machine text has none, because there was no moment of composition to leave a mark. The same applies to unwavering house style across a long document, where a person's capitalisation and list punctuation usually drift.",
+      "what": "Real informal writing carries traces of being made: a repeated word, a sentence that changes direction halfway, a comma in the wrong place, an abandoned clause. AI text has none, because there was no moment of composition to leave a mark. The same applies to unwavering house style across a long document, where a person's capitalisation and list punctuation usually drift.",
       "sounds": "Two thousand words of chatty prose with flawless commas, consistent capitalisation and not one repeated word.",
       "human": "“Sorry — sent that too fast, I meant Thursday not Tuesday.”",
-      "data": "Take this one gently. Linguistics experts shown research abstracts picked out the machine-written ones only 38.9% of the time, worse than guessing, and they erred towards calling machine text human. Careful writers exist, and a clean document proves nothing on its own.",
+      "data": "Take this one gently. Linguistics experts shown research abstracts picked out the AI-written ones only 38.9% of the time, worse than guessing, and they erred towards calling AI text human. Careful writers exist, and a clean document proves nothing on its own.",
       "source": "study summary",
       "url": "https://www.reddit.com/r/science/comments/16g2kpt/ai_vs_human_writing_experts_fooled_almost_62_of/"
      }
@@ -460,7 +460,7 @@ window.PUZZLES = [
       "what": "An opening line that contains no information is the most reliable single sign that nobody chose the subject. The model has to start somewhere, and the era-scale platitude is the highest-probability opening in its training data, so it functions as a warm-up lap. Siblings: “in an era where”, “in an increasingly connected world”, “as technology continues to evolve”, “in the modern workplace”. Its cousins open the same lap from a different angle: a question flung at a reader who never agreed to answer one (“What if everything you know about sleep is wrong?”), a speculative “imagine” or “what if”, and the confiding observer pose — “I've been thinking about this a lot lately.”",
       "sounds": "“In today's fast-paced digital environment, effective communication has never been more important.”",
       "human": "“The rota went out four days late again, so two shifts were uncovered on Saturday.”",
-      "data": "Named first in a published set of twelve cadence detectors, each with a machine sample and the human sentence that should have replaced it. Deleting the opening paragraph of a suspect piece is the quickest possible edit: if nothing is lost, it was a lap of the track.",
+      "data": "Named first in a published set of twelve cadence detectors, each with an AI sample and the human sentence that should have replaced it. Deleting the opening paragraph of a suspect piece is the quickest possible edit: if nothing is lost, it was a lap of the track.",
       "source": "Bloomberry, AI sentence patterns",
       "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
      }
@@ -493,7 +493,7 @@ window.PUZZLES = [
      "clue": "Adjective for detail about smell, light and sound, dropped in to fake a scene: “The aroma of fresh coffee filled the room.”",
      "answer": "SENSORY",
      "note": {
-      "what": "Descriptive detail earns its place when it is specific, surprising or consequential. The machine version is a stock backdrop: streaming sunlight, distant traffic, the smell of rain, the hum of a laptop. Nothing in it could only have happened in that room on that day, which is precisely what a person's memory supplies without being asked.",
+      "what": "Descriptive detail earns its place when it is specific, surprising or consequential. The AI version is a stock backdrop: streaming sunlight, distant traffic, the smell of rain, the hum of a laptop. Nothing in it could only have happened in that room on that day, which is precisely what a person's memory supplies without being asked.",
       "sounds": "“Sunlight streamed through the window as the team gathered, the aroma of fresh coffee filling the air.”",
       "human": "“We met in the room with the broken blind, so half the table could not see the screen.”",
       "data": "Ask whether the detail could be swapped into any other scene without adjustment. Real specifics resist relocation; a detail that fits everywhere was chosen by probability rather than recollection.",
@@ -508,7 +508,7 @@ window.PUZZLES = [
       "what": "The caveat performs nuance and the second half withdraws it. Nothing is specified: not the evidence, not the exception, not the degree of confidence, not who is affected. Models produce the pair because being simultaneously careful and assertive is what raters reward, and because a real limitation would require a real number. Siblings: “it is worth noting”, “while not universal”, “though results may differ”, “generally speaking”, “in most cases”.",
       "sounds": "“While every school is different, research consistently shows that parental engagement is key.”",
       "human": "“At this school, the children whose parents came to the October evening did better in the March tests. We do not know why.”",
-      "data": "Catalogued as one of twelve named cadence patterns, each documented with a machine example beside a human rewrite. The hedge-assertion pair is the one non-specialists find hardest to see, because it looks like good manners.",
+      "data": "Catalogued as one of twelve named cadence patterns, each documented with an AI example beside a human rewrite. The hedge-assertion pair is the one non-specialists find hardest to see, because it looks like good manners.",
       "source": "Bloomberry, AI sentence patterns",
       "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
      }
@@ -520,7 +520,7 @@ window.PUZZLES = [
       "what": "Padding of this kind appears when a model must produce a paragraph on a topic it has nothing to add to. The definition restates the term, the example restates the definition, and the word count rises without a single new fact. It is the mechanism behind fractal summaries as well, where each section explains that it is about the thing named in its heading.",
       "sounds": "“Sustainability means adopting practices that are sustainable over the long term.”",
       "human": "“We cut the van fleet from nine to four and moved deliveries to Tuesdays and Fridays.”",
-      "data": "The information test: after reading a paragraph, try to state one thing you now know that you did not before. If nothing comes, the paragraph was a placeholder — and this is the fastest way to sift a long machine-written document.",
+      "data": "The information test: after reading a paragraph, try to state one thing you now know that you did not before. If nothing comes, the paragraph was a placeholder — and this is the fastest way to sift a long AI-written document.",
       "source": null,
       "url": null
      }
@@ -540,7 +540,7 @@ window.PUZZLES = [
    },
    "down": {
     "2": {
-     "clue": "The formal name for a list of exactly three items. One is good writing; four in a row is a machine keeping time",
+     "clue": "The formal name for a list of exactly three items. One is good writing; four in a row is AI keeping time",
      "answer": "TRICOLON",
      "note": {
       "what": "Three-part lists are genuinely powerful — 'friends, Romans, countrymen'. The tell is not their existence but their regularity. Models fall into the rhythm every paragraph, because three-item lists are statistically the most common shape in persuasive prose. The numbered version does the same thing out loud — “first”, “second”, “third” laid over material that has no sequence in it.",
@@ -558,7 +558,7 @@ window.PUZZLES = [
       "what": "The most famous tell and one of the least reliable. Yes, some models use it more than most people do. But the rate varies wildly between models, respectable human writers are dash addicts, and the whole habit may be an accident of training on old books.",
       "sounds": "A paragraph with four of them — one per sentence — each one pivoting mid-thought — which is a lot.",
       "human": "Commas and full stops, mostly. Two or three dashes in a whole article is normal.",
-      "data": "The numbers, in full: GPT-4.1 runs at 10.62 per thousand words against a matched human baseline of 3.23. But Claude used only 2 in 948 words in one head-to-head test while Gemini used none, and Mark Twain's Huckleberry Finn runs at 10.13 — statistically the same as GPT-4.1. Any threshold that convicts ChatGPT also convicts Twain. Likely cause: models are trained heavily on late-1800s books, which used about 30% more dashes than we do — English dash use peaked around 1860 and has been falling ever since. The baseline also moves between varieties of the language: one Nigerian English corpus runs about ten times below the general rate, so a writer's background shifts the number before any machine is involved. (Sean Goedecke.)",
+      "data": "The numbers, in full: GPT-4.1 runs at 10.62 per thousand words against a matched human baseline of 3.23. But Claude used only 2 in 948 words in one head-to-head test while Gemini used none, and Mark Twain's Huckleberry Finn runs at 10.13 — statistically the same as GPT-4.1. Any threshold that convicts ChatGPT also convicts Twain. Likely cause: models are trained heavily on late-1800s books, which used about 30% more dashes than we do — English dash use peaked around 1860 and has been falling ever since. The baseline also moves between varieties of the language: one Nigerian English corpus runs about ten times below the general rate, so a writer's background shifts the number before any AI is involved. (Sean Goedecke.)",
       "source": "Slop Detector's em-dash measurement",
       "url": "https://slopdetector.org/blog/em-dash-ai-tell-data"
      }
@@ -588,10 +588,10 @@ window.PUZZLES = [
      }
     },
     "6": {
-     "clue": "Technical term for variation in sentence length. The quality human writing has and machine writing conspicuously lacks",
+     "clue": "Technical term for variation in sentence length. The quality human writing has and AI writing conspicuously lacks",
      "answer": "BURSTINESS",
      "note": {
-      "what": "Human prose lurches. A forty-word sentence, then four words. Then a sentence that goes on too long because the writer got interested. Machine prose clusters tightly around fifteen to twenty-five words, paragraph after paragraph, and reads like a treadmill even when every sentence is fine. Tone flattens the same way length does: identically polite about a data breach, a birthday and a bereavement, because nothing in the text knows which is which.",
+      "what": "Human prose lurches. A forty-word sentence, then four words. Then a sentence that goes on too long because the writer got interested. AI prose clusters tightly around fifteen to twenty-five words, paragraph after paragraph, and reads like a treadmill even when every sentence is fine. Tone flattens the same way length does: identically polite about a data breach, a birthday and a bereavement, because nothing in the text knows which is which.",
       "sounds": "Three consecutive sentences of almost identical length, each one balanced, each one closing neatly. Nothing wrong with any of them. Nothing alive in them either.",
       "human": "Real writing has an uneven pulse. Some sentences are too long. Some aren't.",
       "data": "You can feel this without counting, which makes it one of the most useful tells for a non-expert. It is also the reason perfect grammar is suspicious: no typos, no fragments, no risks, no sentence that starts one way and changes its mind.",
@@ -603,7 +603,7 @@ window.PUZZLES = [
      "clue": "Three words, the transition that spends a clause announcing that a fact deserves your attention rather than spending it on the fact",
      "answer": "WORTHNOTING",
      "note": {
-      "what": "Connective tissue with nothing on either side of it. A writer who has found something genuinely surprising states it; the surprise does the work. This phrasing instead instructs you to be interested, which is why it clusters so thickly around unremarkable material — 'it bears mentioning', 'notably', 'interestingly', 'crucially', 'it is important to note'. The adverb form of the same move is elsewhere in this series, under the eleven-letter one usually preceded by 'more'. Machines produce these because they cost almost nothing and make a heap of facts feel like an argument that is going somewhere.",
+      "what": "Connective tissue with nothing on either side of it. A writer who has found something genuinely surprising states it; the surprise does the work. This phrasing instead instructs you to be interested, which is why it clusters so thickly around unremarkable material — 'it bears mentioning', 'notably', 'interestingly', 'crucially', 'it is important to note'. The adverb form of the same move is elsewhere in this series, under the eleven-letter one usually preceded by 'more'. AI produces these because they cost almost nothing and make a heap of facts feel like an argument that is going somewhere.",
       "sounds": "“It’s worth noting that the deadline has moved to the 14th.”",
       "human": "“The deadline has moved to the 14th.”",
       "data": "This is the cleanest deletion test in the puzzle, because the phrase is detachable by design. Cross out the whole clause up to 'that' and read what is left. If the sentence has lost a fact, the phrase was carrying one; it almost never has. Try it on a paragraph rather than a sentence — the tell is not one instance but three of them pointing at things nobody would otherwise have queried.",
@@ -615,7 +615,7 @@ window.PUZZLES = [
      "clue": "Two words for a bogus span whose two ends are not ends of anything: “from innovation to cultural transformation”",
      "answer": "FALSERANGE",
      "note": {
-      "what": "A real range has a scale: from Monday to Friday, from ten pounds to fifty. The machine version borrows the grammar of a spectrum and fills it with two abstractions that do not sit on one, so it sounds comprehensive while listing two things. The habit belongs to the same family as ornate container nouns, where the sentence describes a shape rather than a fact.",
+      "what": "A real range has a scale: from Monday to Friday, from ten pounds to fifty. The AI version borrows the grammar of a spectrum and fills it with two abstractions that do not sit on one, so it sounds comprehensive while listing two things. The habit belongs to the same family as ornate container nouns, where the sentence describes a shape rather than a fact.",
       "sounds": "“Our work spans everything from grassroots engagement to systemic change.”",
       "human": "“We run a Tuesday drop-in and we lobbied the county council twice last year.”",
       "data": "Deletion test: replace “from A to B” with “A and B”. If the sentence loses nothing but a little grandeur, there was never a range — and if the two items would not fit on the same axis, no rewrite will save it.",
@@ -624,10 +624,10 @@ window.PUZZLES = [
      }
     },
     "9": {
-     "clue": "The formal research name for the 'it's not X — it's Y' sentence: the single most cited tell in machine writing",
+     "clue": "The formal research name for the 'it's not X — it's Y' sentence: the single most cited tell in AI writing",
      "answer": "NEGATIVEPARALLELISM",
      "note": {
-      "what": "This is the modern research term for the tic; 'antithesis' is the ancient name for the innocent version. Machines produce it about three times as often as people because opening with a negation is cheap — it buys a beat of fluent, confident text before any claim has to be made. It performs insight without incurring the cost of having any. The same move works as an opening, swapping a modest framing for a grander one: “This isn't a time-management problem — it's a values problem.”",
+      "what": "This is the modern research term for the tic; 'antithesis' is the ancient name for the innocent version. AI produces it about three times as often as people because opening with a negation is cheap — it buys a beat of fluent, confident text before any claim has to be made. It performs insight without incurring the cost of having any. The same move works as an opening, swapping a modest framing for a grander one: “This isn't a time-management problem — it's a values problem.”",
       "sounds": "“This isn't a technology problem — it's a trust problem.” Variants: 'not just X, but Y'; 'not because X, but because Y'; 'the question isn't X, the question is Y'.",
       "human": "“People don't trust it. That's the actual obstacle.”",
       "data": "The best evidence in the whole field. In a 24-billion-word news corpus, 'not just X, but Y' rose 45% between 2015 and 2025 — while 'not only X, but Y', which means exactly the same thing, rose about 1%. Two identical constructions, one of which suddenly took off. Meanwhile its use in corporate communications more than quadrupled from 2023 to 2025, and variants appeared in roughly 6% of messages in a large leaked set of real ChatGPT conversations.",
@@ -660,7 +660,7 @@ window.PUZZLES = [
      }
     },
     "15": {
-     "clue": "Grammatical name for an -ing verb form. Machines trail whole clauses of them off the end of sentences to imply importance: “highlighting its significance”",
+     "clue": "Grammatical name for an -ing verb form. AI trails whole clauses of them off the end of sentences to imply importance: “highlighting its significance”",
      "answer": "PARTICIPLE",
      "note": {
       "what": "This is the grammar of a summary written by someone who has not read the thing. The clause asserts that something matters while naming no actor, no mechanism and no consequence, and it can be deleted without loss in almost every case. Watch for the stock set: reflecting broader trends, underscoring the need, showcasing its potential, contributing to the development of, paving the way for.",
@@ -672,13 +672,13 @@ window.PUZZLES = [
      }
     },
     "16": {
-     "clue": "Statistical measure of how surprising the next word in a sentence is. Machines keep it low, always choosing the safest option",
+     "clue": "Statistical measure of how surprising the next word in a sentence is. AI keeps it low, always choosing the safest option",
      "answer": "PERPLEXITY",
      "note": {
       "what": "This is the engine underneath most of the other tells. A model picks the most probable next word, so its prose is smooth, predictable and slightly generic — it never reaches for the odd word, the wrong-but-better word, or the private joke.",
       "sounds": "“In today's rapidly evolving digital landscape, businesses must adapt to remain competitive.” Every word is the most likely next word.",
       "human": "“Everything's changed since Christmas and half our suppliers have vanished.”",
-      "data": "It is also the source of the cruellest false positive. Detection software flags low perplexity as machine-like — but simple, careful, predictable English is exactly what people write when English is not their first language. The software is not detecting AI. It is detecting plainness.",
+      "data": "It is also the source of the cruellest false positive. Detection software flags low perplexity as AI-like — but simple, careful, predictable English is exactly what people write when English is not their first language. The software is not detecting AI. It is detecting plainness.",
       "source": "Liang et al., Patterns",
       "url": "https://www.sciencedirect.com/science/article/pii/S2666389923001307"
      }
@@ -687,7 +687,7 @@ window.PUZZLES = [
      "clue": "Rhetorical term for beginning several consecutive sentences with exactly the same words: “They assume users will pay. They assume developers will build.”",
      "answer": "ANAPHORA",
      "note": {
-      "what": "Deliberate repetition is one of the oldest tools in English, which is why nobody notices when a model reaches for it by default. A language model is a machine for continuing patterns, so once it has produced one sentence opening it becomes the single most probable way to open the next one. The result reads like a template with the variables filled in, and it usually arrives in threes, alongside the rule-of-three cadence.",
+      "what": "Deliberate repetition is one of the oldest tools in English, which is why nobody notices when a model reaches for it by default. A language model is an engine for continuing patterns, so once it has produced one sentence opening it becomes the single most probable way to open the next one. The result reads like a template with the variables filled in, and it usually arrives in threes, alongside the rule-of-three cadence.",
       "sounds": "“We believe in transparency. We believe in accountability. We believe in doing better.”",
       "human": "“We publish the figures every quarter, including the bad ones. Last year we got the staffing forecast badly wrong.”",
       "data": "Test: cover everything except the first three words of each sentence in a paragraph. If the stubs are identical, a person would almost certainly have varied one of them out of boredom.",
@@ -714,7 +714,7 @@ window.PUZZLES = [
   "id": "p3",
   "issue": "No. 3",
   "title": "The Chat-back",
-  "blurb": "The manners it forgot to delete — “Great question!”, “You're absolutely right!” — plus what a machine does to the look of a document: the bold bullets, the stray asterisks, the arrows used as punctuation.",
+  "blurb": "The manners it forgot to delete — “Great question!”, “You're absolutely right!” — plus what AI does to the look of a document: the bold bullets, the stray asterisks, the arrows used as punctuation.",
   "heroes": [
    "YOUREABSOLUTELYRIGHT",
    "GREATQUESTION",
@@ -756,10 +756,10 @@ window.PUZZLES = [
   "clues": {
    "across": {
     "2": {
-     "clue": "Comparison used for teaching — “think of it as a motorway for data” — offered by machines before, or instead of, the actual explanation",
+     "clue": "Comparison used for teaching — “think of it as a motorway for data” — offered by AI before, or instead of, the actual explanation",
      "answer": "ANALOGY",
      "note": {
-      "what": "Teacher mode has a default gesture, and this is it. The pattern to distrust is the ordering: a person who understands a system usually describes it and then offers a comparison if the description was hard; machine prose comparison-first, because the comparison is easier to generate than the mechanism. A second warning sign is that the image is never checked against the thing it describes. The most worn example is the borrowed engine bay — “under the hood” — wheeled out before explaining absolutely anything technical.",
+      "what": "Teacher mode has a default gesture, and this is it. The pattern to distrust is the ordering: a person who understands a system usually describes it and then offers a comparison if the description was hard; AI prose comparison-first, because the comparison is easier to generate than the mechanism. A second warning sign is that the image is never checked against the thing it describes. The most worn example is the borrowed engine bay — “under the hood” — wheeled out before explaining absolutely anything technical.",
       "sounds": "“Think of your pension like a snowball rolling down a hill.”",
       "human": "“Your pension gained 4.1% last year, and the fee took 0.7% of that.”",
       "data": "Useful question to ask of any comparison you meet this week: does it survive one more step? A snowball hits a tree. Motorways have junctions. If the writer never took the second step, they were decorating rather than explaining.",
@@ -768,13 +768,13 @@ window.PUZZLES = [
      }
     },
     "4": {
-     "clue": "Specialists with authority in a field. Linguistics ones, shown research abstracts, identified the machine-written ones only 38.9% of the time",
+     "clue": "Specialists with authority in a field. Linguistics ones, shown research abstracts, identified the AI-written ones only 38.9% of the time",
      "answer": "EXPERTS",
      "note": {
-      "what": "Worse than a coin toss, and informatively so: they were biased towards calling machine text human, which is the opposite of the mistake most people fear. Expertise in language does not transfer to authorship detection, because the tells in this puzzle are habits of an unedited draft rather than properties of a sentence. A separate study of 1,682 adults found per-story accuracy between 31% and 53%, and readers rated the AI-written stories higher for being well written.",
+      "what": "Worse than a coin toss, and informatively so: they were biased towards calling AI text human, which is the opposite of the mistake most people fear. Expertise in language does not transfer to authorship detection, because the tells in this puzzle are habits of an unedited draft rather than properties of a sentence. A separate study of 1,682 adults found per-story accuracy between 31% and 53%, and readers rated the AI-written stories higher for being well written.",
       "sounds": "“I can always tell.”",
       "human": "“I noticed four of the formatting tells in one email, so I asked the sender whether they had drafted it in a chatbot.”",
-      "data": "The 38.9% figure comes from linguistics experts assessing research abstracts. Pair it with the reader study: 1,682 participants aged 18 to 81 scored 31.43% to 52.82% per story, and preferred the machine’s prose for absorption (1.42 against 0.97). Nobody reliable is walking around with this skill.",
+      "data": "The 38.9% figure comes from linguistics experts assessing research abstracts. Pair it with the reader study: 1,682 participants aged 18 to 81 scored 31.43% to 52.82% per story, and preferred the AI’s prose for absorption (1.42 against 0.97). Nobody reliable is walking around with this skill.",
       "source": "Study summary: experts fooled by AI abstracts",
       "url": "https://www.reddit.com/r/science/comments/16g2kpt/ai_vs_human_writing_experts_fooled_almost_62_of/"
      }
@@ -792,7 +792,7 @@ window.PUZZLES = [
      }
     },
     "9": {
-     "clue": "Portmanteau for an article that is really a numbered list; machines write them even when the paragraphs are pretending otherwise",
+     "clue": "Portmanteau for an article that is really a numbered list; AI writes them even when the paragraphs are pretending otherwise",
      "answer": "LISTICLE",
      "note": {
       "what": "The disguised version is the interesting one: “the first … the second … the third …” strung through prose that has no sequence in it. Ordinal labels imply chronology, priority or dependency, and when none of those exists the numbering is a costume for a bag of unrelated observations. Genuine lists are fine; the tell is numbering applied to an argument, or prose applied to a list.",
@@ -807,19 +807,19 @@ window.PUZZLES = [
      "clue": "Two words for the list where every single point opens with an emphasised label followed by a colon",
      "answer": "BOLDBULLETS",
      "note": {
-      "what": "This is the default shape of machine-generated Markdown, and it is the most visible tell in the whole series because you can see it from the other side of a desk. Emphasis works by scarcity: if every line is heavy, the eye has nothing to land on. It also disguises the absence of an argument, since a list of labels never has to explain how one point leads to the next.",
+      "what": "This is the default shape of AI-generated Markdown, and it is the most visible tell in the whole series because you can see it from the other side of a desk. Emphasis works by scarcity: if every line is heavy, the eye has nothing to land on. It also disguises the absence of an argument, since a list of labels never has to explain how one point leads to the next.",
       "sounds": "A four-item list where each item begins “**Cost:**”, “**Timeline:**”, “**Risk:**”, “**Next steps:**” — in a two-paragraph email about a leaking roof.",
       "human": "“The roof will cost about £900 and they can come on the 14th. The risk is the ceiling in the back bedroom.”",
-      "data": "A published field guide to AI tells lists “nested bold bullets where prose would do” among the twelve things to check, and says that three or more such signals within a few hundred words means the text was probably machine-touched. Counting beats reading.",
+      "data": "A published field guide to AI tells lists “nested bold bullets where prose would do” among the twelve things to check, and says that three or more such signals within a few hundred words means the text was probably AI-touched. Counting beats reading.",
       "source": "Matthew Vollmer, A Field Guide to AI Tells",
       "url": "https://matthewvollmer.substack.com/p/i-asked-the-machine-to-tell-on-itself"
      }
     },
     "14": {
-     "clue": "Standard English exam for non-native speakers. Seven detection tools wrongly flagged 61% of these genuinely human essays as machine-written",
+     "clue": "Standard English exam for non-native speakers. Seven detection tools wrongly flagged 61% of these genuinely human essays as AI-written",
      "answer": "TOEFL",
      "note": {
-      "what": "The ethical heart of the puzzle. AI detectors work by flagging simple, predictable English — and people writing in a second language use a narrower, more careful, more predictable range of words, for entirely human reasons. The software cannot tell the difference between a machine and a careful learner.",
+      "what": "The ethical heart of the puzzle. AI detectors work by flagging simple, predictable English — and people writing in a second language use a narrower, more careful, more predictable range of words, for entirely human reasons. The software cannot tell the difference between AI and a careful learner.",
       "sounds": "A plain, correct, slightly formal paragraph by someone who learned English at school — flagged as a robot.",
       "human": "Say nothing. You cannot tell, and the cost of being wrong falls on the person least able to argue back.",
       "data": "Across 91 real human essays, seven detectors produced a 61% average false-positive rate; 97.8% were flagged by at least one tool and 19% by all seven. Native-speaker school essays were flagged almost never. The killer detail: when researchers asked an AI to rewrite the same essays in more 'literary' language, the false-positive rate fell to 11.6%. The tools were measuring plainness, not authorship. Scale makes even a good detector dangerous: Turnitin publishes a 0.51% false-positive rate, which sounds small until you apply it to the 200 million papers it checks a year and get roughly a million wrongly flagged. (Pangram.)",
@@ -831,7 +831,7 @@ window.PUZZLES = [
      "clue": "Four-word phrase (run together, 20 letters) a chatbot fires back the instant you contradict it — even when what you said was nonsense you shouted at the screen",
      "answer": "YOUREABSOLUTELYRIGHT",
      "note": {
-      "what": "The most parodied sentence in AI. It commits to three things at once: that you were right, that you were completely right, and that the machine is delighted to have changed its mind. It arrives with equal enthusiasm whether you have found a real bug or typed gibberish, which is exactly why it means nothing.",
+      "what": "The most parodied sentence in AI. It commits to three things at once: that you were right, that you were completely right, and that the AI is delighted to have changed its mind. It arrives with equal enthusiasm whether you have found a real bug or typed gibberish, which is exactly why it means nothing.",
       "sounds": "“You're absolutely right! I apologise for the confusion. Let me fix that.”",
       "human": "“No — that bit was fine. The problem is in the other file.”",
       "data": "Agreement this reflexive is measurable. A study of 11 leading systems found they endorsed the user's stated course of action 49% more often than human respondents did, including in situations involving deception. A separate benchmark found flattering behaviour in 58% of tested exchanges.",
@@ -858,7 +858,7 @@ window.PUZZLES = [
       "what": "Not a style tell at all but a process failure, and the most conclusive item in this section. It happens when text is generated in chunks and assembled by somebody who did not read the assembly, or when a model loses track of what it has already produced. Unlike every other entry here, there is no charitable explanation available.",
       "sounds": "The paragraph about fire doors appearing identically on pages two and five of a residents’ handbook.",
       "human": "One paragraph about fire doors, on the page where fire doors are discussed.",
-      "data": "This belongs with the leftover chat filler as evidence of an unread document rather than a machine author. Search for a distinctive six-word string from the middle of any long document; two hits means nobody read it through.",
+      "data": "This belongs with the leftover chat filler as evidence of an unread document rather than an AI author. Search for a distinctive six-word string from the middle of any long document; two hits means nobody read it through.",
       "source": null,
       "url": null
      }
@@ -881,7 +881,7 @@ window.PUZZLES = [
      "clue": "Affirmative filler traditionally deployed just before a chatbot produces what you asked for",
      "answer": "CERTAINLY",
      "note": {
-      "what": "This is the most important category in the whole puzzle and the least glamorous. It is not a style tell — it is leftover machinery. Somebody copied a chatbot's reply into a document and did not delete its manners. There is no innocent reason for a school newsletter to open by agreeing to write itself. “Of course!” and “Absolutely!” are the same machinery, arriving before the machine does the thing that was asked of it anyway.",
+      "what": "This is the most important category in the whole puzzle and the least glamorous. It is not a style tell — it is leftover machinery. Somebody copied a chatbot's reply into a document and did not delete its manners. There is no innocent reason for a school newsletter to open by agreeing to write itself. “Of course!” and “Absolutely!” are the same machinery, arriving before the AI does the thing that was asked of it anyway.",
       "sounds": "“Certainly! Here is a revised version of your paragraph:” — found in the middle of a published document.",
       "human": "Nothing. A person writing to you simply starts.",
       "data": "This is why it matters: 'Certainly! Here is…' and 'As an AI language model' keep turning up in published academic papers, press releases and product listings. One of these is not suspicion, it is a confession. Everything else in this puzzle is circumstantial by comparison.",
@@ -929,7 +929,7 @@ window.PUZZLES = [
      "clue": "Watering-down; the composition habit of stating a single point six times in slightly varied wording",
      "answer": "DILUTION",
      "note": {
-      "what": "Length is easy and substance is not, so a model asked for 800 words on a subject that needs 200 will restate rather than research. Each restatement is slightly rephrased, which stops it looking like a copy-paste error and makes the page feel thorough while teaching you nothing new after the second paragraph. This is why so much machine-written text feels tiring rather than wrong. Its structural cousin repeats at every scale: an intro announcing what the section will say, the section, then a summary of what it just said, nested inside a document doing the same. Watch too for “in other words”, which paraphrases a sentence that was clear the first time.",
+      "what": "Length is easy and substance is not, so a model asked for 800 words on a subject that needs 200 will restate rather than research. Each restatement is slightly rephrased, which stops it looking like a copy-paste error and makes the page feel thorough while teaching you nothing new after the second paragraph. This is why so much AI-written text feels tiring rather than wrong. Its structural cousin repeats at every scale: an intro announcing what the section will say, the section, then a summary of what it just said, nested inside a document doing the same. Watch too for “in other words”, which paraphrases a sentence that was clear the first time.",
       "sounds": "Four paragraphs which between them establish that communication is important to teams.",
       "human": "“The handover notes were missing twice last month, so both wards now use the same template.”",
       "data": "Try summarising the piece in one sentence. If you can, and the piece is 900 words long, you have measured the padding without arguing about anyone’s style.",
@@ -965,7 +965,7 @@ window.PUZZLES = [
      "clue": "Two words, the British idiom for a moment of belated understanding, staged in prose to dramatise having been told the answer",
      "answer": "PENNYDROPPED",
      "note": {
-      "what": "Performed realisation, in essay form rather than in a chat window. It manufactures a narrative arc — confusion, then insight — around information that was simply looked up. Its relatives include “then I realised”, “something shifted”, “everything changed” and “that’s when it hit me”, and they cluster in the middle of first-person business posts. “Now I see” is the chat-window version, produced the instant you point out something the machine had wrong.",
+      "what": "Performed realisation, in essay form rather than in a chat window. It manufactures a narrative arc — confusion, then insight — around information that was simply looked up. Its relatives include “then I realised”, “something shifted”, “everything changed” and “that’s when it hit me”, and they cluster in the middle of first-person business posts. “Now I see” is the chat-window version, produced the instant you point out something the AI had wrong.",
       "sounds": "“Then the penny dropped. Something shifted. I was measuring the wrong thing entirely.”",
       "human": "“In week three I noticed we were counting repeat visitors twice.”",
       "data": "The missing element is always the same: the event. A real realisation has a place, a time and usually another person in it. If you cannot say where the writer was standing, nothing happened.",
@@ -977,7 +977,7 @@ window.PUZZLES = [
      "clue": "Two words, the signpost planted in front of a paragraph that repeats what you have just finished reading",
      "answer": "INSUMMARY",
      "note": {
-      "what": "A signposted conclusion is not a fault in itself — essays have taught it for a century — but machines attach one to everything, including three-paragraph emails that plainly do not need a wrap-up. Its siblings are “in conclusion”, “to sum up” and “overall”. The reliable signal is proportion: a closing summary on a document you can read in forty seconds. The closing flourish is the same instinct pointed forwards rather than back — “so the next time you …”, “remember”, “the choice is yours” — as is the verdict that announces a conclusion the evidence has not reached, and the “at its core” that promises the essential point just before an obvious one.",
+      "what": "A signposted conclusion is not a fault in itself — essays have taught it for a century — but AI attaches one to everything, including three-paragraph emails that plainly do not need a wrap-up. Its siblings are “in conclusion”, “to sum up” and “overall”. The reliable signal is proportion: a closing summary on a document you can read in forty seconds. The closing flourish is the same instinct pointed forwards rather than back — “so the next time you …”, “remember”, “the choice is yours” — as is the verdict that announces a conclusion the evidence has not reached, and the “at its core” that promises the essential point just before an obvious one.",
       "sounds": "“In summary, the meeting has moved to Thursday.” — the fourth sentence of a four-sentence message.",
       "human": "“Meeting’s moved to Thursday, same room.”",
       "data": "A field guide to AI tells lists an “in summary” wrap among the dozen signals to look for, and proposes a thirty-second check: three or more of the signals inside a few hundred words. This one is easy to spot because it labels itself.",
@@ -1025,10 +1025,10 @@ window.PUZZLES = [
      "clue": "Two words for the scripted crowd-work of social media: “unpopular opinion:”, “tag someone who needs to see this”",
      "answer": "ENGAGEMENTBAIT",
      "note": {
-      "what": "These are instructions to the audience disguised as sincerity, and they exist because platforms reward replies and reshares. Machines reproduce them because the training material is full of posts that succeeded, and this is what succeeding looked like. The oddest variant is “not sure who needs to hear this, but …”, which claims humility while addressing everyone alive.",
+      "what": "These are instructions to the audience disguised as sincerity, and they exist because platforms reward replies and reshares. AI reproduces them because the training material is full of posts that succeeded, and this is what succeeding looked like. The oddest variant is “not sure who needs to hear this, but …”, which claims humility while addressing everyone alive.",
       "sounds": "“Unpopular opinion: not sure who needs to hear this, but rest is productive. I’ll say it again.”",
       "human": "“I took Friday off and finished the report on Monday in two hours.”",
-      "data": "Worth noticing that this family is now genuinely mixed — plenty of humans type these phrases on purpose. Treat them as evidence of a copied register, not of a machine.",
+      "data": "Worth noticing that this family is now genuinely mixed — plenty of humans type these phrases on purpose. Treat them as evidence of a copied register, not of AI.",
       "source": null,
       "url": null
      }
@@ -1058,13 +1058,13 @@ window.PUZZLES = [
      }
     },
     "22": {
-     "clue": "Pig-trough word, now the internet's name for cheap machine-made content produced in bulk",
+     "clue": "Pig-trough word, now the internet's name for cheap AI-made content produced in bulk",
      "answer": "SLOP",
      "note": {
-      "what": "Worth knowing because it names the real problem accurately. The complaint is not that a machine was involved — it is that nobody read the result afterwards. A carefully edited AI draft is not slop. An unread one posted at volume is.",
+      "what": "Worth knowing because it names the real problem accurately. The complaint is not that AI was involved — it is that nobody read the result afterwards. A carefully edited AI draft is not slop. An unread one posted at volume is.",
       "sounds": "Forty near-identical articles about the same product, all published the same morning.",
       "human": "One article, by someone who checked.",
-      "data": "Keep this distinction in mind while doing the puzzle. Every habit listed here is a sign that nobody edited, not proof of who typed. Plenty of good writing is now part-machine; the tells survive only where a human stopped paying attention.",
+      "data": "Keep this distinction in mind while doing the puzzle. Every habit listed here is a sign that nobody edited, not proof of who typed. Plenty of good writing is now part-AI; the tells survive only where a human stopped paying attention.",
       "source": null,
       "url": null
      }

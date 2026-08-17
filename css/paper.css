@@ -415,7 +415,10 @@ body {
   opacity: 0.12;
 }
 
-.picker__card.is-current .picker__count { color: #b6ad9b; }
+/* Red on the dark card measures 2.1:1, so the issue line goes white on it and
+   the clue count lifts to a grey that clears the small-text minimum. */
+.picker__card.is-current .picker__issue { color: var(--paper); }
+.picker__card.is-current .picker__count { color: #d8d2c6; }
 
 /* The anchor should land above the article, not flush against the viewport. */
 .puzzle { scroll-margin-top: 70px; }

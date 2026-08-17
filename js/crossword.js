@@ -150,8 +150,10 @@
     this.gridMount.appendChild(this.announcer);
 
     global.addEventListener('resize', function () {
+      self.fitCell();
       self.positionInput();
     });
+    this.fitCell();
   };
 
   Crossword.prototype.renderClues = function () {
@@ -371,6 +373,18 @@
       this.announcer.textContent = text;
       this.onClueChange(this, entry, text);
     }
+  };
+
+  /* These grids run from 23 to 30 squares wide but sit in a column beside the
+   * text, so the square size is measured rather than fixed. Below the floor the
+   * wrapper scrolls sideways instead of shrinking the squares to nothing. */
+  Crossword.prototype.fitCell = function () {
+    var wrap = this.gridNode.parentNode;
+    var available = wrap.clientWidth - 6;
+    if (available <= 0) return;
+    var size = Math.floor(available / this.layout.width);
+    size = Math.max(17, Math.min(30, size));
+    this.gridNode.style.setProperty('--cell', size + 'px');
   };
 
   Crossword.prototype.positionInput = function () {

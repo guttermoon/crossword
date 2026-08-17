@@ -12,7 +12,7 @@
   --wash: #ede0b4;
   --wash-strong: #f0c64b;
   --block: #16130f;
-  --grid-line: #b9b1998f;
+  --grid-line: #1b1714d9;
   --desk: #3b352b;
 
   --font-display: 'Shrikhand', 'Bookman Old Style', Georgia, serif;
@@ -256,30 +256,47 @@ body {
   color: var(--ink-soft);
 }
 
+/* The blurb plays the part the mini-mystery column played: a narrow, justified
+   text block set beside the grid, opening on a drop cap. */
 .puzzle__blurb {
-  max-width: 66ch;
-  margin: 8px 0 18px;
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--ink-soft);
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: justify;
+  hyphens: auto;
 }
 
+.puzzle__blurb::first-letter {
+  font-family: var(--font-display);
+  font-size: 2.6em;
+  line-height: 0.8;
+  float: left;
+  margin: 0.06em 0.09em 0 0;
+  color: var(--red);
+}
+
+/* A sidebar under the blurb, filling the column beside a tall grid. */
 .heroes {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 6px;
-  margin: 14px 0 0;
+  margin: 16px 0 0;
+  padding-top: 10px;
+  border-top: var(--rule);
 }
 
 .heroes__label {
+  margin: 0 0 7px;
   font-family: var(--font-cond);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-right: 2px;
+  color: var(--red);
+}
+
+.heroes__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0;
 }
 
 .heroes__chip {
@@ -295,7 +312,16 @@ body {
 
 .puzzle { margin: 0 0 8px; }
 
-.puzzle__head { margin-bottom: 6px; }
+/* Text column beside the grid, as on the printed page. */
+.puzzle__body {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 32px);
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.puzzle__head { min-width: 0; }
 
 .puzzle__title {
   margin: 0 0 10px;
@@ -314,7 +340,7 @@ body {
   grid-template-columns: auto minmax(0, 1fr);
   gap: 8px;
   align-items: stretch;
-  margin-bottom: 18px;
+  min-width: 0;
 }
 
 .credit {
@@ -414,6 +440,7 @@ body {
 
 @media (max-width: 860px) {
   .brief { grid-template-columns: minmax(0, 1fr); }
+  .puzzle__body { grid-template-columns: minmax(0, 1fr); }
   .credit {
     writing-mode: horizontal-tb;
     transform: none;

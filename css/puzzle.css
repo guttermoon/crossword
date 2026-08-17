@@ -4,9 +4,8 @@
 
 /* ----------------------------------------------------------------------- grid */
 
-/* The puzzles are freeform, so most of the rectangle is empty paper rather than
-   black squares, and the big grids are wider than a phone. Cells therefore take
-   a fixed size and the wrapper scrolls sideways when it has to. */
+/* Cells take a fixed size, set by js/crossword.js to fit the column, and the
+   wrapper scrolls sideways when a grid is still wider than the screen. */
 .grid-scroll {
   overflow-x: auto;
   overflow-y: hidden;
@@ -21,10 +20,10 @@
   grid-template-columns: repeat(var(--cols), var(--cell));
   width: max-content;
   margin: 0 auto;
-  padding: 6px;
-  background: var(--paper-deep);
+  padding: 1px;
+  background: var(--block);
   border: 2px solid var(--ink);
-  --cell: 30px;
+  --cell: 28px;
 }
 
 .cell {
@@ -38,6 +37,7 @@
   /* An inset ring draws the full square without disturbing the grid tracks the
      way real borders would. */
   box-shadow: inset 0 0 0 1px var(--grid-line);
+  z-index: 1;
   font-family: var(--font-cond);
   font-weight: 600;
   font-size: calc(var(--cell) * 0.56);
@@ -47,7 +47,7 @@
 }
 
 .cell--block {
-  background: transparent;
+  background: var(--block);
   box-shadow: none;
   cursor: default;
 }
@@ -61,10 +61,6 @@
   font-size: calc(var(--cell) * 0.3);
   line-height: 1;
   color: var(--ink-soft);
-}
-
-@media (max-width: 860px) {
-  .grid { --cell: 26px; }
 }
 
 .cell__letter { pointer-events: none; }
@@ -255,6 +251,14 @@
 }
 
 .clue__body { min-width: 0; }
+
+@media (min-width: 1000px) {
+  .clues__list { columns: 2; column-gap: 20px; }
+  .clue { break-inside: avoid; font-size: 12px; }
+  /* An open footnote is too tall to balance across columns, so its clue drops
+     out of the column flow and spans the pair. */
+  .clue.has-note-open { column-span: all; break-inside: avoid; }
+}
 
 .clue__text { cursor: pointer; }
 

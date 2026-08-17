@@ -97,15 +97,16 @@ body {
 .stamp:active { background-color: var(--newsprint); }
 .clue.is-crossing { background-color: var(--newsprint-pale); }
 
+/* The clue rows take the grey but never the grain — a clue is a line of type,
+   and pixels crawling under it make it harder to read, not older. */
+
 .puzzle__head::after,
 .tells::after,
 .picker__card:hover::after,
 .picker__card.is-current::after,
 .stamp:hover::after,
 .stamp:active::after,
-.clue__btn:hover::after,
-.clue.is-active::after,
-.clue.is-crossing::after {
+.clue__btn:hover::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -122,9 +123,7 @@ body {
 /* Small surfaces take less of it — at full strength a button goes muddy. */
 .stamp:hover::after,
 .stamp:active::after,
-.clue__btn:hover::after,
-.clue.is-active::after,
-.clue.is-crossing::after {
+.clue__btn:hover::after {
   opacity: 0.3;
 }
 
@@ -855,9 +854,9 @@ body {
   .sheet { box-shadow: none; max-width: none; padding: 0; }
   .sheet::before, .sheet::after { display: none; }
   .puzzle__head::after, .tells::after, .picker__card::after,
-  .picker__card:hover::after, .picker__card.is-current::after,
-  .clue.is-active::after, .clue.is-crossing::after { display: none; }
-  .puzzle__head, .tells, .picker__card, .clue { background-color: #fff; }
+  .picker__card:hover::after, .picker__card.is-current::after { display: none; }
+  .puzzle__head, .tells, .picker__card,
+  .clue, .clue.is-active, .clue.is-crossing { background-color: #fff; }
   .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel,
   .progress, .puzzle__toggle { display: none !important; }
   /* A folded head prints open; paper has no buttons. */

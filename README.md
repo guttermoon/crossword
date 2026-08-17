@@ -2,8 +2,9 @@
 
 Three interactive crosswords about the habits of AI-written English: the
 words, the sentence shapes, and the chatbot manners it forgot to delete. 76
-clues, each carrying a footnote — what the habit is, what it sounds like, what a
-person writes instead, and the study it comes from.
+clues, each carrying a footnote — what the habit is, what it sounds like, and
+what a person writes instead. The studies behind them are listed at the foot of
+the page.
 
 Laid out as a newspaper puzzle page: cream stock, a groovy red masthead, ruled
 intro panels, freeform grids and dense clue columns.
@@ -39,8 +40,8 @@ A **Pick a puzzle** strip links down to each grid and marks whichever one you
 are looking at.
 
 **Notes** open directly under the clue that references them, each one saying
-what the habit is, what it **sounds like**, what a person writes **instead of**
-it, and the study behind it. One opens by
+what the habit is, what it **sounds like**, and what a person writes **instead
+of** it. One opens by
 itself the moment its entry is filled in correctly, so solving teaches as you
 go, and **Why?** opens one early without giving the answer away. Nothing else on
 the page moves — the clue stays put and the list simply grows under it.
@@ -78,9 +79,11 @@ Two data files, and nothing else needs touching.
           what:   'Why AI does this and why it reads as AI-written.',
           sounds: '“This report showcases our commitment to sustainability.”',
           human:  '“This report shows what we did about our emissions.”',
-          data:   'Kept but not shown — a number, or a test the reader can apply.',
-          source: 'Kobak et al., Science Advances',   // null if uncited
-          url:    'https://…',                        // null if uncited
+          // kept in the file, not shown on the page — the sources are listed
+          // together under "Where the numbers come from"
+          data:   'A number, or a test the reader can apply.',
+          source: 'Kobak et al., Science Advances',
+          url:    'https://…',
         },
       },
     },
@@ -141,9 +144,9 @@ grey while it is the puzzle you are looking at — where multiplied grain would 
 invisible, so that one lifts with `screen` instead. The toolbar and per-clue
 buttons work the same way. The clue rows take the greys but never the grain: a
 clue is a line of type, and pixels crawling under it make it harder to read
-rather than older. A note has no fill and no edge of its own — the clue above it
-already carries the red bar — so it reads as part of the clue rather than as a
-panel dropped inside it.
+rather than older. A note has no fill and no edge of its own — the clue it belongs to
+already carries the red bar, and the clue keeps that bar and its grey under the
+pointer, so the block never changes colour while you are reading it.
 
 Each puzzle's head folds away behind a **Hide** button in its top right corner,
 leaving a single bar of number and title, so a solver who has read the blurb

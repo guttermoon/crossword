@@ -289,15 +289,12 @@
 
 /* ---------------------------------------------------------------------- clues */
 
-.clues {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 26px;
-}
+.clues { display: block; }
 
 .clues__col + .clues__col {
-  border-left: var(--rule-thick);
-  padding-left: 26px;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: var(--rule-thick);
 }
 
 .clues__head {
@@ -335,13 +332,7 @@
 
 .clue__body { min-width: 0; }
 
-@media (min-width: 1000px) {
-  .clues__list { columns: 2; column-gap: 20px; }
-  .clue { break-inside: avoid; font-size: 11.5px; }
-  /* An open footnote is too tall to balance across columns, so its clue drops
-     out of the column flow and spans the pair. */
-  .clue.has-note-open { column-span: all; break-inside: avoid; }
-}
+/* Clues sit in a column beside the grid, so they run single-file. */
 
 .clue__text { cursor: pointer; }
 
@@ -374,21 +365,60 @@
 .clue.is-crossing { background: rgba(237, 224, 180, 0.55); }
 .clue.is-active { background: var(--wash); box-shadow: inset 2px 0 0 var(--red); }
 
-/* ------------------------------------------------------------------ footnotes */
+/* ---------------------------------------------------------------- the notes */
 
-.note {
-  margin: 7px 0 12px;
-  padding: 9px 12px;
-  border: 1px solid var(--ink-soft);
-  border-left: 3px solid var(--red);
-  border-radius: 8px;
-  background: var(--paper-deep);
-  font-size: 11.5px;
-  line-height: 1.6;
+.notes__empty {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
 }
 
-.note p { margin: 0 0 6px; }
-.note p:last-child { margin-bottom: 0; }
+.notes__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Reference in a narrow left column, the note itself in a readable measure —
+   the way a printed page sets its footnotes. */
+.note {
+  display: grid;
+  grid-template-columns: minmax(0, 6.5em) minmax(0, 1fr);
+  gap: 4px 18px;
+  padding: 13px 0;
+  border-top: 1px solid var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* An author `display` beats the UA rule behind the hidden attribute, so say it. */
+.note[hidden] { display: none; }
+
+.note:first-child { border-top: 0; padding-top: 2px; }
+
+.note:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+.note__ref {
+  margin: 0;
+  font-family: var(--font-cond);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.note__ref a {
+  color: var(--red-deep);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.note__ref a:hover { border-bottom-color: var(--red-deep); }
+
+.note__body { min-width: 0; max-width: 68ch; }
+
+.note p { margin: 0 0 7px; }
+.note__body p:last-child { margin-bottom: 0; }
 
 .note__pair {
   display: grid;

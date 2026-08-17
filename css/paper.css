@@ -328,12 +328,20 @@ body {
   color: var(--ink-soft);
 }
 
-/* The blurb plays the part the mini-mystery column played: a narrow, justified
-   text block set beside the grid, opening on a drop cap. */
 .puzzle__blurb {
-  margin: 8px 0 0;
-  font-size: 12.5px;
+  margin: 0;
+  font-size: 13px;
   line-height: 1.6;
+}
+
+.puzzle__explainer {
+  margin: 12px 0 0;
+  padding-top: 11px;
+  border-top: 1px solid var(--ink-soft);
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.5;
 }
 
 .puzzle__blurb::first-letter {
@@ -345,10 +353,10 @@ body {
   color: var(--ink);
 }
 
-/* A sidebar under the blurb, filling the column beside a tall grid. */
 .heroes {
-  margin: 16px 0 0;
-  padding-top: 10px;
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  padding-top: 12px;
   border-top: var(--rule);
 }
 
@@ -382,21 +390,43 @@ body {
 
 .puzzle { margin: 0 0 8px; }
 
-/* Text column beside the grid, as on the printed page. */
-.puzzle__body {
-  display: grid;
-  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
-  gap: clamp(18px, 3vw, 32px);
-  align-items: start;
-  margin-bottom: 18px;
-}
-
+/* The title, blurb and hero words run the full width above the puzzle. */
 .puzzle__head {
-  min-width: 0;
-  padding: 14px 16px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 30%) minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 34px);
+  align-items: start;
+  margin-bottom: 22px;
+  padding: 16px 18px 18px;
   border: var(--rule-thick);
   border-radius: var(--radius);
 }
+
+.puzzle__headline { min-width: 0; }
+.puzzle__intro { min-width: 0; }
+
+/* Clues beside the grid, changing sides puzzle to puzzle. */
+.puzzle__play {
+  display: grid;
+  gap: clamp(20px, 3vw, 36px);
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.puzzle__play { --grid-w: 620px; }
+
+.puzzle--grid-right .puzzle__play {
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--grid-w));
+}
+
+.puzzle--grid-left .puzzle__play {
+  grid-template-columns: minmax(0, var(--grid-w)) minmax(0, 1fr);
+}
+
+.puzzle--grid-left .puzzle__clues { order: 2; }
+.puzzle--grid-left .puzzle__gridwrap { order: 1; }
+
+.puzzle__clues { min-width: 0; }
 
 .puzzle__title {
   margin: 0 0 10px;
@@ -415,6 +445,8 @@ body {
   gap: 8px;
   align-items: stretch;
   min-width: 0;
+  position: sticky;
+  top: 14px;
 }
 
 .credit {
@@ -510,7 +542,12 @@ body {
 
 @media (max-width: 860px) {
   .brief { grid-template-columns: minmax(0, 1fr); }
-  .puzzle__body { grid-template-columns: minmax(0, 1fr); }
+  .puzzle__head { grid-template-columns: minmax(0, 1fr); }
+  .puzzle--grid-right .puzzle__play,
+  .puzzle--grid-left .puzzle__play { grid-template-columns: minmax(0, 1fr); }
+  .puzzle--grid-left .puzzle__clues,
+  .puzzle--grid-left .puzzle__gridwrap { order: 0; }
+  .puzzle__gridwrap { position: static; }
   .credit {
     writing-mode: horizontal-tb;
     transform: none;
@@ -534,6 +571,6 @@ body {
   .puzzle { break-after: page; }
   .puzzle:last-of-type { break-after: auto; }
   /* Footnotes are the point of the page, so print them all. */
-  .note { display: block !important; }
+  .note { display: grid !important; }
   .note, .clue { break-inside: avoid; }
 }

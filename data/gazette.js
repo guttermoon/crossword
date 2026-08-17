@@ -5,7 +5,7 @@
  */
 window.GAZETTE = {
   "brand": "The Slop Gazette",
-  "kicker": "Saturday Edition &middot; Three puzzles &middot; 120 clues",
+  "kicker": "Saturday Edition &middot; Three puzzles &middot; 76 clues",
   "title": "How to Spot a Robot",
   "standfirst": "Three crosswords, because one could not hold it all. Every answer is a word, phrase or named pattern that machines cannot stop producing. Every clue carries a footnote: what the habit is, what it sounds like, what a person would have written instead, and &mdash; where the research exists &mdash; the number and the study. <em>Fill them in, or press for the answers. Nobody is marking this.</em>",
   "brief": {
@@ -27,7 +27,7 @@ window.GAZETTE = {
     "footnote": "Mark Twain used more dashes than ChatGPT does, so dashes alone prove nothing. Leave him alone.",
     "selfaware": "Full disclosure: the first version of this box was written in short, punchy, identical little sentences with a snappy ending. It has been sent back for rewriting."
   },
-  "explainer": "<strong>How to read these.</strong> Every answer is the actual word or phrase that machines over-use &mdash; so when a clue describes an adjective meaning &ldquo;extremely careful&rdquo;, the tell is the <em>word</em>, not the quality. Letter counts are in brackets, and multi-word answers run together with no spaces. Press <strong>Why?</strong> for the full explanation, an example of the habit in the wild, what a person would have written instead, and the research. Press <strong>Reveal</strong> to fill the answer in.",
+  "explainer": "<strong>How to read these.</strong> Every answer is a <em>tell</em> &mdash; the poker word for the small unconscious habit that gives a player away. It names a suspicion, not a finding, and accusing someone on the strength of one is how innocent people get into trouble. Each is the actual word or phrase that machines over-use &mdash; so when a clue describes an adjective meaning &ldquo;extremely careful&rdquo;, the tell is the <em>word</em>, not the quality. Letter counts are in brackets, and multi-word answers run together with no spaces. Press <strong>Why?</strong> for the full explanation, an example of the habit in the wild, what a person would have written instead, and the research. Press <strong>Reveal</strong> to fill the answer in.",
   "sources": {
     "heading": "Where the numbers come from",
     "items": [

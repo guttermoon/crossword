@@ -274,8 +274,7 @@
   cursor: pointer;
 }
 
-.stamp:hover { background: var(--wash); }
-.stamp:active { background: var(--wash-strong); }
+/* The greys and the grain that go with them live in paper.css. */
 .stamp:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
 
 .stamp--warn { color: var(--red-deep); border-color: var(--red-deep); }
@@ -360,12 +359,11 @@
   white-space: nowrap;
 }
 
-.clue__btn:hover { background: var(--wash); color: var(--ink); }
+.clue__btn:hover { color: var(--ink); }
 .clue__btn:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
 
 .clue:hover { background: rgba(195, 58, 43, 0.07); }
-.clue.is-crossing { background: rgba(237, 224, 180, 0.55); }
-.clue.is-active { background: var(--wash); box-shadow: inset 2px 0 0 var(--red); }
+.clue.is-active { box-shadow: inset 2px 0 0 var(--red); }
 
 /* ------------------------------------------------------------------ the note */
 
@@ -375,7 +373,6 @@
   padding: 10px 12px;
   border-left: 3px solid var(--red);
   border-radius: 0 8px 8px 0;
-  background: var(--paper-deep);
   font-size: 11.5px;
   line-height: 1.6;
 }

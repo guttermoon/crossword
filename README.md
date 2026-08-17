@@ -145,10 +145,12 @@ leaving a single bar of number and title, so a solver who has read the blurb
 once can put the grid and its clues back at the top of the screen. It prints
 open; paper has no buttons.
 
-The **Pick a puzzle** strip pins itself to the top once scrolled past, shrunk to
-a row of chips. A 1px sentinel above it drives the state, and it checks the
-sentinel is above the viewport rather than merely out of it — otherwise the
-strip would pin itself before you had even reached it.
+The **Pick a puzzle** strip pins itself to the top once you are past it, shrunk
+to a row of chips. A 1px sentinel above it marks where it sits unpinned, and the
+strip pins whenever that sentinel is above the top of the viewport — checked
+once a frame while scrolling. It is deliberately not an IntersectionObserver:
+an observer reports crossings rather than positions, so following a link in the
+strip, which jumps clean over the sentinel, never reports at all.
 
 Each article runs its title, blurb and hero words full width, then sets the
 clues beside the grid — and the grid changes sides puzzle to puzzle, the way a

@@ -26,9 +26,15 @@ python3 -m http.server 8000    # then open http://localhost:8000
 | Ends of the word | Home / End |
 | Erase | Backspace (steps back through the word) or Delete |
 
-A wrong letter found by **Check** gets a red pencil slash, which clears as soon
-as you retype it. A letter given away by **Reveal** keeps a small red corner.
-Filling a grid correctly stamps it SOLVED.
+Each puzzle carries its own controls and progress at the head of the article:
+how many entries are solved, a bar, and how many footnotes you have read. A
+wrong letter found by **Check** gets a red pencil slash, which clears as soon as
+you retype it. A letter given away by **Reveal** keeps a small red corner.
+Filling a grid correctly stamps it SOLVED. Every clue also has its own
+**Reveal** beside it.
+
+A **Pick a puzzle** strip links down to each grid and marks whichever one you
+are looking at.
 
 **Footnotes** open by themselves the moment an entry is filled in correctly, so
 solving teaches as you go; **Why?** opens one early without giving the answer
@@ -104,11 +110,13 @@ js/crossword.js     the engine: cursor, keyboard, check/reveal, footnotes, autos
 js/app.js           builds the page from GAZETTE and PUZZLES
 data/puzzles.js     puzzle content — 3 puzzles, 120 clues, 120 footnotes
 data/gazette.js     front matter and sources
-fonts/              Shrikhand, Oswald, Zilla Slab (SIL OFL — see fonts/README.md)
+fonts/              Shrikhand, Inter, Courier Prime (SIL OFL — see fonts/README.md)
 ```
 
-Colours, fonts and paper tone are CSS custom properties at the top of
-`css/paper.css`.
+Colours and fonts are CSS custom properties at the top of `css/paper.css`. The
+body is set in a typewriter face and the instruction blocks and labels in a
+grotesque, after the way the printed page set Helvetica Bold against typewriter
+copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
 
 Each article sets its text column beside the grid, as the printed page did. The
 grids run from 23 to 30 squares wide, so `Crossword.fitCell` measures the column

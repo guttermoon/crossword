@@ -26,6 +26,7 @@
   }
 
   function Crossword(options) {
+    var self = this;
     this.puzzle = options.puzzle;
     this.root = options.root;
     this.gridMount = options.gridMount;
@@ -40,6 +41,7 @@
     });
     this.revealed = {};
     this.wrong = {};
+    this.read = {};
     this.activeIndex = null;
     this.direction = 'across';
     this.elapsed = 0;
@@ -56,6 +58,9 @@
     this.renderClues();
     this.renderToolbar();
     this.paint();
+    Object.keys(this.read).forEach(function (id) {
+      self.toggleNote(id, true);
+    });
     this.syncNotes();
 
     var firstOpen = this.layout.cells.find(function (cell) {
@@ -153,6 +158,12 @@
       self.fitCell();
       self.positionInput();
     });
+    global.addEventListener('pagehide', function () {
+      self.save();
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') self.save();
+    });
     this.fitCell();
   };
 
@@ -184,20 +195,35 @@
           });
           body.appendChild(text);
 
+          var actions = el('span', 'clue__actions');
           var note = self.clueData(entry).note;
+          var panel = null;
+
           if (note && note.what) {
-            var why = el('button', 'clue__why', 'Why?');
+            var why = el('button', 'clue__btn', 'Why?');
             why.type = 'button';
             why.setAttribute('aria-expanded', 'false');
-            var panel = self.buildNote(entry, note);
+            why.setAttribute('aria-label', 'Why? Footnote for ' + entry.number + ' ' + entry.direction);
+            panel = self.buildNote(entry, note);
             why.setAttribute('aria-controls', panel.id);
             why.addEventListener('click', function () {
               self.toggleNote(entry.id, panel.hidden);
             });
-            body.appendChild(why);
-            body.appendChild(panel);
+            actions.appendChild(why);
             self.noteNodes[entry.id] = { button: why, panel: panel };
           }
+
+          var reveal = el('button', 'clue__btn', 'Reveal');
+          reveal.type = 'button';
+          reveal.setAttribute('aria-label', 'Reveal ' + entry.number + ' ' + entry.direction);
+          reveal.addEventListener('click', function () {
+            self.select(entry.cells[0], entry.direction, { focus: false });
+            self.reveal('word');
+          });
+          actions.appendChild(reveal);
+
+          body.appendChild(actions);
+          if (panel) body.appendChild(panel);
 
           item.appendChild(body);
           list.appendChild(item);
@@ -257,8 +283,53 @@
     this.timerNode.setAttribute('aria-label', 'Time spent on this puzzle');
     bar.appendChild(this.timerNode);
 
+    this.toolbarMount.appendChild(this.buildProgress());
     this.toolbarMount.appendChild(bar);
     this.renderTimer();
+    this.renderProgress();
+  };
+
+  /* How far through the puzzle you are, and how much of the teaching you have
+   * actually read — the second number being the point of the thing. */
+  Crossword.prototype.buildProgress = function () {
+    var wrap = el('div', 'progress');
+    wrap.setAttribute('aria-live', 'polite');
+
+    wrap.appendChild(el('p', 'progress__label',
+      [this.puzzle.issue, this.puzzle.title].filter(Boolean).join(' · ')));
+
+    var count = el('p', 'progress__count');
+    this.solvedNode = el('span', 'progress__n', '0');
+    count.appendChild(this.solvedNode);
+    count.appendChild(el('span', 'progress__of', '/' + this.layout.entries.length));
+    count.appendChild(el('span', 'progress__word', 'solved'));
+    wrap.appendChild(count);
+
+    var track = el('div', 'progress__track');
+    this.fillNode = el('div', 'progress__fill');
+    track.appendChild(this.fillNode);
+    wrap.appendChild(track);
+
+    this.readNode = el('p', 'progress__read', '0 footnotes read');
+    wrap.appendChild(this.readNode);
+
+    return wrap;
+  };
+
+  Crossword.prototype.renderProgress = function () {
+    if (!this.solvedNode) return;
+    var self = this;
+    var total = this.layout.entries.length;
+    var done = this.layout.entries.filter(function (entry) {
+      return entry.cells.every(function (index) {
+        return self.fill[index] === self.layout.cells[index].solution;
+      });
+    }).length;
+    var read = Object.keys(this.read).length;
+
+    this.solvedNode.textContent = String(done);
+    this.fillNode.style.width = total ? (done / total) * 100 + '%' : '0';
+    this.readNode.textContent = read + (read === 1 ? ' footnote read' : ' footnotes read');
   };
 
   /* A clue may be a plain string or a { clue, answer, note } record. */
@@ -315,6 +386,11 @@
   Crossword.prototype.toggleNote = function (id, open) {
     var pair = this.noteNodes[id];
     if (!pair) return;
+    if (open && !this.read[id]) {
+      this.read[id] = true;
+      this.renderProgress();
+      this.save();
+    }
     pair.panel.hidden = !open;
     pair.button.setAttribute('aria-expanded', open ? 'true' : 'false');
     pair.button.textContent = open ? 'Close' : 'Why?';
@@ -500,6 +576,7 @@
     if (letter === '') delete this.revealed[index];
     this.paint();
     this.syncNotes();
+    this.renderProgress();
     this.scheduleSave();
     this.checkSolved();
   };
@@ -559,6 +636,7 @@
     });
     this.paint();
     this.syncNotes();
+    this.renderProgress();
     this.scheduleSave();
     this.checkSolved();
   };
@@ -570,11 +648,13 @@
     });
     this.revealed = {};
     this.wrong = {};
+    this.read = {};
     this.solved = false;
     this.elapsed = 0;
     this.root.classList.remove('is-solved');
     this.renderTimer();
     this.paint();
+    this.renderProgress();
     this.scheduleSave();
   };
 
@@ -716,6 +796,7 @@
             return letter == null ? '.' : letter || ' ';
           }).join(''),
           revealed: Object.keys(this.revealed).map(Number),
+          read: Object.keys(this.read),
           elapsed: this.elapsed,
           solved: this.solved,
         })
@@ -750,6 +831,9 @@
     }
     (saved.revealed || []).forEach(function (index) {
       this.revealed[index] = true;
+    }, this);
+    (saved.read || []).forEach(function (id) {
+      this.read[id] = true;
     }, this);
     this.elapsed = Number(saved.elapsed) || 0;
     this.solved = !!saved.solved;

@@ -108,6 +108,9 @@ fonts/              Shrikhand, Oswald, Zilla Slab (SIL OFL — see fonts/README.
 ```
 
 Colours, fonts and paper tone are CSS custom properties at the top of
-`css/paper.css`. The grids are freeform, so empty squares are drawn as blank
-paper rather than black; cell size is the `--cell` variable on `.grid`, and the
-wrapper scrolls sideways when a grid is wider than the screen.
+`css/paper.css`.
+
+Each article sets its text column beside the grid, as the printed page did. The
+grids run from 23 to 30 squares wide, so `Crossword.fitCell` measures the column
+and sets the `--cell` size to suit — capped at 30px, floored at 17px, below
+which the wrapper scrolls sideways instead. Empty squares are drawn black.

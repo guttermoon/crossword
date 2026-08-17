@@ -72,13 +72,27 @@
     var article = el('article', 'puzzle');
     article.id = 'puzzle-' + puzzle.id;
 
+    var body = el('div', 'puzzle__body');
+
     var head = el('header', 'puzzle__head');
     head.appendChild(el('p', 'puzzle__issue', puzzle.issue || ''));
     var title = el('h2', 'puzzle__title');
     title.appendChild(el('span', 'puzzle__title-line', puzzle.title));
     head.appendChild(title);
     if (puzzle.blurb) head.appendChild(rich('p', 'puzzle__blurb', puzzle.blurb));
-    article.appendChild(head);
+
+    if (puzzle.heroes && puzzle.heroes.length) {
+      var heroes = el('div', 'heroes');
+      heroes.appendChild(el('p', 'heroes__label', 'Famous ones in here'));
+      var chips = el('p', 'heroes__chips');
+      puzzle.heroes.forEach(function (word) {
+        chips.appendChild(el('span', 'heroes__chip', word));
+      });
+      heroes.appendChild(chips);
+      head.appendChild(heroes);
+    }
+
+    body.appendChild(head);
 
     var gridwrap = el('div', 'puzzle__gridwrap');
     gridwrap.appendChild(el('div', 'credit', (puzzle.issue || '') + ' — ' + puzzle.title));
@@ -86,19 +100,12 @@
     var gridMount = el('div', 'grid-mount');
     scroll.appendChild(gridMount);
     gridwrap.appendChild(scroll);
-    article.appendChild(gridwrap);
+    body.appendChild(gridwrap);
+
+    article.appendChild(body);
 
     var toolbarMount = el('div', 'toolbar-mount');
     article.appendChild(toolbarMount);
-
-    if (puzzle.heroes && puzzle.heroes.length) {
-      var heroes = el('p', 'heroes');
-      heroes.appendChild(el('span', 'heroes__label', 'Famous ones in here'));
-      puzzle.heroes.forEach(function (word) {
-        heroes.appendChild(el('span', 'heroes__chip', word));
-      });
-      article.appendChild(heroes);
-    }
 
     var sectionHead = el('h3', 'section-head');
     sectionHead.appendChild(el('span', null, 'Clues and footnotes'));

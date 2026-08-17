@@ -56,7 +56,7 @@ window.PUZZLES = [
   "clues": {
    "across": {
     "3": {
-     "clue": "Seven-letter formal verb whose entire purpose is to be longer than 'use' (7)",
+     "clue": "Formal verb whose entire purpose is to be longer than 'use'",
      "answer": "UTILISE",
      "note": {
       "what": "Here is the clearest evidence anywhere of why machines write like this, and it is not because they were trained on management consultants. Models are tuned by showing paid raters two answers and keeping whichever they prefer. Raters preferred the version that sounded educated, so the longer word won thousands of small contests and became the default. The tic was not learned from the web; it was rewarded into place afterwards.",
@@ -68,7 +68,7 @@ window.PUZZLES = [
      }
     },
     "5": {
-     "clue": "Seven-letter word for two things working better together than apart, and the most mocked term in business English (7)",
+     "clue": "Word for two things working better together than apart, and the most mocked term in business English",
      "answer": "SYNERGY",
      "note": {
       "what": "The interesting fault is not that it is a cliche but that it names a result while hiding the mechanism. Nobody can dispute that combining two things produced extra value, because no figure was offered. Machines produce it freely for the same reason they produce 'ecosystem' and 'holistic': the training data is thick with press releases, and press releases are written to be unarguable.",
@@ -80,7 +80,7 @@ window.PUZZLES = [
      }
     },
     "7": {
-     "clue": "A woven wall hanging. Machines drape this one over culture, history and 'the human experience' whenever they want to sound profound (8)",
+     "clue": "A woven wall hanging. Machines drape this one over culture, history and 'the human experience' whenever they want to sound profound",
      "answer": "TAPESTRY",
      "note": {
       "what": "The classic ornate noun for a simple idea. A tapestry is a specific object made of thread; used as a metaphor for society it says only 'lots of different things', which is why it can be dropped from any sentence without loss.",
@@ -92,7 +92,7 @@ window.PUZZLES = [
      }
     },
     "12": {
-     "clue": "Verb meaning to dig into a subject. The most heavily measured AI word in existence — it appears in scientific writing about 28 times more often than it used to (5)",
+     "clue": "Verb meaning to dig into a subject. The most heavily measured AI word in existence — it appears in scientific writing about 28 times more often than it used to",
      "answer": "DELVE",
      "note": {
       "what": "Before 2022 this was a rare, slightly literary word: you delved into an archive or a drawer. Chatbots use it as the ordinary word for 'look at', because the humans paid to rate early AI answers consistently preferred the fancier-sounding option, and that preference got baked into the model.",
@@ -104,7 +104,7 @@ window.PUZZLES = [
      }
     },
     "13": {
-     "clue": "A glass display cabinet in a museum, drafted in as a verb meaning simply 'to show' (8)",
+     "clue": "A glass display cabinet in a museum, drafted in as a verb meaning simply 'to show'",
      "answer": "SHOWCASE",
      "note": {
       "what": "One of the significance verbs. 'Show' is shorter, clearer and free; 'showcase' adds a ceremonial frame around whatever is being shown. Its cousin 'showcasing' is one of the most over-used words in the data.",
@@ -116,7 +116,7 @@ window.PUZZLES = [
      }
     },
     "14": {
-     "clue": "Two words (11 letters): the attribution that borrows a laboratory's authority while naming no laboratory, no date and no sample (11)",
+     "clue": "Two words: the attribution that borrows a laboratory's authority while naming no laboratory, no date and no sample",
      "answer": "STUDIESSHOW",
      "note": {
       "what": "The most consequential habit in this puzzle, because it is where fluent writing becomes misinformation. Five things are missing every time: who did the work, when, how many people were in it, what method was used, and what the authors said the limits were. Machines produce the phrase because the shape of a citation is easy to generate and an actual citation is not. Its family includes 'experts argue', 'research suggests' and 'industry reports indicate'.",
@@ -128,7 +128,7 @@ window.PUZZLES = [
      }
     },
     "16": {
-     "clue": "Word for a stretch of countryside, bolted onto any industry: 'the current ___ of technology' (9)",
+     "clue": "Word for a stretch of countryside, bolted onto any industry: 'the current ___ of technology'",
      "answer": "LANDSCAPE",
      "note": {
       "what": "Terrain language used to make a subject sound vast and shifting. It implies you are about to be told about complexity, but it is almost always removable: the sentence means the same without it.",
@@ -140,7 +140,7 @@ window.PUZZLES = [
      }
     },
     "17": {
-     "clue": "Fourteen-letter adjective taken from the ceremony of digging the first sod for a new building, now applied to minor software updates (14)",
+     "clue": "Adjective taken from the ceremony of digging the first sod for a new building, now applied to minor software updates",
      "answer": "GROUNDBREAKING",
      "note": {
       "what": "The flagship of the breathless family: revolutionary, cutting-edge, innovative, game-changing, unprecedented. They inflate together and they cancel each other out, because a page on which everything is unprecedented has no way of telling you which part is. The reliable repair is a testable sentence — what it does, for whom, compared with what it replaced.",
@@ -152,7 +152,7 @@ window.PUZZLES = [
      }
     },
     "18": {
-     "clue": "Building-trade adjective for a wall that holds the roof up. A machine will apply it to a paragraph, a code comment, a decision or your feelings (11)",
+     "clue": "Building-trade adjective for a wall that holds the roof up. A machine will apply it to a paragraph, a code comment, a decision or your feelings",
      "answer": "LOADBEARING",
      "note": {
       "what": "The signature tell of 2026, associated above all with Anthropic's Claude. It asserts structural importance in one hyphenated word without having to argue for it, which is exactly why models like it and why banning the phrase alone does not help — they simply switch to 'carries the argument' or 'does the real work here'.",
@@ -164,7 +164,7 @@ window.PUZZLES = [
      }
     },
     "21": {
-     "clue": "Adverb insisting on sincerity — something sincere people rarely need to announce (9)",
+     "clue": "Adverb insisting on sincerity — something sincere people rarely need to announce",
      "answer": "GENUINELY",
      "note": {
       "what": "An intensifier used to manufacture warmth. 'This is good' becomes 'this is genuinely good'. The extra word performs feeling rather than containing it, which is why it clusters with 'truly', 'really' and 'honestly'.",
@@ -176,7 +176,7 @@ window.PUZZLES = [
      }
     },
     "23": {
-     "clue": "Adverb used to intensify emotions the writer does not actually have — '___ concerned', '___ committed', '___ regret' (6)",
+     "clue": "Adverb used to intensify emotions the writer does not actually have — '___ concerned', '___ committed', '___ regret'",
      "answer": "DEEPLY",
      "note": {
       "what": "This is the institutional feeling word, and it is worth learning because it dominates apologies, statements and condolence emails. Nothing about it can be checked: an organisation cannot be shallowly committed, so the adverb sets no bar. The useful question is not whether the sentiment is sincere but who is supposed to be having it — usually a company, a council or a brand, none of which can feel anything.",
@@ -188,7 +188,7 @@ window.PUZZLES = [
      }
     },
     "24": {
-     "clue": "Verb meaning to brag. Machines use it to mean nothing more than 'has': the hotel ___ 47 rooms (6)",
+     "clue": "Verb meaning to brag. Machines use it to mean nothing more than 'has': the hotel ___ 47 rooms",
      "answer": "BOASTS",
      "note": {
       "what": "Estate agents started this and models industrialised it. Note what has happened grammatically: a building is now doing the bragging, which is the same misplaced agency that makes 'load-bearing' and 'harness' odd. It is also on the strongest evidence list in the field, because it both rose sharply in human writing after 2020 and is provably over-produced by ChatGPT.",
@@ -200,7 +200,7 @@ window.PUZZLES = [
      }
     },
     "25": {
-     "clue": "Adjective meaning sturdy, applied indiscriminately to frameworks, findings, systems and debate (6)",
+     "clue": "Adjective meaning sturdy, applied indiscriminately to frameworks, findings, systems and debate",
      "answer": "ROBUST",
      "note": {
       "what": "Vague strength. It signals that you should feel reassured while offering no measurement. Machines use it because it reads as technical and is almost impossible to contradict.",
@@ -214,7 +214,7 @@ window.PUZZLES = [
    },
    "down": {
     "1": {
-     "clue": "Adverb meaning without noise. Machines use it to make an ordinary fact sound like a secret you have just been let in on (7)",
+     "clue": "Adverb meaning without noise. Machines use it to make an ordinary fact sound like a secret you have just been let in on",
      "answer": "QUIETLY",
      "note": {
       "what": "A magic adverb. It smuggles in significance for nothing: 'the app quietly became essential.' Quietly compared with what? Nothing was ever loud. Delete the word and no information is lost, which is the test.",
@@ -226,7 +226,7 @@ window.PUZZLES = [
      }
     },
     "2": {
-     "clue": "A kingdom, borrowed to mean nothing more than 'area' or 'field'. One of the confirmed spike words (5)",
+     "clue": "A kingdom, borrowed to mean nothing more than 'area' or 'field'. One of the confirmed spike words",
      "answer": "REALM",
      "note": {
       "what": "An empty container noun — an abstract vessel you can pour any topic into. Its relatives are 'landscape', 'sphere', 'domain', 'arena', 'frontier' and 'fabric'. They all imply territory and scale where there is only a subject.",
@@ -238,7 +238,7 @@ window.PUZZLES = [
      }
     },
     "4": {
-     "clue": "A group of things close together — and the number of these habits you need before saying anything out loud (7)",
+     "clue": "A group of things close together — and the number of these habits you need before saying anything out loud",
      "answer": "CLUSTER",
      "note": {
       "what": "The single most important idea in this puzzle. One tell is a coincidence. Three in the same paragraph is a machine. This is not a rule of thumb invented for comfort; it is what the measurements actually support.",
@@ -250,7 +250,7 @@ window.PUZZLES = [
      }
     },
     "6": {
-     "clue": "Verb meaning to give someone authority. In practice the word that ends a thousand machine-written conclusions (7)",
+     "clue": "Verb meaning to give someone authority. In practice the word that ends a thousand machine-written conclusions",
      "answer": "EMPOWER",
      "note": {
       "what": "The sign-off verb. It appears in the last paragraph, aimed at the reader, promising agency without describing any. If a piece of writing finishes by empowering you to embrace something, ask who wrote it.",
@@ -262,7 +262,7 @@ window.PUZZLES = [
      }
     },
     "8": {
-     "clue": "Two words (8 letters) standing in for plain 'is', so that a building no longer is a reminder of anything but performs the reminding as a duty (8)",
+     "clue": "Two words standing in for plain 'is', so that a building no longer is a reminder of anything but performs the reminding as a duty",
      "answer": "SERVESAS",
      "note": {
       "what": "The copula gets promoted. 'Is' states a fact and stops; this phrasing dresses the same fact in a job title, and its cousins do the same work — 'stands as', 'represents', 'marks', 'acts as', 'functions as'. Machines reach for it because it sounds considered while committing to nothing, and because encyclopaedia and press-release prose, which the models read a great deal of, is full of it. Unlike 'boasts' or 'showcase' it is not a rare word, so it slips past readers who are only watching for exotic vocabulary. The noun form does the same job: “a testament to”, which means “proof of” and costs three extra words to say so.",
@@ -274,7 +274,7 @@ window.PUZZLES = [
      }
     },
     "9": {
-     "clue": "Borrowed from finance and mechanics, where it means gaining force from a fulcrum. Three syllables standing in for the one-syllable word 'use' (8)",
+     "clue": "Borrowed from finance and mechanics, where it means gaining force from a fulcrum. Three syllables standing in for the one-syllable word 'use'",
      "answer": "LEVERAGE",
      "note": {
       "what": "Corporate vocabulary that machines picked up wholesale. It belongs with 'utilise', 'harness' and 'operationalise' — a family whose only function is to make a sentence sound more expensive than it is.",
@@ -286,7 +286,7 @@ window.PUZZLES = [
      }
     },
     "10": {
-     "clue": "Verb meaning to emphasise or draw attention to. Rose roughly 1,000% in academic writing after 2022, and now travels in a pack with 'delve' and 'pivotal' (10)",
+     "clue": "Verb meaning to emphasise or draw attention to. Rose roughly 1,000% in academic writing after 2022, and now travels in a pack with 'delve' and 'pivotal'",
      "answer": "UNDERSCORE",
      "note": {
       "what": "A perfectly good word that machines reach for instead of 'shows', 'proves' or 'means'. It belongs to a family of what you might call significance verbs — underscores, highlights, demonstrates, exemplifies, showcases — all used to avoid the plain word 'is'.",
@@ -298,7 +298,7 @@ window.PUZZLES = [
      }
     },
     "11": {
-     "clue": "Straps for a horse or a climber, repurposed as a verb meaning to use something (7)",
+     "clue": "Straps for a horse or a climber, repurposed as a verb meaning to use something",
      "answer": "HARNESS",
      "note": {
       "what": "A borrowed-physics word. You harness an ox or a waterfall — something with real pulling force. Applied to 'the power of data' or 'the potential of your team', the machinery is imaginary.",
@@ -310,7 +310,7 @@ window.PUZZLES = [
      }
     },
     "15": {
-     "clue": "Eleven-letter adverb, usually preceded by 'more', asserting a ranking of significance that nobody has established (11)",
+     "clue": "Adverb, usually preceded by 'more', asserting a ranking of significance that nobody has established",
      "answer": "IMPORTANTLY",
      "note": {
       "what": "A promotion handed out with no committee. 'More importantly' claims a comparison has been made between two things and settled, when the writer has merely moved on. There is a caution attached to this whole family, though, and it is worth carrying into the rest of the puzzle: some of the phrases that spiked after 2022 are utterly bland ones, so a single flat signpost convicts nobody.",
@@ -322,7 +322,7 @@ window.PUZZLES = [
      }
     },
     "19": {
-     "clue": "Cosy verb for how a village sits in a valley. In machine prose, nothing is ever merely located (7)",
+     "clue": "Cosy verb for how a village sits in a valley. In machine prose, nothing is ever merely located",
      "answer": "NESTLED",
      "note": {
       "what": "Geography becomes affectionate. Towns are nestled, cottages are tucked away, restaurants are hidden gems. It is a small, harmless, extremely consistent habit — which is what makes it useful. The fixed phrase to watch is “in the heart of”, which machine travel copy attaches to every cafe, market and hotel on earth.",
@@ -334,7 +334,7 @@ window.PUZZLES = [
      }
     },
     "20": {
-     "clue": "Adjective meaning full of energy, applied to every city, market and community on earth (7)",
+     "clue": "Adjective meaning full of energy, applied to every city, market and community on earth",
      "answer": "VIBRANT",
      "note": {
       "what": "A travel-brochure word. It means the writer has not been there. A person names the specific street, the smell, the price of the coffee; a machine reaches for the energy level, because that is what descriptions of places statistically contain.",
@@ -346,7 +346,7 @@ window.PUZZLES = [
      }
     },
     "22": {
-     "clue": "Verb for opening something with a key, used on 'potential', which has no lock (6)",
+     "clue": "Verb for opening something with a key, used on 'potential', which has no lock",
      "answer": "UNLOCK",
      "note": {
       "what": "Borrowed physics again, in motivational form. Potential is not a door, insight is not behind a lock, and value is not in a safe. The metaphor is decoration pretending to be a mechanism.",
@@ -406,7 +406,7 @@ window.PUZZLES = [
   "clues": {
    "across": {
     "1": {
-     "clue": "Small four-letter adverb that turns the most cited machine sentence into its most cited variant: “not ___ X, but Y” (4)",
+     "clue": "Small adverb that turns the most cited machine sentence into its most cited variant: “not ___ X, but Y”",
      "answer": "JUST",
      "note": {
       "what": "One word is doing a surprising amount of work here. Inserting it converts an outright denial into a modest upgrade, which is safer and therefore commoner: the model no longer has to reject X, only to promise something better. This variant is why the tell is so often missed by people watching for the plain negation.",
@@ -418,7 +418,7 @@ window.PUZZLES = [
      }
     },
     "10": {
-     "clue": "Name (20 letters) for posing a question no one asked and answering it instantly: 'The result? Devastating.' (20)",
+     "clue": "Name for posing a question no one asked and answering it instantly: 'The result? Devastating.'",
      "answer": "RHETORICALSELFANSWER",
      "note": {
       "what": "The shortest way to fake momentum. A real writer earns a reveal by building to it; this device skips the building and keeps the reveal. Because it is so cheap, models produce it constantly, and it is the easiest tell to teach someone in one sentence. It comes as a stock of question fragments — “The result?”, “The reality?”, “The catch?”, “The truth?”, “The worst part?” — and in a longer form that parks an empty question-word phrase in front of the real subject: “What this really means is …”.",
@@ -430,7 +430,7 @@ window.PUZZLES = [
      }
     },
     "13": {
-     "clue": "Name (17 letters) for the 'Not X. Not Y. Just Z.' pattern — two things denied before the real point is unveiled (17)",
+     "clue": "Name for the 'Not X. Not Y. Just Z.' pattern — two things denied before the real point is unveiled",
      "answer": "DRAMATICCOUNTDOWN",
      "note": {
       "what": "An escalation of negative parallelism, built for maximum theatre. Each denial narrows the field, so by the time the answer arrives it feels like a discovery. Nothing has actually been established; the reader has simply been made to wait.",
@@ -442,7 +442,7 @@ window.PUZZLES = [
      }
     },
     "14": {
-     "clue": "Small slip of the fingers. Two thousand words of informal writing without a single one is a weak signal — and a cruel thing to accuse anyone over (4)",
+     "clue": "Small slip of the fingers. Two thousand words of informal writing without a single one is a weak signal — and a cruel thing to accuse anyone over",
      "answer": "TYPO",
      "note": {
       "what": "Real informal writing carries traces of being made: a repeated word, a sentence that changes direction halfway, a comma in the wrong place, an abandoned clause. Machine text has none, because there was no moment of composition to leave a mark. The same applies to unwavering house style across a long document, where a person's capitalisation and list punctuation usually drift.",
@@ -454,7 +454,7 @@ window.PUZZLES = [
      }
     },
     "17": {
-     "clue": "Two words (13 letters) for the throat-clearing first sentence that would fit any subject on earth: “In today's rapidly evolving landscape …” (13)",
+     "clue": "Two words for the throat-clearing first sentence that would fit any subject on earth: “In today's rapidly evolving landscape …”",
      "answer": "GENERICOPENER",
      "note": {
       "what": "An opening line that contains no information is the most reliable single sign that nobody chose the subject. The model has to start somewhere, and the era-scale platitude is the highest-probability opening in its training data, so it functions as a warm-up lap. Siblings: “in an era where”, “in an increasingly connected world”, “as technology continues to evolve”, “in the modern workplace”. Its cousins open the same lap from a different angle: a question flung at a reader who never agreed to answer one (“What if everything you know about sleep is wrong?”), a speculative “imagine” or “what if”, and the confiding observer pose — “I've been thinking about this a lot lately.”",
@@ -466,7 +466,7 @@ window.PUZZLES = [
      }
     },
     "18": {
-     "clue": "American author of Huckleberry Finn, whose punctuation habits would fail every AI detector ever built (5)",
+     "clue": "American author of Huckleberry Finn, whose punctuation habits would fail every AI detector ever built",
      "answer": "TWAIN",
      "note": {
       "what": "He is in this puzzle as a warning. Huckleberry Finn contains 10.13 em dashes per thousand words; GPT-4.1 produces 10.62. On the internet's favourite test they are indistinguishable. Emily Dickinson built an entire style out of dashes and would score worse than both.",
@@ -478,7 +478,7 @@ window.PUZZLES = [
      }
     },
     "21": {
-     "clue": "Grammatical mood used for commands. It is the third beat of the motivational three-step: short claim, expansion, instruction (10)",
+     "clue": "Grammatical mood used for commands. It is the third beat of the motivational three-step: short claim, expansion, instruction",
      "answer": "IMPERATIVE",
      "note": {
       "what": "The pattern runs: a mild truism, a line of encouragement, then an order. Nobody has asked to be coached, which is what makes the ending jar in a work email or a school newsletter. Because a model has no relationship with the reader, the instruction is always generic, and often faintly bossy: “start today”, “do the work”, “choose growth”, “show up for yourself”.",
@@ -490,7 +490,7 @@ window.PUZZLES = [
      }
     },
     "22": {
-     "clue": "Adjective for detail about smell, light and sound, dropped in to fake a scene: “The aroma of fresh coffee filled the room.” (7)",
+     "clue": "Adjective for detail about smell, light and sound, dropped in to fake a scene: “The aroma of fresh coffee filled the room.”",
      "answer": "SENSORY",
      "note": {
       "what": "Descriptive detail earns its place when it is specific, surprising or consequential. The machine version is a stock backdrop: streaming sunlight, distant traffic, the smell of rain, the hum of a laptop. Nothing in it could only have happened in that room on that day, which is precisely what a person's memory supplies without being asked.",
@@ -502,7 +502,7 @@ window.PUZZLES = [
      }
     },
     "23": {
-     "clue": "Garden-boundary word, also the name for a qualifying caveat bolted to the front of a confident generalisation: “While individual cases vary, the evidence consistently suggests …” (5)",
+     "clue": "Garden-boundary word, also the name for a qualifying caveat bolted to the front of a confident generalisation: “While individual cases vary, the evidence consistently suggests …”",
      "answer": "HEDGE",
      "note": {
       "what": "The caveat performs nuance and the second half withdraws it. Nothing is specified: not the evidence, not the exception, not the degree of confidence, not who is affected. Models produce the pair because being simultaneously careful and assertive is what raters reward, and because a real limitation would require a real number. Siblings: “it is worth noting”, “while not universal”, “though results may differ”, “generally speaking”, “in most cases”.",
@@ -514,7 +514,7 @@ window.PUZZLES = [
      }
     },
     "24": {
-     "clue": "Adjective for a sentence that arrives back where it set off: “Effective communication is about communicating effectively.” (8)",
+     "clue": "Adjective for a sentence that arrives back where it set off: “Effective communication is about communicating effectively.”",
      "answer": "CIRCULAR",
      "note": {
       "what": "Padding of this kind appears when a model must produce a paragraph on a topic it has nothing to add to. The definition restates the term, the example restates the definition, and the word count rises without a single new fact. It is the mechanism behind fractal summaries as well, where each section explains that it is about the thing named in its heading.",
@@ -526,7 +526,7 @@ window.PUZZLES = [
      }
     },
     "25": {
-     "clue": "Grammatical term for an incomplete sentence. Used as an entire paragraph. For emphasis. Like this (8)",
+     "clue": "Grammatical term for an incomplete sentence. Used as an entire paragraph. For emphasis. Like this",
      "answer": "FRAGMENT",
      "note": {
       "what": "Manufactured drama, and described as the most common and least discussed tic of all. A very short sentence or a phrase with no verb is set on its own line so it feels weighty. Used once by a good writer it lands; used constantly it is a drum machine. Three or more of them in a row is the staccato version, each landing like a drumbeat and none of them carrying an argument.",
@@ -540,7 +540,7 @@ window.PUZZLES = [
    },
    "down": {
     "2": {
-     "clue": "The formal name for a list of exactly three items. One is good writing; four in a row is a machine keeping time (8)",
+     "clue": "The formal name for a list of exactly three items. One is good writing; four in a row is a machine keeping time",
      "answer": "TRICOLON",
      "note": {
       "what": "Three-part lists are genuinely powerful — 'friends, Romans, countrymen'. The tell is not their existence but their regularity. Models fall into the rhythm every paragraph, because three-item lists are statistically the most common shape in persuasive prose. The numbered version does the same thing out loud — “first”, “second”, “third” laid over material that has no sequence in it.",
@@ -564,7 +564,7 @@ window.PUZZLES = [
      }
     },
     "4": {
-     "clue": "Two words (12 letters) for giving every side equal weight regardless of what the evidence actually says (12)",
+     "clue": "Two words for giving every side equal weight regardless of what the evidence actually says",
      "answer": "FALSEBALANCE",
      "note": {
       "what": "Even-handedness is a safe output, so a model will set a well-supported finding beside a fringe objection and award them the same paragraph length. The tell is the refusal to conclude: “both perspectives have merit”, “reasonable people disagree”, “the answer likely lies somewhere in between”. Real analysis weighs and then says which way it came down.",
@@ -576,7 +576,7 @@ window.PUZZLES = [
      }
     },
     "5": {
-     "clue": "Noun for emotional and personal distance: the register of “It could be observed that …” where a person would simply say what they think (10)",
+     "clue": "Noun for emotional and personal distance: the register of “It could be observed that …” where a person would simply say what they think",
      "answer": "DETACHMENT",
      "note": {
       "what": "Third-person constructions bury the actor. “One might consider”, “it is often argued”, “there are those who suggest”: each removes the subject, so no one can be held to the claim. The habit comes from academic and institutional prose in the training data, and it survives because a sentence with nobody in it can never be wrong.",
@@ -588,7 +588,7 @@ window.PUZZLES = [
      }
     },
     "6": {
-     "clue": "Technical term for variation in sentence length. The quality human writing has and machine writing conspicuously lacks (10)",
+     "clue": "Technical term for variation in sentence length. The quality human writing has and machine writing conspicuously lacks",
      "answer": "BURSTINESS",
      "note": {
       "what": "Human prose lurches. A forty-word sentence, then four words. Then a sentence that goes on too long because the writer got interested. Machine prose clusters tightly around fifteen to twenty-five words, paragraph after paragraph, and reads like a treadmill even when every sentence is fine. Tone flattens the same way length does: identically polite about a data breach, a birthday and a bereavement, because nothing in the text knows which is which.",
@@ -600,7 +600,7 @@ window.PUZZLES = [
      }
     },
     "7": {
-     "clue": "Three words (11 letters), the transition that spends a clause announcing that a fact deserves your attention rather than spending it on the fact (11)",
+     "clue": "Three words, the transition that spends a clause announcing that a fact deserves your attention rather than spending it on the fact",
      "answer": "WORTHNOTING",
      "note": {
       "what": "Connective tissue with nothing on either side of it. A writer who has found something genuinely surprising states it; the surprise does the work. This phrasing instead instructs you to be interested, which is why it clusters so thickly around unremarkable material — 'it bears mentioning', 'notably', 'interestingly', 'crucially', 'it is important to note'. The adverb form of the same move is elsewhere in this series, under the eleven-letter one usually preceded by 'more'. Machines produce these because they cost almost nothing and make a heap of facts feel like an argument that is going somewhere.",
@@ -612,7 +612,7 @@ window.PUZZLES = [
      }
     },
     "8": {
-     "clue": "Two words (10 letters) for a bogus span whose two ends are not ends of anything: “from innovation to cultural transformation” (10)",
+     "clue": "Two words for a bogus span whose two ends are not ends of anything: “from innovation to cultural transformation”",
      "answer": "FALSERANGE",
      "note": {
       "what": "A real range has a scale: from Monday to Friday, from ten pounds to fifty. The machine version borrows the grammar of a spectrum and fills it with two abstractions that do not sit on one, so it sounds comprehensive while listing two things. The habit belongs to the same family as ornate container nouns, where the sentence describes a shape rather than a fact.",
@@ -624,7 +624,7 @@ window.PUZZLES = [
      }
     },
     "9": {
-     "clue": "The formal research name (19 letters) for the 'it's not X — it's Y' sentence: the single most cited tell in machine writing (19)",
+     "clue": "The formal research name for the 'it's not X — it's Y' sentence: the single most cited tell in machine writing",
      "answer": "NEGATIVEPARALLELISM",
      "note": {
       "what": "This is the modern research term for the tic; 'antithesis' is the ancient name for the innocent version. Machines produce it about three times as often as people because opening with a negation is cheap — it buys a beat of fluent, confident text before any claim has to be made. It performs insight without incurring the cost of having any. The same move works as an opening, swapping a modest framing for a grander one: “This isn't a time-management problem — it's a values problem.”",
@@ -636,7 +636,7 @@ window.PUZZLES = [
      }
     },
     "11": {
-     "clue": "Two words (12 letters) for a subject that cannot act but is handed a verb anyway: “The decision carries weight.” (12)",
+     "clue": "Two words for a subject that cannot act but is handed a verb anyway: “The decision carries weight.”",
      "answer": "ABSTRACTNOUN",
      "note": {
       "what": "Ideas do not carry, drive, transform or demand. When they are given those verbs the sentence sounds forceful while the actual cause — a person, a committee, a deadline — goes unnamed. The wider fault is misplaced agency, which shows up in technical writing too: a query that “hit” nineteen seconds when it took nineteen seconds, adoption that “moved out”, a lateral that “rides” an index.",
@@ -648,7 +648,7 @@ window.PUZZLES = [
      }
     },
     "12": {
-     "clue": "Two words (13 letters) for the closer so universal it would fit any article ever written: “The best investment is in the people around you.” (13)",
+     "clue": "Two words for the closer so universal it would fit any article ever written: “The best investment is in the people around you.”",
      "answer": "FORTUNECOOKIE",
      "note": {
       "what": "Where the resolution closer asserts that matters are settled, this one steps back and blesses the whole human condition. The test is portability: paste the final sentence onto an article about pension reform, then onto one about badgers, and see whether either notices. Nothing in it belongs to the piece it ends. Its siblings are the announced conclusion, which tells you it has arrived rather than arriving, and the minted maxim built from an abstract noun and a two-word predicate: “Clarity is not a luxury.”",
@@ -660,7 +660,7 @@ window.PUZZLES = [
      }
     },
     "15": {
-     "clue": "Grammatical name for an -ing verb form. Machines trail whole clauses of them off the end of sentences to imply importance: “highlighting its significance” (10)",
+     "clue": "Grammatical name for an -ing verb form. Machines trail whole clauses of them off the end of sentences to imply importance: “highlighting its significance”",
      "answer": "PARTICIPLE",
      "note": {
       "what": "This is the grammar of a summary written by someone who has not read the thing. The clause asserts that something matters while naming no actor, no mechanism and no consequence, and it can be deleted without loss in almost every case. Watch for the stock set: reflecting broader trends, underscoring the need, showcasing its potential, contributing to the development of, paving the way for.",
@@ -672,7 +672,7 @@ window.PUZZLES = [
      }
     },
     "16": {
-     "clue": "Statistical measure of how surprising the next word in a sentence is. Machines keep it low, always choosing the safest option (10)",
+     "clue": "Statistical measure of how surprising the next word in a sentence is. Machines keep it low, always choosing the safest option",
      "answer": "PERPLEXITY",
      "note": {
       "what": "This is the engine underneath most of the other tells. A model picks the most probable next word, so its prose is smooth, predictable and slightly generic — it never reaches for the odd word, the wrong-but-better word, or the private joke.",
@@ -684,7 +684,7 @@ window.PUZZLES = [
      }
     },
     "19": {
-     "clue": "Rhetorical term for beginning several consecutive sentences with exactly the same words: “They assume users will pay. They assume developers will build.” (8)",
+     "clue": "Rhetorical term for beginning several consecutive sentences with exactly the same words: “They assume users will pay. They assume developers will build.”",
      "answer": "ANAPHORA",
      "note": {
       "what": "Deliberate repetition is one of the oldest tools in English, which is why nobody notices when a model reaches for it by default. A language model is a machine for continuing patterns, so once it has produced one sentence opening it becomes the single most probable way to open the next one. The result reads like a template with the variables filled in, and it usually arrives in threes, alongside the rule-of-three cadence.",
@@ -696,7 +696,7 @@ window.PUZZLES = [
      }
     },
     "20": {
-     "clue": "Two words (9 letters) promising that the best or worst part is still coming, generally before a fairly ordinary number (9)",
+     "clue": "Two words promising that the best or worst part is still coming, generally before a fairly ordinary number",
      "answer": "THEKICKER",
      "note": {
       "what": "The phrase does the work a good fact would have done. It instructs the reader to be startled by whatever follows, which means the writer either does not trust the material or has not checked whether it is startling. Its relatives run to a dozen: “here's the deal”, “here's where it gets interesting”, “here's what most people miss”, “here's the uncomfortable part”, “and it gets worse”, “but wait”. Close relatives include “but here's the thing”, “here's the best part” and the instruction to admire what you have just read: “let that sink in”.",
@@ -756,7 +756,7 @@ window.PUZZLES = [
   "clues": {
    "across": {
     "2": {
-     "clue": "Comparison used for teaching — “think of it as a motorway for data” — offered by machines before, or instead of, the actual explanation (7)",
+     "clue": "Comparison used for teaching — “think of it as a motorway for data” — offered by machines before, or instead of, the actual explanation",
      "answer": "ANALOGY",
      "note": {
       "what": "Teacher mode has a default gesture, and this is it. The pattern to distrust is the ordering: a person who understands a system usually describes it and then offers a comparison if the description was hard; machine prose comparison-first, because the comparison is easier to generate than the mechanism. A second warning sign is that the image is never checked against the thing it describes. The most worn example is the borrowed engine bay — “under the hood” — wheeled out before explaining absolutely anything technical.",
@@ -768,7 +768,7 @@ window.PUZZLES = [
      }
     },
     "4": {
-     "clue": "Specialists with authority in a field. Linguistics ones, shown research abstracts, identified the machine-written ones only 38.9% of the time (7)",
+     "clue": "Specialists with authority in a field. Linguistics ones, shown research abstracts, identified the machine-written ones only 38.9% of the time",
      "answer": "EXPERTS",
      "note": {
       "what": "Worse than a coin toss, and informatively so: they were biased towards calling machine text human, which is the opposite of the mistake most people fear. Expertise in language does not transfer to authorship detection, because the tells in this puzzle are habits of an unedited draft rather than properties of a sentence. A separate study of 1,682 adults found per-story accuracy between 31% and 53%, and readers rated the AI-written stories higher for being well written.",
@@ -780,7 +780,7 @@ window.PUZZLES = [
      }
     },
     "7": {
-     "clue": "Plain-text formatting notation, invisible once rendered, which leaves stray asterisks and hash marks behind when pasted into Facebook (8)",
+     "clue": "Plain-text formatting notation, invisible once rendered, which leaves stray asterisks and hash marks behind when pasted into Facebook",
      "answer": "MARKDOWN",
      "note": {
       "what": "This is the single most practical tell in the series, because it requires no judgement at all. Chatbots write in this notation by default; a chat window renders it as headings and heavy type, while a comment box, a text message or a job advert does not. What you see is the plumbing: double asterisks around phrases, hash marks in front of headings, hyphens starting lines. Title Case Applied To Every Major Word belongs to the same family: chat interfaces render headings that way, so the habit follows the text into shopping lists and one-line notes.",
@@ -792,7 +792,7 @@ window.PUZZLES = [
      }
     },
     "9": {
-     "clue": "Portmanteau for an article that is really a numbered list; machines write them even when the paragraphs are pretending otherwise (8)",
+     "clue": "Portmanteau for an article that is really a numbered list; machines write them even when the paragraphs are pretending otherwise",
      "answer": "LISTICLE",
      "note": {
       "what": "The disguised version is the interesting one: “the first … the second … the third …” strung through prose that has no sequence in it. Ordinal labels imply chronology, priority or dependency, and when none of those exists the numbering is a costume for a bag of unrelated observations. Genuine lists are fine; the tell is numbering applied to an argument, or prose applied to a list.",
@@ -804,7 +804,7 @@ window.PUZZLES = [
      }
     },
     "10": {
-     "clue": "Two words (11 letters) for the list where every single point opens with an emphasised label followed by a colon (11)",
+     "clue": "Two words for the list where every single point opens with an emphasised label followed by a colon",
      "answer": "BOLDBULLETS",
      "note": {
       "what": "This is the default shape of machine-generated Markdown, and it is the most visible tell in the whole series because you can see it from the other side of a desk. Emphasis works by scarcity: if every line is heavy, the eye has nothing to land on. It also disguises the absence of an argument, since a list of labels never has to explain how one point leads to the next.",
@@ -816,7 +816,7 @@ window.PUZZLES = [
      }
     },
     "14": {
-     "clue": "Standard English exam for non-native speakers. Seven detection tools wrongly flagged 61% of these genuinely human essays as machine-written (5)",
+     "clue": "Standard English exam for non-native speakers. Seven detection tools wrongly flagged 61% of these genuinely human essays as machine-written",
      "answer": "TOEFL",
      "note": {
       "what": "The ethical heart of the puzzle. AI detectors work by flagging simple, predictable English — and people writing in a second language use a narrower, more careful, more predictable range of words, for entirely human reasons. The software cannot tell the difference between a machine and a careful learner.",
@@ -828,7 +828,7 @@ window.PUZZLES = [
      }
     },
     "18": {
-     "clue": "Four-word phrase (run together, 20 letters) a chatbot fires back the instant you contradict it — even when what you said was nonsense you shouted at the screen (20)",
+     "clue": "Four-word phrase (run together, 20 letters) a chatbot fires back the instant you contradict it — even when what you said was nonsense you shouted at the screen",
      "answer": "YOUREABSOLUTELYRIGHT",
      "note": {
       "what": "The most parodied sentence in AI. It commits to three things at once: that you were right, that you were completely right, and that the machine is delighted to have changed its mind. It arrives with equal enthusiasm whether you have found a real bug or typed gibberish, which is exactly why it means nothing.",
@@ -840,7 +840,7 @@ window.PUZZLES = [
      }
     },
     "23": {
-     "clue": "Verb of visualising, used to open with “a world where …” rather than with anything that has happened (7)",
+     "clue": "Verb of visualising, used to open with “a world where …” rather than with anything that has happened",
      "answer": "IMAGINE",
      "note": {
       "what": "Cinematic futurism as a first sentence. It postpones the concrete claim by a paragraph, and paragraphs of postponement are cheap to produce and pleasant to read, so they survive. The same catalogue of cadence patterns names its neighbours — the Generic Opener (“in today’s rapidly evolving landscape”) and the Interrogative Hook (“what if you could …?”) — which are the same manoeuvre in different costumes.",
@@ -852,7 +852,7 @@ window.PUZZLES = [
      }
     },
     "24": {
-     "clue": "Repetition of something already present — whole paragraphs reappearing word-for-word later in the same document (11)",
+     "clue": "Repetition of something already present — whole paragraphs reappearing word-for-word later in the same document",
      "answer": "DUPLICATION",
      "note": {
       "what": "Not a style tell at all but a process failure, and the most conclusive item in this section. It happens when text is generated in chunks and assembled by somebody who did not read the assembly, or when a model loses track of what it has already produced. Unlike every other entry here, there is no charitable explanation available.",
@@ -864,7 +864,7 @@ window.PUZZLES = [
      }
     },
     "25": {
-     "clue": "Two-word compliment (13 letters) paid to your question before any attempt is made to answer it (13)",
+     "clue": "Two-word compliment paid to your question before any attempt is made to answer it",
      "answer": "GREATQUESTION",
      "note": {
       "what": "The sycophantic opener. Praising the question is a way of filling the first line with warmth at no cost. No human being writing to you grades your enquiry before responding to it — not a colleague, not a teacher, not a plumber.",
@@ -878,7 +878,7 @@ window.PUZZLES = [
    },
    "down": {
     "1": {
-     "clue": "Affirmative filler traditionally deployed just before a chatbot produces what you asked for (9)",
+     "clue": "Affirmative filler traditionally deployed just before a chatbot produces what you asked for",
      "answer": "CERTAINLY",
      "note": {
       "what": "This is the most important category in the whole puzzle and the least glamorous. It is not a style tell — it is leftover machinery. Somebody copied a chatbot's reply into a document and did not delete its manners. There is no innocent reason for a school newsletter to open by agreeing to write itself. “Of course!” and “Absolutely!” are the same machinery, arriving before the machine does the thing that was asked of it anyway.",
@@ -890,7 +890,7 @@ window.PUZZLES = [
      }
     },
     "3": {
-     "clue": "Adjective for the pompously overblown, as when a change to a form “will fundamentally reshape how we think about everything” (9)",
+     "clue": "Adjective for the pompously overblown, as when a change to a form “will fundamentally reshape how we think about everything”",
      "answer": "GRANDIOSE",
      "note": {
       "what": "Stakes inflation: a bounded change given world-historical scale. It happens because promotional and thought-leadership writing dominates the training material, and in that genre nothing is ever merely useful. The diagnostic is a mismatch between the size of the claim and the size of the subject, which you can spot without knowing anything about the subject. False precision inflates the same way: “the issue is twofold”, asserted whether or not there turn out to be exactly two issues.",
@@ -902,7 +902,7 @@ window.PUZZLES = [
      }
     },
     "4": {
-     "clue": "Small coloured picture-character — a tick, a rocket, a lightbulb — used as a list marker where an ordinary dot would do (5)",
+     "clue": "Small coloured picture-character — a tick, a rocket, a lightbulb — used as a list marker where an ordinary dot would do",
      "answer": "EMOJI",
      "note": {
       "what": "Chatbots decorate lists by default, and the pictures carry no information: a rocket beside “next steps” tells you nothing that the words do not. Two things make this spottable at a distance. The pictures are always from the same small set, and they appear in contexts where no human would bother, such as an internal spreadsheet or a note to one colleague. Unicode decoration generally works this way, and is useful precisely because it needs no judgement: arrows used as punctuation to mean “leads to” in a document containing no diagrams, curly quotation marks and apostrophes where a keyboard would have produced straight ones, and the multiplication sign standing in for the letter x.",
@@ -914,7 +914,7 @@ window.PUZZLES = [
      }
     },
     "5": {
-     "clue": "Word for a child with no parents; here, a demonstrative left with nothing to refer to, as in “this highlights the importance …” (6)",
+     "clue": "Word for a child with no parents; here, a demonstrative left with nothing to refer to, as in “this highlights the importance …”",
      "answer": "ORPHAN",
      "note": {
       "what": "The pronoun points backwards at a noun that was never supplied, so the sentence sounds like analysis while making no identifiable claim. It happens because the phrase is a high-probability continuation of almost any paragraph, and it is common in student essays and consultancy decks for the same reason: it fills the slot where a thought belongs. Ask “this what?” and there is frequently no answer in the document.",
@@ -926,7 +926,7 @@ window.PUZZLES = [
      }
     },
     "6": {
-     "clue": "Watering-down; the composition habit of stating a single point six times in slightly varied wording (8)",
+     "clue": "Watering-down; the composition habit of stating a single point six times in slightly varied wording",
      "answer": "DILUTION",
      "note": {
       "what": "Length is easy and substance is not, so a model asked for 800 words on a subject that needs 200 will restate rather than research. Each restatement is slightly rephrased, which stops it looking like a copy-paste error and makes the page feel thorough while teaching you nothing new after the second paragraph. This is why so much machine-written text feels tiring rather than wrong. Its structural cousin repeats at every scale: an intro announcing what the section will say, the section, then a summary of what it just said, nested inside a document doing the same. Watch too for “in other words”, which paraphrases a sentence that was clear the first time.",
@@ -938,7 +938,7 @@ window.PUZZLES = [
      }
     },
     "8": {
-     "clue": "Preposition meaning in spite of, the hinge of a stock manoeuvre: praise, then challenges, then a swerve into vague optimism (7)",
+     "clue": "Preposition meaning in spite of, the hinge of a stock manoeuvre: praise, then challenges, then a swerve into vague optimism",
      "answer": "DESPITE",
      "note": {
       "what": "You can predict the paragraph from its first three words, which is the whole trouble. The structure acknowledges difficulty in the abstract so that the optimism afterwards looks earned, and nobody has to name a risk, a cost or a person responsible. It is the standard closing paragraph of essays, prospectuses and council consultations alike.",
@@ -950,7 +950,7 @@ window.PUZZLES = [
      }
     },
     "11": {
-     "clue": "Two words (12 letters) for an image kept running long after it stopped illuminating anything — a whole memo staged in “the engine room of the business” (12)",
+     "clue": "Two words for an image kept running long after it stopped illuminating anything — a whole memo staged in “the engine room of the business”",
      "answer": "DEADMETAPHOR",
      "note": {
       "what": "A model that opens with a comparison will often keep extending it, because continuing an established image is the statistically comfortable thing to do. So the journey acquires a compass, then headwinds, then a map, and by the fourth paragraph the reader is tracking the vehicle rather than the argument. The slippage is where it becomes funny: the image starts making claims the subject cannot support.",
@@ -962,7 +962,7 @@ window.PUZZLES = [
      }
     },
     "12": {
-     "clue": "Two words (12 letters), the British idiom for a moment of belated understanding, staged in prose to dramatise having been told the answer (12)",
+     "clue": "Two words, the British idiom for a moment of belated understanding, staged in prose to dramatise having been told the answer",
      "answer": "PENNYDROPPED",
      "note": {
       "what": "Performed realisation, in essay form rather than in a chat window. It manufactures a narrative arc — confusion, then insight — around information that was simply looked up. Its relatives include “then I realised”, “something shifted”, “everything changed” and “that’s when it hit me”, and they cluster in the middle of first-person business posts. “Now I see” is the chat-window version, produced the instant you point out something the machine had wrong.",
@@ -974,7 +974,7 @@ window.PUZZLES = [
      }
     },
     "13": {
-     "clue": "Two words (9 letters), the signpost planted in front of a paragraph that repeats what you have just finished reading (9)",
+     "clue": "Two words, the signpost planted in front of a paragraph that repeats what you have just finished reading",
      "answer": "INSUMMARY",
      "note": {
       "what": "A signposted conclusion is not a fault in itself — essays have taught it for a century — but machines attach one to everything, including three-paragraph emails that plainly do not need a wrap-up. Its siblings are “in conclusion”, “to sum up” and “overall”. The reliable signal is proportion: a closing summary on a document you can read in forty seconds. The closing flourish is the same instinct pointed forwards rather than back — “so the next time you …”, “remember”, “the choice is yours” — as is the verdict that announces a conclusion the evidence has not reached, and the “at its core” that promises the essential point just before an obvious one.",
@@ -986,7 +986,7 @@ window.PUZZLES = [
      }
     },
     "15": {
-     "clue": "Two words (12 letters) for a rapid pile-up of historical or corporate comparisons used to borrow authority (12)",
+     "clue": "Two words for a rapid pile-up of historical or corporate comparisons used to borrow authority",
      "answer": "ANALOGYSTACK",
      "note": {
       "what": "The move is to line up famous examples so their weight transfers to the writer’s claim, usually in short parallel sentences: Apple didn’t build this, Facebook didn’t build that, Kodak missed the other. No mechanism is described, and the comparisons are chosen for fame rather than fit. Human experts making the same point tend to give one comparison and then explain where it breaks down.",
@@ -998,7 +998,7 @@ window.PUZZLES = [
      }
     },
     "16": {
-     "clue": "Openness about one’s own weakness, staged rather than felt, as a way of sounding human (13)",
+     "clue": "Openness about one’s own weakness, staged rather than felt, as a way of sounding human",
      "answer": "VULNERABILITY",
      "note": {
       "what": "A confession is a cheap way to buy trust, and models learned that the shape of a confession earns approval whether or not there is anything to confess. What comes out is admission-flavoured: an opinion presented as an embarrassing secret, or a flaw so flattering it functions as a boast. Genuine self-disclosure carries a fact you could check — a date, an amount lost, a person who was annoyed. Announced frankness is the same move in one clause — “let me be honest”, “the truth is simple”, “I'll be candid” — all of which spend words claiming a quality instead of demonstrating one.",
@@ -1010,7 +1010,7 @@ window.PUZZLES = [
      }
     },
     "17": {
-     "clue": "Four words (17 letters) deployed before explaining a two-line fix with five bullet points and a mini-lecture (17)",
+     "clue": "Four words deployed before explaining a two-line fix with five bullet points and a mini-lecture",
      "answer": "LETSBREAKTHISDOWN",
      "note": {
       "what": "Pedagogical hand-holding, applied regardless of who is reading. It treats every reader as a beginner because the model has no idea who you are, and the safest register is the patient teacher. The swimming and unpacking variants are the same gesture: “let's dive in”, “let's unpack this”, “let's explore”.",
@@ -1022,7 +1022,7 @@ window.PUZZLES = [
      }
     },
     "19": {
-     "clue": "Two words (14 letters) for the scripted crowd-work of social media: “unpopular opinion:”, “tag someone who needs to see this” (14)",
+     "clue": "Two words for the scripted crowd-work of social media: “unpopular opinion:”, “tag someone who needs to see this”",
      "answer": "ENGAGEMENTBAIT",
      "note": {
       "what": "These are instructions to the audience disguised as sincerity, and they exist because platforms reward replies and reshares. Machines reproduce them because the training material is full of posts that succeeded, and this is what succeeding looked like. The oddest variant is “not sure who needs to hear this, but …”, which claims humility while addressing everyone alive.",
@@ -1034,7 +1034,7 @@ window.PUZZLES = [
      }
     },
     "20": {
-     "clue": "Old word for flattery and fawning. The technical term researchers now use for 'Great question!' (10)",
+     "clue": "Old word for flattery and fawning. The technical term researchers now use for 'Great question!'",
      "answer": "SYCOPHANCY",
      "note": {
       "what": "The umbrella term for the whole eager-assistant register: 'Great question!', 'That's a really insightful observation', 'I'd be happy to help!', 'I'm here to help!', 'What a thoughtful thing to notice'. It reads like a call-centre script because it was optimised the same way — for approval rather than accuracy.",
@@ -1046,7 +1046,7 @@ window.PUZZLES = [
      }
     },
     "21": {
-     "clue": "Two words (15 letters) for the trick of coining an official-sounding label — “the supervision paradox”, “workload creep” — for something never actually defined (15)",
+     "clue": "Two words for the trick of coining an official-sounding label — “the supervision paradox”, “workload creep” — for something never actually defined",
      "answer": "INVENTEDCONCEPT",
      "note": {
       "what": "A named thing feels like a discovered thing. Models produce these labels because the pattern is everywhere in business writing, and the label is far cheaper than the research it implies. The tell is that the coinage is used once, capitalised or not, and never given criteria, a measurement or a counter-example — real concepts come with all three eventually.",
@@ -1058,7 +1058,7 @@ window.PUZZLES = [
      }
     },
     "22": {
-     "clue": "Pig-trough word, now the internet's name for cheap machine-made content produced in bulk (4)",
+     "clue": "Pig-trough word, now the internet's name for cheap machine-made content produced in bulk",
      "answer": "SLOP",
      "note": {
       "what": "Worth knowing because it names the real problem accurately. The complaint is not that a machine was involved — it is that nobody read the result afterwards. A carefully edited AI draft is not slop. An unread one posted at volume is.",

@@ -184,19 +184,12 @@
 
     article.appendChild(play);
 
-    var notesHead = el('h3', 'section-head');
-    notesHead.appendChild(el('span', null, 'Notes'));
-    article.appendChild(notesHead);
-    var notesMount = el('div', 'notes-mount');
-    article.appendChild(notesMount);
-
     article.appendChild(el('div', 'dinkus', position < total - 1 ? '❖' : ''));
 
     return {
       article: article,
       gridMount: gridMount,
       cluesMount: cluesMount,
-      notesMount: notesMount,
       toolbarMount: toolbarMount,
     };
   }
@@ -289,7 +282,6 @@
         root: parts.article,
         gridMount: parts.gridMount,
         cluesMount: parts.cluesMount,
-        notesMount: parts.notesMount,
         toolbarMount: parts.toolbarMount,
         onActive: function (instance) {
           active = instance;

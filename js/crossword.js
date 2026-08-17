@@ -456,8 +456,13 @@
    * wrapper scrolls sideways instead of shrinking the squares to nothing. */
   Crossword.prototype.fitCell = function () {
     var wrap = this.gridNode.parentNode;
-    var available = wrap.clientWidth - 6;
-    if (available <= 0) return;
+    var pad = global.getComputedStyle(wrap);
+    var frame = global.getComputedStyle(this.gridNode);
+    var available = wrap.clientWidth
+      - parseFloat(pad.paddingLeft) - parseFloat(pad.paddingRight)
+      - parseFloat(frame.borderLeftWidth) - parseFloat(frame.borderRightWidth)
+      - parseFloat(frame.paddingLeft) - parseFloat(frame.paddingRight);
+    if (!(available > 0)) return;
     var size = Math.floor(available / this.layout.width);
     size = Math.max(17, Math.min(30, size));
     this.gridNode.style.setProperty('--cell', size + 'px');

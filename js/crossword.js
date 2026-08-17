@@ -32,7 +32,6 @@
     this.gridMount = options.gridMount;
     this.cluesMount = options.cluesMount;
     this.toolbarMount = options.toolbarMount;
-    this.notesMount = options.notesMount || null;
     this.onActive = options.onActive || function () {};
     this.onClueChange = options.onClueChange || function () {};
 
@@ -57,11 +56,10 @@
     this.restore();
     this.renderGrid();
     this.renderClues();
-    this.renderNotes();
     this.renderToolbar();
     this.paint();
     Object.keys(this.read).forEach(function (id) {
-      self.showNote(id, {});
+      self.showNote(id, { open: true });
     });
     this.syncNotes();
 
@@ -202,17 +200,21 @@
 
           var actions = el('span', 'clue__actions');
           var note = self.clueData(entry).note;
+          var panel = null;
 
           if (note && note.what) {
             var why = el('button', 'clue__btn', 'Why?');
             why.type = 'button';
+            why.setAttribute('aria-expanded', 'false');
             why.setAttribute('aria-label',
-              'Why? Read the note on ' + entry.number + ' ' + entry.direction);
-            why.setAttribute('aria-controls', self.noteId(entry));
+              'Why? The note on ' + entry.number + ' ' + entry.direction);
+            panel = self.buildNote(entry, note);
+            why.setAttribute('aria-controls', panel.id);
             why.addEventListener('click', function () {
-              self.showNote(entry.id, { scroll: true });
+              self.showNote(entry.id, { open: panel.hidden });
             });
             actions.appendChild(why);
+            self.noteNodes[entry.id] = { panel: panel, button: why };
           }
 
           var reveal = el('button', 'clue__btn', 'Reveal');
@@ -225,6 +227,7 @@
           actions.appendChild(reveal);
 
           body.appendChild(actions);
+          if (panel) body.appendChild(panel);
 
           item.appendChild(body);
           list.appendChild(item);
@@ -353,35 +356,13 @@
     return 'note-' + this.puzzle.id + '-' + entry.id;
   };
 
-  Crossword.prototype.entryRef = function (entry) {
-    return entry.number + ' ' + (entry.direction === 'across' ? 'Across' : 'Down');
-  };
-
   /* The note on a clue: what the habit is, how it sounds, what a person would
-   * have written, and the research where it exists. Notes live in their own
-   * section at the foot of the article, labelled by clue reference — never by
-   * the answer, so reading one early does not give the answer away. */
+   * have written, and the research where it exists. It opens directly under the
+   * clue that references it. */
   Crossword.prototype.buildNote = function (entry, note) {
-    var self = this;
-    var panel = el('li', 'note');
+    var panel = el('div', 'note');
     panel.id = this.noteId(entry);
     panel.hidden = true;
-    panel.tabIndex = -1;
-
-    var ref = el('p', 'note__ref');
-    var back = el('a', null, this.entryRef(entry));
-    back.href = '#' + this.clueId(entry);
-    back.title = 'Back to the clue';
-    back.addEventListener('click', function (event) {
-      event.preventDefault();
-      var row = document.getElementById(self.clueId(entry));
-      if (row) {
-        row.scrollIntoView({ block: 'center', behavior: self.scrollBehaviour() });
-        self.select(entry.cells[0], entry.direction, { focus: false });
-      }
-    });
-    ref.appendChild(back);
-    panel.appendChild(ref);
 
     var body = el('div', 'note__body');
     panel.appendChild(body);
@@ -418,56 +399,23 @@
     return panel;
   };
 
-  /* Every note is built up front and revealed as it is earned, so the section
-   * keeps clue order rather than the order you happened to read them in. */
-  Crossword.prototype.renderNotes = function () {
-    var self = this;
-    if (!this.notesMount) return;
-
-    this.emptyNote = el('p', 'notes__empty',
-      'Nothing yet. Solve a clue, or press Why? beside one, and its note appears here.');
-    this.notesMount.appendChild(this.emptyNote);
-
-    var list = el('ol', 'notes__list');
-    this.layout.entries
-      .slice()
-      .sort(function (a, b) {
-        if (a.direction !== b.direction) return a.direction === 'across' ? -1 : 1;
-        return a.number - b.number;
-      })
-      .forEach(function (entry) {
-        var note = self.clueData(entry).note;
-        if (!note || !note.what) return;
-        var panel = self.buildNote(entry, note);
-        list.appendChild(panel);
-        self.noteNodes[entry.id] = { panel: panel };
-      });
-    this.notesMount.appendChild(list);
-  };
-
-  Crossword.prototype.scrollBehaviour = function () {
-    return global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches
-      ? 'auto' : 'smooth';
-  };
-
-  /* Notes accumulate rather than toggling: once a note has been earned it stays,
-   * so each puzzle builds into one continuous piece you can read or print. */
+  /* Opening and closing happen where the clue is — nothing moves but the clue
+   * list growing under the row you pressed. */
   Crossword.prototype.showNote = function (id, options) {
     var opts = options || {};
     var pair = this.noteNodes[id];
     if (!pair) return;
+    var open = opts.open !== false;
 
-    if (!this.read[id]) {
+    if (open && !this.read[id]) {
       this.read[id] = true;
       this.renderProgress();
       this.save();
     }
-    pair.panel.hidden = false;
-    if (this.emptyNote) this.emptyNote.hidden = true;
-
-    if (opts.scroll) {
-      pair.panel.scrollIntoView({ block: 'center', behavior: this.scrollBehaviour() });
-      pair.panel.focus({ preventScroll: true });
+    pair.panel.hidden = !open;
+    if (pair.button) {
+      pair.button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      pair.button.textContent = open ? 'Close' : 'Why?';
     }
   };
 
@@ -480,7 +428,7 @@
       var done = entry.cells.every(function (index) {
         return self.fill[index] === self.layout.cells[index].solution;
       });
-      if (done) self.showNote(entry.id, {});
+      if (done) self.showNote(entry.id, { open: true });
     });
   };
 

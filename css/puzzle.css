@@ -9,9 +9,7 @@
 .grid-scroll {
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 10px;
-  border: var(--rule-thick);
-  border-radius: var(--radius);
+  padding-bottom: 4px;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -22,9 +20,13 @@
   grid-template-columns: repeat(var(--cols), var(--cell));
   width: max-content;
   margin: 0 auto;
-  padding: 1px;
+  /* The field carries the rounded corners itself, with no frame around it. The
+     padding keeps the outermost squares clear of the corner arc, so a square in
+     a corner is never clipped — puzzles 1 and 3 both have one. Raise the radius
+     and this has to rise with it. */
+  padding: 5px;
+  border-radius: var(--radius);
   background: var(--block);
-  border: var(--rule-thick);
   --cell: 28px;
 }
 
@@ -365,60 +367,24 @@
 .clue.is-crossing { background: rgba(237, 224, 180, 0.55); }
 .clue.is-active { background: var(--wash); box-shadow: inset 2px 0 0 var(--red); }
 
-/* ---------------------------------------------------------------- the notes */
+/* ------------------------------------------------------------------ the note */
 
-.notes__empty {
-  margin: 0;
-  font-size: 12.5px;
-  color: var(--ink-soft);
-}
-
-.notes__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Reference in a narrow left column, the note itself in a readable measure —
-   the way a printed page sets its footnotes. */
+/* It opens under the clue that references it, inside the clue column. */
 .note {
-  display: grid;
-  grid-template-columns: minmax(0, 6.5em) minmax(0, 1fr);
-  gap: 4px 18px;
-  padding: 13px 0;
-  border-top: 1px solid var(--ink-soft);
-  font-size: 12px;
-  line-height: 1.65;
+  margin: 8px 0 10px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--red);
+  border-radius: 0 8px 8px 0;
+  background: var(--paper-deep);
+  font-size: 11.5px;
+  line-height: 1.6;
 }
 
-/* An author `display` beats the UA rule behind the hidden attribute, so say it. */
+/* An author `display` beats the UA rule behind the hidden attribute. */
 .note[hidden] { display: none; }
 
-.note:first-child { border-top: 0; padding-top: 2px; }
-
-.note:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
-
-.note__ref {
-  margin: 0;
-  font-family: var(--font-cond);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.note__ref a {
-  color: var(--red-deep);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-
-.note__ref a:hover { border-bottom-color: var(--red-deep); }
-
-.note__body { min-width: 0; max-width: 68ch; }
-
 .note p { margin: 0 0 7px; }
-.note__body p:last-child { margin-bottom: 0; }
+.note p:last-child { margin-bottom: 0; }
 
 .note__pair {
   display: grid;

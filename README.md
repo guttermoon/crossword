@@ -36,12 +36,11 @@ Filling a grid correctly stamps it SOLVED. Every clue also has its own
 A **Pick a puzzle** strip links down to each grid and marks whichever one you
 are looking at.
 
-**Notes** live in their own section below each puzzle, labelled by clue
-reference and linked back to the clue. One opens by itself the moment its entry
-is filled in correctly, so solving teaches as you go, and **Why?** opens one
-early — without giving the answer away — and scrolls you to it. Notes
-accumulate rather than toggling, so each puzzle builds into one continuous piece
-you can read or print. Printing prints every note, opened or not.
+**Notes** open directly under the clue that references them. One opens by
+itself the moment its entry is filled in correctly, so solving teaches as you
+go, and **Why?** opens one early without giving the answer away. Nothing else on
+the page moves — the clue stays put and the list simply grows under it.
+Printing prints every note, opened or not.
 
 Progress and elapsed time are saved to `localStorage` per puzzle, so a reload
 picks up where you left off; **Start Over** clears that puzzle alone. Everything
@@ -69,7 +68,7 @@ Two data files, and nothing else needs touching.
   clues: {
     across: {
       6: {
-        clue: "A glass display cabinet in a museum, drafted in as a verb… (8)",
+        clue: "A glass display cabinet in a museum, drafted in as a verb…",
         answer: 'SHOWCASE',             // checked against the grid on load
         note: {
           what:   'Why machines do this and why it reads as machine-written.',

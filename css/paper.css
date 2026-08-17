@@ -571,6 +571,6 @@ body {
   .puzzle { break-after: page; }
   .puzzle:last-of-type { break-after: auto; }
   /* Footnotes are the point of the page, so print them all. */
-  .note { display: grid !important; }
+  .note { display: block !important; }
   .note, .clue { break-inside: avoid; }
 }

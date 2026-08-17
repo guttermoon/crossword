@@ -179,7 +179,8 @@ body {
 /* Set in the grotesque and centred, so every line falls where the words end
    rather than being stretched out to a common width. */
 .masthead__sub {
-  max-width: 56ch;
+  /* The sheet's own width is the measure; it is four lines under a title that
+     runs the full width, not a narrow column set inside one. */
   margin: 18px auto 0;
   font-family: var(--font-cond);
   font-weight: 700;

@@ -46,7 +46,14 @@ window.PUZZLES = [
    ".....H.L..T.....T.....E",
    ".......I........L.....A",
    ".......S........EMPOWER",
-   "...HARNESS......D.....T"
+   "...HARNESS......D.....T",
+   "........E..............",
+   "........R..............",
+   "........V..............",
+   "........E..............",
+   "........S..............",
+   "........A..............",
+   "........S.............."
   ],
   "clues": {
    "across": {
@@ -411,6 +418,18 @@ window.PUZZLES = [
       "source": null,
       "url": null
      }
+    },
+    "31": {
+     "clue": "Two words (8 letters) standing in for plain 'is', so that a building no longer is a reminder of anything but performs the reminding as a duty (8)",
+     "answer": "SERVESAS",
+     "note": {
+      "what": "The copula gets promoted. 'Is' states a fact and stops; this phrasing dresses the same fact in a job title, and its cousins do the same work — 'stands as', 'represents', 'marks', 'acts as', 'functions as'. Machines reach for it because it sounds considered while committing to nothing, and because encyclopaedia and press-release prose, which the models read a great deal of, is full of it. Unlike 'boasts' or 'showcase' it is not a rare word, so it slips past readers who are only watching for exotic vocabulary.",
+      "sounds": "“The new wing serves as a reminder of the school’s commitment to the arts.”",
+      "human": "“The new wing is named after Mrs Ellery, who taught art here for thirty-one years.”",
+      "data": "The test is substitution rather than deletion: put 'is' back and read it again. 'The building is a reminder' loses nothing, which means the longer phrase was carrying no meaning, only ceremony. Where 'serves as' is doing real work — a room that genuinely doubles as something else — the swap fails and you will hear it fail.",
+      "source": null,
+      "url": null
+     }
     }
    }
   }
@@ -454,11 +473,17 @@ window.PUZZLES = [
    "I.C.C.N..N.E..B.A.U....K.S.O.P",
    "C.H.C....C.C..S.L.N......T.P.H",
    "K.M.A....L.O..E...IMPERATIVE.O",
-   "I.E.T....U.O..R...F......N.N.R",
-   "N.N.O....S.K..VICTORIAN..E.E.A",
+   "I.E.T..W.U.O..R...F......N.N.R",
+   "N.N.O..O.S.K..VICTORIAN..E.E.A",
    "S.T..PARTICIPLE...R......S.R..",
-   "O........O.E..R...M......S....",
-   "N........N...................."
+   "O......T.O.E..R...M......S....",
+   "N......H.N....................",
+   ".......N......................",
+   ".......O......................",
+   ".......T......................",
+   ".......I......................",
+   ".......N......................",
+   ".......G......................"
   ],
   "clues": {
    "across": {
@@ -666,7 +691,7 @@ window.PUZZLES = [
       "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
      }
     },
-    "42": {
+    "43": {
      "clue": "Adjective for the nineteenth-century era whose printed books, hoovered up as training data, may be the real reason for the dash habit (9)",
      "answer": "VICTORIAN",
      "note": {
@@ -678,7 +703,7 @@ window.PUZZLES = [
       "url": "https://www.seangoedecke.com/em-dashes/"
      }
     },
-    "43": {
+    "44": {
      "clue": "Grammatical name for an -ing verb form. Machines trail whole clauses of them off the end of sentences to imply importance: “highlighting its significance” (10)",
      "answer": "PARTICIPLE",
      "note": {
@@ -1000,6 +1025,18 @@ window.PUZZLES = [
       "sounds": "A complaints reply, a redundancy notice and a Christmas message from the same account, all pitched at exactly the same warm neutral.",
       "human": "“Look, I'll be honest, this has been a shambles and the invoice is still wrong.”",
       "data": "Read the middle of a long document rather than the beginning. Machine prose is at its most uniform where a human writer would have got tired, irritated or interested — and that is easier to feel than to measure.",
+      "source": null,
+      "url": null
+     }
+    },
+    "42": {
+     "clue": "Three words (11 letters), the transition that spends a clause announcing that a fact deserves your attention rather than spending it on the fact (11)",
+     "answer": "WORTHNOTING",
+     "note": {
+      "what": "Connective tissue with nothing on either side of it. A writer who has found something genuinely surprising states it; the surprise does the work. This phrasing instead instructs you to be interested, which is why it clusters so thickly around unremarkable material — 'it bears mentioning', 'notably', 'interestingly', 'crucially', 'it is important to note'. The adverb form of the same move is elsewhere in this series, under the eleven-letter one usually preceded by 'more'. Machines produce these because they cost almost nothing and make a heap of facts feel like an argument that is going somewhere.",
+      "sounds": "“It’s worth noting that the deadline has moved to the 14th.”",
+      "human": "“The deadline has moved to the 14th.”",
+      "data": "This is the cleanest deletion test in the puzzle, because the phrase is detachable by design. Cross out the whole clause up to 'that' and read what is left. If the sentence has lost a fact, the phrase was carrying one; it almost never has. Try it on a paragraph rather than a sentence — the tell is not one instance but three of them pointing at things nobody would otherwise have queried.",
       "source": null,
       "url": null
      }
@@ -1575,7 +1612,7 @@ window.PUZZLES = [
      "clue": "Symbol pointing rightwards, used as punctuation to mean “leads to” in documents that contain no diagrams (5)",
      "answer": "ARROW",
      "note": {
-      "what": "Unicode decoration is a formatting habit rather than a writing one, which is exactly why it is useful to a non-expert. Chatbots produce these characters because technical documentation is full of them, and they leak into contexts where nothing is being diagrammed. In genuine engineering notes they map a real sequence; in a school newsletter they are a costume.",
+      "what": "Unicode decoration is a formatting habit rather than a writing one, which is exactly why it is useful to a non-expert. Chatbots produce these characters because technical documentation is full of them, and they leak into contexts where nothing is being diagrammed. In genuine engineering notes they map a real sequence; in a school newsletter they are a costume. The same goes for the other characters that are awkward to type: curly quotation marks and apostrophes where a keyboard would have produced straight ones, and the multiplication sign standing in for the letter x.",
       "sounds": "“Sign up → attend the briefing → collect your pack” in a leaflet about a village fun run.",
       "human": "“Sign up by Friday. Come to the briefing on the 2nd. Packs are handed out on the day.”",
       "data": "Try typing one of these characters on your phone. The difficulty is the point — a person writing quickly would have used the word “then”, so an arrow means either a technical author or a machine.",

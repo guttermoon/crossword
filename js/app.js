@@ -94,6 +94,21 @@
     return nav;
   }
 
+  /* Once the strip scrolls off the top it pins itself, shrunk to a row of
+   * chips, so the three puzzles stay reachable from anywhere on the page. */
+  function stickWhenPassed(nav) {
+    if (!global.IntersectionObserver) return;
+    var sentinel = el('div', 'picker__sentinel');
+    nav.parentNode.insertBefore(sentinel, nav);
+    new global.IntersectionObserver(function (entries) {
+      var entry = entries[0];
+      // Out of view above means scrolled past; out of view below just means we
+      // have not reached it yet, which is not the same thing.
+      nav.classList.toggle('is-stuck',
+        !entry.isIntersecting && entry.boundingClientRect.top < 0);
+    }, { threshold: 0 }).observe(sentinel);
+  }
+
   function trackCurrent(nav) {
     var cards = {};
     nav.querySelectorAll('.picker__card').forEach(function (card) {
@@ -297,7 +312,10 @@
       sheet.insertBefore(buildSources(gazette), colophon);
     }
 
-    if (picker) trackCurrent(picker);
+    if (picker) {
+      trackCurrent(picker);
+      stickWhenPassed(picker);
+    }
   }
 
   if (document.readyState === 'loading') {

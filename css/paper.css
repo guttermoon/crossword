@@ -12,6 +12,10 @@
   --wash: #ede0b4;
   --wash-strong: #f0c64b;
   --block: #16130f;
+  /* Faded newsprint, for the panels that would otherwise be white on white. */
+  --newsprint: #e2e0d8;
+  --newsprint-light: #eeece5;
+  --newsprint-dark: #4b4945;
   --grid-line: #1b1714d9;
   --desk: #fffffd;
 
@@ -26,6 +30,10 @@
   --rule-double: 7px double var(--ink);
   --radius: 10px;
   --sheet-pad: clamp(18px, 3.5vw, 54px);
+
+  /* A 64px greyscale noise tile, scaled up and rendered with hard edges so the
+     grain reads as pixels from an old scan rather than a smooth gradient. */
+  --scan: url("data:image/png;base64,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");
 }
 
 * { box-sizing: border-box; }
@@ -54,6 +62,32 @@ body {
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* --------------------------------------------------------------- scan panels */
+
+.puzzle__head,
+.tells,
+.note,
+.picker__card {
+  position: relative;
+  background-color: var(--newsprint);
+}
+
+.puzzle__head::after,
+.tells::after,
+.note::after,
+.picker__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image: var(--scan);
+  background-size: 168px 168px;
+  image-rendering: pixelated;
+  mix-blend-mode: multiply;
+  opacity: 0.34;
 }
 
 /* ------------------------------------------------------------------- the page */
@@ -176,7 +210,6 @@ body {
 
 .tells {
   padding: 16px 18px;
-  background: var(--paper-deep);
   border: var(--rule-thick);
   border-radius: var(--radius);
 }
@@ -241,9 +274,46 @@ body {
 
 /* ------------------------------------------------------------------- picker */
 
+.picker__sentinel { height: 1px; }
+
 .picker {
+  position: sticky;
+  top: 0;
+  z-index: 30;
   margin: 0 0 34px;
+  padding: 2px 0 6px;
+  background: var(--paper);
 }
+
+/* Pinned once the strip has scrolled past: label gone, cards shrunk to chips,
+   so it costs a single line and the three puzzles stay reachable. */
+.picker.is-stuck {
+  margin-left: calc(var(--sheet-pad) * -1);
+  margin-right: calc(var(--sheet-pad) * -1);
+  padding: 7px var(--sheet-pad) 8px;
+  border-bottom: var(--rule-thick);
+}
+
+.picker.is-stuck .picker__label { display: none; }
+
+.picker.is-stuck .picker__row { gap: 8px; }
+
+.picker.is-stuck .picker__card {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 5px 11px;
+  border-width: 1px;
+}
+
+.picker.is-stuck .picker__issue { font-size: 9px; }
+
+.picker.is-stuck .picker__title {
+  margin: 0;
+  font-size: 13px;
+}
+
+.picker.is-stuck .picker__count { display: none; }
 
 .picker__label {
   margin: 0 0 10px;
@@ -264,15 +334,14 @@ body {
 .picker__card {
   display: block;
   padding: 14px 16px 12px;
-  background: var(--paper);
   border: var(--rule-thick);
   border-radius: var(--radius);
   color: var(--ink);
   text-decoration: none;
-  transition: background 0.12s;
+  transition: background-color 0.12s;
 }
 
-.picker__card:hover { background: var(--wash); }
+.picker__card:hover { background-color: var(--newsprint-light); }
 
 .picker__card:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 
@@ -303,18 +372,23 @@ body {
 }
 
 /* Marks where you are on a page that holds all three. */
-.picker__card.is-current {
-  background: var(--ink);
+.picker__card.is-current,
+.picker__card.is-current:hover {
+  background-color: var(--newsprint-dark);
   border-color: var(--ink);
   color: var(--paper);
 }
 
-.picker__card.is-current:hover { background: var(--ink); }
+/* Multiplied grain is invisible on a dark card, so it lifts instead. */
+.picker__card.is-current::after {
+  mix-blend-mode: screen;
+  opacity: 0.12;
+}
 
 .picker__card.is-current .picker__count { color: #b6ad9b; }
 
 /* The anchor should land above the article, not flush against the viewport. */
-.puzzle { scroll-margin-top: 18px; }
+.puzzle { scroll-margin-top: 70px; }
 
 /* ---------------------------------------------------------------- puzzle head */
 
@@ -446,7 +520,7 @@ body {
   align-items: stretch;
   min-width: 0;
   position: sticky;
-  top: 14px;
+  top: 66px;
 }
 
 .credit {
@@ -475,22 +549,6 @@ body {
   letter-spacing: 0.06em;
   color: var(--red);
   text-align: center;
-}
-
-.notebox {
-  border: var(--rule-thick);
-  border-radius: var(--radius);
-  padding: 13px 17px;
-  margin-bottom: 18px;
-  background: linear-gradient(var(--paper), var(--paper-deep));
-}
-
-.notebox p {
-  margin: 0;
-  font-family: var(--font-cond);
-  font-weight: 700;
-  font-size: 13.5px;
-  line-height: 1.5;
 }
 
 /* -------------------------------------------------------------------- dividers */
@@ -567,7 +625,9 @@ body {
   body { background: #fff; padding: 0; }
   .sheet { box-shadow: none; max-width: none; padding: 0; }
   .sheet::before, .sheet::after { display: none; }
-  .toolbar, .cluebar, .clue__actions, .skip, .picker, .progress { display: none !important; }
+  .puzzle__head::after, .tells::after, .note::after, .picker__card::after { display: none; }
+  .puzzle__head, .tells, .note, .picker__card { background-color: #fff; }
+  .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel, .progress { display: none !important; }
   .puzzle { break-after: page; }
   .puzzle:last-of-type { break-after: auto; }
   /* Footnotes are the point of the page, so print them all. */

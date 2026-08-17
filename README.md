@@ -120,6 +120,18 @@ body is set in a typewriter face and the instruction blocks and labels in a
 grotesque, after the way the printed page set Helvetica Bold against typewriter
 copy. Boxes are rounded and ruled; there are no drop shadows anywhere.
 
+Panels — the puzzle heads, the intro card, the notes and the picker cards — sit
+on `--newsprint` under a scan texture: a 64px greyscale noise tile inlined as a
+data URI in `--scan`, scaled up and drawn with `image-rendering: pixelated` so
+the grain reads as pixels from an old scan rather than a smooth gradient. It is
+laid over the panel's contents by a shared `::after`, which is what makes it
+read as a scan; printing drops it and returns the panels to white.
+
+The **Pick a puzzle** strip pins itself to the top once scrolled past, shrunk to
+a row of chips. A 1px sentinel above it drives the state, and it checks the
+sentinel is above the viewport rather than merely out of it — otherwise the
+strip would pin itself before you had even reached it.
+
 Each article runs its title, blurb and hero words full width, then sets the
 clues beside the grid — and the grid changes sides puzzle to puzzle, the way a
 magazine alternates a spread. `Crossword.claimWidth` gives the grid column only

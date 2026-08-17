@@ -1,0 +1,469 @@
+/* Page furniture: paper, masthead, article layout, story column, note box,
+ * intro panels, sources. Everything grid-related lives in puzzle.css.
+ */
+
+:root {
+  --paper: #f0eade;
+  --paper-deep: #e6dfcd;
+  --ink: #1b1714;
+  --ink-soft: #4a4239;
+  --red: #c33a2b;
+  --red-deep: #9d2c20;
+  --wash: #ede0b4;
+  --wash-strong: #f0c64b;
+  --block: #16130f;
+  --grid-line: #1b1714d9;
+  --desk: #3b352b;
+
+  --font-display: 'Shrikhand', 'Bookman Old Style', Georgia, serif;
+  --font-cond: 'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --font-body: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+
+  --rule: 1px solid var(--ink);
+  --sheet-pad: clamp(18px, 3.5vw, 54px);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: clamp(0px, 3vw, 40px) clamp(0px, 3vw, 40px) 0;
+  background: var(--desk);
+  background-image: radial-gradient(circle at 50% 0%, #4a4234 0%, #2c281f 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ------------------------------------------------------------------- the page */
+
+.sheet {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--sheet-pad) var(--sheet-pad) calc(var(--sheet-pad) * 0.6);
+  background: var(--paper);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+/* Paper grain and the slight darkening toward the gutter. */
+.sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.sheet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(90, 74, 46, 0.16) 0%, rgba(90, 74, 46, 0) 5%),
+    linear-gradient(-90deg, rgba(90, 74, 46, 0.12) 0%, rgba(90, 74, 46, 0) 4%);
+}
+
+.sheet > * { position: relative; z-index: 3; }
+
+/* --------------------------------------------------------------------- masthead */
+
+.masthead {
+  border-bottom: 3px double var(--ink);
+  padding-bottom: 14px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.masthead__brand {
+  margin: 0 0 10px;
+  font-family: var(--font-cond);
+  font-size: clamp(13px, 2vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.masthead__kicker {
+  margin: 0 0 6px;
+  font-family: var(--font-cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.masthead__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(38px, 7vw, 68px);
+  line-height: 0.95;
+  color: var(--red);
+  text-shadow: 2px 2px 0 var(--paper), 4px 4px 0 var(--ink);
+}
+
+.masthead__sub {
+  max-width: 62ch;
+  margin: 16px auto 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  text-align: left;
+}
+
+.masthead__sub em { color: var(--ink); }
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: 12px;
+  top: 12px;
+  z-index: 40;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 8px 14px;
+}
+
+/* ------------------------------------------------------- the two intro panels */
+
+.brief {
+  display: grid;
+  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  gap: clamp(20px, 3vw, 38px);
+  align-items: start;
+  padding-bottom: 26px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.brief__head,
+.tells__head {
+  margin: 0 0 10px;
+  font-family: var(--font-cond);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.brief__col p {
+  margin: 0 0 0.8em;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.brief__col strong { color: var(--ink); }
+
+.tells {
+  padding: 16px 18px;
+  background: var(--paper-deep);
+  border: var(--rule);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.tells__list {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.tells__list li { margin-bottom: 0.7em; }
+.tells__list li::marker { color: var(--red); font-weight: 700; }
+.tells__list .tell-name { font-weight: 700; color: var(--ink); }
+
+.tells__list .tell-ref {
+  display: inline-block;
+  margin-left: 4px;
+  font-family: var(--font-cond);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red-deep);
+}
+
+.tells__note {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed var(--ink-soft);
+  font-style: italic;
+  font-size: 13px;
+}
+
+.tells__aside {
+  margin: 8px 0 0;
+  font-size: 11.5px;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ----------------------------------------------------------------- the sources */
+
+.sources { margin-top: 34px; }
+
+.sources__list {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.sources__list li { margin-bottom: 0.5em; }
+.sources__list a { color: var(--red-deep); }
+
+.sources__colophon {
+  margin: 14px 0 24px;
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------------------- puzzle head */
+
+.puzzle__issue {
+  margin: 0 0 2px;
+  font-family: var(--font-cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* The blurb plays the part the mini-mystery column played: a narrow, justified
+   text block set beside the grid, opening on a drop cap. */
+.puzzle__blurb {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.puzzle__blurb::first-letter {
+  font-family: var(--font-display);
+  font-size: 2.6em;
+  line-height: 0.8;
+  float: left;
+  margin: 0.06em 0.09em 0 0;
+  color: var(--red);
+}
+
+/* A sidebar under the blurb, filling the column beside a tall grid. */
+.heroes {
+  margin: 16px 0 0;
+  padding-top: 10px;
+  border-top: var(--rule);
+}
+
+.heroes__label {
+  margin: 0 0 7px;
+  font-family: var(--font-cond);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.heroes__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0;
+}
+
+.heroes__chip {
+  padding: 1px 7px;
+  border: 1px solid var(--ink-soft);
+  border-radius: 2px;
+  font-family: var(--font-cond);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+/* ---------------------------------------------------------------------- article */
+
+.puzzle { margin: 0 0 8px; }
+
+/* Text column beside the grid, as on the printed page. */
+.puzzle__body {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 32px);
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.puzzle__head { min-width: 0; }
+
+.puzzle__title {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1;
+  color: var(--red);
+  text-shadow: 1px 1px 0 var(--paper), 3px 3px 0 var(--ink);
+}
+
+.puzzle__title-line { display: inline-block; }
+
+.puzzle__gridwrap {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.credit {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  justify-self: start;
+  align-self: end;
+  font-family: var(--font-cond);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------- section heading */
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 26px 0 14px;
+  font-family: var(--font-cond);
+  font-size: clamp(15px, 2.2vw, 19px);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--red);
+  text-transform: none;
+}
+
+.section-head::before,
+.section-head::after {
+  content: "";
+  flex: 1;
+  height: 0;
+  border-top: 1px solid var(--red);
+}
+
+.notebox {
+  border: var(--rule);
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  background: linear-gradient(var(--paper), var(--paper-deep));
+}
+
+.notebox p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------------------------- dividers */
+
+.dinkus {
+  margin: 34px 0;
+  text-align: center;
+  color: var(--red);
+  font-size: 13px;
+  letter-spacing: 0.4em;
+}
+
+.dinkus:empty { margin: 18px 0 0; }
+
+.dinkus:not(:empty)::before,
+.dinkus:not(:empty)::after {
+  content: "";
+  display: inline-block;
+  width: 22%;
+  vertical-align: middle;
+  border-top: 1px solid var(--ink);
+  margin: 0 12px;
+}
+
+.colophon {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 3px double var(--ink);
+  padding-top: 8px;
+  font-family: var(--font-cond);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.errorbox {
+  border: 2px solid var(--red);
+  background: #fbeeea;
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.errorbox ul { margin: 6px 0 0; padding-left: 20px; }
+
+/* ------------------------------------------------------------------ responsive */
+
+@media (max-width: 860px) {
+  .brief { grid-template-columns: minmax(0, 1fr); }
+  .puzzle__body { grid-template-columns: minmax(0, 1fr); }
+  .credit {
+    writing-mode: horizontal-tb;
+    transform: none;
+    justify-self: start;
+  }
+  .puzzle__gridwrap { grid-template-columns: minmax(0, 1fr); }
+  body { padding-bottom: 74px; }
+}
+
+@media (max-width: 520px) {
+  .sheet { box-shadow: none; }
+}
+
+/* ----------------------------------------------------------------------- print */
+
+@media print {
+  body { background: #fff; padding: 0; }
+  .sheet { box-shadow: none; max-width: none; padding: 0; }
+  .sheet::before, .sheet::after { display: none; }
+  .toolbar, .cluebar, .clue__why, .skip { display: none !important; }
+  .puzzle { break-after: page; }
+  .puzzle:last-of-type { break-after: auto; }
+  /* Footnotes are the point of the page, so print them all. */
+  .note { display: block !important; }
+  .note, .clue { break-inside: avoid; }
+}

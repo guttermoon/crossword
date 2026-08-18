@@ -209,7 +209,14 @@
             self.select(entry.cells[0], entry.direction);
             if (panel) self.showNote(entry.id, { open: panel.hidden });
           };
-          text.addEventListener('click', press);
+          // The whole row answers, not just the words: it is the row that
+          // lights up under the pointer, so the row is what you are aiming at —
+          // the number, the space after the text, all of it. Reveal has its own
+          // job, and a press inside an open note is someone reading it.
+          item.addEventListener('click', function (event) {
+            if (event.target.closest('.clue__btn') || event.target.closest('.note')) return;
+            press();
+          });
           text.addEventListener('keydown', function (event) {
             if (event.key !== 'Enter' && event.key !== ' ' && event.key !== 'Spacebar') return;
             event.preventDefault();

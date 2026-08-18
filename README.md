@@ -199,9 +199,13 @@ Each article runs its title, blurb and hero words full width, then sets the
 clues beside the grid — and the grid changes sides puzzle to puzzle, the way a
 magazine alternates a spread. `Crossword.claimWidth` gives the grid column only
 the width its squares need and hands the rest to the clues; `Crossword.fitCell`
-then measures that column and sets `--cell` to suit, capped at 30px and floored
-at 17px, below which the wrapper scrolls sideways. Empty squares are drawn
-black.
+then sets `--cell` to the smaller of what the column allows and what the window
+does, capped at 30px and floored at 17px, below which the wrapper scrolls
+sideways. The second constraint is the one that matters: these grids are 28 rows
+deep, which is 850px at the cap, so sized to the column alone the bottom third
+of every grid sat below the fold while the clues beside it scrolled past. At
+1440x780 the squares come out at 24px and the whole grid stands in view. Empty
+squares are drawn black.
 
 Entries are deliberately one-per-habit: a trope's sibling phrases live in that
 entry's footnote rather than becoming entries of their own. Adding or removing a

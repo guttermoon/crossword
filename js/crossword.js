@@ -517,18 +517,44 @@
   /* These grids run from 23 to 30 squares wide but sit in a column beside the
    * text, so the square size is measured rather than fixed. Below the floor the
    * wrapper scrolls sideways instead of shrinking the squares to nothing. */
+  /* Sizes the squares to the space there is, in both directions. The width of
+   * the column was the only constraint for a while, and these grids are 28 rows
+   * deep: at the 30px cap that is 850px of grid, so on any ordinary screen the
+   * bottom third hung below the fold while the clues beside it scrolled past
+   * it. The height of the window is now the other constraint, and the smaller
+   * of the two wins. */
   Crossword.prototype.fitCell = function () {
     var wrap = this.gridNode.parentNode;
     var pad = global.getComputedStyle(wrap);
     var frame = global.getComputedStyle(this.gridNode);
+
     var available = wrap.clientWidth
       - parseFloat(pad.paddingLeft) - parseFloat(pad.paddingRight)
       - parseFloat(frame.borderLeftWidth) - parseFloat(frame.borderRightWidth)
       - parseFloat(frame.paddingLeft) - parseFloat(frame.paddingRight);
     if (!(available > 0)) return;
-    var size = Math.floor(available / this.layout.width);
+    var byWidth = Math.floor(available / this.layout.width);
+
+    var size = byWidth;
+    var room = this.roomBelow()
+      - parseFloat(frame.borderTopWidth) - parseFloat(frame.borderBottomWidth)
+      - parseFloat(frame.paddingTop) - parseFloat(frame.paddingBottom)
+      - parseFloat(pad.paddingTop) - parseFloat(pad.paddingBottom);
+    if (room > 0) size = Math.min(size, Math.floor(room / this.layout.height));
+
     size = Math.max(17, Math.min(30, size));
     this.gridNode.style.setProperty('--cell', size + 'px');
+  };
+
+  /* How much of the window the grid has to itself: everything under whatever
+   * the grid is pinned below, less a little air at the bottom. */
+  Crossword.prototype.roomBelow = function () {
+    var wrapper = this.gridMount.closest('.puzzle__gridwrap');
+    if (!wrapper) return 0;
+    var style = global.getComputedStyle(wrapper);
+    // Pinned, it sits below the picker strip; unpinned, it only wants a margin.
+    var top = style.position === 'sticky' ? parseFloat(style.top) || 0 : 16;
+    return (global.innerHeight || 0) - top - 24;
   };
 
   /* The grid column asks for only the width its squares need, so the clues

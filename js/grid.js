@@ -139,6 +139,28 @@
             clue.answer + '" but the grid spells "' + entry.answer + '"'
         );
       }
+      // A second accepted spelling has to fit the same squares, or the letters
+      // it would add fall off the end of the word and are silently ignored.
+      if (typeof clue === 'object' && clue.also) {
+        var also = String(clue.also).toUpperCase();
+        if (!/^[A-Z]+$/.test(also)) {
+          problems.push(
+            label + ': ' + entry.direction + ' ' + entry.number +
+              ' has a second spelling with characters outside A-Z'
+          );
+        } else if (also.length !== entry.answer.length) {
+          problems.push(
+            label + ': ' + entry.direction + ' ' + entry.number + ' also accepts "' +
+              also + '" (' + also.length + ') but the grid holds ' +
+              entry.answer.length + ' squares'
+          );
+        } else if (also === entry.answer) {
+          problems.push(
+            label + ': ' + entry.direction + ' ' + entry.number +
+              ' lists "' + also + '" as a second spelling of itself'
+          );
+        }
+      }
     });
 
     ['across', 'down'].forEach(function (direction) {

@@ -818,17 +818,32 @@ body {
 /* ------------------------------------------------------------------ responsive */
 
 @media (max-width: 860px) {
-  /* The strip does not pin on a phone: as chips it still wraps to three rows,
-     and the controls are the thing worth keeping under your thumb. */
-  .picker { position: static; }
-  .picker.is-stuck {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 2px 0 6px;
-    border-bottom: 0;
+  /* Pinned, the three puzzles go three across in one row — names only, no
+     counts — so the strip costs a single line and the controls sit under it. */
+  .picker.is-stuck { padding: 5px var(--sheet-pad) 6px; }
+
+  .picker.is-stuck .picker__row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
   }
-  .picker.is-stuck .picker__label { display: block; }
-  .picker.is-stuck .picker__count { display: block; }
+
+  .picker.is-stuck .picker__card {
+    display: block;
+    padding: 4px 6px;
+    text-align: center;
+  }
+
+  .picker.is-stuck .picker__issue { display: none; }
+
+  .picker.is-stuck .picker__title {
+    margin: 0;
+    font-size: 11.5px;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   .brief { grid-template-columns: minmax(0, 1fr); }
   /* The blurb drops below the title, but the control keeps its corner. */
@@ -846,7 +861,9 @@ body {
     justify-self: start;
   }
   .puzzle__gridwrap { grid-template-columns: minmax(0, 1fr); }
-  body { padding-bottom: 74px; }
+  /* Exactly the height of the bar at the foot of the window, which changes with
+     the clue in it — js/app.js measures it and writes the value here. */
+  body { padding-bottom: calc(var(--cluebar-h, 74px) + 12px); }
 }
 
 @media (max-width: 520px) {
@@ -871,7 +888,10 @@ body {
   .puzzle__head.is-collapsed .heroes { display: block; }
   .puzzle { break-after: page; }
   .puzzle:last-of-type { break-after: auto; }
-  /* Footnotes are the point of the page, so print them all. */
+  /* Footnotes are the point of the page, so print them all — and a printed page
+     is narrow enough to match the phone query, which stands the clue list down.
+     On paper there is no bar at the foot of the screen to replace it. */
+  .puzzle__clues { display: block !important; }
   .note { display: block !important; }
   .note, .clue { break-inside: avoid; }
 }

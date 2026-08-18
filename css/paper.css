@@ -494,12 +494,14 @@ body {
   color: var(--red);
 }
 
+/* A caption in the paper's own voice: the words are set as words, not as the
+   block capitals they are in the grid. */
 .heroes__words {
   margin: 0;
-  font-family: var(--font-cond);
-  font-size: 12px;
+  font-size: 11.5px;
+  font-style: italic;
   line-height: 1.5;
-  letter-spacing: 0.06em;
+  text-transform: lowercase;
   color: var(--ink-soft);
 }
 

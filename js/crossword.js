@@ -51,6 +51,7 @@
     this.cellNodes = [];
     this.clueNodes = {};
     this.noteNodes = {};
+    this.alsoAccepts = this.collectAlternates();
 
     this.restore();
     this.renderGrid();
@@ -66,6 +67,33 @@
     if (firstOpen) this.select(firstOpen.index, this.direction, { focus: false });
     if (this.solved) this.markSolved({ silent: true });
   }
+
+  /* A clue may name a second spelling of its answer — "utilise" is the word the
+   * research counted, but an American solver types "utilize" and is not wrong.
+   * Both are the same length, so it comes down to the squares where they
+   * differ, each of which ends up accepting either letter. */
+  Crossword.prototype.collectAlternates = function () {
+    var self = this;
+    var accepts = {};
+    this.layout.entries.forEach(function (entry) {
+      var also = self.clueData(entry).also;
+      if (!also) return;
+      also = String(also).toUpperCase();
+      if (also.length !== entry.cells.length) return;
+      entry.cells.forEach(function (index, position) {
+        var letter = also.charAt(position);
+        if (letter !== self.layout.cells[index].solution) accepts[index] = letter;
+      });
+    });
+    return accepts;
+  };
+
+  /* True when the square holds the answer, or the other spelling of it. */
+  Crossword.prototype.isCorrect = function (index) {
+    var entered = this.fill[index];
+    if (!entered) return false;
+    return entered === this.layout.cells[index].solution || entered === this.alsoAccepts[index];
+  };
 
   /* ---------------------------------------------------------------- rendering */
 
@@ -341,7 +369,7 @@
     var self = this;
     var done = this.layout.entries.filter(function (entry) {
       return entry.cells.every(function (index) {
-        return self.fill[index] === self.layout.cells[index].solution;
+        return self.isCorrect(index);
       });
     }).length;
     this.solvedNode.textContent = String(done);
@@ -438,7 +466,7 @@
     this.layout.entries.forEach(function (entry) {
       if (!self.noteNodes[entry.id] || !self.noteNodes[entry.id].panel.hidden) return;
       var earned = entry.cells.every(function (index) {
-        return !self.revealed[index] && self.fill[index] === self.layout.cells[index].solution;
+        return !self.revealed[index] && self.isCorrect(index);
       });
       if (earned) self.showNote(entry.id, { open: true });
     });
@@ -677,10 +705,9 @@
   Crossword.prototype.check = function (scope) {
     var self = this;
     this.scopeIndices(scope).forEach(function (index) {
-      var entered = self.fill[index];
-      if (!entered) return;
-      if (entered !== self.layout.cells[index].solution) self.wrong[index] = true;
-      else delete self.wrong[index];
+      if (!self.fill[index]) return;
+      if (self.isCorrect(index)) delete self.wrong[index];
+      else self.wrong[index] = true;
     });
     this.paint();
     this.scheduleSave();
@@ -698,9 +725,9 @@
   Crossword.prototype.revealCells = function (indices) {
     var self = this;
     indices.forEach(function (index) {
-      var solution = self.layout.cells[index].solution;
-      if (self.fill[index] !== solution) {
-        self.fill[index] = solution;
+      // Reveal writes the answer as set, not the variant.
+      if (!self.isCorrect(index)) {
+        self.fill[index] = self.layout.cells[index].solution;
         self.revealed[index] = true;
       }
       delete self.wrong[index];
@@ -731,7 +758,7 @@
   Crossword.prototype.checkSolved = function () {
     var self = this;
     var complete = this.layout.cells.every(function (cell) {
-      return cell.block || self.fill[cell.index] === cell.solution;
+      return cell.block || self.isCorrect(cell.index);
     });
     if (complete && !this.solved) {
       this.solved = true;

@@ -37,8 +37,7 @@ Each puzzle carries its own controls under its title, against the squares they
 act on: Check, Reveal, Start Over, and on the end of the same line the count of
 entries solved and the clock. The bar pins itself under the picker strip, so
 those controls are still there twenty clues down the column when the grid is out
-of reach. On a phone it pins to the top of the window instead and becomes one
-row that slides sideways, rather than three rows of a small screen. A wrong letter found by **Check** gets a red
+of reach. A wrong letter found by **Check** gets a red
 pencil slash, which clears as soon as you retype it. A letter given away by **Reveal** keeps a small red corner.
 Filling a grid correctly stamps it SOLVED. Every note ends with **Show me the
 word**, under the rule below the rewrite: read what the habit is, then give up
@@ -70,14 +69,31 @@ picks up where you left off; **Start Over** clears that puzzle alone. Everything
 works from the keyboard, cells carry screen-reader labels naming the clue and
 the position within it.
 
-Narrow screens get a bar at the foot of the window carrying the word you are in.
-It shows two lines of the clue and then stops: the bar is a reminder of where
-you are, not somewhere to read a clue in full. **Why?** beside it — or the clue
-itself — opens a sheet with the clue whole, its note, and **Show me the word**,
-which is the clue list's job brought to where your thumb is. Escape, or a tap
-off the sheet, closes it; reading one there counts as reading it, the same as
-opening it in the list. The picker strip does not pin on a phone: as chips it
-still wraps to three rows, and the controls are worth more of that space.
+## On a phone
+
+A phone gets a different page rather than a squeezed one.
+
+Both strips pin to the top: the three puzzles three across in a single line,
+names only, and under them the controls as three drawings — check this word,
+show me this word, start over — with the count of entries solved on the end.
+Eight labelled buttons do not fit a small screen, and a row that has to be
+swiped sideways is a row whose right-hand half nobody finds. They act on the
+word you are in, which is the scope that matters with the grid under your thumb;
+letter and puzzle stay on the wider layout.
+
+The clue list stands down. Fifty-odd clues under a grid is a wall of type to be
+scrolled past rather than read. Instead a bar sits at the foot of the window
+carrying the clue for the word you are in, all of it, however many lines that
+takes — 138px for the longest of the 76, and the page reserves exactly the
+height the bar is currently using rather than a guess. Chevrons step through the
+entries. **Why?**, or the clue itself, opens a sheet with the clue whole,
+its note, and **Show me the word**, which is the clue list's job brought to
+where your thumb is. Escape, or a tap off the sheet, closes it, and reading one
+there counts as read the same as opening it in the list.
+
+The phone rules are `@media screen and (max-width: 860px)` rather than plain
+`max-width`: a printed page is about 816px wide and would otherwise match, and
+print the puzzles with no clues at all.
 
 ## Editing the content
 

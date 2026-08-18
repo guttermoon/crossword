@@ -304,6 +304,16 @@
     bar.appendChild(next);
     document.body.appendChild(bar);
 
+    // The bar is as tall as the clue in it, so the page reserves exactly that
+    // much at the foot rather than a guess that is wrong in both directions.
+    function reserve() {
+      document.documentElement.style.setProperty(
+        '--cluebar-h', Math.ceil(bar.getBoundingClientRect().height) + 'px');
+    }
+    if (global.ResizeObserver) new global.ResizeObserver(reserve).observe(bar);
+    else global.addEventListener('resize', reserve);
+    reserve();
+
     return {
       set: function (text, instance, entry) {
         line.textContent = text;

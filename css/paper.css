@@ -861,7 +861,9 @@ body {
     justify-self: start;
   }
   .puzzle__gridwrap { grid-template-columns: minmax(0, 1fr); }
-  body { padding-bottom: 74px; }
+  /* Exactly the height of the bar at the foot of the window, which changes with
+     the clue in it — js/app.js measures it and writes the value here. */
+  body { padding-bottom: calc(var(--cluebar-h, 74px) + 12px); }
 }
 
 @media (max-width: 520px) {

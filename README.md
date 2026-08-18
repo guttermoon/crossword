@@ -83,9 +83,10 @@ letter and puzzle stay on the wider layout.
 
 The clue list stands down. Fifty-odd clues under a grid is a wall of type to be
 scrolled past rather than read. Instead a bar sits at the foot of the window
-carrying the word you are in, two lines of it and then an ellipsis — a reminder
-of where you are, not somewhere to read a clue in full. Chevrons step through
-the entries. **Why?**, or the clue itself, opens a sheet with the clue whole,
+carrying the clue for the word you are in, all of it, however many lines that
+takes — 138px for the longest of the 76, and the page reserves exactly the
+height the bar is currently using rather than a guess. Chevrons step through the
+entries. **Why?**, or the clue itself, opens a sheet with the clue whole,
 its note, and **Show me the word**, which is the clue list's job brought to
 where your thumb is. Escape, or a tap off the sheet, closes it, and reading one
 there counts as read the same as opening it in the list.

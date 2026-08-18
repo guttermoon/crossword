@@ -524,9 +524,8 @@
     border-top: var(--rule-thick);
   }
 
-  /* Two lines and then an ellipsis. The bar is a reminder of the word you are
-     in, not somewhere to read a clue in full — that is what the note is for,
-     and the button beside it opens one. */
+  /* The whole clue, however many lines it takes. Long ones scroll inside the
+     bar rather than pushing it up the screen. */
   .cluebar__text {
     flex: 1;
     min-width: 0;
@@ -543,17 +542,19 @@
     cursor: pointer;
   }
 
-  .cluebar__line {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    overflow: hidden;
+  .cluebar__text {
+    max-height: 34vh;
+    overflow-y: auto;
   }
+
+  /* The buttons keep to the top of a bar that may now be several lines tall,
+     where the thumb reaches them. */
+  .cluebar { align-items: flex-start; }
 
   .cluebar__nav,
   .cluebar__why {
     flex: 0 0 auto;
+    align-self: stretch;
     border: 0;
     border-left: 1px solid var(--ink);
     background: var(--paper-deep);

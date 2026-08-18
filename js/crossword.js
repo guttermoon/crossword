@@ -205,8 +205,9 @@
             text.setAttribute('aria-controls', panel.id);
             self.noteNodes[entry.id] = { panel: panel, button: text };
           }
+          // Opening the note is all a clue does. Which word you are in is the
+          // grid's business, and it is set by pressing a square.
           var press = function () {
-            self.select(entry.cells[0], entry.direction);
             if (panel) self.showNote(entry.id, { open: panel.hidden });
           };
           // The whole row answers, not just the words: it is the row that
@@ -230,8 +231,7 @@
           reveal.type = 'button';
           reveal.setAttribute('aria-label', 'Reveal ' + entry.number + ' ' + entry.direction);
           reveal.addEventListener('click', function () {
-            self.select(entry.cells[0], entry.direction, { focus: false });
-            self.reveal('word');
+            self.revealCells(entry.cells);
           });
           actions.appendChild(reveal);
 
@@ -421,16 +421,17 @@
     if (pair.button) pair.button.setAttribute('aria-expanded', open ? 'true' : 'false');
   };
 
-  /* A correctly filled entry earns its note without the reader asking — and
-   * without scrolling, so typing is never interrupted. */
+  /* An entry you solved yourself earns its note without asking — and without
+   * scrolling, so typing is never interrupted. An entry you were given does
+   * not: Reveal puts the word in the grid, and nothing else. */
   Crossword.prototype.syncNotes = function () {
     var self = this;
     this.layout.entries.forEach(function (entry) {
       if (!self.noteNodes[entry.id] || !self.noteNodes[entry.id].panel.hidden) return;
-      var done = entry.cells.every(function (index) {
-        return self.fill[index] === self.layout.cells[index].solution;
+      var earned = entry.cells.every(function (index) {
+        return !self.revealed[index] && self.fill[index] === self.layout.cells[index].solution;
       });
-      if (done) self.showNote(entry.id, { open: true });
+      if (earned) self.showNote(entry.id, { open: true });
     });
   };
 
@@ -677,8 +678,17 @@
   };
 
   Crossword.prototype.reveal = function (scope) {
+    this.revealCells(this.scopeIndices(scope));
+  };
+
+  /* Fills the given squares in and marks them as given away. It does not move
+   * the cursor — the toolbar's Reveal acts on where you already are, and a
+   * clue's Reveal acts on that clue, neither of which is a reason to jump.
+   * No syncNotes either: revealing a word is not solving it, and the note that
+   * explains the answer is not what was asked for. */
+  Crossword.prototype.revealCells = function (indices) {
     var self = this;
-    this.scopeIndices(scope).forEach(function (index) {
+    indices.forEach(function (index) {
       var solution = self.layout.cells[index].solution;
       if (self.fill[index] !== solution) {
         self.fill[index] = solution;
@@ -687,7 +697,6 @@
       delete self.wrong[index];
     });
     this.paint();
-    this.syncNotes();
     this.renderProgress();
     this.scheduleSave();
     this.checkSolved();

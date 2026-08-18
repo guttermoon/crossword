@@ -58,6 +58,7 @@ window.PUZZLES = [
     "3": {
      "clue": "Formal verb whose entire purpose is to be longer than 'use'",
      "answer": "UTILISE",
+     "also": "UTILIZE",
      "note": {
       "what": "Here is the clearest evidence anywhere of why AI writes like this, and it is not because it was trained on management consultants. Models are tuned by showing paid raters two answers and keeping whichever they prefer. Raters preferred the version that sounded educated, so the longer word won thousands of small contests and became the default. The tic was not learned from the web; it was rewarded into place afterwards.",
       "sounds": "“Please utilise the attached template to facilitate the process.”",

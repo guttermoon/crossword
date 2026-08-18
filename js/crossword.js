@@ -428,6 +428,89 @@
     return panel;
   };
 
+  /* On a phone the clue list is a long way from the grid, so the note comes to
+   * you: the bar at the foot of the screen opens this sheet for the word you
+   * are in, with the clue in full, the note, and the way out. Built fresh each
+   * time rather than moved, so the list keeps its own copy and its own state. */
+  Crossword.prototype.openNoteSheet = function (entry) {
+    var self = this;
+    var data = this.clueData(entry);
+    if (!data.note || !data.note.what) return;
+    if (this.sheet) this.closeNoteSheet();
+
+    var opener = document.activeElement;
+    var back = el('div', 'notesheet');
+    var panel = el('div', 'notesheet__panel');
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-modal', 'true');
+    panel.setAttribute('aria-label', entry.number + ' ' + entry.direction);
+
+    panel.appendChild(el('p', 'notesheet__ref', entry.number + ' ' + entry.direction));
+    panel.appendChild(el('p', 'notesheet__clue', this.clueText(entry)));
+
+    var note = this.buildNote(entry, data.note);
+    note.hidden = false;
+    panel.appendChild(note);
+
+    var acts = el('div', 'notesheet__acts');
+    var reveal = el('button', 'notesheet__btn', 'Show me the word');
+    reveal.type = 'button';
+    reveal.addEventListener('click', function () {
+      self.revealCells(entry.cells);
+      self.closeNoteSheet();
+    });
+    var close = el('button', 'notesheet__btn notesheet__btn--close', 'Close');
+    close.type = 'button';
+    close.addEventListener('click', function () {
+      self.closeNoteSheet();
+    });
+    acts.appendChild(reveal);
+    acts.appendChild(close);
+    panel.appendChild(acts);
+
+    back.appendChild(panel);
+    back.addEventListener('mousedown', function (event) {
+      if (event.target === back) self.closeNoteSheet();
+    });
+    document.body.appendChild(back);
+
+    this.sheet = { node: back, opener: opener, first: reveal, last: close };
+    this.sheetKeys = function (event) {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        self.closeNoteSheet();
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      var s = self.sheet;
+      if (event.shiftKey && document.activeElement === s.first) {
+        event.preventDefault();
+        s.last.focus();
+      } else if (!event.shiftKey && document.activeElement === s.last) {
+        event.preventDefault();
+        s.first.focus();
+      }
+    };
+    document.addEventListener('keydown', this.sheetKeys, true);
+
+    // Reading it counts as reading it, wherever it was read.
+    if (!this.read[entry.id]) {
+      this.read[entry.id] = true;
+      this.renderProgress();
+      this.save();
+    }
+    close.focus();
+  };
+
+  Crossword.prototype.closeNoteSheet = function () {
+    if (!this.sheet) return;
+    document.removeEventListener('keydown', this.sheetKeys, true);
+    if (this.sheet.node.parentNode) this.sheet.node.parentNode.removeChild(this.sheet.node);
+    var opener = this.sheet.opener;
+    this.sheet = null;
+    if (opener && opener.focus) opener.focus({ preventScroll: true });
+  };
+
   /* Opening and closing happen where the clue is — nothing moves but the clue
    * list growing under the row you pressed. One note is open at a time, so the
    * list cannot fill up with them as you work down it. */

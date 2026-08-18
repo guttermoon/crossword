@@ -35,7 +35,10 @@ python3 -m http.server 8000    # then open http://localhost:8000
 
 Each puzzle carries its own controls under its title, against the squares they
 act on: Check, Reveal, Start Over, and on the end of the same line the count of
-entries solved and the clock. A wrong letter found by **Check** gets a red
+entries solved and the clock. The bar pins itself under the picker strip, so
+those controls are still there twenty clues down the column when the grid is out
+of reach. On a phone it pins to the top of the window instead and becomes one
+row that slides sideways, rather than three rows of a small screen. A wrong letter found by **Check** gets a red
 pencil slash, which clears as soon as you retype it. A letter given away by **Reveal** keeps a small red corner.
 Filling a grid correctly stamps it SOLVED. Every note ends with **Show me the
 word**, under the rule below the rewrite: read what the habit is, then give up
@@ -65,8 +68,16 @@ note, opened or not.
 Progress and elapsed time are saved to `localStorage` per puzzle, so a reload
 picks up where you left off; **Start Over** clears that puzzle alone. Everything
 works from the keyboard, cells carry screen-reader labels naming the clue and
-the position within it, and narrow screens get a sticky clue bar above the
-on-screen keyboard.
+the position within it.
+
+Narrow screens get a bar at the foot of the window carrying the word you are in.
+It shows two lines of the clue and then stops: the bar is a reminder of where
+you are, not somewhere to read a clue in full. **Why?** beside it — or the clue
+itself — opens a sheet with the clue whole, its note, and **Show me the word**,
+which is the clue list's job brought to where your thumb is. Escape, or a tap
+off the sheet, closes it; reading one there counts as reading it, the same as
+opening it in the list. The picker strip does not pin on a phone: as chips it
+still wraps to three rows, and the controls are worth more of that space.
 
 ## Editing the content
 

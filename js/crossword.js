@@ -287,7 +287,7 @@
         return;
       }
       ask({
-        brand: (self.puzzle.issue ? self.puzzle.issue + ' · ' : '') + 'Late Edition',
+        brand: (self.puzzle.issue ? self.puzzle.issue + ' · ' : '') + 'Crossword',
         headline: 'Wipe the grid!',
         question: 'Erase everything you have filled in for this puzzle?',
         yes: 'Yes, wipe it',

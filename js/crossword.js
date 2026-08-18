@@ -172,7 +172,7 @@
 
     ['across', 'down'].forEach(function (direction) {
       var column = el('section', 'clues__col');
-      column.appendChild(el('h4', 'clues__head', direction === 'across' ? 'Across' : 'Down'));
+      column.appendChild(el('h4', 'clues__head', direction));
       var list = el('ol', 'clues__list');
 
       self.layout.entries

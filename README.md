@@ -35,7 +35,10 @@ python3 -m http.server 8000    # then open http://localhost:8000
 
 Each puzzle carries its own controls under its title, against the squares they
 act on: Check, Reveal, Start Over, and on the end of the same line the count of
-entries solved and the clock. A wrong letter found by **Check** gets a red
+entries solved and the clock. The bar pins itself under the picker strip, so
+those controls are still there twenty clues down the column when the grid is out
+of reach. On a phone it pins to the top of the window instead and becomes one
+row that slides sideways, rather than three rows of a small screen. A wrong letter found by **Check** gets a red
 pencil slash, which clears as soon as you retype it. A letter given away by **Reveal** keeps a small red corner.
 Filling a grid correctly stamps it SOLVED. Every note ends with **Show me the
 word**, under the rule below the rewrite: read what the habit is, then give up
@@ -65,8 +68,16 @@ note, opened or not.
 Progress and elapsed time are saved to `localStorage` per puzzle, so a reload
 picks up where you left off; **Start Over** clears that puzzle alone. Everything
 works from the keyboard, cells carry screen-reader labels naming the clue and
-the position within it, and narrow screens get a sticky clue bar above the
-on-screen keyboard.
+the position within it.
+
+Narrow screens get a bar at the foot of the window carrying the word you are in.
+It shows two lines of the clue and then stops: the bar is a reminder of where
+you are, not somewhere to read a clue in full. **Why?** beside it — or the clue
+itself — opens a sheet with the clue whole, its note, and **Show me the word**,
+which is the clue list's job brought to where your thumb is. Escape, or a tap
+off the sheet, closes it; reading one there counts as reading it, the same as
+opening it in the list. The picker strip does not pin on a phone: as chips it
+still wraps to three rows, and the controls are worth more of that space.
 
 ## Editing the content
 
@@ -80,7 +91,7 @@ Two data files, and nothing else needs touching.
   issue: 'No. 1',
   title: 'The Words',
   blurb: 'The vocabulary AI cannot put down…',
-  heroes: ['DELVE', 'LOADBEARING'],     // chips listed under the toolbar
+  heroes: ['DELVE', 'LOADBEARING'],     // named in a caption under the blurb
   grid: [                               // equal-length rows, '.' = empty square
     '.B.U...',
     '.OASTS.',
@@ -90,6 +101,7 @@ Two data files, and nothing else needs touching.
       6: {
         clue: "A glass display cabinet in a museum, drafted in as a verb…",
         answer: 'SHOWCASE',             // checked against the grid on load
+     // also: 'SHOWCAZE',             // optional second accepted spelling
         note: {
           what:   'Why AI does this and why it reads as AI-written.',
           sounds: '“This report showcases our commitment to sustainability.”',
@@ -115,7 +127,15 @@ On load each puzzle is validated, and problems are reported in a red box on the
 page and logged to the console rather than rendering a broken grid. It catches
 ragged rows, stray characters, an entry with no clue, a clue with no entry, and
 — most usefully while editing squares — **an `answer` that no longer matches
-what the grid spells**.
+what the grid spells**, and an `also` that would not fit the squares.
+
+`also` is a second accepted spelling of the same answer, letter for letter: the
+squares where it differs from `answer` take either letter, and the entry counts
+as solved with either. `UTILISE` carries `also: 'UTILIZE'` — it is the word the
+research counted, but an American solver typing the Z is not wrong, and without
+this Check would paint a red slash through a square they had right. **Reveal**
+always writes the answer as set, never the variant. It is the only one of the 76
+answers where British and American English part company.
 
 **`data/gazette.js`** — the title, standfirst, the two intro panels and the
 source list. These strings carry inline
@@ -190,9 +210,13 @@ Each article runs its title, blurb and hero words full width, then sets the
 clues beside the grid — and the grid changes sides puzzle to puzzle, the way a
 magazine alternates a spread. `Crossword.claimWidth` gives the grid column only
 the width its squares need and hands the rest to the clues; `Crossword.fitCell`
-then measures that column and sets `--cell` to suit, capped at 30px and floored
-at 17px, below which the wrapper scrolls sideways. Empty squares are drawn
-black.
+then sets `--cell` to the smaller of what the column allows and what the window
+does, capped at 30px and floored at 17px, below which the wrapper scrolls
+sideways. The second constraint is the one that matters: these grids are 28 rows
+deep, which is 850px at the cap, so sized to the column alone the bottom third
+of every grid sat below the fold while the clues beside it scrolled past. At
+1440x780 the squares come out at 24px and the whole grid stands in view. Empty
+squares are drawn black.
 
 Entries are deliberately one-per-habit: a trope's sibling phrases live in that
 entry's footnote rather than becoming entries of their own. Adding or removing a

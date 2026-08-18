@@ -51,6 +51,7 @@
     this.cellNodes = [];
     this.clueNodes = {};
     this.noteNodes = {};
+    this.alsoAccepts = this.collectAlternates();
 
     this.restore();
     this.renderGrid();
@@ -66,6 +67,33 @@
     if (firstOpen) this.select(firstOpen.index, this.direction, { focus: false });
     if (this.solved) this.markSolved({ silent: true });
   }
+
+  /* A clue may name a second spelling of its answer — "utilise" is the word the
+   * research counted, but an American solver types "utilize" and is not wrong.
+   * Both are the same length, so it comes down to the squares where they
+   * differ, each of which ends up accepting either letter. */
+  Crossword.prototype.collectAlternates = function () {
+    var self = this;
+    var accepts = {};
+    this.layout.entries.forEach(function (entry) {
+      var also = self.clueData(entry).also;
+      if (!also) return;
+      also = String(also).toUpperCase();
+      if (also.length !== entry.cells.length) return;
+      entry.cells.forEach(function (index, position) {
+        var letter = also.charAt(position);
+        if (letter !== self.layout.cells[index].solution) accepts[index] = letter;
+      });
+    });
+    return accepts;
+  };
+
+  /* True when the square holds the answer, or the other spelling of it. */
+  Crossword.prototype.isCorrect = function (index) {
+    var entered = this.fill[index];
+    if (!entered) return false;
+    return entered === this.layout.cells[index].solution || entered === this.alsoAccepts[index];
+  };
 
   /* ---------------------------------------------------------------- rendering */
 
@@ -341,7 +369,7 @@
     var self = this;
     var done = this.layout.entries.filter(function (entry) {
       return entry.cells.every(function (index) {
-        return self.fill[index] === self.layout.cells[index].solution;
+        return self.isCorrect(index);
       });
     }).length;
     this.solvedNode.textContent = String(done);
@@ -400,6 +428,89 @@
     return panel;
   };
 
+  /* On a phone the clue list is a long way from the grid, so the note comes to
+   * you: the bar at the foot of the screen opens this sheet for the word you
+   * are in, with the clue in full, the note, and the way out. Built fresh each
+   * time rather than moved, so the list keeps its own copy and its own state. */
+  Crossword.prototype.openNoteSheet = function (entry) {
+    var self = this;
+    var data = this.clueData(entry);
+    if (!data.note || !data.note.what) return;
+    if (this.sheet) this.closeNoteSheet();
+
+    var opener = document.activeElement;
+    var back = el('div', 'notesheet');
+    var panel = el('div', 'notesheet__panel');
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-modal', 'true');
+    panel.setAttribute('aria-label', entry.number + ' ' + entry.direction);
+
+    panel.appendChild(el('p', 'notesheet__ref', entry.number + ' ' + entry.direction));
+    panel.appendChild(el('p', 'notesheet__clue', this.clueText(entry)));
+
+    var note = this.buildNote(entry, data.note);
+    note.hidden = false;
+    panel.appendChild(note);
+
+    var acts = el('div', 'notesheet__acts');
+    var reveal = el('button', 'notesheet__btn', 'Show me the word');
+    reveal.type = 'button';
+    reveal.addEventListener('click', function () {
+      self.revealCells(entry.cells);
+      self.closeNoteSheet();
+    });
+    var close = el('button', 'notesheet__btn notesheet__btn--close', 'Close');
+    close.type = 'button';
+    close.addEventListener('click', function () {
+      self.closeNoteSheet();
+    });
+    acts.appendChild(reveal);
+    acts.appendChild(close);
+    panel.appendChild(acts);
+
+    back.appendChild(panel);
+    back.addEventListener('mousedown', function (event) {
+      if (event.target === back) self.closeNoteSheet();
+    });
+    document.body.appendChild(back);
+
+    this.sheet = { node: back, opener: opener, first: reveal, last: close };
+    this.sheetKeys = function (event) {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        self.closeNoteSheet();
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      var s = self.sheet;
+      if (event.shiftKey && document.activeElement === s.first) {
+        event.preventDefault();
+        s.last.focus();
+      } else if (!event.shiftKey && document.activeElement === s.last) {
+        event.preventDefault();
+        s.first.focus();
+      }
+    };
+    document.addEventListener('keydown', this.sheetKeys, true);
+
+    // Reading it counts as reading it, wherever it was read.
+    if (!this.read[entry.id]) {
+      this.read[entry.id] = true;
+      this.renderProgress();
+      this.save();
+    }
+    close.focus();
+  };
+
+  Crossword.prototype.closeNoteSheet = function () {
+    if (!this.sheet) return;
+    document.removeEventListener('keydown', this.sheetKeys, true);
+    if (this.sheet.node.parentNode) this.sheet.node.parentNode.removeChild(this.sheet.node);
+    var opener = this.sheet.opener;
+    this.sheet = null;
+    if (opener && opener.focus) opener.focus({ preventScroll: true });
+  };
+
   /* Opening and closing happen where the clue is — nothing moves but the clue
    * list growing under the row you pressed. One note is open at a time, so the
    * list cannot fill up with them as you work down it. */
@@ -438,7 +549,7 @@
     this.layout.entries.forEach(function (entry) {
       if (!self.noteNodes[entry.id] || !self.noteNodes[entry.id].panel.hidden) return;
       var earned = entry.cells.every(function (index) {
-        return !self.revealed[index] && self.fill[index] === self.layout.cells[index].solution;
+        return !self.revealed[index] && self.isCorrect(index);
       });
       if (earned) self.showNote(entry.id, { open: true });
     });
@@ -489,18 +600,44 @@
   /* These grids run from 23 to 30 squares wide but sit in a column beside the
    * text, so the square size is measured rather than fixed. Below the floor the
    * wrapper scrolls sideways instead of shrinking the squares to nothing. */
+  /* Sizes the squares to the space there is, in both directions. The width of
+   * the column was the only constraint for a while, and these grids are 28 rows
+   * deep: at the 30px cap that is 850px of grid, so on any ordinary screen the
+   * bottom third hung below the fold while the clues beside it scrolled past
+   * it. The height of the window is now the other constraint, and the smaller
+   * of the two wins. */
   Crossword.prototype.fitCell = function () {
     var wrap = this.gridNode.parentNode;
     var pad = global.getComputedStyle(wrap);
     var frame = global.getComputedStyle(this.gridNode);
+
     var available = wrap.clientWidth
       - parseFloat(pad.paddingLeft) - parseFloat(pad.paddingRight)
       - parseFloat(frame.borderLeftWidth) - parseFloat(frame.borderRightWidth)
       - parseFloat(frame.paddingLeft) - parseFloat(frame.paddingRight);
     if (!(available > 0)) return;
-    var size = Math.floor(available / this.layout.width);
+    var byWidth = Math.floor(available / this.layout.width);
+
+    var size = byWidth;
+    var room = this.roomBelow()
+      - parseFloat(frame.borderTopWidth) - parseFloat(frame.borderBottomWidth)
+      - parseFloat(frame.paddingTop) - parseFloat(frame.paddingBottom)
+      - parseFloat(pad.paddingTop) - parseFloat(pad.paddingBottom);
+    if (room > 0) size = Math.min(size, Math.floor(room / this.layout.height));
+
     size = Math.max(17, Math.min(30, size));
     this.gridNode.style.setProperty('--cell', size + 'px');
+  };
+
+  /* How much of the window the grid has to itself: everything under whatever
+   * the grid is pinned below, less a little air at the bottom. */
+  Crossword.prototype.roomBelow = function () {
+    var wrapper = this.gridMount.closest('.puzzle__gridwrap');
+    if (!wrapper) return 0;
+    var style = global.getComputedStyle(wrapper);
+    // Pinned, it sits below the picker strip; unpinned, it only wants a margin.
+    var top = style.position === 'sticky' ? parseFloat(style.top) || 0 : 16;
+    return (global.innerHeight || 0) - top - 24;
   };
 
   /* The grid column asks for only the width its squares need, so the clues
@@ -677,10 +814,9 @@
   Crossword.prototype.check = function (scope) {
     var self = this;
     this.scopeIndices(scope).forEach(function (index) {
-      var entered = self.fill[index];
-      if (!entered) return;
-      if (entered !== self.layout.cells[index].solution) self.wrong[index] = true;
-      else delete self.wrong[index];
+      if (!self.fill[index]) return;
+      if (self.isCorrect(index)) delete self.wrong[index];
+      else self.wrong[index] = true;
     });
     this.paint();
     this.scheduleSave();
@@ -698,9 +834,9 @@
   Crossword.prototype.revealCells = function (indices) {
     var self = this;
     indices.forEach(function (index) {
-      var solution = self.layout.cells[index].solution;
-      if (self.fill[index] !== solution) {
-        self.fill[index] = solution;
+      // Reveal writes the answer as set, not the variant.
+      if (!self.isCorrect(index)) {
+        self.fill[index] = self.layout.cells[index].solution;
         self.revealed[index] = true;
       }
       delete self.wrong[index];
@@ -731,7 +867,7 @@
   Crossword.prototype.checkSolved = function () {
     var self = this;
     var complete = this.layout.cells.every(function (cell) {
-      return cell.block || self.fill[cell.index] === cell.solution;
+      return cell.block || self.isCorrect(cell.index);
     });
     if (complete && !this.solved) {
       this.solved = true;

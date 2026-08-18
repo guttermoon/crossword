@@ -37,6 +37,11 @@
      the same cornering. */
   --radius-btn: 6px;
   --sheet-pad: clamp(18px, 3.5vw, 54px);
+  /* What the two pinned bars cost at the top of the window. The grid pins
+     below both of them, and js/crossword.js reads that offset back off the
+     element when it works out how big the squares can be. */
+  --pin-strip: 46px;
+  --pin-toolbar: 54px;
 
   /* A 64px greyscale tile, scaled up and rendered with hard edges so every
      tile pixel lands as a square block. It is mostly per-pixel grain with a
@@ -494,12 +499,14 @@ body {
   color: var(--red);
 }
 
+/* A caption in the paper's own voice: the words are set as words, not as the
+   block capitals they are in the grid. */
 .heroes__words {
   margin: 0;
-  font-family: var(--font-cond);
-  font-size: 12px;
+  font-size: 11.5px;
+  font-style: italic;
   line-height: 1.5;
-  letter-spacing: 0.06em;
+  text-transform: lowercase;
   color: var(--ink-soft);
 }
 
@@ -625,7 +632,7 @@ body {
   align-items: stretch;
   min-width: 0;
   position: sticky;
-  top: 66px;
+  top: calc(var(--pin-strip) + var(--pin-toolbar) + 10px);
 }
 
 .credit {
@@ -811,6 +818,18 @@ body {
 /* ------------------------------------------------------------------ responsive */
 
 @media (max-width: 860px) {
+  /* The strip does not pin on a phone: as chips it still wraps to three rows,
+     and the controls are the thing worth keeping under your thumb. */
+  .picker { position: static; }
+  .picker.is-stuck {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2px 0 6px;
+    border-bottom: 0;
+  }
+  .picker.is-stuck .picker__label { display: block; }
+  .picker.is-stuck .picker__count { display: block; }
+
   .brief { grid-template-columns: minmax(0, 1fr); }
   /* The blurb drops below the title, but the control keeps its corner. */
   .puzzle__head { grid-template-columns: minmax(0, 1fr) auto; gap: 14px; }

@@ -43,10 +43,14 @@ are looking at.
 
 **Notes** open directly under the clue that references them, each one saying
 what the habit is, what it **sounds like**, and what a person writes **instead
-of** it. Pressing a clue goes to its word in the grid and opens its note; press
-it again and the note closes. One is open at a time, so the list cannot fill up
+of** it. Pressing a clue opens its note; press it again and it closes. That is
+all a clue does — which word you are in is the grid's business, set by pressing
+a square — and a clue's **Reveal** fills that clue's word in without moving the
+cursor either. One is open at a time, so the list cannot fill up
 with them as you work down it. A note also opens by itself the moment its entry
-is filled in correctly, so solving teaches as you go. Nothing else on the page
+is solved, so solving teaches as you go — but only when you solved it: an entry
+filled in by **Reveal** was given to you, and Reveal puts the word in the grid
+and does nothing else. Nothing else on the page
 moves — the clue stays put and the list grows under it. Printing prints every
 note, opened or not.
 

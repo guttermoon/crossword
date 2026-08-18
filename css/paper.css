@@ -26,6 +26,7 @@
      the printed page used Helvetica Bold against its typewriter body. */
   --font-cond: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-body: 'Courier Prime', 'Courier New', Courier, monospace;
+  --font-headline: 'Libre Franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --rule: 1px solid var(--ink);
   --rule-thick: 2px solid var(--ink);
@@ -707,14 +708,18 @@ body {
   color: var(--ink-soft);
 }
 
+/* One line, whatever the screen: nowrap, with the size following the viewport
+   down until it fits. */
 .paperbox__head {
   margin: 0;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(32px, 8vw, 46px);
-  line-height: 0.95;
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: clamp(19px, 6.4vw, 40px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: var(--red);
+  white-space: nowrap;
+  color: var(--ink);
 }
 
 .paperbox__ask {

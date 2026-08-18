@@ -269,7 +269,7 @@
   color: var(--ink);
   background: var(--paper);
   border: var(--rule-thick);
-  border-radius: 8px;
+  border-radius: var(--radius-btn);
   padding: 3px 11px;
   cursor: pointer;
 }
@@ -347,7 +347,7 @@
 .clue__btn {
   padding: 1px 8px;
   border: 1px solid var(--ink-soft);
-  border-radius: 8px;
+  border-radius: var(--radius-btn);
   background: transparent;
   font-family: var(--font-cond);
   font-size: 10px;
@@ -362,8 +362,15 @@
 .clue__btn:hover { color: var(--ink); }
 .clue__btn:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
 
-.clue:hover { background: rgba(195, 58, 43, 0.07); }
+/* A clue takes the red edge whenever it is under the pointer or under the
+   cursor; what changes between them is the fill — the wash for a row you are
+   passing over, the grey for the one you are actually in, which it keeps when
+   the pointer comes over it. */
+.clue:hover,
 .clue.is-active { box-shadow: inset 2px 0 0 var(--red); }
+
+.clue:hover { background: rgba(195, 58, 43, 0.07); }
+.clue.is-active:hover { background: var(--newsprint-light); }
 
 /* ------------------------------------------------------------------ the note */
 
@@ -390,6 +397,12 @@
   gap: 8px;
 }
 
+/* A rule between the explanation and the pair of quotes under it. */
+.note__what + .note__pair {
+  padding-top: 9px;
+  border-top: 1px dotted var(--ink-soft);
+}
+
 .note__label {
   font-family: var(--font-cond);
   font-size: 10px;
@@ -402,17 +415,6 @@
 
 .note__quote { font-style: italic; }
 
-
-.note__source {
-  margin-top: 9px;
-  padding-top: 7px;
-  border-top: 1px dotted var(--ink-soft);
-  font-family: var(--font-cond);
-  font-size: 11px;
-  letter-spacing: 0.04em;
-}
-
-.note__source a { color: var(--red-deep); }
 
 /* -------------------------------------------------- sticky clue bar (narrow) */
 

@@ -362,7 +362,12 @@
   gap: 8px;
 }
 
-/* The rule sits under the pair of quotes, between the rewrite and the way out. */
+/* One rule above the pair of quotes, one below them. */
+.note__what + .note__pair {
+  padding-top: 9px;
+  border-top: 1px dotted var(--ink-soft);
+}
+
 .note__reveal {
   margin: 10px 0 0;
   padding-top: 9px;

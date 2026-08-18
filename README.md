@@ -26,26 +26,29 @@ python3 -m http.server 8000    # then open http://localhost:8000
 | Next / previous clue | Tab / Shift-Tab |
 | Ends of the word | Home / End |
 | Erase | Backspace (steps back through the word) or Delete |
+| Open a clue's note | Press the clue — again to close it |
 
-Each puzzle carries its own controls and progress at the head of the article:
-how many entries are solved, a bar, and how many footnotes you have read. A
-wrong letter found by **Check** gets a red pencil slash, which clears as soon as
-you retype it. A letter given away by **Reveal** keeps a small red corner.
+Each puzzle carries its own controls under its title, against the squares they
+act on: Check, Reveal, Start Over, and on the end of the same line the count of
+entries solved and the clock. A wrong letter found by **Check** gets a red
+pencil slash, which clears as soon as you retype it. A letter given away by **Reveal** keeps a small red corner.
 Filling a grid correctly stamps it SOLVED. Every clue also has its own
 **Reveal** beside it. **Start Over** sends a late edition spinning off the press
 — WIPE THE GRID! — and waits for a yes or a no; Escape, or a click off the
-paper, means no.
+paper, means no. The paper is a plain white sheet: a headline set in Libre
+Franklin, kept to one line at any width, then the question and the two answers.
 
 A **Pick a puzzle** strip links down to each grid and marks whichever one you
 are looking at.
 
 **Notes** open directly under the clue that references them, each one saying
 what the habit is, what it **sounds like**, and what a person writes **instead
-of** it. One opens by
-itself the moment its entry is filled in correctly, so solving teaches as you
-go, and **Why?** opens one early without giving the answer away. Nothing else on
-the page moves — the clue stays put and the list simply grows under it.
-Printing prints every note, opened or not.
+of** it. Pressing a clue goes to its word in the grid and opens its note; press
+it again and the note closes. One is open at a time, so the list cannot fill up
+with them as you work down it. A note also opens by itself the moment its entry
+is filled in correctly, so solving teaches as you go. Nothing else on the page
+moves — the clue stays put and the list grows under it. Printing prints every
+note, opened or not.
 
 Progress and elapsed time are saved to `localStorage` per puzzle, so a reload
 picks up where you left off; **Start Over** clears that puzzle alone. Everything
@@ -120,7 +123,7 @@ js/crossword.js     the engine: cursor, keyboard, check/reveal, footnotes, autos
 js/app.js           builds the page from GAZETTE and PUZZLES
 data/puzzles.js     puzzle content — 3 puzzles, 76 clues, 76 footnotes
 data/gazette.js     front matter and sources
-fonts/              Shrikhand, Inter, Courier Prime (SIL OFL — see fonts/README.md)
+fonts/              Shrikhand, Inter, Courier Prime, Libre Franklin (SIL OFL)
 ```
 
 Colours and fonts are CSS custom properties at the top of `css/paper.css`. The
@@ -144,10 +147,10 @@ grey while it is the puzzle you are looking at — where multiplied grain would 
 invisible, so that one lifts with `screen` instead. The toolbar and per-clue
 buttons work the same way. The clue rows take the greys but never the grain: a
 clue is a line of type, and pixels crawling under it make it harder to read
-rather than older. A clue takes the red edge whenever it is under the pointer or
-under the cursor, and what changes between them is the fill — the red wash for a
-row you are passing over, the grey for the one you are actually in, which it
-keeps when the pointer comes over it, so the block never changes colour while
+rather than older. A clue takes an edge whenever it is under the pointer or
+under the cursor, and the pair read as a hierarchy: red with the wash for a row
+you are passing over, ink with the grey for the one you are actually in, which
+it keeps when the pointer comes over it, so the block never changes colour while
 you are reading it. A note has no fill and no edge of its own; the clue above it
 is already carrying both.
 

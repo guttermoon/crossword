@@ -2,7 +2,7 @@
  * — asked in the paper's own voice: a late edition spins in off the press with
  * the headline, and you answer it yes or no.
  *
- *   AskPaper.open({ headline, question, byline, yes, no }, onYes)
+ *   AskPaper.open({ headline, question, yes, no }, onYes)
  */
 (function (global) {
   'use strict';
@@ -28,7 +28,7 @@
     sheet.setAttribute('aria-labelledby', headId);
     sheet.setAttribute('aria-describedby', askId);
 
-    sheet.appendChild(el('p', 'paperbox__brand', opts.brand || 'Late Edition'));
+    sheet.appendChild(el('p', 'paperbox__brand', opts.brand || 'Crossword'));
 
     var headline = el('h2', 'paperbox__head', opts.headline || 'Wipe the grid!');
     headline.id = headId;
@@ -37,16 +37,6 @@
     var question = el('p', 'paperbox__ask', opts.question || '');
     question.id = askId;
     sheet.appendChild(question);
-
-    if (opts.byline) sheet.appendChild(el('p', 'paperbox__byline', opts.byline));
-
-    // Columns of unreadable newsprint, the way the prop paper in the film has
-    // one real headline and a page of grey underneath it.
-    var body = el('div', 'paperbox__cols');
-    body.setAttribute('aria-hidden', 'true');
-    body.appendChild(el('div', 'paperbox__col'));
-    body.appendChild(el('div', 'paperbox__col'));
-    sheet.appendChild(body);
 
     var acts = el('div', 'paperbox__acts');
     var yes = el('button', 'paperbox__btn paperbox__btn--yes', opts.yes || 'Yes');

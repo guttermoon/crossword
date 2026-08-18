@@ -26,7 +26,6 @@
   }
 
   function Crossword(options) {
-    var self = this;
     this.puzzle = options.puzzle;
     this.root = options.root;
     this.gridMount = options.gridMount;
@@ -58,10 +57,8 @@
     this.renderClues();
     this.renderToolbar();
     this.paint();
-    Object.keys(this.read).forEach(function (id) {
-      self.showNote(id, { open: true });
-    });
-    this.syncNotes();
+    // No note is opened on load. Solving an entry opens its note while you are
+    // playing; reopening a half-finished puzzle should not greet you with one.
 
     var firstOpen = this.layout.cells.find(function (cell) {
       return !cell.block;
@@ -192,30 +189,35 @@
           item.appendChild(el('b', 'clue__num', entry.number + '.'));
 
           var body = el('div', 'clue__body');
+          var note = self.clueData(entry).note;
+          var panel = note && note.what ? self.buildNote(entry, note) : null;
+
+          // The clue is its own control: pressing it goes to the word in the
+          // grid and opens the note under it. A span carrying the button role
+          // rather than a real <button>, because a button is an atomic inline
+          // box — it would take the whole line and drop Reveal beneath it,
+          // where a span wraps like the sentence it is.
           var text = el('span', 'clue__text', self.clueText(entry));
-          text.addEventListener('click', function () {
+          text.setAttribute('role', 'button');
+          text.tabIndex = 0;
+          if (panel) {
+            text.setAttribute('aria-expanded', 'false');
+            text.setAttribute('aria-controls', panel.id);
+            self.noteNodes[entry.id] = { panel: panel, button: text };
+          }
+          var press = function () {
             self.select(entry.cells[0], entry.direction);
+            if (panel) self.showNote(entry.id, { open: panel.hidden });
+          };
+          text.addEventListener('click', press);
+          text.addEventListener('keydown', function (event) {
+            if (event.key !== 'Enter' && event.key !== ' ' && event.key !== 'Spacebar') return;
+            event.preventDefault();
+            press();
           });
           body.appendChild(text);
 
           var actions = el('span', 'clue__actions');
-          var note = self.clueData(entry).note;
-          var panel = null;
-
-          if (note && note.what) {
-            var why = el('button', 'clue__btn', 'Why?');
-            why.type = 'button';
-            why.setAttribute('aria-expanded', 'false');
-            why.setAttribute('aria-label',
-              'Why? The note on ' + entry.number + ' ' + entry.direction);
-            panel = self.buildNote(entry, note);
-            why.setAttribute('aria-controls', panel.id);
-            why.addEventListener('click', function () {
-              self.showNote(entry.id, { open: panel.hidden });
-            });
-            actions.appendChild(why);
-            self.noteNodes[entry.id] = { panel: panel, button: why };
-          }
 
           var reveal = el('button', 'clue__btn', 'Reveal');
           reveal.type = 'button';
@@ -296,57 +298,38 @@
     extras.appendChild(clear);
     bar.appendChild(extras);
 
+    bar.appendChild(this.buildProgress());
+
     this.timerNode = el('span', 'timer', '00:00');
     this.timerNode.setAttribute('aria-label', 'Time spent on this puzzle');
     bar.appendChild(this.timerNode);
 
-    this.toolbarMount.appendChild(this.buildProgress());
     this.toolbarMount.appendChild(bar);
     this.renderTimer();
     this.renderProgress();
   };
 
-  /* How far through the puzzle you are, and how much of the teaching you have
-   * actually read — the second number being the point of the thing. */
+  /* How far through the puzzle you are. It rides on the end of the toolbar
+   * rather than in a row of its own — one number does not need a row. */
   Crossword.prototype.buildProgress = function () {
-    var wrap = el('div', 'progress');
-    wrap.setAttribute('aria-live', 'polite');
-
-    wrap.appendChild(el('p', 'progress__label',
-      [this.puzzle.issue, this.puzzle.title].filter(Boolean).join(' · ')));
-
     var count = el('p', 'progress__count');
+    count.setAttribute('aria-live', 'polite');
     this.solvedNode = el('span', 'progress__n', '0');
     count.appendChild(this.solvedNode);
     count.appendChild(el('span', 'progress__of', '/' + this.layout.entries.length));
     count.appendChild(el('span', 'progress__word', 'solved'));
-    wrap.appendChild(count);
-
-    var track = el('div', 'progress__track');
-    this.fillNode = el('div', 'progress__fill');
-    track.appendChild(this.fillNode);
-    wrap.appendChild(track);
-
-    this.readNode = el('p', 'progress__read', '0 footnotes read');
-    wrap.appendChild(this.readNode);
-
-    return wrap;
+    return count;
   };
 
   Crossword.prototype.renderProgress = function () {
     if (!this.solvedNode) return;
     var self = this;
-    var total = this.layout.entries.length;
     var done = this.layout.entries.filter(function (entry) {
       return entry.cells.every(function (index) {
         return self.fill[index] === self.layout.cells[index].solution;
       });
     }).length;
-    var read = Object.keys(this.read).length;
-
     this.solvedNode.textContent = String(done);
-    this.fillNode.style.width = total ? (done / total) * 100 + '%' : '0';
-    this.readNode.textContent = read + (read === 1 ? ' footnote read' : ' footnotes read');
   };
 
   /* A clue may be a plain string or a { clue, answer, note } record. */
@@ -403,8 +386,10 @@
   };
 
   /* Opening and closing happen where the clue is — nothing moves but the clue
-   * list growing under the row you pressed. */
+   * list growing under the row you pressed. One note is open at a time, so the
+   * list cannot fill up with them as you work down it. */
   Crossword.prototype.showNote = function (id, options) {
+    var self = this;
     var opts = options || {};
     var pair = this.noteNodes[id];
     if (!pair) return;
@@ -415,11 +400,19 @@
       this.renderProgress();
       this.save();
     }
-    pair.panel.hidden = !open;
-    if (pair.button) {
-      pair.button.setAttribute('aria-expanded', open ? 'true' : 'false');
-      pair.button.textContent = open ? 'Close' : 'Why?';
+    if (open) {
+      Object.keys(this.noteNodes).forEach(function (other) {
+        if (other !== id) self.setNoteOpen(other, false);
+      });
     }
+    this.setNoteOpen(id, open);
+  };
+
+  Crossword.prototype.setNoteOpen = function (id, open) {
+    var pair = this.noteNodes[id];
+    if (!pair || pair.panel.hidden === !open) return;
+    pair.panel.hidden = !open;
+    if (pair.button) pair.button.setAttribute('aria-expanded', open ? 'true' : 'false');
   };
 
   /* A correctly filled entry earns its note without the reader asking — and

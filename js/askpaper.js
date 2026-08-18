@@ -28,7 +28,7 @@
     sheet.setAttribute('aria-labelledby', headId);
     sheet.setAttribute('aria-describedby', askId);
 
-    sheet.appendChild(el('p', 'paperbox__brand', opts.brand || 'Late Edition'));
+    sheet.appendChild(el('p', 'paperbox__brand', opts.brand || 'Crossword'));
 
     var headline = el('h2', 'paperbox__head', opts.headline || 'Wipe the grid!');
     headline.id = headId;

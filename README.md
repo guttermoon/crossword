@@ -33,7 +33,10 @@ act on: Check, Reveal, Start Over, and on the end of the same line the count of
 entries solved and the clock. A wrong letter found by **Check** gets a red
 pencil slash, which clears as soon as you retype it. A letter given away by **Reveal** keeps a small red corner.
 Filling a grid correctly stamps it SOLVED. Every clue also has its own
-**Reveal** beside it. **Start Over** sends a late edition spinning off the press
+**reveal** at the end of it, set as a word rather than a button: the toolbar's
+Reveal acts on the word you are in, and pressing a clue no longer moves the
+cursor, so without it you would have to find the word in the grid before you
+could give up on it. **Start Over** sends a late edition spinning off the press
 — WIPE THE GRID! — and waits for a yes or a no; Escape, or a click off the
 paper, means no. The paper is a plain white sheet: a headline set in Libre
 Franklin, kept to one line at any width, then the question and the two answers.

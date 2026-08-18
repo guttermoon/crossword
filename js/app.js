@@ -115,6 +115,15 @@
     function measure() {
       waiting = false;
       nav.classList.toggle('is-stuck', sentinel.getBoundingClientRect().top < 0);
+      // What the pinned strip actually costs, so the toolbar under it can sit
+      // flush. Guessing at it left a sliver of the page showing through between
+      // the two, and the guess was wrong by a different amount on each screen.
+      if (nav.classList.contains('is-stuck')) {
+        // Rounded down, not up: a fraction of a pixel of overlap hides behind
+        // the strip, where a fraction of a gap shows the page sliding through.
+        document.documentElement.style.setProperty(
+          '--pin-strip', Math.floor(nav.getBoundingClientRect().height) + 'px');
+      }
     }
 
     function onScroll() {
@@ -390,6 +399,18 @@
     if (picker) {
       trackCurrent(picker);
       stickWhenPassed(picker);
+    }
+
+    // The grid pins below both bars, so it needs the second one's height too.
+    var toolbar = document.querySelector('.toolbar');
+    if (toolbar) {
+      var noteToolbar = function () {
+        document.documentElement.style.setProperty(
+          '--pin-toolbar', Math.ceil(toolbar.getBoundingClientRect().height) + 'px');
+      };
+      if (global.ResizeObserver) new global.ResizeObserver(noteToolbar).observe(toolbar);
+      else global.addEventListener('resize', noteToolbar);
+      noteToolbar();
     }
   }
 

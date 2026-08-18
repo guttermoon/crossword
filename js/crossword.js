@@ -225,18 +225,26 @@
           });
           body.appendChild(text);
 
-          var actions = el('span', 'clue__actions');
-
           var reveal = el('button', 'clue__btn', 'Reveal');
           reveal.type = 'button';
           reveal.setAttribute('aria-label', 'Reveal ' + entry.number + ' ' + entry.direction);
           reveal.addEventListener('click', function () {
             self.revealCells(entry.cells);
           });
-          actions.appendChild(reveal);
 
-          body.appendChild(actions);
-          if (panel) body.appendChild(panel);
+          if (panel) {
+            // It lives at the foot of the note, after the rewrite and under the
+            // rule: read what the habit is, then give up on the word if you
+            // want to. A clue with no note keeps it on the line instead.
+            var tail = el('p', 'note__reveal');
+            tail.appendChild(reveal);
+            panel.querySelector('.note__body').appendChild(tail);
+            body.appendChild(panel);
+          } else {
+            var actions = el('span', 'clue__actions');
+            actions.appendChild(reveal);
+            body.appendChild(actions);
+          }
 
           item.appendChild(body);
           list.appendChild(item);

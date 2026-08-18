@@ -35,7 +35,8 @@ pencil slash, which clears as soon as you retype it. A letter given away by **Re
 Filling a grid correctly stamps it SOLVED. Every clue also has its own
 **Reveal** beside it. **Start Over** sends a late edition spinning off the press
 — WIPE THE GRID! — and waits for a yes or a no; Escape, or a click off the
-paper, means no.
+paper, means no. The paper is a plain white sheet: a headline, the question and
+the two answers, and nothing set-dressed around them.
 
 A **Pick a puzzle** strip links down to each grid and marks whichever one you
 are looking at.

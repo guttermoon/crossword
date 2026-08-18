@@ -290,7 +290,6 @@
         brand: (self.puzzle.issue ? self.puzzle.issue + ' · ' : '') + 'Late Edition',
         headline: 'Wipe the grid!',
         question: 'Erase everything you have filled in for this puzzle?',
-        byline: self.puzzle.title,
         yes: 'Yes, wipe it',
         no: 'No, leave it',
       }, wipe);

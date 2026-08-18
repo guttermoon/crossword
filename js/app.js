@@ -220,10 +220,8 @@
     // Clues beside the grid; which side depends on the puzzle.
     var play = el('div', 'puzzle__play');
 
+    // No "Clues" heading: the two lists say Across and Down themselves.
     var cluesCol = el('div', 'puzzle__clues');
-    var cluesHead = el('h3', 'section-head');
-    cluesHead.appendChild(el('span', null, 'Clues'));
-    cluesCol.appendChild(cluesHead);
     var cluesMount = el('div', 'clues-mount');
     cluesCol.appendChild(cluesMount);
     play.appendChild(cluesCol);

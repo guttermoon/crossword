@@ -247,16 +247,16 @@
   border-top: var(--rule-thick);
 }
 
+/* Lowercase and heavy, the way the printed page set them. */
 .clues__head {
-  margin: 0 0 8px;
+  margin: 0 0 9px;
   font-family: var(--font-cond);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--red);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
   border-bottom: var(--rule-thick);
-  padding-bottom: 4px;
+  padding-bottom: 5px;
 }
 
 .clues__list {
@@ -271,6 +271,8 @@
   padding: 4px 5px;
   font-size: 12px;
   line-height: 1.55;
+  /* The row is the target, so the whole row says so. */
+  cursor: pointer;
 }
 
 .clue__num {
@@ -284,7 +286,8 @@
 
 /* Clues sit in a column beside the grid, so they run single-file. */
 
-.clue__text { cursor: pointer; }
+/* Inside an open note you are reading, not aiming. */
+.note { cursor: auto; }
 
 .clue__text:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 
@@ -298,23 +301,27 @@
   vertical-align: 1px;
 }
 
+/* Seventy-six of these run down the page, so it is set as a word rather than a
+   box: a boxed chip repeated on every line is what made the list look busy. */
 .clue__btn {
-  padding: 1px 8px;
-  border: 1px solid var(--ink-soft);
-  border-radius: var(--radius-btn);
-  background: transparent;
+  padding: 0;
+  border: 0;
+  background: none;
   font-family: var(--font-cond);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--red-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .clue__btn:hover { color: var(--ink); }
-.clue__btn:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
+.clue__btn:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 
 /* A clue takes an edge whenever it is under the pointer or under the cursor,
    and the pair of them read as a hierarchy: red and the wash for a row you are
@@ -356,8 +363,9 @@
   gap: 8px;
 }
 
-/* A rule between the explanation and the pair of quotes under it. */
-.note__what + .note__pair {
+/* The rule sits under the pair of quotes, between the rewrite and the way out. */
+.note__reveal {
+  margin: 10px 0 0;
   padding-top: 9px;
   border-top: 1px dotted var(--ink-soft);
 }

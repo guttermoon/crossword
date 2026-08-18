@@ -392,8 +392,11 @@ body {
 .picker__title {
   display: block;
   margin: 5px 0 4px;
+  font-family: var(--font-headline);
+  font-weight: 700;
   font-size: 21px;
   line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .picker__count {

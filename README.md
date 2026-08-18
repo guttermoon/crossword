@@ -7,7 +7,11 @@ what a person writes instead. The studies behind them are listed at the foot of
 the page.
 
 Laid out as a newspaper puzzle page: cream stock, a groovy red masthead, ruled
-intro panels, freeform grids and dense clue columns.
+intro panels, freeform grids and dense clue columns, under the Dead Good Club
+mark. The mark is served from `img/dgc-logo.png`, resampled to 900px (40KB)
+from the supplied art in the repository root, which is 10,630px and 644KB. It
+is black on white rather than on transparency, so it is multiplied into the
+paper rather than sitting on a white patch a shade brighter than the page.
 
 Plain HTML, CSS and JavaScript — no build step, no dependencies, no network
 calls. Open `index.html` directly, or serve the folder:
@@ -121,7 +125,8 @@ as first-party copy: do not paste anything into it that you did not write.
 ## Layout
 
 ```
-index.html          the sheet: skip link, puzzle mount, footer
+index.html          the sheet: skip link, club mark, puzzle mount, footer
+img/dgc-logo.png    the Dead Good Club mark, 900px wide, linking to the club
 css/fonts.css       @font-face for the self-hosted families
 css/paper.css       paper, grain, masthead, intro panels, article, sources, print
 css/puzzle.css      grid, cursor states, toolbar, clue lists, footnotes, clue bar
@@ -132,6 +137,7 @@ js/app.js           builds the page from GAZETTE and PUZZLES
 data/puzzles.js     puzzle content — 3 puzzles, 76 clues, 76 footnotes
 data/gazette.js     front matter and sources
 fonts/              Shrikhand, Inter, Courier Prime, Libre Franklin (SIL OFL)
+dgc penguin official.png/.svg   the mark as supplied, kept as the source art
 ```
 
 Colours and fonts are CSS custom properties at the top of `css/paper.css`. The

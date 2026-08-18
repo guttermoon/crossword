@@ -541,7 +541,11 @@
       this.renderProgress();
       this.save();
     }
-    close.focus();
+    // Focus scrolls its element into view, and Close is at the bottom of a
+    // panel that scrolls — so taking focus normally opened the sheet at its
+    // foot, with the clue already off the top.
+    close.focus({ preventScroll: true });
+    panel.scrollTop = 0;
   };
 
   Crossword.prototype.closeNoteSheet = function () {

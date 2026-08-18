@@ -90,6 +90,7 @@ Two data files, and nothing else needs touching.
       6: {
         clue: "A glass display cabinet in a museum, drafted in as a verb…",
         answer: 'SHOWCASE',             // checked against the grid on load
+        also:   'SHOWCASE',             // optional: a second accepted spelling
         note: {
           what:   'Why AI does this and why it reads as AI-written.',
           sounds: '“This report showcases our commitment to sustainability.”',
@@ -115,7 +116,15 @@ On load each puzzle is validated, and problems are reported in a red box on the
 page and logged to the console rather than rendering a broken grid. It catches
 ragged rows, stray characters, an entry with no clue, a clue with no entry, and
 — most usefully while editing squares — **an `answer` that no longer matches
-what the grid spells**.
+what the grid spells**, and an `also` that would not fit the squares.
+
+`also` is a second accepted spelling of the same answer, letter for letter: the
+squares where it differs from `answer` take either letter, and the entry counts
+as solved with either. `UTILISE` carries `also: 'UTILIZE'` — it is the word the
+research counted, but an American solver typing the Z is not wrong, and without
+this Check would paint a red slash through a square they had right. **Reveal**
+always writes the answer as set, never the variant. It is the only one of the 76
+answers where British and American English part company.
 
 **`data/gazette.js`** — the title, standfirst, the two intro panels and the
 source list. These strings carry inline

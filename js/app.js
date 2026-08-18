@@ -246,13 +246,30 @@
 
   function buildClueBar(getActive) {
     var bar = el('div', 'cluebar');
-    bar.setAttribute('aria-hidden', 'true');
+    var showing = null;
 
     var prev = el('button', 'cluebar__nav', '◀');
     prev.type = 'button';
+    prev.setAttribute('aria-label', 'Previous clue');
     var next = el('button', 'cluebar__nav', '▶');
     next.type = 'button';
-    var label = el('div', 'cluebar__text', 'Tap a square to begin');
+    next.setAttribute('aria-label', 'Next clue');
+    // The clamp lives on a span inside the button: a button's own box is atomic,
+    // so -webkit-box on it is ignored and the clue runs to three cut lines.
+    var label = el('button', 'cluebar__text');
+    label.type = 'button';
+    var line = el('span', 'cluebar__line', 'Tap a square to begin');
+    label.appendChild(line);
+
+    // The clue is cut to two lines in the bar; this opens the whole of it,
+    // with the note and the way out, without going to find the clue list.
+    var why = el('button', 'cluebar__why', 'Why?');
+    why.type = 'button';
+    function openSheet() {
+      if (showing) showing.instance.openNoteSheet(showing.entry);
+    }
+    label.addEventListener('click', openSheet);
+    why.addEventListener('click', openSheet);
 
     prev.addEventListener('click', function () {
       var active = getActive();
@@ -271,12 +288,14 @@
 
     bar.appendChild(prev);
     bar.appendChild(label);
+    bar.appendChild(why);
     bar.appendChild(next);
     document.body.appendChild(bar);
 
     return {
-      set: function (text) {
-        label.textContent = text;
+      set: function (text, instance, entry) {
+        line.textContent = text;
+        showing = instance && entry ? { instance: instance, entry: entry } : null;
       },
     };
   }
@@ -336,7 +355,7 @@
           active = instance;
         },
         onClueChange: function (instance, entry, text) {
-          if (active === instance) clueBar.set(text);
+          if (active === instance) clueBar.set(text, instance, entry);
         },
       });
     });

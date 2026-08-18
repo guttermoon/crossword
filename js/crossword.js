@@ -225,9 +225,10 @@
           });
           body.appendChild(text);
 
-          var reveal = el('button', 'clue__btn', 'Reveal');
+          var reveal = el('button', 'clue__btn', 'Show me the word');
           reveal.type = 'button';
-          reveal.setAttribute('aria-label', 'Reveal ' + entry.number + ' ' + entry.direction);
+          reveal.setAttribute('aria-label',
+            'Show me the word for ' + entry.number + ' ' + entry.direction);
           reveal.addEventListener('click', function () {
             self.revealCells(entry.cells);
           });

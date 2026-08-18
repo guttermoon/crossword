@@ -8,7 +8,7 @@ the page.
 
 Laid out as a newspaper puzzle page: cream stock, a groovy red masthead, ruled
 intro panels, freeform grids and dense clue columns, under the Dead Good Club
-mark. The mark is served from `img/dgc-logo.png`, resampled to 900px (40KB)
+mark. The mark is served from `img/dgc-logo.webp`, resampled to 900px (12KB)
 from the supplied art in the repository root, which is 10,630px and 644KB. It
 is black on white rather than on transparency, so it is multiplied into the
 paper rather than sitting on a white patch a shade brighter than the page.
@@ -126,7 +126,7 @@ as first-party copy: do not paste anything into it that you did not write.
 
 ```
 index.html          the sheet: skip link, club mark, puzzle mount, footer
-img/dgc-logo.png    the Dead Good Club mark, 900px wide, linking to the club
+img/dgc-logo.webp   the Dead Good Club mark, 900px wide, linking to the club
 css/fonts.css       @font-face for the self-hosted families
 css/paper.css       paper, grain, masthead, intro panels, article, sources, print
 css/puzzle.css      grid, cursor states, toolbar, clue lists, footnotes, clue bar

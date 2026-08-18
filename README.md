@@ -73,8 +73,12 @@ the position within it.
 
 A phone gets a different page rather than a squeezed one.
 
-Both strips pin to the top: the three puzzles three across in a single line,
-names only, and under them the controls as three drawings — check this word,
+Both strips pin to the top, flush against each other — each measures its own
+height into the custom property the one below it pins at, because a guess at
+those heights left a sliver of the page showing through between them, and the
+guess was wrong by a different amount on every screen. The three puzzles go
+three across in a single line, names only, and under them the controls as three
+drawings — check this word,
 show me this word, start over — with the count of entries solved on the end.
 Eight labelled buttons do not fit a small screen, and a row that has to be
 swiped sideways is a row whose right-hand half nobody finds. They act on the

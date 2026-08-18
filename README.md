@@ -147,10 +147,10 @@ grey while it is the puzzle you are looking at — where multiplied grain would 
 invisible, so that one lifts with `screen` instead. The toolbar and per-clue
 buttons work the same way. The clue rows take the greys but never the grain: a
 clue is a line of type, and pixels crawling under it make it harder to read
-rather than older. A clue takes the red edge whenever it is under the pointer or
-under the cursor, and what changes between them is the fill — the red wash for a
-row you are passing over, the grey for the one you are actually in, which it
-keeps when the pointer comes over it, so the block never changes colour while
+rather than older. A clue takes an edge whenever it is under the pointer or
+under the cursor, and the pair read as a hierarchy: red with the wash for a row
+you are passing over, ink with the grey for the one you are actually in, which
+it keeps when the pointer comes over it, so the block never changes colour while
 you are reading it. A note has no fill and no edge of its own; the clue above it
 is already carrying both.
 

@@ -156,6 +156,26 @@ body {
 
 .sheet > * { position: relative; z-index: 3; }
 
+/* ------------------------------------------------------------------ the club */
+
+/* The publisher's mark, above everything. The artwork is black on white rather
+   than on transparency, so it multiplies into the paper instead of sitting on a
+   white patch a shade brighter than the page. */
+.dgc {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 26px;
+}
+
+.dgc__mark {
+  display: block;
+  width: clamp(190px, 26vw, 280px);
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+.dgc:focus-visible { outline: 2px solid var(--red); outline-offset: 6px; }
+
 /* --------------------------------------------------------------------- masthead */
 
 .masthead {
@@ -474,25 +494,23 @@ body {
   color: var(--red);
 }
 
-.heroes__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+.heroes__words {
   margin: 0;
-}
-
-.heroes__chip {
-  padding: 1px 7px;
-  border: 1px solid var(--ink-soft);
-  border-radius: 2px;
   font-family: var(--font-cond);
-  font-size: 11px;
+  font-size: 12px;
+  line-height: 1.5;
   letter-spacing: 0.06em;
+  color: var(--ink-soft);
 }
 
 /* ---------------------------------------------------------------------- article */
 
-.puzzle { margin: 0 0 8px; }
+/* The double rule opens the article, above the head that names the puzzle. */
+.puzzle {
+  margin: 0 0 8px;
+  padding-top: 20px;
+  border-top: var(--rule-double);
+}
 
 /* The title, blurb and hero words run the full width above the puzzle. */
 .puzzle__head {

@@ -7,7 +7,11 @@ what a person writes instead. The studies behind them are listed at the foot of
 the page.
 
 Laid out as a newspaper puzzle page: cream stock, a groovy red masthead, ruled
-intro panels, freeform grids and dense clue columns.
+intro panels, freeform grids and dense clue columns, under the Dead Good Club
+mark. The mark is served from `img/dgc-logo.webp`, resampled to 900px (12KB)
+from the supplied art in the repository root, which is 10,630px and 644KB. It
+is black on white rather than on transparency, so it is multiplied into the
+paper rather than sitting on a white patch a shade brighter than the page.
 
 Plain HTML, CSS and JavaScript — no build step, no dependencies, no network
 calls. Open `index.html` directly, or serve the folder:
@@ -27,16 +31,17 @@ python3 -m http.server 8000    # then open http://localhost:8000
 | Ends of the word | Home / End |
 | Erase | Backspace (steps back through the word) or Delete |
 | Open a clue's note | Press the clue — again to close it |
+| Give up on a word | **Show me the word**, at the foot of its note |
 
 Each puzzle carries its own controls under its title, against the squares they
 act on: Check, Reveal, Start Over, and on the end of the same line the count of
 entries solved and the clock. A wrong letter found by **Check** gets a red
 pencil slash, which clears as soon as you retype it. A letter given away by **Reveal** keeps a small red corner.
-Filling a grid correctly stamps it SOLVED. Every note ends with its own
-**reveal**, under the rule below the rewrite: read what the habit is, then give
-up on the word if you want to. It is there because the toolbar's Reveal acts on
-the word you are in and pressing a clue no longer moves the cursor, so without
-it you would have to find the word in the grid before you could give up on it. **Start Over** sends a late edition spinning off the press
+Filling a grid correctly stamps it SOLVED. Every note ends with **Show me the
+word**, under the rule below the rewrite: read what the habit is, then give up
+on the word if you want to. It is there because the toolbar's Reveal acts on the
+word you are in and pressing a clue no longer moves the cursor, so without it
+you would have to find the word in the grid before you could give up on it. **Start Over** sends a late edition spinning off the press
 — WIPE THE GRID! — and waits for a yes or a no; Escape, or a click off the
 paper, means no. The paper is a plain white sheet: a headline set in Libre
 Franklin, kept to one line at any width, then the question and the two answers.
@@ -46,10 +51,10 @@ are looking at.
 
 **Notes** open directly under the clue that references them, each one saying
 what the habit is, what it **sounds like**, and what a person writes **instead
-of** it, and then a **reveal** for the word itself. Pressing a clue opens its
-note; press it again and it closes. That is all a clue does — which word you are
-in is the grid's business, set by pressing a square — and the reveal at the foot
-of a note fills that clue's word in without moving the cursor either. One is open at a time, so the list cannot fill up
+of** it, and then **Show me the word**. Pressing a clue opens its note; press it
+again and it closes. That is all a clue does — which word you are in is the
+grid's business, set by pressing a square — and the line at the foot of a note
+fills that clue's word in without moving the cursor either. One is open at a time, so the list cannot fill up
 with them as you work down it. A note also opens by itself the moment its entry
 is solved, so solving teaches as you go — but only when you solved it: an entry
 filled in by **Reveal** was given to you, and Reveal puts the word in the grid
@@ -120,7 +125,8 @@ as first-party copy: do not paste anything into it that you did not write.
 ## Layout
 
 ```
-index.html          the sheet: skip link, puzzle mount, footer
+index.html          the sheet: skip link, club mark, puzzle mount, footer
+img/dgc-logo.webp   the Dead Good Club mark, 900px wide, linking to the club
 css/fonts.css       @font-face for the self-hosted families
 css/paper.css       paper, grain, masthead, intro panels, article, sources, print
 css/puzzle.css      grid, cursor states, toolbar, clue lists, footnotes, clue bar
@@ -131,6 +137,7 @@ js/app.js           builds the page from GAZETTE and PUZZLES
 data/puzzles.js     puzzle content — 3 puzzles, 76 clues, 76 footnotes
 data/gazette.js     front matter and sources
 fonts/              Shrikhand, Inter, Courier Prime, Libre Franklin (SIL OFL)
+dgc penguin official.png/.svg   the mark as supplied, kept as the source art
 ```
 
 Colours and fonts are CSS custom properties at the top of `css/paper.css`. The

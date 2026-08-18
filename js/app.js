@@ -205,13 +205,11 @@
     head.appendChild(intro);
 
     if (puzzle.heroes && puzzle.heroes.length) {
+      // A caption, not a row of chips: they are words in the puzzle, and the
+      // boxes made them look like the controls they sit near.
       var heroes = el('div', 'heroes');
       heroes.appendChild(el('p', 'heroes__label', 'Famous ones in here'));
-      var chips = el('p', 'heroes__chips');
-      puzzle.heroes.forEach(function (word) {
-        chips.appendChild(el('span', 'heroes__chip', word));
-      });
-      heroes.appendChild(chips);
+      heroes.appendChild(el('p', 'heroes__words', puzzle.heroes.join(', ')));
       head.appendChild(heroes);
     }
     article.appendChild(head);

@@ -181,9 +181,9 @@
     var article = el('article', 'puzzle');
     article.id = 'puzzle-' + puzzle.id;
 
-    // Controls and progress sit at the top of the article, not below the grid.
+    // Controls and progress go between the head and the grid — under the title
+    // that names the puzzle and against the squares they act on.
     var toolbarMount = el('div', 'toolbar-mount');
-    article.appendChild(toolbarMount);
 
     // The grid changes sides puzzle to puzzle, the way a magazine alternates a
     // spread so two facing pages do not repeat the same block of type.
@@ -215,6 +215,7 @@
       head.appendChild(heroes);
     }
     article.appendChild(head);
+    article.appendChild(toolbarMount);
 
     // Clues beside the grid; which side depends on the puzzle.
     var play = el('div', 'puzzle__play');

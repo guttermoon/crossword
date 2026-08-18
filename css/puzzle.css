@@ -154,6 +154,39 @@
 
 /* -------------------------------------------------------------------- toolbar */
 
+/* Line drawings, sized to the text beside them. */
+.icon {
+  width: 1.15em;
+  height: 1.15em;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The phone's three controls; the wider layout uses the spelled-out groups. */
+.toolbar__phone { display: none; }
+
+.iconbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 32px;
+  padding: 0;
+  border: var(--rule-thick);
+  border-radius: var(--radius-btn);
+  background: var(--paper);
+  font-size: 15px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.iconbtn--warn { color: var(--red-deep); border-color: var(--red-deep); }
+.iconbtn:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
 /* On the end of the toolbar, sized to sit on its line. */
 .progress__count {
   margin: 0 0 0 auto;
@@ -528,7 +561,13 @@
     cursor: pointer;
   }
 
-  .cluebar__nav { width: 42px; font-size: 15px; }
+  .cluebar__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    font-size: 15px;
+  }
 
   .cluebar__why {
     padding: 0 12px;
@@ -542,23 +581,22 @@
 
   .cluebar__nav:first-child { border-left: 0; border-right: 1px solid var(--ink); }
 
-  /* The controls stay with you rather than scrolling away above the clues.
-     One row that slides sideways, rather than three rows of a phone screen. */
-  .toolbar-mount { top: 0; }
+  /* The controls stay with you rather than scrolling away above the clues, and
+     they are three drawings rather than eight labelled buttons: a row that has
+     to be swiped sideways is a row whose right-hand half nobody finds. They
+     act on the word you are in, which is the scope that matters with the grid
+     under your thumb. */
+  .toolbar-mount { top: var(--pin-strip); }
 
   .toolbar {
     flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 6px 12px;
-    padding: 8px 0;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    gap: 8px;
+    padding: 7px 0;
   }
 
-  .toolbar::-webkit-scrollbar { display: none; }
-  .toolbar__group, .stamp, .timer, .progress__count { flex: 0 0 auto; }
-  .progress__count { margin-left: 6px; }
-  .timer { margin-left: 6px; }
+  .toolbar__group, .timer { display: none; }
+  .toolbar__phone { display: flex; gap: 8px; }
+  .progress__count { margin-left: auto; font-size: 15px; }
 
   .grid { max-width: none; margin: 0 auto; }
 
@@ -570,4 +608,13 @@
     border-top: 1px solid var(--ink);
     padding-top: 14px;
   }
+}
+
+/* The clue list is a wall of type on a phone — fifty-odd clues under the grid,
+   scrolled past rather than read. The bar at the foot of the screen carries the
+   one you are in and opens the rest, so the list stands down. Screen only: a
+   printed page is about 816px wide, which would otherwise match this query and
+   print a puzzle with no clues at all. */
+@media screen and (max-width: 860px) {
+  .puzzle__clues { display: none; }
 }

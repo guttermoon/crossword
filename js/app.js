@@ -248,12 +248,24 @@
     var bar = el('div', 'cluebar');
     var showing = null;
 
-    var prev = el('button', 'cluebar__nav', '◀');
+    function chevron(back) {
+      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 16 16');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+      svg.classList.add('icon');
+      svg.innerHTML = back ? '<path d="M10 2L4 8l6 6"/>' : '<path d="M6 2l6 6-6 6"/>';
+      return svg;
+    }
+
+    var prev = el('button', 'cluebar__nav');
     prev.type = 'button';
     prev.setAttribute('aria-label', 'Previous clue');
-    var next = el('button', 'cluebar__nav', '▶');
+    prev.appendChild(chevron(true));
+    var next = el('button', 'cluebar__nav');
     next.type = 'button';
     next.setAttribute('aria-label', 'Next clue');
+    next.appendChild(chevron(false));
     // The clamp lives on a span inside the button: a button's own box is atomic,
     // so -webkit-box on it is ignored and the clue runs to three cut lines.
     var label = el('button', 'cluebar__text');

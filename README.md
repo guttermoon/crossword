@@ -26,11 +26,12 @@ python3 -m http.server 8000    # then open http://localhost:8000
 | Next / previous clue | Tab / Shift-Tab |
 | Ends of the word | Home / End |
 | Erase | Backspace (steps back through the word) or Delete |
+| Open a clue's note | Press the clue — again to close it |
 
-Each puzzle carries its own controls and progress at the head of the article:
-how many entries are solved, a bar, and how many footnotes you have read. A
-wrong letter found by **Check** gets a red pencil slash, which clears as soon as
-you retype it. A letter given away by **Reveal** keeps a small red corner.
+Each puzzle carries its own controls under its title, against the squares they
+act on: Check, Reveal, Start Over, and on the end of the same line the count of
+entries solved and the clock. A wrong letter found by **Check** gets a red
+pencil slash, which clears as soon as you retype it. A letter given away by **Reveal** keeps a small red corner.
 Filling a grid correctly stamps it SOLVED. Every clue also has its own
 **Reveal** beside it. **Start Over** sends a late edition spinning off the press
 — WIPE THE GRID! — and waits for a yes or a no; Escape, or a click off the
@@ -41,11 +42,12 @@ are looking at.
 
 **Notes** open directly under the clue that references them, each one saying
 what the habit is, what it **sounds like**, and what a person writes **instead
-of** it. One opens by
-itself the moment its entry is filled in correctly, so solving teaches as you
-go, and **Why?** opens one early without giving the answer away. Nothing else on
-the page moves — the clue stays put and the list simply grows under it.
-Printing prints every note, opened or not.
+of** it. Pressing a clue goes to its word in the grid and opens its note; press
+it again and the note closes. One is open at a time, so the list cannot fill up
+with them as you work down it. A note also opens by itself the moment its entry
+is filled in correctly, so solving teaches as you go. Nothing else on the page
+moves — the clue stays put and the list grows under it. Printing prints every
+note, opened or not.
 
 Progress and elapsed time are saved to `localStorage` per puzzle, so a reload
 picks up where you left off; **Start Over** clears that puzzle alone. Everything

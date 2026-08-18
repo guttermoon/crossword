@@ -80,7 +80,7 @@ Two data files, and nothing else needs touching.
   issue: 'No. 1',
   title: 'The Words',
   blurb: 'The vocabulary AI cannot put down…',
-  heroes: ['DELVE', 'LOADBEARING'],     // chips listed under the toolbar
+  heroes: ['DELVE', 'LOADBEARING'],     // named in a caption under the blurb
   grid: [                               // equal-length rows, '.' = empty square
     '.B.U...',
     '.OASTS.',
@@ -90,7 +90,7 @@ Two data files, and nothing else needs touching.
       6: {
         clue: "A glass display cabinet in a museum, drafted in as a verb…",
         answer: 'SHOWCASE',             // checked against the grid on load
-        also:   'SHOWCASE',             // optional: a second accepted spelling
+     // also: 'SHOWCAZE',             // optional second accepted spelling
         note: {
           what:   'Why AI does this and why it reads as AI-written.',
           sounds: '“This report showcases our commitment to sustainability.”',

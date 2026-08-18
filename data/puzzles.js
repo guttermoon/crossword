@@ -371,8 +371,7 @@ window.PUZZLES = [
    "EMDASH",
    "TRICOLON",
    "RHETORICALSELFANSWER",
-   "FRAGMENT",
-   "TWAIN"
+   "FRAGMENT"
   ],
   "grid": [
    ".JUST.....E.......F.",

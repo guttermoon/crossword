@@ -287,6 +287,25 @@
     this.cluesMount.appendChild(wrap);
   };
 
+  /* Small line drawings, so the phone toolbar can be one row of icons rather
+   * than two rows of words or one row that slides sideways. */
+  var ICONS = {
+    check: '<path d="M3 9.5l4 4 8-9"/>',
+    reveal: '<path d="M1 8s2.8-4.5 7-4.5S15 8 15 8s-2.8 4.5-7 4.5S1 8 1 8z"/>'
+      + '<circle cx="8" cy="8" r="1.9"/>',
+    restart: '<path d="M13.5 8a5.5 5.5 0 1 1-1.9-4.2"/><path d="M13.6 1.6v2.6H11"/>',
+  };
+
+  function icon(name) {
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 16 16');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+    svg.classList.add('icon');
+    svg.innerHTML = ICONS[name];
+    return svg;
+  }
+
   Crossword.prototype.renderToolbar = function () {
     var self = this;
     var bar = el('div', 'toolbar');
@@ -317,26 +336,30 @@
         this.reveal.bind(this))
     );
 
+    // The same three things a phone has room for, drawn rather than spelled out.
+    // They act on the word you are in, which is the scope that matters when the
+    // grid is under your thumb; letter and puzzle stay on the wider layout.
+    var phone = el('div', 'toolbar__phone');
+    [
+      ['check', 'Check this word', function () { self.check('word'); }],
+      ['reveal', 'Show me this word', function () { self.reveal('word'); }],
+      ['restart', 'Start this puzzle over', function () { self.askStartOver(); }],
+    ].forEach(function (spec) {
+      var button = el('button', 'iconbtn' + (spec[0] === 'restart' ? ' iconbtn--warn' : ''));
+      button.type = 'button';
+      button.title = spec[1];
+      button.setAttribute('aria-label', spec[1]);
+      button.appendChild(icon(spec[0]));
+      button.addEventListener('click', spec[2]);
+      phone.appendChild(button);
+    });
+    bar.appendChild(phone);
+
     var extras = el('div', 'toolbar__group');
     var clear = el('button', 'stamp stamp--warn', 'Start Over');
     clear.type = 'button';
     clear.addEventListener('click', function () {
-      var ask = global.AskPaper ? global.AskPaper.open : null;
-      function wipe() {
-        self.clearAll();
-        self.input.focus();
-      }
-      if (!ask) {
-        if (global.confirm('Erase everything you have filled in for this puzzle?')) wipe();
-        return;
-      }
-      ask({
-        brand: (self.puzzle.issue ? self.puzzle.issue + ' · ' : '') + 'Crossword',
-        headline: 'Wipe the grid!',
-        question: 'Erase everything you have filled in for this puzzle?',
-        yes: 'Yes, wipe it',
-        no: 'No, leave it',
-      }, wipe);
+      self.askStartOver();
     });
     extras.appendChild(clear);
     bar.appendChild(extras);
@@ -350,6 +373,25 @@
     this.toolbarMount.appendChild(bar);
     this.renderTimer();
     this.renderProgress();
+  };
+
+  Crossword.prototype.askStartOver = function () {
+    var self = this;
+    function wipe() {
+      self.clearAll();
+      self.input.focus();
+    }
+    if (!global.AskPaper) {
+      if (global.confirm('Erase everything you have filled in for this puzzle?')) wipe();
+      return;
+    }
+    global.AskPaper.open({
+      brand: (this.puzzle.issue ? this.puzzle.issue + ' · ' : '') + 'Crossword',
+      headline: 'Wipe the grid!',
+      question: 'Erase everything you have filled in for this puzzle?',
+      yes: 'Yes, wipe it',
+      no: 'No, leave it',
+    }, wipe);
   };
 
   /* How far through the puzzle you are. It rides on the end of the toolbar

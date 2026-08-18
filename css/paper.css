@@ -31,6 +31,10 @@
   --rule-thick: 2px solid var(--ink);
   --rule-double: 7px double var(--ink);
   --radius: 10px;
+  /* Buttons are shorter than twice the box radius, so the box radius turns them
+     into stadiums. Theirs is smaller, which leaves them flat sides and reads as
+     the same cornering. */
+  --radius-btn: 6px;
   --sheet-pad: clamp(18px, 3.5vw, 54px);
 
   /* A 64px greyscale tile, scaled up and rendered with hard edges so every
@@ -533,7 +537,7 @@ body {
   justify-self: end;
   padding: 3px 11px;
   border: var(--rule-thick);
-  border-radius: 999px;
+  border-radius: var(--radius-btn);
   background: var(--paper);
   font-family: var(--font-cond);
   font-size: 10px;
@@ -778,7 +782,7 @@ body {
 .paperbox__btn {
   padding: 6px 16px;
   border: var(--rule-thick);
-  border-radius: 999px;
+  border-radius: var(--radius-btn);
   background: var(--paper);
   font-family: var(--font-cond);
   font-size: 11px;

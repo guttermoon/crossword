@@ -1012,6 +1012,84 @@ body {
   .sheet { box-shadow: none; }
 }
 
+/* ------------------------------------------------------------------ easy eyes */
+
+/* The switch itself is the club's, and the club's stylesheet is left alone —
+   it is a preference control, the same object on every page it appears on, and
+   a reader who knows it by its shape should not have to learn it again here.
+   All we change is where it stands: in the page under the standfirst, rather
+   than pinned to the corner of the window.
+
+   It stays `relative`, never `static`: the knob and the on/off hint are
+   absolutely positioned, and they measure themselves against this box. */
+.easy-eyes-switch {
+  position: relative;
+  right: auto;
+  top: auto;
+  margin: 20px auto 2px;
+}
+
+/* The club hides the full switch on a phone and shows a bare eyeball in the
+   corner instead. Here it sits in the page rather than over it, so there is
+   room for the labelled version at every width — and the reader who most wants
+   Easy Eyes is the one least well served by an unlabelled icon. */
+@media (max-width: 767px) {
+  .easy-eyes-switch { display: block; }
+}
+
+/* --- what the page itself does when Easy Eyes is on --- */
+
+/* The grain and the scan are the whole visual idea of the page, and they are
+   also the first thing to go: every one of them is a texture laid over type. */
+html.easy-eyes .sheet::before,
+html.easy-eyes .puzzle__head::after,
+html.easy-eyes .tells::after,
+html.easy-eyes .picker__card:hover::after,
+html.easy-eyes .picker__card.is-current::after,
+html.easy-eyes .stamp:hover::after,
+html.easy-eyes .stamp:active::after,
+html.easy-eyes .clue__btn:hover::after {
+  display: none;
+}
+
+/* With the grain gone the panels can be a shade lighter and warmer — the club's
+   cream, so the two sites read as one. Ink on it is about 12:1. */
+html.easy-eyes .puzzle__head,
+html.easy-eyes .tells {
+  background-color: #efe9dd;
+}
+
+/* The clue rows keep their tinting, one step lighter to match. */
+html.easy-eyes .clue.is-active,
+html.easy-eyes .stamp:hover,
+html.easy-eyes .clue__btn:hover {
+  background-color: #f2eee4;
+}
+
+/* On a phone the clue is read in the bar at the foot of the screen rather than
+   in the list, and that bar is a button — outside the club's p-and-li pass. It
+   is still the clue, so it reads like one. */
+html.easy-eyes .cluebar__text {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* The same on the sheet that clue opens into. It is hung on <body> so that it
+   can cover the page, which puts it outside the <main> the club's pass is
+   scoped to — but it holds the note, and a note is reading matter. The
+   reference line above it is a label, and labels are left alone. */
+html.easy-eyes .notesheet p:not(.notesheet__ref),
+html.easy-eyes .notesheet li {
+  font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* The typewriter face is the reason for the switch, and the club's own rule
+   does that part: every p and li inside <main> — the article, the clues, the
+   notes, the specimens — goes to Helvetica. The headline, the standfirst and
+   the section labels are already a grotesque, and the letters in the grid set
+   their own face, so none of them are touched. */
+
 /* ----------------------------------------------------------------------- print */
 
 @media print {
@@ -1023,7 +1101,8 @@ body {
   .puzzle__head, .tells, .picker__card,
   .clue, .clue.is-active, .clue.is-crossing { background-color: #fff; }
   .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel,
-  .progress, .puzzle__toggle, .video__frame { display: none !important; }
+  .progress, .puzzle__toggle, .video__frame,
+  .easy-eyes-switch { display: none !important; }
   /* The film cannot play on paper, so it prints as its address. */
   .video__url {
     display: block;

@@ -25,7 +25,13 @@
     // The publication line lives in the browser title and the colophon; up here
     // a rule opens the page instead.
     head.appendChild(el('div', 'masthead__rule'));
-    head.appendChild(el('h1', 'masthead__title', g.title));
+
+    // The title breaks where the copy breaks it, not where the column runs out.
+    var title = el('h1', 'masthead__title');
+    (g.titleLines && g.titleLines.length ? g.titleLines : [g.title]).forEach(function (line) {
+      title.appendChild(el('span', 'masthead__line', line));
+    });
+    head.appendChild(title);
     head.appendChild(rich('p', 'masthead__sub', g.standfirst));
     return head;
   }
@@ -254,17 +260,34 @@
   }
 
   /* The head of an article folds away, so a solver who has read it once can
-   * put the grid and its clues back at the top of the screen. */
+   * put the grid and its clues back at the top of the screen. A mark rather
+   * than a word: an asterisk while it is open, a plus while it is folded. */
+  var MARKS = {
+    open: '<path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>',
+    shut: '<path d="M12 4v16M4 12h16"/>',
+  };
+
+  function mark(open) {
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+    svg.classList.add('icon');
+    svg.innerHTML = open ? MARKS.open : MARKS.shut;
+    return svg;
+  }
+
   function makeCollapsible(head, label) {
-    var button = el('button', 'puzzle__toggle', 'Hide');
+    var button = el('button', 'puzzle__toggle');
     button.type = 'button';
     button.setAttribute('aria-expanded', 'true');
     button.setAttribute('aria-label', 'Hide the introduction to ' + label);
+    button.appendChild(mark(true));
     head.appendChild(button);
 
     button.addEventListener('click', function () {
       var collapsed = head.classList.toggle('is-collapsed');
-      button.textContent = collapsed ? 'Show' : 'Hide';
+      button.replaceChild(mark(!collapsed), button.firstChild);
       button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
       button.setAttribute('aria-label',
         (collapsed ? 'Show' : 'Hide') + ' the introduction to ' + label);

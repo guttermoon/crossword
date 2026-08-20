@@ -7,7 +7,11 @@ window.GAZETTE = {
   "brand": "The Slop Gazette",
   "kicker": "Saturday Edition &middot; Three puzzles &middot; 76 clues",
   "title": "How to puzzle out AI writing",
-  "standfirst": "Learn how to spot common signs of AI-generated writing, from em dashes and buzzwords to familiar phrases.",
+  "titleLines": [
+    "How to puzzle out",
+    "AI writing"
+  ],
+  "standfirst": "Learn how to spot the common signs of AI-generated writing, from em dashes and buzzwords to familiar phrases and repeated patterns.",
   "brief": {
     "blocks": [
       {
@@ -28,12 +32,7 @@ window.GAZETTE = {
       },
       {
         "type": "p",
-        "html": "It’s also worth noting that new forms of detecting AI writing are being rolled out. In addition to tools like <a href=\"https://www.pangram.com/\">Pangram</a> being used widely in schools to detect AI writing, Claude models will now generate text that contains a watermark or invisible, machine-readable signature embedded directly into generated text. The intent is to comply with new laws (like Article 50 of the EU AI Act) and to help readers have more transparency about whether something was machine-made."
-      },
-      {
-        "type": "link",
-        "href": "https://www.anthropic.com/news/claude-text-watermark",
-        "html": "Anthropic on the Claude text watermark"
+        "html": "It’s also worth noting that new forms of detecting AI writing are being rolled out. In addition to tools like <a href=\"https://www.pangram.com/\">Pangram</a> being used widely in schools to detect AI writing, <a href=\"https://www.anthropic.com/news/claude-text-watermark\">Claude models</a> will now generate text that contains a watermark or invisible, machine-readable signature embedded directly into generated text. The intent is to comply with new laws (like Article 50 of the EU AI Act) and to help readers have more transparency about whether something was machine-made."
       },
       {
         "type": "p",

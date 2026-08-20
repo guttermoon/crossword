@@ -226,35 +226,29 @@ EXAMPLE 28: Our expectations.
 
 EXAMPLE 29: Our ideas about what a hero should look like.
 
-EXAMPLE 30: What a woman should want.
+EXAMPLE 30: We take an old story and quietly rewrite it to make sense to us.
 
-EXAMPLE 31: What success should mean.
+EXAMPLE 31: Sometimes that’s the point.
 
-EXAMPLE 32: What “home” is supposed to be.
+EXAMPLE 32: Sometimes that’s the problem.
 
-EXAMPLE 33: We take an old story and quietly rewrite it to make sense to us.
+EXAMPLE 33: And honestly?
 
-EXAMPLE 34: Sometimes that’s the point.
+EXAMPLE 34: That’s what I want to explore next week.
 
-EXAMPLE 35: Sometimes that’s the problem.
+EXAMPLE 35: Because if we can see how an ancient story gets rewritten by a modern filmmaker, maybe we can start noticing how often we’re doing the exact same thing with our own lives.
 
-EXAMPLE 36: And honestly?
+EXAMPLE 36: The narratives we inherited.
 
-EXAMPLE 37: That’s what I want to explore next week.
+EXAMPLE 37: The roles we slipped into.
 
-EXAMPLE 38: Because if we can see how an ancient story gets rewritten by a modern filmmaker, maybe we can start noticing how often we’re doing the exact same thing with our own lives.
+EXAMPLE 38: The identities we decided were just “who we are”.
 
-EXAMPLE 39: The narratives we inherited.
+EXAMPLE 39: The things we’re still chasing because, somewhere along the way, we decided they were what we were supposed to want.
 
-EXAMPLE 40: The roles we slipped into.
+EXAMPLE 40: If you’ve seen <em>The Odyssey</em> already, tell me what you thought.
 
-EXAMPLE 41: The identities we decided were just “who we are”.
-
-EXAMPLE 42: The things we’re still chasing because, somewhere along the way, we decided they were what we were supposed to want.
-
-EXAMPLE 43: If you’ve seen <em>The Odyssey</em> already, tell me what you thought.
-
-EXAMPLE 44: Because I have a feeling this one is going to be divisive.
+EXAMPLE 41: Because I have a feeling this one is going to be divisive.
 
 ### The source list at the foot
 

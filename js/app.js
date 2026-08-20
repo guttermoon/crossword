@@ -33,6 +33,11 @@
     });
     head.appendChild(title);
     head.appendChild(rich('p', 'masthead__sub', g.standfirst));
+
+    // Easy Eyes belongs at the top, where a reader who needs it finds it before
+    // reading anything — not tucked in a corner they would have to hunt for.
+    if (global.EasyEyes) head.appendChild(global.EasyEyes.build());
+
     return head;
   }
 

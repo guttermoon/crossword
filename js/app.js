@@ -30,28 +30,113 @@
     return head;
   }
 
+  /* A YouTube film, without YouTube on the page until it is asked for. The
+   * poster is drawn here rather than fetched from Google, so nothing at all
+   * leaves the page on load; pressing it swaps in the player. */
+  function buildVideo(block) {
+    var figure = el('figure', 'video');
+    var frame = el('div', 'video__frame');
+
+    var poster = el('button', 'video__poster');
+    poster.type = 'button';
+    poster.setAttribute('aria-label', 'Play ' + block.title + ' on YouTube');
+
+    var play = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    play.setAttribute('viewBox', '0 0 64 64');
+    play.setAttribute('aria-hidden', 'true');
+    play.classList.add('video__play');
+    play.innerHTML = '<circle cx="32" cy="32" r="30"/><path d="M26 20l20 12-20 12z"/>';
+    poster.appendChild(play);
+    poster.appendChild(el('span', 'video__name', block.title));
+    frame.appendChild(poster);
+
+    poster.addEventListener('click', function () {
+      var player = document.createElement('iframe');
+      player.className = 'video__player';
+      player.src = 'https://www.youtube-nocookie.com/embed/' + block.id +
+        '?autoplay=1&rel=0&modestbranding=1';
+      player.title = block.title;
+      player.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+      player.referrerPolicy = 'strict-origin-when-cross-origin';
+      player.allowFullscreen = true;
+      frame.replaceChild(player, poster);
+    });
+
+    figure.appendChild(frame);
+    if (block.caption) figure.appendChild(el('figcaption', 'video__caption', block.caption));
+
+    // Paper cannot play anything, so it gets the address instead.
+    var printed = el('p', 'video__url', 'youtube.com/watch?v=' + block.id);
+    figure.appendChild(printed);
+
+    return figure;
+  }
+
+  function buildBlock(block) {
+    if (block.type === 'video') return buildVideo(block);
+    if (block.type === 'quote') return rich('blockquote', 'brief__quote', block.html);
+    if (block.type === 'link') {
+      var wrap = el('p', 'brief__link');
+      var link = rich('a', null, block.html);
+      link.href = block.href;
+      wrap.appendChild(link);
+      return wrap;
+    }
+    return rich('p', null, block.html);
+  }
+
+  /* The article that opens the page, and the callout that runs beside it. */
   function buildBrief(g) {
     var wrap = el('section', 'brief');
 
     var col = el('div', 'brief__col');
-    col.appendChild(el('h2', 'brief__head', g.brief.heading));
-    g.brief.paragraphs.forEach(function (paragraph) {
-      col.appendChild(rich('p', null, paragraph));
+    if (g.brief.heading) col.appendChild(el('h2', 'brief__head', g.brief.heading));
+    (g.brief.blocks || []).forEach(function (block) {
+      col.appendChild(buildBlock(block));
     });
     wrap.appendChild(col);
 
-    var card = el('aside', 'tells');
-    card.appendChild(el('h3', 'tells__head', g.tells.heading));
-    var list = el('ol', 'tells__list');
-    g.tells.items.forEach(function (item) {
-      list.appendChild(rich('li', null, item));
-    });
-    card.appendChild(list);
-    if (g.tells.footnote) card.appendChild(rich('p', 'tells__note', g.tells.footnote));
-    if (g.tells.selfaware) card.appendChild(rich('p', 'tells__aside', g.tells.selfaware));
-    wrap.appendChild(card);
-
+    if (g.callout) wrap.appendChild(buildCallout(g.callout));
     return wrap;
+  }
+
+  function buildCallout(c) {
+    var card = el('aside', 'tells');
+    card.appendChild(el('h3', 'tells__head', c.heading));
+    if (c.intro) card.appendChild(rich('p', 'tells__intro', c.intro));
+
+    (c.groups || []).forEach(function (group) {
+      var section = el('section', 'gen');
+      section.appendChild(el('h4', 'gen__name', group.name));
+
+      var list = el('ul', 'gen__points');
+      (group.points || []).forEach(function (point) {
+        var item = el('li');
+        if (typeof point === 'string') {
+          item.innerHTML = point;
+        } else {
+          item.innerHTML = point.text;
+          var sub = el('ul', 'gen__sub');
+          (point.sub || []).forEach(function (line) {
+            sub.appendChild(rich('li', null, line));
+          });
+          item.appendChild(sub);
+        }
+        list.appendChild(item);
+      });
+      section.appendChild(list);
+
+      if (group.example && group.example.length) {
+        var quote = el('div', 'gen__example');
+        group.example.forEach(function (paragraph) {
+          quote.appendChild(rich('p', null, paragraph));
+        });
+        section.appendChild(quote);
+      }
+      card.appendChild(section);
+    });
+
+    return card;
   }
 
   function buildSources(g) {

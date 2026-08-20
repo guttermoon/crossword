@@ -24,9 +24,9 @@ and I will add them to this doc too.
 
 ### Masthead
 
-TITLE: How to Spot a Robot
+TITLE: How to puzzle out AI writing
 
-STANDFIRST: Three crosswords, because one could not hold it all. Every answer is a word, phrase or named pattern that AI cannot stop producing. Every clue carries a footnote: what the habit is, what it sounds like, what a person would have written instead, and &mdash; where the research exists &mdash; the number and the study. <em>Fill them in, or press for the answers. Nobody is marking this.</em>
+STANDFIRST: Learn how to spot common signs of AI-generated writing, from em dashes and buzzwords to familiar phrases.
 
 _Not shown on the page, but used for the browser tab and the footer:_
 
@@ -38,31 +38,225 @@ FOOTER LEFT: Saturday Edition
 
 FOOTER RIGHT: Three puzzles &middot; 76 clues
 
-### The long intro panel
+### The article, left column
 
-HEADING: Read this first (it's short)
+PARA 1: Everyone has their own unique way of speaking and writing. This comes from a mix of cultural and generational influences. We recognise it when people speak in an accent or dialect. Certain words can suggest where someone is from. For example, if someone used the term “wee” in place of the word “little” or “small”, you would instantly get a sense that the conversation has gone a bit Scottish.
 
-PARA 1: These puzzles won't turn you into a lie detector. Nothing can prove a computer wrote something. What you <em>can</em> learn is the sound of it &mdash; the same way you can hear that someone is Australian without being able to explain which vowels gave them away.
+PARA 2: In writing, both typed and handwritten, we can see different styles emerge, heavily influenced by the technology that was prominent during youth, the books that were popular, and cultural trends. Like regional accents, these styles and writing markers get embedded when we’re young, but can be influenced throughout life by the people you spend time with, workplace culture, and living in new environments; altering and expanding your vocabulary and writing tics.
 
-PARA 2: And everybody is bad at this. When researchers asked language experts to pick out the AI-written science summaries, they got it right <strong>39%</strong> of the time &mdash; worse than guessing. In another test, 1,682 ordinary people scored somewhere between <strong>31% and 52%</strong>, and most of them thought the computer's writing was the <em>better</em> writing. So if you get fooled, you are in excellent company.
+PARA 3: AI-generated writing has its own style too.
 
-PARA 3: Please also be kind about it. Software built to catch AI wrongly accused <strong>61%</strong> of real essays written by people who had learned English as a second language. Plain, simple, careful English looks robotic to the software. It isn't.
+PARA 4: Learning how to spot AI writing is a skill worth developing as it helps you become a better writer. It also helps you read marketing content, social media posts, emails, and articles with more discernment.
 
-PARA 4: <strong>The one rule:</strong> any single habit in these puzzles means nothing on its own. Lots of good writers say &ldquo;delve&rdquo;. It's when you notice three or four of them crowded into the same paragraph that something is up.
+PARA 5: It’s also worth noting that new forms of detecting AI writing are being rolled out. In addition to tools like <a href="https://www.pangram.com/">Pangram</a> being used widely in schools to detect AI writing, Claude models will now generate text that contains a watermark or invisible, machine-readable signature embedded directly into generated text. The intent is to comply with new laws (like Article 50 of the EU AI Act) and to help readers have more transparency about whether something was machine-made.
 
-### The boxed panel beside it
+LINK 6: Anthropic on the Claude text watermark -> https://www.anthropic.com/news/claude-text-watermark
 
-HEADING: Three things to look for
+PARA 7: It’s important to understand the author though and be kind about how you go about identifying AI writing. After all, AI learned how to write from humans. All of its patterns and tropes came from us. And just because you suspect writing of being generated, does not mean it was or that a human didn’t put work into it.
 
-ITEM 1: <span class="tell-name">It forgot to delete the chatty bit.</span> Someone pasted a chatbot's answer straight into an email or a school newsletter and left its manners in: <em>&ldquo;Great question!&rdquo;</em>, <em>&ldquo;Certainly! Here's a draft:&rdquo;</em>, <em>&ldquo;Would you like me to expand on any section?&rdquo;</em> Nobody writes to you like that. This one is proof rather than suspicion. <span class="tell-ref">Puzzle 3</span>
+PARA 8: A particular form of corporate word salad emerged out of Silicon Valley in the 2010s and has shown no sign of going away. By “corporate word salad” I mean the overuse of buzzwords and empty phrases such as “synergy”, “bandwidth” and “pivot”.
 
-ITEM 2: <span class="tell-name">Everything is the same shape.</span> Sentences that tell you what a thing <em>isn't</em> before saying what it is (<em>&ldquo;this isn't about speed, it's about trust&rdquo;</em>). Lists that are always exactly three items long. Paragraphs all the same size, like paving slabs. And a neat closing line that sounds wise but doesn't actually say anything. <span class="tell-ref">Puzzle 2</span>
+PARA 9: This newspeak was masterfully parodied in “Weird Al” Yankovic’s <em>Mission Statement</em>, capturing both the emptiness of the words and the whiteboard visual style that was heavily used at the time.
 
-ITEM 3: <span class="tell-name">Metaphors that aren't holding anything up.</span> AI loves borrowing words from the world of heavy objects: a sentence is <em>load-bearing</em>, a company will <em>harness</em> data, a course will <em>unlock your potential</em>. Try deleting the word. If nothing falls over, it was never doing any work. <span class="tell-ref">Puzzle 1</span>
+VIDEO 10: youtube GyV_UG60dD4 — “Weird Al” Yankovic — Mission Statement
 
-FOOTNOTE: Mark Twain used more dashes than ChatGPT does, so dashes alone prove nothing. Leave him alone.
+VIDEO 10 CAPTION: Plays from YouTube. Nothing loads from Google until you press it.
 
-ASIDE: Full disclosure: the first version of this box was written in short, punchy, identical little sentences with a snappy ending. It has been sent back for rewriting.
+PARA 11: This word salad demonstrates how ways of communicating can be influenced and homogenised by workplace culture. And it’s worth keeping in mind, not every time you see the word “synergy” does it automatically mean AI wrote it.
+
+PARA 12: Another trope, the em dash “—” is one of the most recognisable tells of AI writing. In all of our literature, essays, and scientific documents that were written before the move from typewriters to computers during the mid-1980s to the early 1990s, you will see the em dash used heavily. <strong>Mark Twain used more em dashes than GPT-4.1</strong> (10.13 vs 10.62 per 1,000 words) according to the <a href="https://slopdetector.org/blog/em-dash-ai-tell-data">Slop Detector</a>.
+
+PARA 13: But once we started moving to smaller and smaller keyboards, it just became too much of a hassle to use the em dash, some opting to just use a hyphen “-” instead, some dropping it entirely. If you had to write an em dash right now, would you know how? Probably not, and this is exactly why humans don’t naturally use it when writing today, but an AI doesn’t have this hurdle of a physical keyboard, so it leans towards the trends in writing that can be seen more prominently over the course of time opposed to the last 30 or 40 years.
+
+QUOTE 14: To type an em dash (—), <strong>use Option + Shift + Hyphen on a Mac</strong>. On Windows, press <strong>Alt + 0151</strong> on a numeric keypad, or press <strong>Windows Key + Period (.)</strong> This is opposed to just hitting a <strong>hyphen key twice</strong> on a traditional keyboard.
+
+PARA 15: These types of shifts in writing habits can be seen generationally as well. You may have heard that “old people” use two spaces after a full stop. This too is a reaction of moving from <strong>typewriters to computers where varied and proportional fonts became available</strong>. On a typewriter, each letter is the same width, so two spaces were needed to visually separate sentences. Modern digital fonts adjust spacing automatically now, eliminating the need for two spaces.
+
+PARA 16: Have a look at the examples to learn more about how writing has shifted generationally.
+
+PARA 17: You can probably get a clear sense how the AI writing is different, just by looking at the shape the writing takes. These are exaggerated examples though and out in the wild it can be harder to spot. A 2026 study published in August, <a href="https://www.cambridge.org/core/journals/judgment-and-decision-making/article/bot-or-not-can-people-tell-the-difference-between-stories-written-by-a-human-or-by-an-ai-system/45E6DC0BB90AA648654D5AE243F6C667">Bot or not: Can people tell the difference between stories written by a human or by an AI system?</a>, found participants failed to reliably spot AI text, identifying true origins at rates between 39.4% and 52% (no better than random chance), and most of them thought the AI’s writing was the <em>better</em> writing.
+
+PARA 18: It also swings the other way, a famous study published in <a href="https://www.cell.com/patterns/fulltext/S2666-3899(23)00130-7"><em>Patterns</em></a> by Stanford researchers found that popular AI detectors falsely accused non-native English speakers, flagging 61.3% of genuine human-written TOEFL essays as machine-generated.
+
+PARA 19: Below you’ll find three crossword puzzles, each “delving” into the common tropes seen in AI writing. 1. The <strong>words</strong> you’ll see time and again, 2. the overall <strong>shape</strong> of the writing, 3. the types of responses you’ll get when interacting with AI (the <strong>chat-back</strong>).
+
+PARA 20: Any single habit in these puzzles, if seen out in the wild, does not mean it was AI. But when you start noticing several tropes crowded into the same paragraph, then you know something is up.
+
+### The callout, right column
+
+HEADING: Generation AI?
+
+INTRO: Here are some examples on how writing has shifted generationally. Use this for educational purposes, not to age-shame please.
+
+#### Baby Boomer
+
+POINT 1: Use two spaces after a full stop.
+
+POINT 2: Type with proper capital letters and full sentences.
+
+POINT 3: Use emojis in a literal way, like a simple thumbs-up or smile.
+
+POINT 4: Write out full words instead of using short text words.
+
+EXAMPLE 1: Arthur and I went to the IMAX theater last night to see the new movie, ‘The Odyssey.’ The imagery was absolutely spectacular, and Matt Damon gave a very powerful performance as Odysseus... however, I must say that I preferred the original book by Homer. Christopher Nolan took far too many liberties with the historical timeline. Have you seen it yet? 🎬👍
+
+#### Gen X
+
+POINT 1: Mix old and new styles.
+
+POINT 2: Use standard punctuation and normal capital letters.
+
+POINT 3: Use basic emojis like a simple smiley face :)
+
+POINT 4: Rarely use two spaces after a period, but sometimes do out of habit
+
+EXAMPLE 1: Just saw Nolan’s The Odyssey. Totally massive in scale! Matt Damon killed it, but using modern English dialogue in ancient Greece felt a bit jarring, imo... still, that Cyclops sequence was incredible. Definitely worth the price of admission &lt;3
+
+#### Millennial
+
+POINT 1: Start using all lowercase letters to look calm or casual.
+
+POINT 2: Avoid the full stop at the end of a short text because it feels too angry or mean.
+
+POINT 3: Use the laughing-crying emoji and the skull emoji.
+
+POINT 4: Write in run-on sentences with commas.
+
+EXAMPLE 1: omg just got out of the odyssey, christopher nolan really went all out with the visuals but i am literally so stressed by the pacing?? also did anyone else notice the audio mixing was kind of loud or am i just getting old lol... tom holland as telemachus was everything though
+
+#### Gen Z
+
+POINT 1: Write almost all text in lowercase letters on purpose.
+
+POINT 2: Drop the period at the end of texts.
+
+POINT 3: Use the skull emoji or crying face emoji to mean "that is very funny."
+
+POINT 4: Generally views ellipses as passive-aggressive.
+
+EXAMPLE 1: the new odyssey movie is literally insane 💀 like why did nolan make the cyclops look like that i am crying 😭 also the timeline makes no sense standard nolan behavior but zendaya ate as always ngl
+
+#### AI-generated writing
+
+POINT 1: The em dash — everywhere
+
+POINT 2: Go to word(s) and phrases:
+
+POINT 2.1: “quietly” ie “The business was quietly outperforming competitors”
+
+POINT 2.2: “but here’s the honest truth”
+
+POINT 2.3: “What nobody mentions”
+
+POINT 2.4: “Here’s the uncomfortable part”
+
+POINT 3: 🏖️ Emojis as bullets (a particular ChatGPT quirk beginning to be seen less now)
+
+POINT 4: Unicode decoration →
+
+POINT 5: Negative Parallelism
+
+POINT 5.1: “It’s not X, it’s Y” ie “That’s not learning. That’s a queue with your name on it.”
+
+POINT 5.2: “Not X. Not Y. Just Z.” ie “Not a bug. Not a feature. A fundamental design flaw.”
+
+POINT 5.3: “The X? A Y.” ie “The worst part? Nobody saw it coming.”
+
+POINT 5.4: “It’s X. It’s Y. It’s Z” ie “It’s enormous. It’s beautiful. It’s very Nolan.”
+
+POINT 6: Listing three or more “proof points” in a thought
+
+POINT 7: Over-reliance on bulleted lists or short, punchy, scannable sentences.
+
+POINT 8: Saying a lot without saying anything
+
+EXAMPLE 1: I finally went to see Nolan’s <em>The Odyssey</em>.
+
+EXAMPLE 2: And I have thoughts.
+
+EXAMPLE 3: Because obviously I do.
+
+EXAMPLE 4: It’s enormous. It’s beautiful. It’s very Nolan. There are epic landscapes, tortured men, enormous practical sets, questionable decisions, and approximately seventeen thousand opportunities for someone to just go home.
+
+EXAMPLE 5: But here’s the thing.
+
+EXAMPLE 6: I actually really enjoyed it.
+
+EXAMPLE 7: And then I started thinking about Homer.
+
+EXAMPLE 8: Because we tend to think we know <em>The Odyssey</em>. Heroic warrior. Long journey home. Faithful wife waiting patiently. Monsters. Gods. The whole thing.
+
+EXAMPLE 9: But Homer’s Odysseus is… weird.
+
+EXAMPLE 10: He’s clever. Obviously.
+
+EXAMPLE 11: But he’s also vain. Manipulative. Curious. Reckless. Sometimes downright awful.
+
+EXAMPLE 12: He lies constantly.
+
+EXAMPLE 13: He gets himself into trouble.
+
+EXAMPLE 14: Then uses his enormous brain to get himself back out again.
+
+EXAMPLE 15: It’s messy.
+
+EXAMPLE 16: It’s funny.
+
+EXAMPLE 17: It’s strange.
+
+EXAMPLE 18: And that’s what I kept thinking about while watching Nolan’s version.
+
+EXAMPLE 19: Because Nolan has taken this ancient, deeply weird story and filtered it through his own obsessions — war, trauma, sacrifice, masculinity, guilt, duty, time, homecoming.
+
+EXAMPLE 20: Which makes sense.
+
+EXAMPLE 21: Of course it does.
+
+EXAMPLE 22: But it also changes the story.
+
+EXAMPLE 23: And that got me thinking about something else.
+
+EXAMPLE 24: The stories we inherit are never really the stories we inherit.
+
+EXAMPLE 25: We bring ourselves to them.
+
+EXAMPLE 26: Our culture.
+
+EXAMPLE 27: Our fears.
+
+EXAMPLE 28: Our expectations.
+
+EXAMPLE 29: Our ideas about what a hero should look like.
+
+EXAMPLE 30: What a woman should want.
+
+EXAMPLE 31: What success should mean.
+
+EXAMPLE 32: What “home” is supposed to be.
+
+EXAMPLE 33: We take an old story and quietly rewrite it to make sense to us.
+
+EXAMPLE 34: Sometimes that’s the point.
+
+EXAMPLE 35: Sometimes that’s the problem.
+
+EXAMPLE 36: And honestly?
+
+EXAMPLE 37: That’s what I want to explore next week.
+
+EXAMPLE 38: Because if we can see how an ancient story gets rewritten by a modern filmmaker, maybe we can start noticing how often we’re doing the exact same thing with our own lives.
+
+EXAMPLE 39: The narratives we inherited.
+
+EXAMPLE 40: The roles we slipped into.
+
+EXAMPLE 41: The identities we decided were just “who we are”.
+
+EXAMPLE 42: The things we’re still chasing because, somewhere along the way, we decided they were what we were supposed to want.
+
+EXAMPLE 43: If you’ve seen <em>The Odyssey</em> already, tell me what you thought.
+
+EXAMPLE 44: Because I have a feeling this one is going to be divisive.
 
 ### The source list at the foot
 

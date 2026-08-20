@@ -381,11 +381,15 @@ body {
   border-radius: var(--radius);
 }
 
+/* Everything inside the grey panels is full ink. The soft ink is mixed for
+   white paper: it measures 9.9:1 there but only 6.1:1 on the grey, so using it
+   in both places left the callout looking washed out beside its own specimens,
+   which were ink at 11:1. Hierarchy in here comes from size and weight. */
 .tells__intro {
   margin: 0 0 14px;
   font-size: 12.5px;
   line-height: 1.6;
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 /* One generation per block: what it does, then a specimen of it. */
@@ -409,7 +413,7 @@ body {
   padding-left: 1.1em;
   font-size: 12px;
   line-height: 1.55;
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .gen__points > li { margin-bottom: 0.35em; }
@@ -602,7 +606,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .puzzle__blurb {
@@ -645,7 +649,7 @@ body {
   font-style: italic;
   line-height: 1.5;
   text-transform: lowercase;
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 /* ---------------------------------------------------------------------- article */

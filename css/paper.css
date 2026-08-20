@@ -205,6 +205,9 @@ body {
   color: var(--red);
 }
 
+/* One line of the title per line of the copy. */
+.masthead__line { display: block; }
+
 /* Set in the grotesque and centred, so every line falls where the words end
    rather than being stretched out to a common width. */
 .masthead__sub {
@@ -239,7 +242,11 @@ body {
 
 .brief {
   display: grid;
-  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  /* Not a guess: the two columns were 2,479px and 3,585px at 58/42, and this is
+     the split where they come out level. Measured at every width from 980px up,
+     the article and the callout end within 65px of each other — a fifth of one
+     screen out of a column three thousand pixels tall. */
+  grid-template-columns: minmax(0, 43.4fr) minmax(0, 56.6fr);
   gap: clamp(20px, 3vw, 38px);
   align-items: start;
   padding-bottom: 26px;
@@ -267,6 +274,16 @@ body {
 
 .brief__col strong { color: var(--ink); }
 .brief__col a { color: var(--red-deep); }
+
+/* The article opens on a dropped capital, the same one the puzzle blurbs use. */
+.brief__col > p:first-of-type::first-letter {
+  font-weight: 700;
+  font-size: 2.4em;
+  line-height: 0.9;
+  float: left;
+  margin: 0.1em 0.06em 0 0;
+  color: var(--ink);
+}
 
 /* The aside about typing an em dash, set apart from the argument around it. */
 .brief__quote {
@@ -668,9 +685,12 @@ body {
 .puzzle__head.is-collapsed .puzzle__intro,
 .puzzle__head.is-collapsed .heroes { display: none; }
 
+/* Centred on each other rather than sitting on a shared baseline: the number
+   is small caps and the title is a display face, so a baseline drops the number
+   to the foot of the bar. */
 .puzzle__head.is-collapsed .puzzle__headline {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
 }
 
@@ -685,32 +705,29 @@ body {
   grid-column: 3;
   grid-row: 1;
   justify-self: end;
-  padding: 3px 11px;
-  border: var(--rule-thick);
-  border-radius: var(--radius-btn);
-  background: var(--paper);
-  font-family: var(--font-cond);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: -3px -4px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
   color: var(--ink);
   cursor: pointer;
 }
 
-.puzzle__toggle:hover { background: var(--newsprint-light); }
-.puzzle__toggle:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
-
-/* The arrow points the way the panel will move. */
-.puzzle__toggle::after {
-  content: "▲";
-  margin-left: 7px;
-  font-size: 8px;
-  vertical-align: 1px;
+.puzzle__toggle .icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2;
 }
 
-.puzzle__head.is-collapsed .puzzle__toggle { grid-column: 2; }
-.puzzle__head.is-collapsed .puzzle__toggle::after { content: "▼"; }
+.puzzle__toggle:hover { color: var(--red); }
+.puzzle__toggle:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+.puzzle__head.is-collapsed .puzzle__toggle { grid-column: 2; margin-top: 0; }
 
 /* Clues beside the grid, changing sides puzzle to puzzle. */
 .puzzle__play {

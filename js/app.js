@@ -268,14 +268,14 @@
   /* The head of an article folds away, so a solver who has read it once can
    * put the grid and its clues back at the top of the screen. A mark rather
    * than a word: an asterisk while it is open, which turns as it folds down to
-   * the single stroke of a minus.
+   * a plus — the mark for a thing that will open, on a thing that is shut.
    *
    * It is drawn as four identical spokes laid across each other rather than as
    * two states swapped over, because a swap cannot be animated — the mark has
    * to be one object throughout for the turn to read as one movement. Each
    * spoke is horizontal in the markup and rotated into place from the
-   * stylesheet, so that the same rule can take three of them back to nothing
-   * and leave the fourth lying flat.
+   * stylesheet, so that one rule can take the two diagonals back to nothing and
+   * leave the upright and the flat one crossed.
    *
    * Plain elements rather than the SVG the other icons use. Transforming an
    * SVG child means pinning transform-box and transform-origin to the viewBox,
@@ -289,7 +289,7 @@
     var box = el('span', 'mark');
     box.setAttribute('aria-hidden', 'true');
     SPOKES.forEach(function (angle) {
-      // The flat spoke is the one the minus is made of; the rest fold away.
+      // The flat and upright spokes are the plus; the diagonals fold away.
       box.appendChild(el('span', 'mark__arm mark__arm--a' + angle));
     });
     return box;
@@ -297,11 +297,11 @@
 
   /* A mark in the corner of a panel is easy to scroll straight past, so the
    * first time one comes on screen it performs itself: it folds down to the
-   * minus and opens back out to the asterisk. The eye goes to the movement, and
+   * plus and opens back out to the asterisk. The eye goes to the movement, and
    * what it sees is the thing the button does.
    *
    * It has to come back. The mark reports whether the head is open, and leaving
-   * it as a minus over an open head would be a lie told to catch attention.
+   * it as a plus over an open head would be a lie told to catch attention.
    *
    * A crossing is exactly what an observer is for — unlike the picker's pinning
    * a few functions down, which needs a position and so reads the scroll. An
@@ -318,7 +318,7 @@
       if (!entries.some(function (e) { return e.isIntersecting; })) return;
       self.disconnect();
       // Folded already, by a reader who got here before the mark did: it is a
-      // minus, and has nothing to demonstrate.
+      // plus, and has nothing to demonstrate.
       if (head.classList.contains('is-collapsed')) return;
       head.classList.add('is-hinting');
       global.setTimeout(function () {

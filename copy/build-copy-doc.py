@@ -49,17 +49,34 @@ w("KICKER: %s\n\n" % gaz['kicker'])
 w("FOOTER LEFT: Saturday Edition\n\n")
 w("FOOTER RIGHT: Three puzzles &middot; 76 clues\n\n")
 
-w("### The long intro panel\n\n")
-w("HEADING: %s\n\n" % gaz['brief']['heading'])
-for i, para in enumerate(gaz['brief']['paragraphs'], 1):
-    w("PARA %d: %s\n\n" % (i, para))
+w("### The article, left column\n\n")
+for i, block in enumerate(gaz['brief']['blocks'], 1):
+    kind = block['type']
+    if kind == 'video':
+        w("VIDEO %d: youtube %s — %s\n\n" % (i, block['id'], block['title']))
+        w("VIDEO %d CAPTION: %s\n\n" % (i, block.get('caption', '')))
+    elif kind == 'quote':
+        w("QUOTE %d: %s\n\n" % (i, block['html']))
+    elif kind == 'link':
+        w("LINK %d: %s -> %s\n\n" % (i, block['html'], block['href']))
+    else:
+        w("PARA %d: %s\n\n" % (i, block['html']))
 
-w("### The boxed panel beside it\n\n")
-w("HEADING: %s\n\n" % gaz['tells']['heading'])
-for i, item in enumerate(gaz['tells']['items'], 1):
-    w("ITEM %d: %s\n\n" % (i, item))
-w("FOOTNOTE: %s\n\n" % gaz['tells']['footnote'])
-w("ASIDE: %s\n\n" % gaz['tells']['selfaware'])
+c = gaz['callout']
+w("### The callout, right column\n\n")
+w("HEADING: %s\n\n" % c['heading'])
+w("INTRO: %s\n\n" % c['intro'])
+for group in c['groups']:
+    w("#### %s\n\n" % group['name'])
+    for j, point in enumerate(group['points'], 1):
+        if isinstance(point, str):
+            w("POINT %d: %s\n\n" % (j, point))
+        else:
+            w("POINT %d: %s\n\n" % (j, point['text']))
+            for k, sub in enumerate(point.get('sub', []), 1):
+                w("POINT %d.%d: %s\n\n" % (j, k, sub))
+    for j, para in enumerate(group.get('example', []), 1):
+        w("EXAMPLE %d: %s\n\n" % (j, para))
 
 w("### The source list at the foot\n\n")
 w("HEADING: %s\n\n" % gaz['sources']['heading'])

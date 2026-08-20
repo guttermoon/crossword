@@ -713,7 +713,7 @@ window.PUZZLES = [
  {
   "id": "p3",
   "issue": "No. 3",
-  "title": "The Chat-back",
+  "title": "The Chat-Back",
   "blurb": "The manners it forgot to delete — “Great question!”, “You're absolutely right!” — plus what AI does to the look of a document: the bold bullets, the stray asterisks, the arrows used as punctuation.",
   "heroes": [
    "YOUREABSOLUTELYRIGHT",

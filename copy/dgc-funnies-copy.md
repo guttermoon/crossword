@@ -934,17 +934,17 @@ SOUNDS: “Costs rose 4% last year. And here's the kicker: nobody noticed.”
 
 INSTEAD: “Costs rose 4% and it took eleven months for anyone to raise it.”
 
-## No. 3 — The Chat-back
+## No. 3 — The Chat-Back
 
 ISSUE: No. 3
 
-TITLE: The Chat-back
+TITLE: The Chat-Back
 
 BLURB: The manners it forgot to delete — “Great question!”, “You're absolutely right!” — plus what AI does to the look of a document: the bold bullets, the stray asterisks, the arrows used as punctuation.
 
 FAMOUS ONES: YOUREABSOLUTELYRIGHT, GREATQUESTION, CERTAINLY, LETSBREAKTHISDOWN, BOLDBULLETS, TOEFL
 
-### The Chat-back — across
+### The Chat-Back — across
 
 #### P3 · 2 across
 
@@ -1066,7 +1066,7 @@ SOUNDS: “Great question! That really gets to the heart of the issue.”
 
 INSTEAD: A person just answers.
 
-### The Chat-back — down
+### The Chat-Back — down
 
 #### P3 · 1 down
 

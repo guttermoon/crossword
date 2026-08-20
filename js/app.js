@@ -295,6 +295,40 @@
     return box;
   }
 
+  /* A mark in the corner of a panel is easy to scroll straight past, so the
+   * first time one comes on screen it performs itself: it folds down to the
+   * minus and opens back out to the asterisk. The eye goes to the movement, and
+   * what it sees is the thing the button does.
+   *
+   * It has to come back. The mark reports whether the head is open, and leaving
+   * it as a minus over an open head would be a lie told to catch attention.
+   *
+   * A crossing is exactly what an observer is for — unlike the picker's pinning
+   * a few functions down, which needs a position and so reads the scroll. An
+   * observer also reports what it finds on the first pass, so a mark already on
+   * screen when the page loads is caught too. */
+  function hint(head, button) {
+    if (!('IntersectionObserver' in global)) return;
+    // An unasked-for flourish is precisely what a reader who has asked for less
+    // movement has asked not to have.
+    var still = global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)');
+    if (still && still.matches) return;
+
+    var watch = new IntersectionObserver(function (entries, self) {
+      if (!entries.some(function (e) { return e.isIntersecting; })) return;
+      self.disconnect();
+      // Folded already, by a reader who got here before the mark did: it is a
+      // minus, and has nothing to demonstrate.
+      if (head.classList.contains('is-collapsed')) return;
+      head.classList.add('is-hinting');
+      global.setTimeout(function () {
+        head.classList.remove('is-hinting');
+      }, 620);
+    }, { threshold: 1 });
+
+    watch.observe(button);
+  }
+
   function makeCollapsible(head, label) {
     var button = el('button', 'puzzle__toggle');
     button.type = 'button';
@@ -310,6 +344,8 @@
       button.setAttribute('aria-label',
         (collapsed ? 'Show' : 'Hide') + ' the introduction to ' + label);
     });
+
+    hint(head, button);
   }
 
   function buildArticle(puzzle, position, total) {

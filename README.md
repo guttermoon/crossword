@@ -1,10 +1,10 @@
-# The Slop Gazette — How to Spot a Robot
+# The Slop Gazette — How to puzzle out AI writing
 
-Three interactive crosswords about the habits of AI-written English: the
-words, the sentence shapes, and the chatbot manners it forgot to delete. 76
-clues, each carrying a footnote — what the habit is, what it sounds like, and
-what a person writes instead. The studies behind them are listed at the foot of
-the page.
+An article on how writing habits differ by generation and by machine, and three
+interactive crosswords under it: the words, the sentence shapes, and the chatbot
+manners it forgot to delete. 76 clues, each carrying a footnote — what the habit
+is, what it sounds like, and what a person writes instead. The studies behind
+them are listed at the foot of the page.
 
 Laid out as a newspaper puzzle page: cream stock, a groovy red masthead, ruled
 intro panels, freeform grids and dense clue columns, under the Dead Good Club

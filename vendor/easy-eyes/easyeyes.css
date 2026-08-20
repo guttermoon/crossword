@@ -1,0 +1,154 @@
+/* ── "Easy Eyes" readable theme ──────────────────────────────────────────
+   Portable extract from The Dead Good Club (deadgoodclub.com).
+
+   The toggle sets `easy-eyes` on <html>. It is a BODY-TEXT-ONLY pass,
+   scoped to <main> so headers, footers and other page chrome keep their own
+   type: running copy becomes clean Helvetica, ragged-left, no text-shadow,
+   roomier line-height. Headlines, decorative type, background images and
+   coloured panels are deliberately left untouched.
+
+   Plain CSS on purpose — no Tailwind, no build step, no font packages.
+   Drop it in and import it once. */
+
+/* ---- 1. the body-text pass (the part that does the real work) ---- */
+
+html.easy-eyes main :is(p, li, blockquote, figcaption, dd, dt) {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif !important;
+  font-style: normal !important;
+  text-shadow: none !important;
+  letter-spacing: normal !important;
+  line-height: 1.6 !important;
+}
+
+/* justified type is hard going — unjustify it and stop hyphenation */
+html.easy-eyes main .justified-text {
+  text-align: left !important;
+  hyphens: none !important;
+}
+
+/* ---- 2. opt-in helpers. Add these classes to elements that need more
+          than a type change. Nothing happens until Easy Eyes is on. ---- */
+
+/* .easy-cream — swap a panel's flat background COLOUR for a calm cream and
+   drop any grain/mottle pseudo-element. Photos and children are untouched. */
+html.easy-eyes .easy-cream {
+  background-color: #efe9dd !important;
+}
+html.easy-eyes .easy-cream::before {
+  display: none !important;
+}
+
+/* .easy-panel — for saturated coloured boxes that stay unreadable when only
+   the body copy is touched: cream ground, calm dark text throughout. */
+html.easy-eyes .easy-panel {
+  background-color: #efe9dd !important;
+  background-image: none !important;
+  color: #141414 !important;
+  border-color: #141414 !important;
+}
+html.easy-eyes .easy-panel * {
+  color: #141414 !important;
+  background-color: transparent !important;
+  text-shadow: none !important;
+}
+
+/* .easy-flat — straighten anything rotated/floated so it reads in order.
+   (Called .memo-card on the parent site.) */
+html.easy-eyes .easy-flat {
+  transform: none !important;
+  float: none !important;
+  width: 100% !important;
+  margin: 0 0 20px !important;
+}
+
+/* ---- 3. the switch itself ---- */
+
+.easy-eyes-switch {
+  position: fixed;
+  right: 12px;
+  top: 70px;
+  z-index: 90;
+  display: block;
+  height: 36px;
+  width: 142px;
+  cursor: pointer;
+  border: 2px solid #4c5340;
+  border-radius: 9999px;
+  background: #7c8465;
+  box-shadow: inset 0 1px 3px rgb(0 0 0 / 0.4);
+  transition: background-color 0.2s;
+  padding: 0;
+}
+.easy-eyes-switch:focus-visible {
+  outline: 2px solid #141414;
+  outline-offset: 2px;
+}
+
+/* the ON/OFF hint on the exposed side of the track */
+.easy-eyes-state {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgb(239 233 220 / 0.8);
+}
+.easy-eyes-switch[aria-checked="false"] .easy-eyes-state { right: 13px; }
+.easy-eyes-switch[aria-checked="true"]  .easy-eyes-state { left: 14px; }
+
+/* the sliding oval knob carries the label */
+.easy-eyes-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  height: 28px;
+  width: 92px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #f4efe1;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #3a3f2e;
+  transition: left 0.2s;
+}
+.easy-eyes-switch[aria-checked="true"] .easy-eyes-knob { left: 44px; }
+
+/* compact eyeball button on small screens */
+.easy-eyes-mini {
+  position: fixed;
+  right: 62px;
+  top: 11px;
+  z-index: 60;
+  display: none;
+  height: 36px;
+  width: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #4c5340;
+  background: #e8e4d9;
+  color: #4c5340;
+  padding: 0;
+}
+.easy-eyes-mini[aria-checked="true"] {
+  background: #7c8465;
+  color: #f4efe1;
+}
+
+@media (max-width: 767px) {
+  .easy-eyes-switch { display: none; }
+  .easy-eyes-mini { display: inline-flex; }
+}
+
+/* the switch is a preference control, not content — never restyle it */
+@media (prefers-reduced-motion: reduce) {
+  .easy-eyes-switch,
+  .easy-eyes-knob { transition: none; }
+}

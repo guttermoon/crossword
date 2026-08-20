@@ -246,7 +246,7 @@ body {
      the split where they come out level. Measured at every width from 980px up,
      the article and the callout end within 65px of each other — a fifth of one
      screen out of a column three thousand pixels tall. */
-  grid-template-columns: minmax(0, 43.4fr) minmax(0, 56.6fr);
+  grid-template-columns: minmax(0, 44.2fr) minmax(0, 55.8fr);
   gap: clamp(20px, 3vw, 38px);
   align-items: start;
   padding-bottom: 26px;

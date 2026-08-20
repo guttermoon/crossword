@@ -228,8 +228,13 @@ body {
 /* Set in the grotesque and centred, so every line falls where the words end
    rather than being stretched out to a common width. */
 .masthead__sub {
-  /* The sheet's own width is the measure; it is four lines under a title that
-     runs the full width, not a narrow column set inside one. */
+  /* Measured, not guessed. Across the full sheet this sets as one long line
+     under the title; held to this measure it falls into two, breaking after
+     "em dashes". The window that puts the break there is 540-569px in the
+     grotesque and 520-549px in the Helvetica Easy Eyes swaps in, so 545 is the
+     one width that breaks both the same way. Below it the line simply reflows,
+     which is what should happen on a phone. */
+  max-width: 545px;
   margin: 18px auto 0;
   font-family: var(--font-cond);
   font-weight: 700;

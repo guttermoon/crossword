@@ -243,7 +243,8 @@ boxes use. They are shorter than twice the box radius, so the box radius would
 round them into stadiums; a smaller one leaves them flat sides and reads as the
 same cornering.
 
-Each puzzle's head folds away behind a **Hide** button in its top right corner,
+Each puzzle's head folds away behind a mark in its top right corner — an
+asterisk while it is open, a plus while it is folded —
 leaving a single bar of number and title, so a solver who has read the blurb
 once can put the grid and its clues back at the top of the screen. It prints
 open; paper has no buttons.

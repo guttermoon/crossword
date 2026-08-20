@@ -705,32 +705,29 @@ body {
   grid-column: 3;
   grid-row: 1;
   justify-self: end;
-  padding: 3px 11px;
-  border: var(--rule-thick);
-  border-radius: var(--radius-btn);
-  background: var(--paper);
-  font-family: var(--font-cond);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: -3px -4px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
   color: var(--ink);
   cursor: pointer;
 }
 
-.puzzle__toggle:hover { background: var(--newsprint-light); }
-.puzzle__toggle:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
-
-/* The arrow points the way the panel will move. */
-.puzzle__toggle::after {
-  content: "▲";
-  margin-left: 7px;
-  font-size: 8px;
-  vertical-align: 1px;
+.puzzle__toggle .icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2;
 }
 
-.puzzle__head.is-collapsed .puzzle__toggle { grid-column: 2; }
-.puzzle__head.is-collapsed .puzzle__toggle::after { content: "▼"; }
+.puzzle__toggle:hover { color: var(--red); }
+.puzzle__toggle:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+.puzzle__head.is-collapsed .puzzle__toggle { grid-column: 2; margin-top: 0; }
 
 /* Clues beside the grid, changing sides puzzle to puzzle. */
 .puzzle__play {

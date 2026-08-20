@@ -788,11 +788,22 @@ body {
 
 /* Folded: the mark turns a half circle while three of its four spokes draw
    back into the middle. Half a turn rather than a quarter so that the spoke
-   left standing arrives lying flat — a minus, not a bar on its end. */
-.puzzle__head.is-collapsed .mark { transform: rotate(180deg); }
-.puzzle__head.is-collapsed .mark__arm--a45 { transform: rotate(45deg) scaleX(0); }
-.puzzle__head.is-collapsed .mark__arm--a90 { transform: rotate(90deg) scaleX(0); }
-.puzzle__head.is-collapsed .mark__arm--a135 { transform: rotate(135deg) scaleX(0); }
+   left standing arrives lying flat — a minus, not a bar on its end.
+
+   `is-hinting` is the same shape held for a moment and let go, so that the mark
+   performs itself once as it comes on screen. One set of rules for both: the
+   demonstration is the real movement, not an imitation of it. */
+.puzzle__head.is-collapsed .mark,
+.puzzle__head.is-hinting .mark { transform: rotate(180deg); }
+
+.puzzle__head.is-collapsed .mark__arm--a45,
+.puzzle__head.is-hinting .mark__arm--a45 { transform: rotate(45deg) scaleX(0); }
+
+.puzzle__head.is-collapsed .mark__arm--a90,
+.puzzle__head.is-hinting .mark__arm--a90 { transform: rotate(90deg) scaleX(0); }
+
+.puzzle__head.is-collapsed .mark__arm--a135,
+.puzzle__head.is-hinting .mark__arm--a135 { transform: rotate(135deg) scaleX(0); }
 
 @media (prefers-reduced-motion: reduce) {
   .mark,

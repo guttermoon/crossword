@@ -1,0 +1,9 @@
+<!-- Optional: paste this inline script in <head>, BEFORE any content.
+     Without it, a reader who has Easy Eyes on sees one frame of the normal
+     theme before React mounts and re-applies the class. -->
+<script>
+  try {
+    if (localStorage.getItem('easy-eyes') === '1')
+      document.documentElement.classList.add('easy-eyes')
+  } catch (e) {}
+</script>

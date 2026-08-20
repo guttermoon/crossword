@@ -1,4 +1,4 @@
-# The Slop Gazette — every word on the page
+# The Dead Good Club Funnies — every word on the page
 
 Edit anything in this file and send it back. Keep the **labels** (`CLUE:`,
 `WHAT:`, and the `###` headings) exactly as they are — that is how each line
@@ -30,7 +30,7 @@ STANDFIRST: Learn how to spot the common signs of AI-generated writing, from em 
 
 _Not shown on the page, but used for the browser tab and the footer:_
 
-BRAND: The Slop Gazette
+BRAND: The Dead Good Club Funnies
 
 KICKER: Saturday Edition &middot; Three puzzles &middot; 76 clues
 

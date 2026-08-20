@@ -47,7 +47,14 @@
      tile pixel lands as a square block. It is mostly per-pixel grain with a
      little low-frequency drift under it — pixels evenly spread rather than
      clouds — and the whole tile sits in a narrow dark band, so neighbours
-     differ in tone without any one of them standing out as a speck. */
+     differ in tone without any one of them standing out as a speck.
+
+     How much of it shows. One number for the standing panels and a lighter
+     one for the small hover surfaces, which go muddy at full strength — the
+     two move together, so easing the texture off is an edit in one place. */
+  --scan-strength: 0.405;
+  --scan-strength-soft: 0.27;
+
   --scan: url("data:image/png;base64,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");
 }
 
@@ -127,14 +134,14 @@ body {
   background-size: 192px 192px;
   image-rendering: pixelated;
   mix-blend-mode: multiply;
-  opacity: 0.45;
+  opacity: var(--scan-strength);
 }
 
 /* Small surfaces take less of it — at full strength a button goes muddy. */
 .stamp:hover::after,
 .stamp:active::after,
 .clue__btn:hover::after {
-  opacity: 0.3;
+  opacity: var(--scan-strength-soft);
 }
 
 /* The grain is the panel's ground, so it has to lie under the panel's contents.
@@ -1048,7 +1055,10 @@ body {
   position: relative;
   right: auto;
   top: auto;
-  margin: 20px auto 2px;
+  /* Between the title and the standfirst. The title is set at a line-height of
+     0.95 and its descenders hang below its box, so it needs more air above the
+     switch than the standfirst does below it. */
+  margin: 26px auto 0;
 }
 
 /* The club hides the full switch on a phone and shows a bare eyeball in the

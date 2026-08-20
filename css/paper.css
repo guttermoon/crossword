@@ -751,7 +751,7 @@ body {
   cursor: pointer;
 }
 
-/* The asterisk that turns into a minus: four bars crossing at the middle of a
+/* The asterisk that turns into a plus: four bars crossing at the middle of a
    22px box. Both the box and the bars turn about their own centres, which is
    where a transform origin sits by default, so nothing here has to be told
    where its middle is. */
@@ -774,8 +774,8 @@ body {
   background: currentColor;
 }
 
-/* The spokes are held back so that the turn is under way before they start to
-   go. Given the same timing they finish first, and the mark is a minus before
+/* The diagonals are held back so that the turn is under way before they start
+   to go. Given the same timing they finish first, and the mark is a plus before
    it has visibly moved — all of the rotation happens with nothing left to
    rotate. They draw in over the middle of the turn instead, and land a moment
    before it settles. */
@@ -786,9 +786,11 @@ body {
 .mark__arm--a90 { transform: rotate(90deg); }
 .mark__arm--a135 { transform: rotate(135deg); }
 
-/* Folded: the mark turns a half circle while three of its four spokes draw
-   back into the middle. Half a turn rather than a quarter so that the spoke
-   left standing arrives lying flat — a minus, not a bar on its end.
+/* Folded: the mark turns a half circle while its two diagonals draw back into
+   the middle, leaving the upright and the flat one crossed — a plus, which is
+   what a folded thing should offer. A half turn, or a quarter, rather than
+   anything between: those are the turns that land the cross square rather than
+   on its corner, and a plus tipped over is a multiplication sign.
 
    `is-hinting` is the same shape held for a moment and let go, so that the mark
    performs itself once as it comes on screen. One set of rules for both: the
@@ -798,9 +800,6 @@ body {
 
 .puzzle__head.is-collapsed .mark__arm--a45,
 .puzzle__head.is-hinting .mark__arm--a45 { transform: rotate(45deg) scaleX(0); }
-
-.puzzle__head.is-collapsed .mark__arm--a90,
-.puzzle__head.is-hinting .mark__arm--a90 { transform: rotate(90deg) scaleX(0); }
 
 .puzzle__head.is-collapsed .mark__arm--a135,
 .puzzle__head.is-hinting .mark__arm--a135 { transform: rotate(135deg) scaleX(0); }

@@ -185,6 +185,12 @@ The callout beside the article is `callout.groups`: a name, a list of points —
 each of which may carry a `sub` list — and an `example`, given as an array of
 paragraphs.
 
+The two columns are split 44/56 rather than the even-looking 58/42, because the
+callout carries five specimens and one of them is 2,000px long. At 58/42 the
+article ended 1,106px above it; at 44/56 the two come out level — within 50px of
+each other at every width from 980px up, where the layout goes single-column
+soon after.
+
 ## Layout
 
 ```

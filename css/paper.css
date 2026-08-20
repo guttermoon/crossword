@@ -244,8 +244,9 @@ body {
   display: grid;
   /* Not a guess: the two columns were 2,479px and 3,585px at 58/42, and this is
      the split where they come out level. Measured at every width from 980px up,
-     the article and the callout now end within about 50px of each other. */
-  grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
+     the article and the callout end within 65px of each other — a fifth of one
+     screen out of a column three thousand pixels tall. */
+  grid-template-columns: minmax(0, 43.4fr) minmax(0, 56.6fr);
   gap: clamp(20px, 3vw, 38px);
   align-items: start;
   padding-bottom: 26px;
@@ -273,6 +274,16 @@ body {
 
 .brief__col strong { color: var(--ink); }
 .brief__col a { color: var(--red-deep); }
+
+/* The article opens on a dropped capital, the same one the puzzle blurbs use. */
+.brief__col > p:first-of-type::first-letter {
+  font-weight: 700;
+  font-size: 2.4em;
+  line-height: 0.9;
+  float: left;
+  margin: 0.1em 0.06em 0 0;
+  color: var(--ink);
+}
 
 /* The aside about typing an em dash, set apart from the argument around it. */
 .brief__quote {
@@ -674,9 +685,12 @@ body {
 .puzzle__head.is-collapsed .puzzle__intro,
 .puzzle__head.is-collapsed .heroes { display: none; }
 
+/* Centred on each other rather than sitting on a shared baseline: the number
+   is small caps and the title is a display face, so a baseline drops the number
+   to the foot of the bar. */
 .puzzle__head.is-collapsed .puzzle__headline {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
 }
 

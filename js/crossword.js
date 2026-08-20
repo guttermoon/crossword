@@ -253,7 +253,8 @@
           });
           body.appendChild(text);
 
-          var reveal = el('button', 'clue__btn', 'Show me the word');
+          var reveal = el('button', 'clue__btn');
+          reveal.appendChild(el('span', 'clue__btn-label', 'Show me the word'));
           reveal.type = 'button';
           reveal.setAttribute('aria-label',
             'Show me the word for ' + entry.number + ' ' + entry.direction);
@@ -314,7 +315,10 @@
       var box = el('div', 'toolbar__group');
       box.appendChild(el('span', 'toolbar__label', label));
       scopes.forEach(function (scope) {
-        var button = el('button', 'stamp', scope[1]);
+        // The label is wrapped so that it can be lifted above the grain the
+        // button takes on hover; a bare text node has nothing to lift.
+        var button = el('button', 'stamp');
+        button.appendChild(el('span', 'stamp__label', scope[1]));
         button.type = 'button';
         // The visible text repeats across groups; spell it out for screen readers.
         button.setAttribute('aria-label', label + ' ' + scope[1].toLowerCase());

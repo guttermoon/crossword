@@ -266,6 +266,97 @@ body {
 }
 
 .brief__col strong { color: var(--ink); }
+.brief__col a { color: var(--red-deep); }
+
+/* The aside about typing an em dash, set apart from the argument around it. */
+.brief__quote {
+  margin: 16px 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--red);
+  border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+  background: var(--newsprint-pale);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.brief__link {
+  margin: -0.4em 0 0.9em;
+  font-family: var(--font-cond);
+  font-size: 11.5px;
+}
+
+/* --------------------------------------------------------------------- video */
+
+/* Nothing reaches Google until the poster is pressed: the still is drawn here
+   rather than fetched from YouTube, and the player is only built on the click.
+   The privacy-enhanced host is used even then. */
+.video {
+  margin: 18px 0;
+}
+
+.video__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: var(--rule-thick);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--block);
+}
+
+.video__poster,
+.video__player {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video__poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px;
+  background: var(--block);
+  color: var(--paper);
+  cursor: pointer;
+}
+
+.video__play {
+  width: 54px;
+  height: 54px;
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 3;
+}
+
+.video__play path { fill: var(--red); stroke: none; }
+
+.video__poster:hover .video__play path { fill: var(--paper); }
+
+.video__name {
+  font-family: var(--font-cond);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.video__poster:focus-visible { outline: 3px solid var(--red); outline-offset: -3px; }
+
+/* Only on paper, where the poster is a black rectangle that does nothing. */
+.video__url { display: none; }
+
+.video__caption {
+  margin: 7px 0 0;
+  font-family: var(--font-cond);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
 
 .tells {
   padding: 16px 18px;
@@ -273,42 +364,72 @@ body {
   border-radius: var(--radius);
 }
 
-.tells__list {
-  margin: 0;
-  padding-left: 1.1em;
+.tells__intro {
+  margin: 0 0 14px;
   font-size: 12.5px;
   line-height: 1.6;
   color: var(--ink-soft);
 }
 
-.tells__list li { margin-bottom: 0.7em; }
-.tells__list li::marker { color: var(--red); font-weight: 700; }
-.tells__list .tell-name { font-weight: 700; color: var(--ink); }
+/* One generation per block: what it does, then a specimen of it. */
+.gen + .gen {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dotted var(--ink-soft);
+}
 
-.tells__list .tell-ref {
-  display: inline-block;
-  margin-left: 4px;
+.gen__name {
+  margin: 0 0 7px;
   font-family: var(--font-cond);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--red-deep);
-}
-
-.tells__note {
-  margin: 12px 0 0;
-  padding-top: 10px;
-  border-top: 1px dashed var(--ink-soft);
-  font-style: italic;
   font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
 }
 
-.tells__aside {
-  margin: 8px 0 0;
-  font-size: 11.5px;
-  font-style: italic;
+.gen__points {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 12px;
+  line-height: 1.55;
   color: var(--ink-soft);
 }
+
+.gen__points > li { margin-bottom: 0.35em; }
+.gen__points > li::marker { color: var(--red); }
+
+.gen__sub {
+  margin: 0.3em 0 0.5em;
+  padding-left: 1.1em;
+  list-style: none;
+}
+
+.gen__sub li {
+  position: relative;
+  margin-bottom: 0.25em;
+  font-size: 11.5px;
+}
+
+.gen__sub li::before {
+  content: "—";
+  position: absolute;
+  left: -1.1em;
+  color: var(--red);
+}
+
+/* The specimen itself, set on the paper so it reads as something quoted. */
+.gen__example {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  background: var(--paper);
+  border-left: 3px solid var(--ink-soft);
+  border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+.gen__example p { margin: 0 0 0.7em; }
+.gen__example p:last-child { margin-bottom: 0; }
 
 /* ----------------------------------------------------------------- the sources */
 
@@ -881,7 +1002,14 @@ body {
   .puzzle__head, .tells, .picker__card,
   .clue, .clue.is-active, .clue.is-crossing { background-color: #fff; }
   .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel,
-  .progress, .puzzle__toggle { display: none !important; }
+  .progress, .puzzle__toggle, .video__frame { display: none !important; }
+  /* The film cannot play on paper, so it prints as its address. */
+  .video__url {
+    display: block;
+    margin: 0;
+    font-family: var(--font-cond);
+    font-size: 11px;
+  }
   /* A folded head prints open; paper has no buttons. */
   .puzzle__head.is-collapsed { grid-template-columns: minmax(0, 30%) minmax(0, 1fr); }
   .puzzle__head.is-collapsed .puzzle__intro { display: block; }

@@ -157,10 +157,33 @@ this Check would paint a red slash through a square they had right. **Reveal**
 always writes the answer as set, never the variant. It is the only one of the 76
 answers where British and American English part company.
 
-**`data/gazette.js`** — the title, standfirst, the two intro panels and the
-source list. These strings carry inline
-markup (`<em>`, `<strong>`, `<a>`) and are inserted as HTML, so treat the file
-as first-party copy: do not paste anything into it that you did not write.
+**`data/gazette.js`** — the masthead, the article that opens the page, the
+callout beside it and the source list. These strings carry inline markup
+(`<em>`, `<strong>`, `<a>`) and are inserted as HTML, so treat the file as
+first-party copy: do not paste anything into it that you did not write.
+
+The article is a list of blocks rather than a list of paragraphs, so things can
+sit between them in a fixed order:
+
+```js
+brief: { blocks: [
+  { type: 'p',     html: 'A paragraph, with <em>markup</em> if it needs it.' },
+  { type: 'link',  href: 'https://…', html: 'A source on its own line' },
+  { type: 'quote', html: 'An aside, set apart from the argument.' },
+  { type: 'video', id: 'GyV_UG60dD4', title: '…', caption: '…' },
+] }
+```
+
+`video` is a YouTube film that does not put YouTube on the page. The still is
+drawn in CSS rather than fetched from Google, and the player is only built when
+someone presses it — verified: the page makes **no off-site request at all**
+until that click, and the one it then makes is to `youtube-nocookie.com`. On
+paper the poster is a black rectangle that does nothing, so it prints as the
+video's address instead.
+
+The callout beside the article is `callout.groups`: a name, a list of points —
+each of which may carry a `sub` list — and an `example`, given as an array of
+paragraphs.
 
 ## Layout
 

@@ -239,7 +239,10 @@ body {
 
 .brief {
   display: grid;
-  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  /* Not a guess: the two columns were 2,479px and 3,585px at 58/42, and this is
+     the split where they come out level. Measured at every width from 980px up,
+     the article and the callout now end within about 50px of each other. */
+  grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
   gap: clamp(20px, 3vw, 38px);
   align-items: start;
   padding-bottom: 26px;

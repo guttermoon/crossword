@@ -196,59 +196,51 @@ EXAMPLE 13: He gets himself into trouble.
 
 EXAMPLE 14: Then uses his enormous brain to get himself back out again.
 
-EXAMPLE 15: It’s messy.
+EXAMPLE 15: And that’s what I kept thinking about while watching Nolan’s version.
 
-EXAMPLE 16: It’s funny.
+EXAMPLE 16: Because Nolan has taken this ancient, deeply weird story and filtered it through his own obsessions — war, trauma, sacrifice, masculinity, guilt, duty, time, homecoming.
 
-EXAMPLE 17: It’s strange.
+EXAMPLE 17: Which makes sense.
 
-EXAMPLE 18: And that’s what I kept thinking about while watching Nolan’s version.
+EXAMPLE 18: But it also changes the story.
 
-EXAMPLE 19: Because Nolan has taken this ancient, deeply weird story and filtered it through his own obsessions — war, trauma, sacrifice, masculinity, guilt, duty, time, homecoming.
+EXAMPLE 19: And that got me thinking about something else.
 
-EXAMPLE 20: Which makes sense.
+EXAMPLE 20: The stories we inherit are never really the stories we inherit.
 
-EXAMPLE 21: Of course it does.
+EXAMPLE 21: We bring ourselves to them.
 
-EXAMPLE 22: But it also changes the story.
+EXAMPLE 22: Our culture.
 
-EXAMPLE 23: And that got me thinking about something else.
+EXAMPLE 23: Our fears.
 
-EXAMPLE 24: The stories we inherit are never really the stories we inherit.
+EXAMPLE 24: Our expectations.
 
-EXAMPLE 25: We bring ourselves to them.
+EXAMPLE 25: Our ideas about what a hero should look like.
 
-EXAMPLE 26: Our culture.
+EXAMPLE 26: We take an old story and quietly rewrite it to make sense to us.
 
-EXAMPLE 27: Our fears.
+EXAMPLE 27: Sometimes that’s the point.
 
-EXAMPLE 28: Our expectations.
+EXAMPLE 28: Sometimes that’s the problem.
 
-EXAMPLE 29: Our ideas about what a hero should look like.
+EXAMPLE 29: And honestly?
 
-EXAMPLE 30: We take an old story and quietly rewrite it to make sense to us.
+EXAMPLE 30: That’s what I want to explore next week.
 
-EXAMPLE 31: Sometimes that’s the point.
+EXAMPLE 31: Because if we can see how an ancient story gets rewritten by a modern filmmaker, maybe we can start noticing how often we’re doing the exact same thing with our own lives.
 
-EXAMPLE 32: Sometimes that’s the problem.
+EXAMPLE 32: The narratives we inherited.
 
-EXAMPLE 33: And honestly?
+EXAMPLE 33: The roles we slipped into.
 
-EXAMPLE 34: That’s what I want to explore next week.
+EXAMPLE 34: The identities we decided were just “who we are”.
 
-EXAMPLE 35: Because if we can see how an ancient story gets rewritten by a modern filmmaker, maybe we can start noticing how often we’re doing the exact same thing with our own lives.
+EXAMPLE 35: The things we’re still chasing because, somewhere along the way, we decided they were what we were supposed to want.
 
-EXAMPLE 36: The narratives we inherited.
+EXAMPLE 36: If you’ve seen <em>The Odyssey</em> already, tell me what you thought.
 
-EXAMPLE 37: The roles we slipped into.
-
-EXAMPLE 38: The identities we decided were just “who we are”.
-
-EXAMPLE 39: The things we’re still chasing because, somewhere along the way, we decided they were what we were supposed to want.
-
-EXAMPLE 40: If you’ve seen <em>The Odyssey</em> already, tell me what you thought.
-
-EXAMPLE 41: Because I have a feeling this one is going to be divisive.
+EXAMPLE 37: Because I have a feeling this one is going to be divisive.
 
 ### The source list at the foot
 

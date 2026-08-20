@@ -137,6 +137,23 @@ body {
   opacity: 0.3;
 }
 
+/* The grain is the panel's ground, so it has to lie under the panel's contents.
+   A pseudo-element comes after them in tree order and so paints over them by
+   default, and multiplying pixel noise into the type is not a scan — it is a
+   stain. It cost the emoji most: multiply against grey drains a colour glyph of
+   both its brightness and its colour, so a beach parasol arrived as a smudge.
+
+   Giving the children a z-index lifts them clear. It is the same move the sheet
+   already makes over its own paper grain a few rules down. */
+.puzzle__head > *,
+.tells > *,
+.picker__card > *,
+.stamp__label,
+.clue__btn-label {
+  position: relative;
+  z-index: 1;
+}
+
 /* ------------------------------------------------------------------- the page */
 
 .sheet {
@@ -1064,6 +1081,18 @@ html.easy-eyes .clue.is-active,
 html.easy-eyes .stamp:hover,
 html.easy-eyes .clue__btn:hover {
   background-color: #f2eee4;
+}
+
+/* The two columns are balanced by a measured ratio, and Easy Eyes invalidates
+   the measurement: it swaps the typewriter face for Helvetica, which is much
+   narrower, so the article column loses about a quarter of its height. The
+   callout barely moves, because most of it is the AI specimen — forty-odd
+   fragments already one line each, and a line is a line whatever it is set in.
+   At 44.2/55.8 that left the callout overrunning the article by some 400px.
+   Measured the same way as the ratio above: at 37/63 the two ends land within
+   60px of each other at every width from 1100px up. */
+html.easy-eyes .brief {
+  grid-template-columns: minmax(0, 37fr) minmax(0, 63fr);
 }
 
 /* On a phone the clue is read in the bar at the foot of the screen rather than

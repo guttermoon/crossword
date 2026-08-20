@@ -205,6 +205,9 @@ body {
   color: var(--red);
 }
 
+/* One line of the title per line of the copy. */
+.masthead__line { display: block; }
+
 /* Set in the grotesque and centred, so every line falls where the words end
    rather than being stretched out to a common width. */
 .masthead__sub {

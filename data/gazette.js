@@ -7,7 +7,11 @@ window.GAZETTE = {
   "brand": "The Slop Gazette",
   "kicker": "Saturday Edition &middot; Three puzzles &middot; 76 clues",
   "title": "How to puzzle out AI writing",
-  "standfirst": "Learn how to spot common signs of AI-generated writing, from em dashes and buzzwords to familiar phrases.",
+  "titleLines": [
+    "How to puzzle out",
+    "AI writing"
+  ],
+  "standfirst": "Learn how to spot the common signs of AI-generated writing, from em dashes and buzzwords to familiar phrases and repeated patterns.",
   "brief": {
     "blocks": [
       {

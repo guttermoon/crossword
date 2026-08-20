@@ -275,31 +275,24 @@
    * to be one object throughout for the turn to read as one movement. Each
    * spoke is horizontal in the markup and rotated into place from the
    * stylesheet, so that the same rule can take three of them back to nothing
-   * and leave the fourth lying flat. */
+   * and leave the fourth lying flat.
+   *
+   * Plain elements rather than the SVG the other icons use. Transforming an
+   * SVG child means pinning transform-box and transform-origin to the viewBox,
+   * because a shape has no layout box of its own to turn about, and that is the
+   * corner of CSS where engines disagree. An element has a box, turns about the
+   * middle of it by default, and animates the same everywhere. Four bars need
+   * no drawing surface. */
   var SPOKES = [0, 45, 90, 135];
 
   function mark() {
-    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('viewBox', '0 0 24 24');
-    svg.setAttribute('aria-hidden', 'true');
-    svg.setAttribute('focusable', 'false');
-    svg.setAttribute('class', 'icon mark');
-
-    var spin = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    spin.setAttribute('class', 'mark__spin');
+    var box = el('span', 'mark');
+    box.setAttribute('aria-hidden', 'true');
     SPOKES.forEach(function (angle) {
-      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      line.setAttribute('x1', '3.5');
-      line.setAttribute('y1', '12');
-      line.setAttribute('x2', '20.5');
-      line.setAttribute('y2', '12');
       // The flat spoke is the one the minus is made of; the rest fold away.
-      line.setAttribute('class', 'mark__arm mark__arm--a' + angle);
-      spin.appendChild(line);
+      box.appendChild(el('span', 'mark__arm mark__arm--a' + angle));
     });
-
-    svg.appendChild(spin);
-    return svg;
+    return box;
   }
 
   function makeCollapsible(head, label) {

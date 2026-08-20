@@ -14,7 +14,7 @@ puz = load('data/puzzles.js', 'window.PUZZLES')
 out = io.StringIO()
 w = out.write
 
-w("""# The Slop Gazette — every word on the page
+w("""# The Dead Good Club Funnies — every word on the page
 
 Edit anything in this file and send it back. Keep the **labels** (`CLUE:`,
 `WHAT:`, and the `###` headings) exactly as they are — that is how each line
@@ -142,7 +142,7 @@ for pz in puz:
 
 text = out.getvalue()
 os.makedirs('/home/user/crossword/copy', exist_ok=True)
-path = '/home/user/crossword/copy/the-slop-gazette-copy.md'
+path = '/home/user/crossword/copy/dgc-funnies-copy.md'
 open(path, 'w', encoding='utf-8').write(text)
 
 words = len(re.findall(r"[A-Za-z0-9'’-]+", text))

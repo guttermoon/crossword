@@ -4,7 +4,7 @@
  * first-party content: do not paste anything here that you did not write.
  */
 window.GAZETTE = {
-  "brand": "The Slop Gazette",
+  "brand": "The Dead Good Club Funnies",
   "kicker": "Saturday Edition &middot; Three puzzles &middot; 76 clues",
   "title": "How to puzzle out AI writing",
   "titleLines": [

@@ -515,7 +515,9 @@
     if (gazette) {
       sheet.insertBefore(buildMasthead(gazette), mount);
       sheet.insertBefore(buildBrief(gazette), mount);
-      document.title = gazette.brand + ' — ' + gazette.title;
+      // Kept in step with the <title> in the markup, which is what a crawler
+      // that does not run scripts will read.
+      document.title = gazette.brand + ': ' + gazette.title;
     }
 
     var picker = null;

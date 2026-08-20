@@ -1,4 +1,4 @@
-# The Slop Gazette — How to puzzle out AI writing
+# The Dead Good Club Funnies: How to puzzle out AI writing
 
 An article on how writing habits differ by generation and by machine, and three
 interactive crosswords under it: the words, the sentence shapes, and the chatbot

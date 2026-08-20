@@ -267,19 +267,38 @@
 
   /* The head of an article folds away, so a solver who has read it once can
    * put the grid and its clues back at the top of the screen. A mark rather
-   * than a word: an asterisk while it is open, a plus while it is folded. */
-  var MARKS = {
-    open: '<path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>',
-    shut: '<path d="M12 4v16M4 12h16"/>',
-  };
+   * than a word: an asterisk while it is open, which turns as it folds down to
+   * the single stroke of a minus.
+   *
+   * It is drawn as four identical spokes laid across each other rather than as
+   * two states swapped over, because a swap cannot be animated — the mark has
+   * to be one object throughout for the turn to read as one movement. Each
+   * spoke is horizontal in the markup and rotated into place from the
+   * stylesheet, so that the same rule can take three of them back to nothing
+   * and leave the fourth lying flat. */
+  var SPOKES = [0, 45, 90, 135];
 
-  function mark(open) {
+  function mark() {
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('viewBox', '0 0 24 24');
     svg.setAttribute('aria-hidden', 'true');
     svg.setAttribute('focusable', 'false');
-    svg.classList.add('icon');
-    svg.innerHTML = open ? MARKS.open : MARKS.shut;
+    svg.setAttribute('class', 'icon mark');
+
+    var spin = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    spin.setAttribute('class', 'mark__spin');
+    SPOKES.forEach(function (angle) {
+      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', '3.5');
+      line.setAttribute('y1', '12');
+      line.setAttribute('x2', '20.5');
+      line.setAttribute('y2', '12');
+      // The flat spoke is the one the minus is made of; the rest fold away.
+      line.setAttribute('class', 'mark__arm mark__arm--a' + angle);
+      spin.appendChild(line);
+    });
+
+    svg.appendChild(spin);
     return svg;
   }
 
@@ -288,12 +307,12 @@
     button.type = 'button';
     button.setAttribute('aria-expanded', 'true');
     button.setAttribute('aria-label', 'Hide the introduction to ' + label);
-    button.appendChild(mark(true));
+    button.appendChild(mark());
     head.appendChild(button);
 
     button.addEventListener('click', function () {
+      // The mark stays put and changes shape; the head's own class drives it.
       var collapsed = head.classList.toggle('is-collapsed');
-      button.replaceChild(mark(!collapsed), button.firstChild);
       button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
       button.setAttribute('aria-label',
         (collapsed ? 'Show' : 'Hide') + ' the introduction to ' + label);

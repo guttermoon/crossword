@@ -757,6 +757,41 @@ body {
   stroke-width: 2.2;
 }
 
+/* The asterisk turning into a minus. Everything pivots on the middle of the
+   24-unit viewBox, so both the spin and the folding spokes share one centre —
+   `view-box` rather than the default `fill-box`, because a horizontal line's
+   own box has no height to find a centre in. */
+.mark__spin,
+.mark__arm {
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+}
+
+/* The spokes are held back so that the turn is under way before they start to
+   go. Given the same timing they finish first, and the mark is a minus before
+   it has visibly moved — all of the rotation happens with nothing left to
+   rotate. They draw in over the middle of the turn instead, and land a moment
+   before it settles. */
+.mark__spin { transition: transform 420ms cubic-bezier(0.65, 0, 0.35, 1); }
+.mark__arm { transition: transform 260ms cubic-bezier(0.65, 0, 0.35, 1) 120ms; }
+
+.mark__arm--a45 { transform: rotate(45deg); }
+.mark__arm--a90 { transform: rotate(90deg); }
+.mark__arm--a135 { transform: rotate(135deg); }
+
+/* Folded: the mark turns a half circle while three of its four spokes draw
+   back into the middle. Half a turn rather than a quarter so that the spoke
+   left standing arrives lying flat — a minus, not a bar on its end. */
+.puzzle__head.is-collapsed .mark__spin { transform: rotate(180deg); }
+.puzzle__head.is-collapsed .mark__arm--a45 { transform: rotate(45deg) scaleX(0); }
+.puzzle__head.is-collapsed .mark__arm--a90 { transform: rotate(90deg) scaleX(0); }
+.puzzle__head.is-collapsed .mark__arm--a135 { transform: rotate(135deg) scaleX(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mark__spin,
+  .mark__arm { transition: none; }
+}
+
 .puzzle__toggle:hover { color: var(--red); }
 .puzzle__toggle:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 

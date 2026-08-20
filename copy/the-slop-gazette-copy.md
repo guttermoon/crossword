@@ -26,7 +26,7 @@ and I will add them to this doc too.
 
 TITLE: How to puzzle out AI writing
 
-STANDFIRST: Learn how to spot common signs of AI-generated writing, from em dashes and buzzwords to familiar phrases.
+STANDFIRST: Learn how to spot the common signs of AI-generated writing, from em dashes and buzzwords to familiar phrases and repeated patterns.
 
 _Not shown on the page, but used for the browser tab and the footer:_
 

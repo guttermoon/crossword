@@ -25,7 +25,13 @@
     // The publication line lives in the browser title and the colophon; up here
     // a rule opens the page instead.
     head.appendChild(el('div', 'masthead__rule'));
-    head.appendChild(el('h1', 'masthead__title', g.title));
+
+    // The title breaks where the copy breaks it, not where the column runs out.
+    var title = el('h1', 'masthead__title');
+    (g.titleLines && g.titleLines.length ? g.titleLines : [g.title]).forEach(function (line) {
+      title.appendChild(el('span', 'masthead__line', line));
+    });
+    head.appendChild(title);
     head.appendChild(rich('p', 'masthead__sub', g.standfirst));
     return head;
   }

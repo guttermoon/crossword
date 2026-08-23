@@ -29,12 +29,12 @@ window.PUZZLES = [
    "..L.O...S.DELVE",
    "..Y.R...C..R.E.",
    "....T...O....R.",
-   "....A...R....A.",
+   "....A...R..K.A.",
    "GROUNDBREAKING.",
-   ".E..T........E.",
-   ".A..L..........",
-   ".L.SYNERGY.....",
-   ".M............."
+   ".E..T......C.E.",
+   ".A..L......K...",
+   ".L.SYNERGY.E...",
+   ".M.........R..."
   ],
   "clues": {
    "across": {
@@ -87,7 +87,7 @@ window.PUZZLES = [
       "url": "https://www.science.org/doi/10.1126/sciadv.adt3813"
      }
     },
-    "10": {
+    "11": {
      "clue": "Adjective taken from the ceremony of digging the first sod for a new building, now applied as a marketing term to almost everything that’s new",
      "answer": "GROUNDBREAKING",
      "note": {
@@ -99,7 +99,7 @@ window.PUZZLES = [
       "url": "https://arxiv.org/html/2412.11385v1"
      }
     },
-    "12": {
+    "13": {
      "clue": "Word for two things working better together than either could achieve alone (and the most over used term in corporate business)",
      "answer": "SYNERGY",
      "note": {
@@ -173,7 +173,19 @@ window.PUZZLES = [
       "url": null
      }
     },
-    "11": {
+    "10": {
+     "clue": "Someone who kicks a ball. In writing, a verbal drumroll for the best or most unbelievable part of a tale",
+     "answer": "KICKER",
+     "note": {
+      "what": "As in “Here’s the ____”. A false-suspense transition. It signals that an important or surprising reveal is coming. Models learn this as a ready-made template from marketing and social posts. It gives a response rhythm and makes a conclusion feel dramatic, even when the point does not need drama. It is widely noted in AI-writing trope lists, “but here’s the thing.”, “the best part?”, “what most people miss is…”, “here’s the uncomfortable part”, and “let that sink in”. The modern equivalent of the catchphrase: “and that’s not all” or “but wait, there’s more”.",
+      "sounds": "“Costs rose 4% last year. And here’s the kicker: nobody noticed.”",
+      "human": "“Costs rose 4% and it took eleven months for anyone to raise it.”",
+      "data": null,
+      "source": null,
+      "url": null
+     }
+    },
+    "12": {
      "clue": "A kingdom, often used figuratively to mean an area of knowledge, work, or discussion",
      "answer": "REALM",
      "note": {

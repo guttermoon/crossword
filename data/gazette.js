@@ -5,7 +5,7 @@
  */
 window.GAZETTE = {
   "brand": "The Dead Good Club Funnies",
-  "kicker": "Saturday Edition &middot; Three puzzles &middot; 63 clues",
+  "kicker": "Saturday Edition &middot; Three puzzles &middot; 64 clues",
   "title": "How to puzzle out AI writing",
   "titleLines": [
     "How to puzzle out",

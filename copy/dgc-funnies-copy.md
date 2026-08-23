@@ -32,7 +32,7 @@ _Not shown on the page, but used for the browser tab and the footer:_
 
 BRAND: The Dead Good Club Funnies
 
-KICKER: Saturday Edition &middot; Three puzzles &middot; 63 clues
+KICKER: Saturday Edition &middot; Three puzzles &middot; 64 clues
 
 FOOTER LEFT: Saturday Edition
 
@@ -366,7 +366,7 @@ SOUNDS: “In this article we delve into the intricacies of remote work.”
 
 INSTEAD: “This article looks at remote work.”
 
-#### P1 · 10 across
+#### P1 · 11 across
 
 ANSWER _(fixed)_: GROUNDBREAKING
 
@@ -378,7 +378,7 @@ SOUNDS: “Our groundbreaking new feature is a game-changer for productivity.”
 
 INSTEAD: “You can export to a spreadsheet now, which people have asked for since 2021.”
 
-#### P1 · 12 across
+#### P1 · 13 across
 
 ANSWER _(fixed)_: SYNERGY
 
@@ -452,7 +452,19 @@ SOUNDS: “We leverage AI to optimise workflows.”
 
 INSTEAD: “We use AI to speed up scheduling.”
 
-#### P1 · 11 down
+#### P1 · 10 down
+
+ANSWER _(fixed)_: KICKER
+
+CLUE: Someone who kicks a ball. In writing, a verbal drumroll for the best or most unbelievable part of a tale
+
+WHAT: As in “Here’s the ____”. A false-suspense transition. It signals that an important or surprising reveal is coming. Models learn this as a ready-made template from marketing and social posts. It gives a response rhythm and makes a conclusion feel dramatic, even when the point does not need drama. It is widely noted in AI-writing trope lists, “but here’s the thing.”, “the best part?”, “what most people miss is…”, “here’s the uncomfortable part”, and “let that sink in”. The modern equivalent of the catchphrase: “and that’s not all” or “but wait, there’s more”.
+
+SOUNDS: “Costs rose 4% last year. And here’s the kicker: nobody noticed.”
+
+INSTEAD: “Costs rose 4% and it took eleven months for anyone to raise it.”
+
+#### P1 · 12 down
 
 ANSWER _(fixed)_: REALM
 

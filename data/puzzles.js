@@ -14,53 +14,48 @@ window.PUZZLES = [
   "id": "p1",
   "issue": "No. 1",
   "title": "The Words",
-  "blurb": "The vocabulary AI cannot put down — the adverbs, the ornate nouns, the corporate verbs, and the travel-brochure adjectives that arrive when nobody looked at the thing being described.",
+  "blurb": "There are certain words you’ll see in AI writing again and again. That happens partly because language models generate text one small chunk at a time. Like your phone’s predictive text, guessing the single best word to follow the text that came before it, models repeatedly choose from a pool of likely best options, using patterns learned during training and instructions to favour safe, polite, and statistically average choices. It tends to repeat terms that appear frequently in sanitised web pages, books, scientific papers, encyclopaedic sources, and technical or government-style documents which can all skew the word choices toward academic, business, and formal language.",
   "heroes": [
    "DELVE",
-   "LOADBEARING",
    "QUIETLY",
-   "TAPESTRY",
-   "UNDERSCORE",
-   "CLUSTER"
+   "TAPESTRY"
   ],
   "grid": [
-   ".......Q.....R.",
-   ".......UTILISE.",
-   "C......I.....A.",
-   "L...SYNERGY..L.",
-   "U.E....T.....M.",
-   "S.M....L.......",
-   "TAPESTRY.L...U.",
-   "E.O.E....E.H.N.",
-   "R.W.R....V.A.D.",
-   ".DELVE...E.R.E.",
-   "..R.E....R.N.R.",
-   "....SHOWCASE.S.",
-   "....A....G.S.C.",
-   "....STUDIESSHOW",
-   "........M....R.",
-   ".LANDSCAPE...E.",
-   "........O......",
-   ".GROUNDBREAKING",
-   "........T......",
-   "..LOADBEARING..",
-   "........N..E...",
-   ".....V..T..S...",
-   ".GENUINELY.T.U.",
-   ".....B..Y..L.N.",
-   ".....R...DEEPLY",
-   "...BOASTS..D.O.",
-   ".....N.......C.",
-   "ROBUST.......K."
+   "..Q..GENUINELY.",
+   "..U.....N..M...",
+   "UTILISE.D..P...",
+   "..E.M...E..O.L.",
+   "..TAPESTRY.W.E.",
+   "..L.O...S.DELVE",
+   "..Y.R...C..R.E.",
+   "....T...O....R.",
+   "....A...R....A.",
+   "GROUNDBREAKING.",
+   ".E..T........E.",
+   ".A..L..........",
+   ".L.SYNERGY.....",
+   ".M............."
   ],
   "clues": {
    "across": {
-    "3": {
-     "clue": "Formal verb whose entire purpose is to be longer than 'use'",
+    "2": {
+     "clue": "Reassuring adverb insisting on sincerity",
+     "answer": "GENUINELY",
+     "note": {
+      "what": "Similarly ‘honestly’, ‘truly’, and ‘really’ are used to add warmth and emphasis. ‘This is good’ becomes ‘this is genuinely good’. The extra word is a conversational sincerity marker and can make AI prose sound candid, helpful, and personally invested.",
+      "sounds": "“Honestly, this is a genuinely exciting development that I truly believe matters.”",
+      "human": "“This is a big deal, and I think it will hold up.”",
+      "data": "Related and worth knowing: performed candour. 'Let me be honest', 'truth be told', 'I'll be real with you' — announcing honesty instead of simply being direct. The announcement is the tell.",
+      "source": null,
+      "url": null
+     }
+    },
+    "5": {
+     "clue": "Formal verb and more technical word for putting something to ‘use’",
      "answer": "UTILISE",
      "also": "UTILIZE",
      "note": {
-      "what": "Here is the clearest evidence anywhere of why AI writes like this, and it is not because it was trained on management consultants. Models are tuned by showing paid raters two answers and keeping whichever they prefer. Raters preferred the version that sounded educated, so the longer word won thousands of small contests and became the default. The tic was not learned from the web; it was rewarded into place afterwards.",
+      "what": "Here is the clearest example of AI preferring the longer version of a word instead of a more natural or colloquial word. Over time the longer word won thousands of small contests and became the default.",
       "sounds": "“Please utilise the attached template to facilitate the process.”",
       "human": "“Use the form attached. It takes two minutes.”",
       "data": "The causal test: an untuned Llama 2-Base model was about equally surprised by human and AI text (entropy 1.616 against 1.633). Once tuned on human ratings, Llama 2-Chat found AI text containing these words far less surprising (0.886) than human text (1.051) — the fingerprint of raters' taste being trained in.",
@@ -68,35 +63,23 @@ window.PUZZLES = [
       "url": "https://arxiv.org/html/2412.11385v1"
      }
     },
-    "5": {
-     "clue": "Word for two things working better together than apart, and the most mocked term in business English",
-     "answer": "SYNERGY",
-     "note": {
-      "what": "The interesting fault is not that it is a cliche but that it names a result while hiding the mechanism. Nobody can dispute that combining two things produced extra value, because no figure was offered. AI produces it freely for the same reason it produces 'ecosystem' and 'holistic': the training data is thick with press releases, and press releases are written to be unarguable.",
-      "sounds": "“The merger will unlock powerful synergies across both organisations.”",
-      "human": "“They'll share one warehouse and close the smaller one.”",
-      "data": null,
-      "source": null,
-      "url": null
-     }
-    },
-    "7": {
-     "clue": "A woven wall hanging. AI drapes this one over culture, history and 'the human experience' whenever it wants to sound profound",
+    "8": {
+     "clue": "A woven wall hanging. AI drapes this one over culture, history, and ‘the human experience’ whenever it wants to sound profound",
      "answer": "TAPESTRY",
      "note": {
-      "what": "The classic ornate noun for a simple idea. A tapestry is a specific object made of thread; used as a metaphor for society it says only 'lots of different things', which is why it can be dropped from any sentence without loss.",
-      "sounds": "“Immigration is part of the rich tapestry of British life.”",
-      "human": "“Britain has always had immigrants.”",
+      "what": "AI often uses this ornate noun as a shortcut for “a complex mixture of connected things.” It is an attractive, high-register metaphor making an ordinary point sound rich, thoughtful, and literary without requiring the model to name the actual parts or relationships.",
+      "sounds": "“The local music scene is part of the rich tapestry of British culture.”",
+      "human": "“Local venues, radio stations, promoters, and musicians have shaped British music for decades.”",
       "data": "Not folklore — 'tapestry' cleared the statistical threshold for AI-influenced vocabulary in a study of 27.5 million medical records, alongside 'unlocking'. Watch especially for the fixed phrase 'rich tapestry', which is almost never how a person describes anything.",
       "source": "Matsui, Perspectives on Medical Education",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12679996/"
      }
     },
-    "12": {
-     "clue": "Verb meaning to dig into a subject. The most heavily measured AI word in existence — it appears in scientific writing about 28 times more often than it used to",
+    "9": {
+     "clue": "Verb meaning to dig into a subject and investigate thoroughly, now the most heavily measured AI word in existence",
      "answer": "DELVE",
      "note": {
-      "what": "Before 2022 this was a rare, slightly literary word: you delved into an archive or a drawer. Chatbots use it as the ordinary word for 'look at', because the humans paid to rate early AI answers consistently preferred the fancier-sounding option, and that preference got baked into the model.",
+      "what": "The use of this word rose 1,375% between 2020 and 2024. A 2025 analysis found that this word (and others strongly associated with ChatGPT-style prose like underscore, meticulous, and pivotal) began declining after being publicly identified as AI tells. This is partially down to human editing, like the ‘em dash’, once writers become aware of an AI trope they seek them out and remove or replace these tells. Newer models are also less likely to use some older giveaways.",
       "sounds": "“In this article we delve into the intricacies of remote work.”",
       "human": "“This article looks at remote work.”",
       "data": "Across 15.1 million medical abstracts, 'delves' appeared 28 times more often in 2024 than the pre-ChatGPT trend predicted. One study measured a 6,697% rise between 2020 and 2024, and found ChatGPT-3.5 using 'delves' roughly 570 times more often than human authors did. Worth knowing that these tells have a half-life. Across 1.29 million arXiv abstracts, “delve” and “showcasing” peaked between January and March 2024 and started falling in April, right after researchers named them publicly — while “significant” and “additionally” kept climbing, because nobody memed those. (Human–LLM Coevolution, arXiv.)",
@@ -104,47 +87,11 @@ window.PUZZLES = [
       "url": "https://www.science.org/doi/10.1126/sciadv.adt3813"
      }
     },
-    "13": {
-     "clue": "A glass display cabinet in a museum, drafted in as a verb meaning simply 'to show'",
-     "answer": "SHOWCASE",
-     "note": {
-      "what": "One of the significance verbs. 'Show' is shorter, clearer and free; 'showcase' adds a ceremonial frame around whatever is being shown. Its cousin 'showcasing' is one of the most over-used words in the data.",
-      "sounds": "“This report showcases our commitment to sustainability.”",
-      "human": "“This report shows what we did about our emissions.”",
-      "data": "'Showcasing' appeared about 10.7 times more often in 2024 medical abstracts than the pre-ChatGPT trend predicted — the third-largest jump measured, behind 'delves' and 'underscores'.",
-      "source": "Kobak et al., Science Advances",
-      "url": "https://www.science.org/doi/10.1126/sciadv.adt3813"
-     }
-    },
-    "14": {
-     "clue": "Two words: the attribution that borrows a laboratory's authority while naming no laboratory, no date and no sample",
-     "answer": "STUDIESSHOW",
-     "note": {
-      "what": "The most consequential habit in this puzzle, because it is where fluent writing becomes misinformation. Five things are missing every time: who did the work, when, how many people were in it, what method was used, and what the authors said the limits were. AI produces the phrase because the shape of a citation is easy to generate and an actual citation is not. Its family includes 'experts argue', 'research suggests' and 'industry reports indicate'.",
-      "sounds": "“Studies show that this approach improves outcomes.”",
-      "human": "“A 2019 trial of 240 patients in Leeds found a small improvement, and nobody has repeated it since.”",
-      "data": "For comparison, here is what a real attribution looks like: Kousha and Thelwall, working across more than 2.4 million PubMed Central full texts, found the use of 'underscore' rising roughly 1,000% between 2022 and 2024. Named authors, named corpus, stated size, checkable claim.",
-      "source": "Kousha & Thelwall",
-      "url": "https://arxiv.org/abs/2509.09596"
-     }
-    },
-    "16": {
-     "clue": "Word for a stretch of countryside, bolted onto any industry: 'the current ___ of technology'",
-     "answer": "LANDSCAPE",
-     "note": {
-      "what": "Terrain language used to make a subject sound vast and shifting. It implies you are about to be told about complexity, but it is almost always removable: the sentence means the same without it.",
-      "sounds": "“The evolving landscape of digital marketing presents new challenges.”",
-      "human": "“Digital marketing keeps changing.”",
-      "data": "Try the deletion test on this one. 'The current landscape of X' and 'X' carry identical information, which is the definition of filler — words that occupy space without adding meaning.",
-      "source": null,
-      "url": null
-     }
-    },
-    "17": {
-     "clue": "Adjective taken from the ceremony of digging the first sod for a new building, now applied to minor software updates",
+    "10": {
+     "clue": "Adjective taken from the ceremony of digging the first sod for a new building, now applied as a marketing term to almost everything that’s new",
      "answer": "GROUNDBREAKING",
      "note": {
-      "what": "The flagship of the breathless family: revolutionary, cutting-edge, innovative, game-changing, unprecedented. They inflate together and they cancel each other out, because a page on which everything is unprecedented has no way of telling you which part is. The reliable repair is a testable sentence — what it does, for whom, compared with what it replaced.",
+      "what": "The flagship of the breathless hype family, using superlatives as a substitute for proof: revolutionary, cutting-edge, innovative, game-changing, unprecedented. This default promotional tone that treats an ordinary product, idea, or update as unusually important. These words signal excitement, but often fail to give proof. AI-generated text commonly leans on these kinds of buzzword to make prose sound energetic and authoritative.",
       "sounds": "“Our groundbreaking new feature is a game-changer for productivity.”",
       "human": "“You can export to a spreadsheet now, which people have asked for since 2021.”",
       "data": "This one is on the verified focal-word list: it both rose sharply in human scientific writing between 2020 and 2024 and is over-produced by ChatGPT compared with human authors.",
@@ -152,62 +99,14 @@ window.PUZZLES = [
       "url": "https://arxiv.org/html/2412.11385v1"
      }
     },
-    "18": {
-     "clue": "Building-trade adjective for a wall that holds the roof up. AI will apply it to a paragraph, a code comment, a decision or your feelings",
-     "answer": "LOADBEARING",
+    "12": {
+     "clue": "Word for two things working better together than either could achieve alone (and the most over used term in corporate business)",
+     "answer": "SYNERGY",
      "note": {
-      "what": "The signature tell of 2026, associated above all with Anthropic's Claude. It asserts structural importance in one hyphenated word without having to argue for it, which is exactly why models like it and why banning the phrase alone does not help — they simply switch to 'carries the argument' or 'does the real work here'.",
-      "sounds": "“That indentation is deliberate and load-bearing rather than tidy.” (written about a routine software build step)",
-      "human": "“Don't change that line — the build breaks without it.”",
-      "data": "The joke went viral when a user posted a moving personalised message from Claude that ended 'THEY WERE LOAD-BEARING'. A follow-up post documented the phrase appearing 25 times in a single conversation. Note honestly: unlike 'delve', nobody has yet counted this one across a large corpus — it is a very well-evidenced joke rather than a statistic.",
-      "source": "“Load-Bearing. 25 Times.”, r/ClaudeAI",
-      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uojyml/loadbearing_25_times/"
-     }
-    },
-    "21": {
-     "clue": "Adverb insisting on sincerity — something sincere people rarely need to announce",
-     "answer": "GENUINELY",
-     "note": {
-      "what": "An intensifier used to manufacture warmth. 'This is good' becomes 'this is genuinely good'. The extra word performs feeling rather than containing it, which is why it clusters with 'truly', 'really' and 'honestly'.",
-      "sounds": "“This is a genuinely exciting development that I truly believe matters.”",
-      "human": "“This is a big deal, and I think it will hold up.”",
-      "data": "Related and worth knowing: performed candour. 'Let me be honest', 'truth be told', 'I'll be real with you' — announcing honesty instead of simply being direct. The announcement is the tell.",
-      "source": null,
-      "url": null
-     }
-    },
-    "23": {
-     "clue": "Adverb used to intensify emotions the writer does not actually have — '___ concerned', '___ committed', '___ regret'",
-     "answer": "DEEPLY",
-     "note": {
-      "what": "This is the institutional feeling word, and it is worth learning because it dominates apologies, statements and condolence emails. Nothing about it can be checked: an organisation cannot be shallowly committed, so the adverb sets no bar. The useful question is not whether the sentiment is sincere but who is supposed to be having it — usually a company, a council or a brand, none of which can feel anything.",
-      "sounds": "“We are deeply committed to your satisfaction and deeply value your feedback.”",
-      "human": "“We got this wrong. Your refund goes out on Friday and I've stopped the direct debit.”",
+      "what": "This corporate cliché is conveniently vague and can be used to imply action without naming the actual mechanism or result. It suggests that collaboration will create value without committing the writer to a measurable claim or an accountable outcome, becoming a polished substitute for an explanation. Just like the words ‘ecosystem’ and ‘holistic’, it’s a low-risk filler. Corporate jargon has long worked this way; AI is merely reproducing an established human habit.",
+      "sounds": "“The merger will unlock powerful synergies across both organisations.”",
+      "human": "“They’ll share one warehouse and close the smaller one.”",
       "data": null,
-      "source": null,
-      "url": null
-     }
-    },
-    "24": {
-     "clue": "Verb meaning to brag. AI uses it to mean nothing more than 'has': the hotel ___ 47 rooms",
-     "answer": "BOASTS",
-     "note": {
-      "what": "Estate agents started this and models industrialised it. Note what has happened grammatically: a building is now doing the bragging, which is the same misplaced agency that makes 'load-bearing' and 'harness' odd. It is also on the strongest evidence list in the field, because it both rose sharply in human writing after 2020 and is provably over-produced by ChatGPT.",
-      "sounds": "“The property boasts three bedrooms and a utility room.”",
-      "human": "“Three bedrooms, and a utility room off the kitchen with the boiler in it.”",
-      "data": "'Boasts' appears on the verified focal-word list — terms that spiked in human scientific writing between 2020 and 2024 and are also over-used by ChatGPT relative to human authors, alongside 'delve', 'showcasing', 'realm' and 'groundbreaking'.",
-      "source": "Juzek & Ward, Florida State",
-      "url": "https://arxiv.org/html/2412.11385v1"
-     }
-    },
-    "25": {
-     "clue": "Adjective meaning sturdy, applied indiscriminately to frameworks, findings, systems and debate",
-     "answer": "ROBUST",
-     "note": {
-      "what": "Vague strength. It signals that you should feel reassured while offering no measurement. AI uses it because it reads as technical and is almost impossible to contradict.",
-      "sounds": "“We have implemented robust safeguards and a robust review process.”",
-      "human": "“Two people check every file, and we keep a log for a year.”",
-      "data": "Watch for the same adjective twice in one sentence, as in the example. Human writers instinctively vary; models reach for the highest-probability word again and again, which is why repetition within a paragraph is a stronger signal than any single word.",
       "source": null,
       "url": null
      }
@@ -215,10 +114,10 @@ window.PUZZLES = [
    },
    "down": {
     "1": {
-     "clue": "Adverb meaning without noise. AI uses it to make an ordinary fact sound like a secret you have just been let in on",
+     "clue": "Adverb meaning with little noise. AI uses it to make ordinary information feel like insider knowledge",
      "answer": "QUIETLY",
      "note": {
-      "what": "A magic adverb. It smuggles in significance for nothing: 'the app quietly became essential.' Quietly compared with what? Nothing was ever loud. Delete the word and no information is lost, which is the test.",
+      "what": "Frequently noticed in AI prose, especially phrases like “quietly reshaping,” “quietly transforming,” or “quietly becoming” because it creates an intriguing sense of momentum without having to identify who acted, when, or what changed.",
       "sounds": "“The company has quietly become one of the biggest landlords in the country.”",
       "human": "“The company owns 40,000 homes and almost nobody has heard of it.”",
       "data": "Its relatives are 'deeply', 'genuinely', 'truly', 'fundamentally', 'remarkably' and 'arguably'. Each performs an attitude the writer does not have to justify. Strip all the adverbs from a suspect paragraph and see how much of it survives.",
@@ -226,71 +125,11 @@ window.PUZZLES = [
       "url": null
      }
     },
-    "2": {
-     "clue": "A kingdom, borrowed to mean nothing more than 'area' or 'field'. One of the confirmed spike words",
-     "answer": "REALM",
-     "note": {
-      "what": "An empty container noun — an abstract vessel you can pour any topic into. Its relatives are 'landscape', 'sphere', 'domain', 'arena', 'frontier' and 'fabric'. They all imply territory and scale where there is only a subject.",
-      "sounds": "“In the realm of education technology, change is constant.”",
-      "human": "“Education technology changes fast.”",
-      "data": "'Realm' sits on the shortlist of words that both jumped sharply in human scientific writing after 2020 and are provably over-used by ChatGPT compared with people — a list that also includes 'showcasing', 'boasts', 'intricacies', 'garnered' and 'groundbreaking'.",
-      "source": "Juzek & Ward, Florida State",
-      "url": "https://arxiv.org/html/2412.11385v1"
-     }
-    },
-    "4": {
-     "clue": "A group of things close together — and the number of these habits you need before saying anything out loud",
-     "answer": "CLUSTER",
-     "note": {
-      "what": "The single most important idea in this puzzle. One tell is a coincidence. Three in the same paragraph is AI. This is not a rule of thumb invented for comfort; it is what the measurements actually support.",
-      "sounds": "“Let's delve into the intricate tapestry of this pivotal moment, which underscores a truly transformative shift.” Five tells, one sentence. That is AI.",
-      "human": "One 'delve' in an otherwise ordinary email is one word. Leave it.",
-      "data": "Before ChatGPT these words appeared independently of one another. The statistical link between 'underscore' and 'pivotal' was 0.03 in 2022 and 0.45 by 2024; between 'underscore' and 'delve', 0.02 to 0.31. The words did not just get more common — they started travelling together.",
-      "source": "Kousha & Thelwall",
-      "url": "https://arxiv.org/abs/2509.09596"
-     }
-    },
-    "6": {
-     "clue": "Verb meaning to give someone authority. In practice the word that ends a thousand AI-written conclusions",
-     "answer": "EMPOWER",
-     "note": {
-      "what": "The sign-off verb. It appears in the last paragraph, aimed at the reader, promising agency without describing any. If a piece of writing finishes by empowering you to embrace something, ask who wrote it.",
-      "sounds": "“By embracing these tools, you can empower yourself to thrive.”",
-      "human": "“Try one of these for a fortnight and see if it helps.”",
-      "data": "Endings are one of the most reliable places to look, because models are trained to resolve. Named patterns include the Resolution Closer ('the path forward is clear') and the Fortune Cookie Closer — a single wise-sounding line of universal scope that answers nothing.",
-      "source": "Bloomberry, AI sentence patterns",
-      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
-     }
-    },
-    "8": {
-     "clue": "Two words standing in for plain 'is', so that a building no longer is a reminder of anything but performs the reminding as a duty",
-     "answer": "SERVESAS",
-     "note": {
-      "what": "The copula gets promoted. 'Is' states a fact and stops; this phrasing dresses the same fact in a job title, and its cousins do the same work — 'stands as', 'represents', 'marks', 'acts as', 'functions as'. AI reaches for it because it sounds considered while committing to nothing, and because encyclopaedia and press-release prose, which the models read a great deal of, is full of it. Unlike 'boasts' or 'showcase' it is not a rare word, so it slips past readers who are only watching for exotic vocabulary. The noun form does the same job: “a testament to”, which means “proof of” and costs three extra words to say so.",
-      "sounds": "“The new wing serves as a reminder of the school’s commitment to the arts.”",
-      "human": "“The new wing is named after Mrs Ellery, who taught art here for thirty-one years.”",
-      "data": "The test is substitution rather than deletion: put 'is' back and read it again. 'The building is a reminder' loses nothing, which means the longer phrase was carrying no meaning, only ceremony. Where 'serves as' is doing real work — a room that genuinely doubles as something else — the swap fails and you will hear it fail.",
-      "source": null,
-      "url": null
-     }
-    },
-    "9": {
-     "clue": "Borrowed from finance and mechanics, where it means gaining force from a fulcrum. Three syllables standing in for the one-syllable word 'use'",
-     "answer": "LEVERAGE",
-     "note": {
-      "what": "Corporate vocabulary that AI picked up wholesale. It belongs with 'utilise', 'harness' and 'operationalise' — a family whose only function is to make a sentence sound more expensive than it is.",
-      "sounds": "“We leverage AI to optimise workflows.”",
-      "human": "“We use AI to speed up scheduling.”",
-      "data": "Useful editing habit: replace it with 'use' and see whether the meaning changes. It never does. If it never does, the longer word was doing no work — the same test that catches 'load-bearing'.",
-      "source": null,
-      "url": null
-     }
-    },
-    "10": {
-     "clue": "Verb meaning to emphasise or draw attention to. Rose roughly 1,000% in academic writing after 2022, and now travels in a pack with 'delve' and 'pivotal'",
+    "3": {
+     "clue": "Literally it means to underline; figuratively, it means to stress or draw attention to a point",
      "answer": "UNDERSCORE",
      "note": {
-      "what": "A perfectly good word that AI reaches for instead of 'shows', 'proves' or 'means'. It belongs to a family of what you might call significance verbs — underscores, highlights, demonstrates, exemplifies, showcases — all used to avoid the plain word 'is'.",
+      "what": "Rose roughly 1,000% in academic writing after 2022, one of several “excess words” whose sudden rise is consistent with AI-assisted writing along with ‘delve’ and ‘pivotal’. It belongs to a category you could call “significance verbs”: ‘underscore’, ‘highlight’, ‘demonstrate’, ‘reveal’, ‘showcase’, ‘reinforce’, and ‘emphasise’. They make a sentence sound interpretive and authoritative.",
       "sounds": "“These findings underscore the importance of early intervention.”",
       "human": "“This shows early treatment matters.”",
       "data": "Use of 'underscore' rose about 1,000% between 2022 and 2024. The number of papers using it six or more times rose by over 10,000% between 2022 and 2025 — which is the real tell: not the word, but the repetition.",
@@ -298,23 +137,23 @@ window.PUZZLES = [
       "url": "https://arxiv.org/abs/2509.09596"
      }
     },
-    "11": {
-     "clue": "Straps for a horse or a climber, repurposed as a verb meaning to use something",
-     "answer": "HARNESS",
+    "4": {
+     "clue": "Verb meaning to give someone authority, and one in a family of marketing buzzwords",
+     "answer": "EMPOWER",
      "note": {
-      "what": "A borrowed-physics word. You harness an ox or a waterfall — something with real pulling force. Applied to 'the power of data' or 'the potential of your team', the machinery is imaginary.",
-      "sounds": "“Harness the power of your data to unlock new insights.”",
-      "human": "“Look at your sales figures and you may spot something useful.”",
-      "data": "This is the same fault as 'load-bearing', and it points at something deeper than word choice: AI routinely hands physical force and agency to things that have none. One programmer collected examples from code reviews — 'the lateral rides the index', 'the query hit 19 seconds', 'adoption moved out'.",
-      "source": "Jesse Duffield, AI-isms go deeper",
-      "url": "https://jesseduffield.com/AI-isms-go-deeper/"
+      "what": "Common in AI-generated marketing, coaching, and product copy because it is an upbeat, low-risk verb. It makes an offer sound beneficial without requiring the writer to specify what will change. It belongs to the family of ‘the promise of possibility’ words which also include ‘unlock’, ‘unleash’, ‘elevate’, ‘enhance’, ‘amplify’, ‘transform’, ‘revolutionise’, ‘supercharge’, ‘harness’, ‘optimise’, ‘streamline’, and ‘enable’.",
+      "sounds": "“By embracing these tools, you can empower yourself to thrive.”",
+      "human": "“Try one of these for a fortnight and see if it helps.”",
+      "data": "Endings are one of the most reliable places to look, because models are trained to resolve. Named patterns include the Resolution Closer ('the path forward is clear') and the Fortune Cookie Closer — a single wise-sounding line of universal scope that answers nothing.",
+      "source": "Bloomberry, AI sentence patterns",
+      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
      }
     },
-    "15": {
-     "clue": "Adverb, usually preceded by 'more', asserting a ranking of significance that nobody has established",
+    "6": {
+     "clue": "Above all; especially. An adverb used to signal that the next point deserves special weight",
      "answer": "IMPORTANTLY",
      "note": {
-      "what": "A promotion handed out with no committee. 'More importantly' claims a comparison has been made between two things and settled, when the writer has merely moved on. There is a caution attached to this whole family, though, and it is worth carrying into the rest of the puzzle: some of the phrases that spiked after 2022 are utterly bland ones, so a single flat signpost convicts nobody.",
+      "what": "An importance-signalling adverb that tells the reader that a point matters before demonstrating why. It belongs with notably, crucially, significantly, critically, and especially. This type of language suits AI because it helps structure an answer, sound authoritative, and move from one broadly relevant point to the next. A word also common in human academic and professional writing, so it is not a reliable AI tell on its own. It becomes noticeable when it appears alongside other formulaic AI-style habits.",
       "sounds": "“More importantly, this underscores our ongoing commitment to excellence.”",
       "human": "“The bit that matters is the deadline. It moved to 3 October.”",
       "data": "In a study of 27.5 million medical records, 103 of 135 candidate AI-influenced terms cleared the statistical threshold in 2024 — but so did supposedly neutral control phrases such as 'further research' and 'aim to'. Some of the rise is AI and some is fashion.",
@@ -322,40 +161,28 @@ window.PUZZLES = [
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12679996/"
      }
     },
-    "19": {
-     "clue": "Cosy verb for how a village sits in a valley. In AI prose, nothing is ever merely located",
-     "answer": "NESTLED",
+    "7": {
+     "clue": "Gaining force from a fulcrum. In business language, it means using a resource, relationship, or existing advantage to achieve a result",
+     "answer": "LEVERAGE",
      "note": {
-      "what": "Geography becomes affectionate. Towns are nestled, cottages are tucked away, restaurants are hidden gems. It is a small, harmless, extremely consistent habit — which is what makes it useful. The fixed phrase to watch is “in the heart of”, which AI travel copy attaches to every cafe, market and hotel on earth.",
-      "sounds": "“Nestled in the rolling hills of Devon lies a charming village.”",
-      "human": "“The village is twenty minutes off the A38, down a lane with no passing places.”",
-      "data": "Also watch the sentence shape here, not just the words: starting with the scene-setting phrase and putting the subject at the end ('Nestled in X lies Y') is a construction models produce far more often than people do.",
+      "what": "It belongs with the ‘utilise’, ‘harness’ and ‘operationalise’ family whose only function is to make a sentence sound more strategic and high-value than it is. It’s useful as an AI default because it appears frequently in business, strategy, policy, and marketing material. It also fits repeatable templates such as “leverage [resource] to [outcome].”",
+      "sounds": "“We leverage AI to optimise workflows.”",
+      "human": "“We use AI to speed up scheduling.”",
+      "data": "Useful editing habit: replace it with 'use' and see whether the meaning changes. It never does. If it never does, the longer word was doing no work — the same test that catches 'load-bearing'.",
       "source": null,
       "url": null
      }
     },
-    "20": {
-     "clue": "Adjective meaning full of energy, applied to every city, market and community on earth",
-     "answer": "VIBRANT",
+    "11": {
+     "clue": "A kingdom, often used figuratively to mean an area of knowledge, work, or discussion",
+     "answer": "REALM",
      "note": {
-      "what": "A travel-brochure word. It means the writer has not been there. A person names the specific street, the smell, the price of the coffee; AI reaches for the energy level, because that is what descriptions of places statistically contain.",
-      "sounds": "“The vibrant city of Bristol boasts a bustling harbour.”",
-      "human": "“Bristol's harbour is full of boats and about six competing coffee stands.”",
-      "data": "The brochure family — vibrant, bustling, nestled, picturesque, charming, breathtaking, renowned, a hidden gem, in the heart of — clusters so tightly that finding three of them in a paragraph is close to conclusive. 'Boasts' is on the verified spike list.",
+      "what": "Unlike some suspected AI words, this one is supported by research as overrepresented in certain AI-generated academic-style text. Researchers found that it appeared among a set of AI-favoured buzzwords such as ‘landscape’, ‘sphere’, ‘domain’, ‘arena’, ‘frontier’ and ‘fabric’. They all imply territory and scale.",
+      "sounds": "“In the realm of education technology, change is constant.”",
+      "human": "“Education technology changes fast.”",
+      "data": "'Realm' sits on the shortlist of words that both jumped sharply in human scientific writing after 2020 and are provably over-used by ChatGPT compared with people — a list that also includes 'showcasing', 'boasts', 'intricacies', 'garnered' and 'groundbreaking'.",
       "source": "Juzek & Ward, Florida State",
       "url": "https://arxiv.org/html/2412.11385v1"
-     }
-    },
-    "22": {
-     "clue": "Verb for opening something with a key, used on 'potential', which has no lock",
-     "answer": "UNLOCK",
-     "note": {
-      "what": "Borrowed physics again, in motivational form. Potential is not a door, insight is not behind a lock, and value is not in a safe. The metaphor is decoration pretending to be a mechanism.",
-      "sounds": "“Unlock your team's full potential with our platform.”",
-      "human": "“The scheduling tool saves our team about four hours a week.”",
-      "data": "Its family: unlock, unleash, elevate, empower, supercharge, propel, catalyse. All movement, no direction — none of them tells you what actually happens or to whom. 'Unlocking' also appears on the corpus-verified list of AI-influenced words.",
-      "source": "Matsui, Perspectives on Medical Education",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12679996/"
      }
     }
    }
@@ -713,7 +540,7 @@ window.PUZZLES = [
  {
   "id": "p3",
   "issue": "No. 3",
-  "title": "The Chat-back",
+  "title": "The Chat-Back",
   "blurb": "The manners it forgot to delete — “Great question!”, “You're absolutely right!” — plus what AI does to the look of a document: the bold bullets, the stray asterisks, the arrows used as punctuation.",
   "heroes": [
    "YOUREABSOLUTELYRIGHT",

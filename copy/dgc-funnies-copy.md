@@ -32,7 +32,7 @@ _Not shown on the page, but used for the browser tab and the footer:_
 
 BRAND: The Dead Good Club Funnies
 
-KICKER: Saturday Edition &middot; Three puzzles &middot; 76 clues
+KICKER: Saturday Edition &middot; Three puzzles &middot; 63 clues
 
 FOOTER LEFT: Saturday Edition
 
@@ -312,167 +312,83 @@ ISSUE: No. 1
 
 TITLE: The Words
 
-BLURB: The vocabulary AI cannot put down — the adverbs, the ornate nouns, the corporate verbs, and the travel-brochure adjectives that arrive when nobody looked at the thing being described.
+BLURB: There are certain words you’ll see in AI writing again and again. That happens partly because language models generate text one small chunk at a time. Like your phone’s predictive text, guessing the single best word to follow the text that came before it, models repeatedly choose from a pool of likely best options, using patterns learned during training and instructions to favour safe, polite, and statistically average choices. It tends to repeat terms that appear frequently in sanitised web pages, books, scientific papers, encyclopaedic sources, and technical or government-style documents which can all skew the word choices toward academic, business, and formal language.
 
-FAMOUS ONES: DELVE, LOADBEARING, QUIETLY, TAPESTRY, UNDERSCORE, CLUSTER
+FAMOUS ONES: DELVE, QUIETLY, TAPESTRY
 
 ### The Words — across
 
-#### P1 · 3 across
+#### P1 · 2 across
+
+ANSWER _(fixed)_: GENUINELY
+
+CLUE: Reassuring adverb insisting on sincerity
+
+WHAT: Similarly ‘honestly’, ‘truly’, and ‘really’ are used to add warmth and emphasis. ‘This is good’ becomes ‘this is genuinely good’. The extra word is a conversational sincerity marker and can make AI prose sound candid, helpful, and personally invested.
+
+SOUNDS: “Honestly, this is a genuinely exciting development that I truly believe matters.”
+
+INSTEAD: “This is a big deal, and I think it will hold up.”
+
+#### P1 · 5 across
 
 ANSWER _(fixed)_: UTILISE — also accepts UTILIZE
 
-CLUE: Formal verb whose entire purpose is to be longer than 'use'
+CLUE: Formal verb and more technical word for putting something to ‘use’
 
-WHAT: Here is the clearest evidence anywhere of why AI writes like this, and it is not because it was trained on management consultants. Models are tuned by showing paid raters two answers and keeping whichever they prefer. Raters preferred the version that sounded educated, so the longer word won thousands of small contests and became the default. The tic was not learned from the web; it was rewarded into place afterwards.
+WHAT: Here is the clearest example of AI preferring the longer version of a word instead of a more natural or colloquial word. Over time the longer word won thousands of small contests and became the default.
 
 SOUNDS: “Please utilise the attached template to facilitate the process.”
 
 INSTEAD: “Use the form attached. It takes two minutes.”
 
-#### P1 · 5 across
-
-ANSWER _(fixed)_: SYNERGY
-
-CLUE: Word for two things working better together than apart, and the most mocked term in business English
-
-WHAT: The interesting fault is not that it is a cliche but that it names a result while hiding the mechanism. Nobody can dispute that combining two things produced extra value, because no figure was offered. AI produces it freely for the same reason it produces 'ecosystem' and 'holistic': the training data is thick with press releases, and press releases are written to be unarguable.
-
-SOUNDS: “The merger will unlock powerful synergies across both organisations.”
-
-INSTEAD: “They'll share one warehouse and close the smaller one.”
-
-#### P1 · 7 across
+#### P1 · 8 across
 
 ANSWER _(fixed)_: TAPESTRY
 
-CLUE: A woven wall hanging. AI drapes this one over culture, history and 'the human experience' whenever it wants to sound profound
+CLUE: A woven wall hanging. AI drapes this one over culture, history, and ‘the human experience’ whenever it wants to sound profound
 
-WHAT: The classic ornate noun for a simple idea. A tapestry is a specific object made of thread; used as a metaphor for society it says only 'lots of different things', which is why it can be dropped from any sentence without loss.
+WHAT: AI often uses this ornate noun as a shortcut for “a complex mixture of connected things.” It is an attractive, high-register metaphor making an ordinary point sound rich, thoughtful, and literary without requiring the model to name the actual parts or relationships.
 
-SOUNDS: “Immigration is part of the rich tapestry of British life.”
+SOUNDS: “The local music scene is part of the rich tapestry of British culture.”
 
-INSTEAD: “Britain has always had immigrants.”
+INSTEAD: “Local venues, radio stations, promoters, and musicians have shaped British music for decades.”
 
-#### P1 · 12 across
+#### P1 · 9 across
 
 ANSWER _(fixed)_: DELVE
 
-CLUE: Verb meaning to dig into a subject. The most heavily measured AI word in existence — it appears in scientific writing about 28 times more often than it used to
+CLUE: Verb meaning to dig into a subject and investigate thoroughly, now the most heavily measured AI word in existence
 
-WHAT: Before 2022 this was a rare, slightly literary word: you delved into an archive or a drawer. Chatbots use it as the ordinary word for 'look at', because the humans paid to rate early AI answers consistently preferred the fancier-sounding option, and that preference got baked into the model.
+WHAT: The use of this word rose 1,375% between 2020 and 2024. A 2025 analysis found that this word (and others strongly associated with ChatGPT-style prose like underscore, meticulous, and pivotal) began declining after being publicly identified as AI tells. This is partially down to human editing, like the ‘em dash’, once writers become aware of an AI trope they seek them out and remove or replace these tells. Newer models are also less likely to use some older giveaways.
 
 SOUNDS: “In this article we delve into the intricacies of remote work.”
 
 INSTEAD: “This article looks at remote work.”
 
-#### P1 · 13 across
-
-ANSWER _(fixed)_: SHOWCASE
-
-CLUE: A glass display cabinet in a museum, drafted in as a verb meaning simply 'to show'
-
-WHAT: One of the significance verbs. 'Show' is shorter, clearer and free; 'showcase' adds a ceremonial frame around whatever is being shown. Its cousin 'showcasing' is one of the most over-used words in the data.
-
-SOUNDS: “This report showcases our commitment to sustainability.”
-
-INSTEAD: “This report shows what we did about our emissions.”
-
-#### P1 · 14 across
-
-ANSWER _(fixed)_: STUDIESSHOW
-
-CLUE: Two words: the attribution that borrows a laboratory's authority while naming no laboratory, no date and no sample
-
-WHAT: The most consequential habit in this puzzle, because it is where fluent writing becomes misinformation. Five things are missing every time: who did the work, when, how many people were in it, what method was used, and what the authors said the limits were. AI produces the phrase because the shape of a citation is easy to generate and an actual citation is not. Its family includes 'experts argue', 'research suggests' and 'industry reports indicate'.
-
-SOUNDS: “Studies show that this approach improves outcomes.”
-
-INSTEAD: “A 2019 trial of 240 patients in Leeds found a small improvement, and nobody has repeated it since.”
-
-#### P1 · 16 across
-
-ANSWER _(fixed)_: LANDSCAPE
-
-CLUE: Word for a stretch of countryside, bolted onto any industry: 'the current ___ of technology'
-
-WHAT: Terrain language used to make a subject sound vast and shifting. It implies you are about to be told about complexity, but it is almost always removable: the sentence means the same without it.
-
-SOUNDS: “The evolving landscape of digital marketing presents new challenges.”
-
-INSTEAD: “Digital marketing keeps changing.”
-
-#### P1 · 17 across
+#### P1 · 10 across
 
 ANSWER _(fixed)_: GROUNDBREAKING
 
-CLUE: Adjective taken from the ceremony of digging the first sod for a new building, now applied to minor software updates
+CLUE: Adjective taken from the ceremony of digging the first sod for a new building, now applied as a marketing term to almost everything that’s new
 
-WHAT: The flagship of the breathless family: revolutionary, cutting-edge, innovative, game-changing, unprecedented. They inflate together and they cancel each other out, because a page on which everything is unprecedented has no way of telling you which part is. The reliable repair is a testable sentence — what it does, for whom, compared with what it replaced.
+WHAT: The flagship of the breathless hype family, using superlatives as a substitute for proof: revolutionary, cutting-edge, innovative, game-changing, unprecedented. This default promotional tone that treats an ordinary product, idea, or update as unusually important. These words signal excitement, but often fail to give proof. AI-generated text commonly leans on these kinds of buzzword to make prose sound energetic and authoritative.
 
 SOUNDS: “Our groundbreaking new feature is a game-changer for productivity.”
 
 INSTEAD: “You can export to a spreadsheet now, which people have asked for since 2021.”
 
-#### P1 · 18 across
+#### P1 · 12 across
 
-ANSWER _(fixed)_: LOADBEARING
+ANSWER _(fixed)_: SYNERGY
 
-CLUE: Building-trade adjective for a wall that holds the roof up. AI will apply it to a paragraph, a code comment, a decision or your feelings
+CLUE: Word for two things working better together than either could achieve alone (and the most over used term in corporate business)
 
-WHAT: The signature tell of 2026, associated above all with Anthropic's Claude. It asserts structural importance in one hyphenated word without having to argue for it, which is exactly why models like it and why banning the phrase alone does not help — they simply switch to 'carries the argument' or 'does the real work here'.
+WHAT: This corporate cliché is conveniently vague and can be used to imply action without naming the actual mechanism or result. It suggests that collaboration will create value without committing the writer to a measurable claim or an accountable outcome, becoming a polished substitute for an explanation. Just like the words ‘ecosystem’ and ‘holistic’, it’s a low-risk filler. Corporate jargon has long worked this way; AI is merely reproducing an established human habit.
 
-SOUNDS: “That indentation is deliberate and load-bearing rather than tidy.” (written about a routine software build step)
+SOUNDS: “The merger will unlock powerful synergies across both organisations.”
 
-INSTEAD: “Don't change that line — the build breaks without it.”
-
-#### P1 · 21 across
-
-ANSWER _(fixed)_: GENUINELY
-
-CLUE: Adverb insisting on sincerity — something sincere people rarely need to announce
-
-WHAT: An intensifier used to manufacture warmth. 'This is good' becomes 'this is genuinely good'. The extra word performs feeling rather than containing it, which is why it clusters with 'truly', 'really' and 'honestly'.
-
-SOUNDS: “This is a genuinely exciting development that I truly believe matters.”
-
-INSTEAD: “This is a big deal, and I think it will hold up.”
-
-#### P1 · 23 across
-
-ANSWER _(fixed)_: DEEPLY
-
-CLUE: Adverb used to intensify emotions the writer does not actually have — '___ concerned', '___ committed', '___ regret'
-
-WHAT: This is the institutional feeling word, and it is worth learning because it dominates apologies, statements and condolence emails. Nothing about it can be checked: an organisation cannot be shallowly committed, so the adverb sets no bar. The useful question is not whether the sentiment is sincere but who is supposed to be having it — usually a company, a council or a brand, none of which can feel anything.
-
-SOUNDS: “We are deeply committed to your satisfaction and deeply value your feedback.”
-
-INSTEAD: “We got this wrong. Your refund goes out on Friday and I've stopped the direct debit.”
-
-#### P1 · 24 across
-
-ANSWER _(fixed)_: BOASTS
-
-CLUE: Verb meaning to brag. AI uses it to mean nothing more than 'has': the hotel ___ 47 rooms
-
-WHAT: Estate agents started this and models industrialised it. Note what has happened grammatically: a building is now doing the bragging, which is the same misplaced agency that makes 'load-bearing' and 'harness' odd. It is also on the strongest evidence list in the field, because it both rose sharply in human writing after 2020 and is provably over-produced by ChatGPT.
-
-SOUNDS: “The property boasts three bedrooms and a utility room.”
-
-INSTEAD: “Three bedrooms, and a utility room off the kitchen with the boiler in it.”
-
-#### P1 · 25 across
-
-ANSWER _(fixed)_: ROBUST
-
-CLUE: Adjective meaning sturdy, applied indiscriminately to frameworks, findings, systems and debate
-
-WHAT: Vague strength. It signals that you should feel reassured while offering no measurement. AI uses it because it reads as technical and is almost impossible to contradict.
-
-SOUNDS: “We have implemented robust safeguards and a robust review process.”
-
-INSTEAD: “Two people check every file, and we keep a log for a year.”
+INSTEAD: “They’ll share one warehouse and close the smaller one.”
 
 ### The Words — down
 
@@ -480,145 +396,73 @@ INSTEAD: “Two people check every file, and we keep a log for a year.”
 
 ANSWER _(fixed)_: QUIETLY
 
-CLUE: Adverb meaning without noise. AI uses it to make an ordinary fact sound like a secret you have just been let in on
+CLUE: Adverb meaning with little noise. AI uses it to make ordinary information feel like insider knowledge
 
-WHAT: A magic adverb. It smuggles in significance for nothing: 'the app quietly became essential.' Quietly compared with what? Nothing was ever loud. Delete the word and no information is lost, which is the test.
+WHAT: Frequently noticed in AI prose, especially phrases like “quietly reshaping,” “quietly transforming,” or “quietly becoming” because it creates an intriguing sense of momentum without having to identify who acted, when, or what changed.
 
 SOUNDS: “The company has quietly become one of the biggest landlords in the country.”
 
 INSTEAD: “The company owns 40,000 homes and almost nobody has heard of it.”
 
-#### P1 · 2 down
-
-ANSWER _(fixed)_: REALM
-
-CLUE: A kingdom, borrowed to mean nothing more than 'area' or 'field'. One of the confirmed spike words
-
-WHAT: An empty container noun — an abstract vessel you can pour any topic into. Its relatives are 'landscape', 'sphere', 'domain', 'arena', 'frontier' and 'fabric'. They all imply territory and scale where there is only a subject.
-
-SOUNDS: “In the realm of education technology, change is constant.”
-
-INSTEAD: “Education technology changes fast.”
-
-#### P1 · 4 down
-
-ANSWER _(fixed)_: CLUSTER
-
-CLUE: A group of things close together — and the number of these habits you need before saying anything out loud
-
-WHAT: The single most important idea in this puzzle. One tell is a coincidence. Three in the same paragraph is AI. This is not a rule of thumb invented for comfort; it is what the measurements actually support.
-
-SOUNDS: “Let's delve into the intricate tapestry of this pivotal moment, which underscores a truly transformative shift.” Five tells, one sentence. That is AI.
-
-INSTEAD: One 'delve' in an otherwise ordinary email is one word. Leave it.
-
-#### P1 · 6 down
-
-ANSWER _(fixed)_: EMPOWER
-
-CLUE: Verb meaning to give someone authority. In practice the word that ends a thousand AI-written conclusions
-
-WHAT: The sign-off verb. It appears in the last paragraph, aimed at the reader, promising agency without describing any. If a piece of writing finishes by empowering you to embrace something, ask who wrote it.
-
-SOUNDS: “By embracing these tools, you can empower yourself to thrive.”
-
-INSTEAD: “Try one of these for a fortnight and see if it helps.”
-
-#### P1 · 8 down
-
-ANSWER _(fixed)_: SERVESAS
-
-CLUE: Two words standing in for plain 'is', so that a building no longer is a reminder of anything but performs the reminding as a duty
-
-WHAT: The copula gets promoted. 'Is' states a fact and stops; this phrasing dresses the same fact in a job title, and its cousins do the same work — 'stands as', 'represents', 'marks', 'acts as', 'functions as'. AI reaches for it because it sounds considered while committing to nothing, and because encyclopaedia and press-release prose, which the models read a great deal of, is full of it. Unlike 'boasts' or 'showcase' it is not a rare word, so it slips past readers who are only watching for exotic vocabulary. The noun form does the same job: “a testament to”, which means “proof of” and costs three extra words to say so.
-
-SOUNDS: “The new wing serves as a reminder of the school’s commitment to the arts.”
-
-INSTEAD: “The new wing is named after Mrs Ellery, who taught art here for thirty-one years.”
-
-#### P1 · 9 down
-
-ANSWER _(fixed)_: LEVERAGE
-
-CLUE: Borrowed from finance and mechanics, where it means gaining force from a fulcrum. Three syllables standing in for the one-syllable word 'use'
-
-WHAT: Corporate vocabulary that AI picked up wholesale. It belongs with 'utilise', 'harness' and 'operationalise' — a family whose only function is to make a sentence sound more expensive than it is.
-
-SOUNDS: “We leverage AI to optimise workflows.”
-
-INSTEAD: “We use AI to speed up scheduling.”
-
-#### P1 · 10 down
+#### P1 · 3 down
 
 ANSWER _(fixed)_: UNDERSCORE
 
-CLUE: Verb meaning to emphasise or draw attention to. Rose roughly 1,000% in academic writing after 2022, and now travels in a pack with 'delve' and 'pivotal'
+CLUE: Literally it means to underline; figuratively, it means to stress or draw attention to a point
 
-WHAT: A perfectly good word that AI reaches for instead of 'shows', 'proves' or 'means'. It belongs to a family of what you might call significance verbs — underscores, highlights, demonstrates, exemplifies, showcases — all used to avoid the plain word 'is'.
+WHAT: Rose roughly 1,000% in academic writing after 2022, one of several “excess words” whose sudden rise is consistent with AI-assisted writing along with ‘delve’ and ‘pivotal’. It belongs to a category you could call “significance verbs”: ‘underscore’, ‘highlight’, ‘demonstrate’, ‘reveal’, ‘showcase’, ‘reinforce’, and ‘emphasise’. They make a sentence sound interpretive and authoritative.
 
 SOUNDS: “These findings underscore the importance of early intervention.”
 
 INSTEAD: “This shows early treatment matters.”
 
-#### P1 · 11 down
+#### P1 · 4 down
 
-ANSWER _(fixed)_: HARNESS
+ANSWER _(fixed)_: EMPOWER
 
-CLUE: Straps for a horse or a climber, repurposed as a verb meaning to use something
+CLUE: Verb meaning to give someone authority, and one in a family of marketing buzzwords
 
-WHAT: A borrowed-physics word. You harness an ox or a waterfall — something with real pulling force. Applied to 'the power of data' or 'the potential of your team', the machinery is imaginary.
+WHAT: Common in AI-generated marketing, coaching, and product copy because it is an upbeat, low-risk verb. It makes an offer sound beneficial without requiring the writer to specify what will change. It belongs to the family of ‘the promise of possibility’ words which also include ‘unlock’, ‘unleash’, ‘elevate’, ‘enhance’, ‘amplify’, ‘transform’, ‘revolutionise’, ‘supercharge’, ‘harness’, ‘optimise’, ‘streamline’, and ‘enable’.
 
-SOUNDS: “Harness the power of your data to unlock new insights.”
+SOUNDS: “By embracing these tools, you can empower yourself to thrive.”
 
-INSTEAD: “Look at your sales figures and you may spot something useful.”
+INSTEAD: “Try one of these for a fortnight and see if it helps.”
 
-#### P1 · 15 down
+#### P1 · 6 down
 
 ANSWER _(fixed)_: IMPORTANTLY
 
-CLUE: Adverb, usually preceded by 'more', asserting a ranking of significance that nobody has established
+CLUE: Above all; especially. An adverb used to signal that the next point deserves special weight
 
-WHAT: A promotion handed out with no committee. 'More importantly' claims a comparison has been made between two things and settled, when the writer has merely moved on. There is a caution attached to this whole family, though, and it is worth carrying into the rest of the puzzle: some of the phrases that spiked after 2022 are utterly bland ones, so a single flat signpost convicts nobody.
+WHAT: An importance-signalling adverb that tells the reader that a point matters before demonstrating why. It belongs with notably, crucially, significantly, critically, and especially. This type of language suits AI because it helps structure an answer, sound authoritative, and move from one broadly relevant point to the next. A word also common in human academic and professional writing, so it is not a reliable AI tell on its own. It becomes noticeable when it appears alongside other formulaic AI-style habits.
 
 SOUNDS: “More importantly, this underscores our ongoing commitment to excellence.”
 
 INSTEAD: “The bit that matters is the deadline. It moved to 3 October.”
 
-#### P1 · 19 down
+#### P1 · 7 down
 
-ANSWER _(fixed)_: NESTLED
+ANSWER _(fixed)_: LEVERAGE
 
-CLUE: Cosy verb for how a village sits in a valley. In AI prose, nothing is ever merely located
+CLUE: Gaining force from a fulcrum. In business language, it means using a resource, relationship, or existing advantage to achieve a result
 
-WHAT: Geography becomes affectionate. Towns are nestled, cottages are tucked away, restaurants are hidden gems. It is a small, harmless, extremely consistent habit — which is what makes it useful. The fixed phrase to watch is “in the heart of”, which AI travel copy attaches to every cafe, market and hotel on earth.
+WHAT: It belongs with the ‘utilise’, ‘harness’ and ‘operationalise’ family whose only function is to make a sentence sound more strategic and high-value than it is. It’s useful as an AI default because it appears frequently in business, strategy, policy, and marketing material. It also fits repeatable templates such as “leverage [resource] to [outcome].”
 
-SOUNDS: “Nestled in the rolling hills of Devon lies a charming village.”
+SOUNDS: “We leverage AI to optimise workflows.”
 
-INSTEAD: “The village is twenty minutes off the A38, down a lane with no passing places.”
+INSTEAD: “We use AI to speed up scheduling.”
 
-#### P1 · 20 down
+#### P1 · 11 down
 
-ANSWER _(fixed)_: VIBRANT
+ANSWER _(fixed)_: REALM
 
-CLUE: Adjective meaning full of energy, applied to every city, market and community on earth
+CLUE: A kingdom, often used figuratively to mean an area of knowledge, work, or discussion
 
-WHAT: A travel-brochure word. It means the writer has not been there. A person names the specific street, the smell, the price of the coffee; AI reaches for the energy level, because that is what descriptions of places statistically contain.
+WHAT: Unlike some suspected AI words, this one is supported by research as overrepresented in certain AI-generated academic-style text. Researchers found that it appeared among a set of AI-favoured buzzwords such as ‘landscape’, ‘sphere’, ‘domain’, ‘arena’, ‘frontier’ and ‘fabric’. They all imply territory and scale.
 
-SOUNDS: “The vibrant city of Bristol boasts a bustling harbour.”
+SOUNDS: “In the realm of education technology, change is constant.”
 
-INSTEAD: “Bristol's harbour is full of boats and about six competing coffee stands.”
-
-#### P1 · 22 down
-
-ANSWER _(fixed)_: UNLOCK
-
-CLUE: Verb for opening something with a key, used on 'potential', which has no lock
-
-WHAT: Borrowed physics again, in motivational form. Potential is not a door, insight is not behind a lock, and value is not in a safe. The metaphor is decoration pretending to be a mechanism.
-
-SOUNDS: “Unlock your team's full potential with our platform.”
-
-INSTEAD: “The scheduling tool saves our team about four hours a week.”
+INSTEAD: “Education technology changes fast.”
 
 ## No. 2 — The Shapes
 
@@ -934,17 +778,17 @@ SOUNDS: “Costs rose 4% last year. And here's the kicker: nobody noticed.”
 
 INSTEAD: “Costs rose 4% and it took eleven months for anyone to raise it.”
 
-## No. 3 — The Chat-back
+## No. 3 — The Chat-Back
 
 ISSUE: No. 3
 
-TITLE: The Chat-back
+TITLE: The Chat-Back
 
 BLURB: The manners it forgot to delete — “Great question!”, “You're absolutely right!” — plus what AI does to the look of a document: the bold bullets, the stray asterisks, the arrows used as punctuation.
 
 FAMOUS ONES: YOUREABSOLUTELYRIGHT, GREATQUESTION, CERTAINLY, LETSBREAKTHISDOWN, BOLDBULLETS, TOEFL
 
-### The Chat-back — across
+### The Chat-Back — across
 
 #### P3 · 2 across
 
@@ -1066,7 +910,7 @@ SOUNDS: “Great question! That really gets to the heart of the issue.”
 
 INSTEAD: A person just answers.
 
-### The Chat-back — down
+### The Chat-Back — down
 
 #### P3 · 1 down
 

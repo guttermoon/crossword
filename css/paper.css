@@ -961,6 +961,25 @@ body {
   text-transform: uppercase;
 }
 
+/* A word in the colophon that happens to be pressable — set as the type around
+   it is, not as a button, because it is a footnote to the footer. */
+.colophon__link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.colophon__link:hover { color: var(--red-deep); }
+.colophon__link:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
 /* ------------------------------------------------------- the spinning paper */
 
 /* The one destructive question on the page, asked by a late edition that comes

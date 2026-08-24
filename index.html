@@ -29,9 +29,11 @@
 <a class="skip" href="#puzzles">Skip to the puzzles</a>
 
 <main class="sheet">
-  <a class="dgc" href="https://deadgoodclub.com/">
+  <!-- rel goes with target: without noopener the page being opened can reach
+       back through window.opener and navigate this one. -->
+  <a class="dgc" href="https://deadgoodclub.com/" target="_blank" rel="noopener">
     <img class="dgc__mark" src="img/dgc-logo.webp" width="900" height="220"
-         alt="The Dead Good Club">
+         alt="The Dead Good Club (opens in a new tab)">
   </a>
 
   <!-- The masthead and intro panels are inserted here from data/gazette.js. -->
@@ -39,7 +41,11 @@
   <div id="puzzles"></div>
 
   <footer class="colophon">
-    <span>Saturday Edition</span>
+    <span>Saturday Edition
+      <!-- Consent has to be as easy to take back as it was to give. Hidden
+           until there is something to take back — js/consent.js shows it. -->
+      &middot; <button type="button" class="colophon__link" id="cookie-choice"
+                       hidden>Cookies</button></span>
     <span>The Dead Good Club Funnies</span>
   </footer>
 </main>
@@ -48,6 +54,8 @@
 <script src="data/puzzles.js"></script>
 <script src="js/grid.js"></script>
 <script src="js/askpaper.js"></script>
+<script src="js/analytics-config.js"></script>
+<script src="js/consent.js"></script>
 <script src="js/easyeyes.js"></script>
 <script src="js/crossword.js"></script>
 <script src="js/app.js"></script>

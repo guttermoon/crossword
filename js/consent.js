@@ -47,11 +47,26 @@
     if (!cfg.posthogKey) return;
     started = true;
 
+    // The path PostHog's own snippet uses: one bundle for everyone, with the
+    // project named afterwards in init. An earlier guess here put the key in
+    // the path, which is a route PostHog used to serve and now 404s — so a
+    // failure to load says so out loud rather than going quiet.
+    var assets = cfg.assetHost ||
+      String(cfg.apiHost || '').replace('.i.posthog.com', '-assets.i.posthog.com');
+
     var script = document.createElement('script');
     script.async = true;
-    script.src = cfg.assetHost + '/array/' + cfg.posthogKey + '/array.js';
+    script.crossOrigin = 'anonymous';
+    script.src = assets + '/static/array.js';
+    script.addEventListener('error', function () {
+      started = false;
+      if (global.console) global.console.warn('analytics: could not load ' + script.src);
+    });
     script.addEventListener('load', function () {
-      if (!global.posthog || !global.posthog.init) return;
+      if (!global.posthog || !global.posthog.init) {
+        if (global.console) global.console.warn('analytics: loaded, but posthog.init is missing');
+        return;
+      }
       global.posthog.init(cfg.posthogKey, {
         api_host: cfg.apiHost,
         // Nobody signs in, so there is no one to build a profile of.

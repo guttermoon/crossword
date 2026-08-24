@@ -204,51 +204,49 @@ window.PUZZLES = [
   "id": "p2",
   "issue": "No. 2",
   "title": "The Shapes",
-  "blurb": "The sentence patterns. Not what the words are, but what shape they keep making — the false contrasts, the lists of three, the questions nobody asked, the tidy closing lines that resolve nothing.",
+  "blurb": "Just as words can be overused, there are also certain <strong>shapes</strong> that turn up repeatedly in AI writing. These sentence patterns and rhetorical flourishes can sometimes be spotted before even reading the text. Models use these patterns, often in marketing copy, as a way to write for scannability and deliver gravitas. Because they are safe ways to make a point sound clear without taking much stylistic risk, these patterns result in prose built from familiar templates: the “It’s not X, it’s Y” set up; an em dash used to add drama, or a rhetorical question immediately answered by the writer. None of these forms proves something was written by AI, but repeated use can make a piece feel overly symmetrical and performative.",
   "heroes": [
    "NEGATIVEPARALLELISM",
    "EMDASH",
-   "TRICOLON",
-   "RHETORICALSELFANSWER",
-   "FRAGMENT"
+   "TRICOLON"
   ],
   "grid": [
-   ".JUST.....E.......F.",
-   "....R.....M...D.B.A.",
-   "W...I.....D.F.E.U.L.",
-   "O.N.C.....A.A.T.R.S.",
-   "RHETORICALSELFANSWER",
-   "T.G.L.....H.S.C.T.B.",
-   "H.A.O.A..F..E.H.I.A.",
-   "N.T.N.B..O..R.M.N.L.",
-   "O.I...S..R..A.E.E.A.",
-   "T.V...T..T..N.N.S.N.",
-   "I.E...R..U..G.T.S.C.",
-   "N.P...A..N..E.....E.",
-   "G.A...C..E..........",
-   ".DRAMATICCOUNTDOWN..",
-   "..A...N..O..........",
-   "..L...O..O....TYPO..",
-   "..L...U..K...P..A...",
-   "..E.GENERICOPENER...",
-   "..L......E...R..T...",
-   "..I.TWAIN.T..P..I...",
-   "..S...N...H..L..C...",
-   ".IMPERATIVE..E..I...",
-   "......P...K..X..P...",
-   "......H...I..I..L...",
-   "..SENSORY.C..T.HEDGE",
-   "......R...K..Y......",
-   "CIRCULAR..E.........",
-   ".........FRAGMENT..."
+   "..D.............",
+   "..E.............",
+   "..T...A.........",
+   "FRAGMENT........",
+   "..C...A.C.F.JUST",
+   "..HYPOPHORA....R",
+   "..M.A.H.O.L....I",
+   "..E.R.O.K.S....C",
+   "..N.A.R.I.E....O",
+   "..T.L.A.E.R.E..L",
+   "....L.....A.M..O",
+   "....E..COUNTDOWN",
+   "....L.....G.A...",
+   "....I....SENSORY",
+   "TYPOS.......H...",
+   "....M..........."
   ],
   "clues": {
    "across": {
-    "1": {
+    "3": {
+     "clue": "Grammatical term for an incomplete sentence. Used as an entire paragraph. For emphasis. Like this",
+     "answer": "FRAGMENT",
+     "note": {
+      "what": "Short, punchy sentences can be effective when used deliberately. They imitate spoken rhythm and turn a longer point into a sequence of skimmable beats. Using these can also help neurodivergent readers by cutting down cognitive load and making text processing faster. But, AI often uses fragments for pace and emphasis. Specifically, several very short lines or fragments in a row, often combined with manufactured suspense or negative parallelism is commonly seen in AI prose.",
+      "sounds": "“That’s not a small detail. It’s the whole design. Deliberately. From the start.”",
+      "human": "“That detail was deliberate, and it shaped the rest of the design.”",
+      "data": "The related trick is the rhetorical self-answer — posing a question nobody asked and answering it immediately: 'The result? Devastating.' 'The reality? Nobody knows.' 'Here's the best part: it's free.' All of them buy suspense on credit and then pay out something ordinary.",
+      "source": "Bloomberry, AI sentence patterns",
+      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
+     }
+    },
+    "6": {
      "clue": "Small adverb that turns the most cited AI sentence into its most cited variant: “not ___ X, but Y”",
      "answer": "JUST",
      "note": {
-      "what": "One word is doing a surprising amount of work here. Inserting it converts an outright denial into a modest upgrade, which is safer and therefore commoner: the model no longer has to reject X, only to promise something better. This variant is why the tell is so often missed by people watching for the plain negation.",
+      "what": "There is meaningful evidence that this pattern is unusually common in AI text. Pangram researchers estimate the construction occurs roughly three times as often in AI writing as in human writing. Those figures should be treated as estimates from particular datasets, not a universal detection rule.",
       "sounds": "“This is not just a software update, but a new way of working.”",
       "human": "“The update changes how the rota is approved. Everything else stays.”",
       "data": "The cleanest experiment in the whole subject rests on this variant: in a 24-billion-word news corpus it rose from about 94 to over 136 instances per million words between 2015 and 2025, a 45% climb, while its grammatical twin “not only X, but Y” moved roughly 1%.",
@@ -256,83 +254,35 @@ window.PUZZLES = [
       "url": "https://womenwritinboutai.substack.com/p/who-decides-what-human-writing-sounds"
      }
     },
-    "10": {
-     "clue": "Name for posing a question no one asked and answering it instantly: 'The result? Devastating.'",
-     "answer": "RHETORICALSELFANSWER",
+    "8": {
+     "clue": "Another word for ‘rhetorical self-answer’: ‘The result? Devastating.’",
+     "answer": "HYPOPHORA",
      "note": {
-      "what": "The shortest way to fake momentum. A real writer earns a reveal by building to it; this device skips the building and keeps the reveal. Because it is so cheap, models produce it constantly, and it is the easiest tell to teach someone in one sentence. It comes as a stock of question fragments — “The result?”, “The reality?”, “The catch?”, “The truth?”, “The worst part?” — and in a longer form that parks an empty question-word phrase in front of the real subject: “What this really means is …”.",
-      "sounds": "“The catch? There isn't one. The best part? It's free.”",
-      "human": "“There's no catch, and it costs nothing.”",
+      "what": "AI often produces rhetorical self-answers in its writing where a question is posed and then immediately answered. Questions make prose feel conversational and create a neat transition into an explanation, but it becomes an AI-ish tic when the question exists only to tee up an obvious answer. Language models can lean on it as a reliable structure for engagement, emphasis, and orderly explanation. It comes as a stock of question fragments “The result?”, “The reality?”, “The catch?”, “The truth?”, “The worst part?”",
+      "sounds": "“The catch? There isn’t one. The best part? It’s free.”",
+      "human": "“There’s no catch, and it costs nothing.”",
       "data": "Full sentences are the fix and the test: if you can restore the question fragment to an ordinary sentence with no loss ('the result was devastating'), the fragment was decoration. That single rewrite removes a large fraction of AI cadence.",
       "source": null,
       "url": null
      }
     },
-    "13": {
-     "clue": "Name for the 'Not X. Not Y. Just Z.' pattern — two things denied before the real point is unveiled",
-     "answer": "DRAMATICCOUNTDOWN",
+    "11": {
+     "clue": "Dramatic _______. The build-up before the point, as in the ‘Not X. Not Y. It’s Z.’ pattern",
+     "answer": "COUNTDOWN",
      "note": {
-      "what": "An escalation of negative parallelism, built for maximum theatre. Each denial narrows the field, so by the time the answer arrives it feels like a discovery. Nothing has actually been established; the reader has simply been made to wait.",
+      "what": "Two things denied before the real point is unveiled. It gives an ordinary claim the rhythm of a revelation. The first two fragments create tension by ruling things out; the third “unveils” the answer. An AI-writing trope, but also an established human advertising and slogan technique. Models often default to punchy, highly reusable structures learned from persuasive marketing copy and this template is easy to complete, reads as confident, and produces a tidy ending without requiring much evidence or specificity.",
       "sounds": "“Not a bug. Not a feature. A fundamental design flaw.”",
-      "human": "“It's a design flaw, and it's been there since the first version.”",
+      "human": "“It’s a design flaw, and it’s been there since the first version.”",
       "data": "Almost always paired with sentence fragments as paragraphs, which is why the two tells travel together. Spotting the pair — denial stack plus one-line paragraphs — is more reliable than spotting either alone.",
       "source": null,
       "url": null
      }
     },
-    "14": {
-     "clue": "Small slip of the fingers. Two thousand words of informal writing without a single one is a weak signal — and a cruel thing to accuse anyone over",
-     "answer": "TYPO",
-     "note": {
-      "what": "Real informal writing carries traces of being made: a repeated word, a sentence that changes direction halfway, a comma in the wrong place, an abandoned clause. AI text has none, because there was no moment of composition to leave a mark. The same applies to unwavering house style across a long document, where a person's capitalisation and list punctuation usually drift.",
-      "sounds": "Two thousand words of chatty prose with flawless commas, consistent capitalisation and not one repeated word.",
-      "human": "“Sorry — sent that too fast, I meant Thursday not Tuesday.”",
-      "data": "Take this one gently. Linguistics experts shown research abstracts picked out the AI-written ones only 38.9% of the time, worse than guessing, and they erred towards calling AI text human. Careful writers exist, and a clean document proves nothing on its own.",
-      "source": "study summary",
-      "url": "https://www.reddit.com/r/science/comments/16g2kpt/ai_vs_human_writing_experts_fooled_almost_62_of/"
-     }
-    },
-    "17": {
-     "clue": "Two words for the throat-clearing first sentence that would fit any subject on earth: “In today's rapidly evolving landscape …”",
-     "answer": "GENERICOPENER",
-     "note": {
-      "what": "An opening line that contains no information is the most reliable single sign that nobody chose the subject. The model has to start somewhere, and the era-scale platitude is the highest-probability opening in its training data, so it functions as a warm-up lap. Siblings: “in an era where”, “in an increasingly connected world”, “as technology continues to evolve”, “in the modern workplace”. Its cousins open the same lap from a different angle: a question flung at a reader who never agreed to answer one (“What if everything you know about sleep is wrong?”), a speculative “imagine” or “what if”, and the confiding observer pose — “I've been thinking about this a lot lately.”",
-      "sounds": "“In today's fast-paced digital environment, effective communication has never been more important.”",
-      "human": "“The rota went out four days late again, so two shifts were uncovered on Saturday.”",
-      "data": "Named first in a published set of twelve cadence detectors, each with an AI sample and the human sentence that should have replaced it. Deleting the opening paragraph of a suspect piece is the quickest possible edit: if nothing is lost, it was a lap of the track.",
-      "source": "Bloomberry, AI sentence patterns",
-      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
-     }
-    },
-    "18": {
-     "clue": "American author of Huckleberry Finn, whose punctuation habits would fail every AI detector ever built",
-     "answer": "TWAIN",
-     "note": {
-      "what": "He is in this puzzle as a warning. Huckleberry Finn contains 10.13 em dashes per thousand words; GPT-4.1 produces 10.62. On the internet's favourite test they are indistinguishable. Emily Dickinson built an entire style out of dashes and would score worse than both.",
-      "sounds": "Any dash-heavy human writer, accused on the basis of punctuation alone.",
-      "human": "Nothing. Leave them alone.",
-      "data": "This is the cheapest possible inoculation against false accusations, and worth remembering before you say anything to a colleague, a student or a child. Historically, dash use in English peaked around 1860 and has been declining ever since — so an unusually dashy writer may simply be old-fashioned.",
-      "source": "Slop Detector's em-dash measurement",
-      "url": "https://slopdetector.org/blog/em-dash-ai-tell-data"
-     }
-    },
-    "21": {
-     "clue": "Grammatical mood used for commands. It is the third beat of the motivational three-step: short claim, expansion, instruction",
-     "answer": "IMPERATIVE",
-     "note": {
-      "what": "The pattern runs: a mild truism, a line of encouragement, then an order. Nobody has asked to be coached, which is what makes the ending jar in a work email or a school newsletter. Because a model has no relationship with the reader, the instruction is always generic, and often faintly bossy: “start today”, “do the work”, “choose growth”, “show up for yourself”.",
-      "sounds": "“Most people wait for permission. You don't need it. Start now.”",
-      "human": "“If you want the training budget, email Priya before the 14th. She signs it off.”",
-      "data": "Motivational cadence sits on the published list of twelve cadence patterns. The distinguishing feature is that the imperative names no specific action, no deadline and no person to contact — the three things a real instruction always carries.",
-      "source": "Bloomberry, AI sentence patterns",
-      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
-     }
-    },
-    "22": {
-     "clue": "Adjective for detail about smell, light and sound, dropped in to fake a scene: “The aroma of fresh coffee filled the room.”",
+    "12": {
+     "clue": "Relating to the five senses, a descriptive word used to make writing more vivid",
      "answer": "SENSORY",
      "note": {
-      "what": "Descriptive detail earns its place when it is specific, surprising or consequential. The AI version is a stock backdrop: streaming sunlight, distant traffic, the smell of rain, the hum of a laptop. Nothing in it could only have happened in that room on that day, which is precisely what a person's memory supplies without being asked.",
+      "what": "These types of words by themselves are not AI tells. Models can differ: certain Gemini models use more visual and concrete sensory language than human writers, while several other models used less. Each is different, but the distinction is that AI has no body or firsthand sensations. It can produce phrases such as “the crisp sea air” or “the warm glow of sunlight” because it has learned common textual associations, not because it smelled the air or felt the warmth. That can make its descriptions feel clichéd and generic.",
       "sounds": "“Sunlight streamed through the window as the team gathered, the aroma of fresh coffee filling the air.”",
       "human": "“We met in the room with the broken blind, so half the table could not see the screen.”",
       "data": "Ask whether the detail could be swapped into any other scene without adjustment. Real specifics resist relocation; a detail that fits everywhere was chosen by probability rather than recollection.",
@@ -340,193 +290,37 @@ window.PUZZLES = [
       "url": null
      }
     },
-    "23": {
-     "clue": "Garden-boundary word, also the name for a qualifying caveat bolted to the front of a confident generalisation: “While individual cases vary, the evidence consistently suggests …”",
-     "answer": "HEDGE",
+    "13": {
+     "clue": "Small mistakes in typed text. The lack of these is the tell",
+     "answer": "TYPOS",
      "note": {
-      "what": "The caveat performs nuance and the second half withdraws it. Nothing is specified: not the evidence, not the exception, not the degree of confidence, not who is affected. Models produce the pair because being simultaneously careful and assertive is what raters reward, and because a real limitation would require a real number. Siblings: “it is worth noting”, “while not universal”, “though results may differ”, “generally speaking”, “in most cases”.",
-      "sounds": "“While every school is different, research consistently shows that parental engagement is key.”",
-      "human": "“At this school, the children whose parents came to the October evening did better in the March tests. We do not know why.”",
-      "data": "Catalogued as one of twelve named cadence patterns, each documented with an AI example beside a human rewrite. The hedge-assertion pair is the one non-specialists find hardest to see, because it looks like good manners.",
-      "source": "Bloomberry, AI sentence patterns",
-      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
-     }
-    },
-    "24": {
-     "clue": "Adjective for a sentence that arrives back where it set off: “Effective communication is about communicating effectively.”",
-     "answer": "CIRCULAR",
-     "note": {
-      "what": "Padding of this kind appears when a model must produce a paragraph on a topic it has nothing to add to. The definition restates the term, the example restates the definition, and the word count rises without a single new fact. It is the mechanism behind fractal summaries as well, where each section explains that it is about the thing named in its heading.",
-      "sounds": "“Sustainability means adopting practices that are sustainable over the long term.”",
-      "human": "“We cut the van fleet from nine to four and moved deliveries to Tuesdays and Fridays.”",
-      "data": "The information test: after reading a paragraph, try to state one thing you now know that you did not before. If nothing comes, the paragraph was a placeholder — and this is the fastest way to sift a long AI-written document.",
-      "source": null,
-      "url": null
-     }
-    },
-    "25": {
-     "clue": "Grammatical term for an incomplete sentence. Used as an entire paragraph. For emphasis. Like this",
-     "answer": "FRAGMENT",
-     "note": {
-      "what": "Manufactured drama, and described as the most common and least discussed tic of all. A very short sentence or a phrase with no verb is set on its own line so it feels weighty. Used once by a good writer it lands; used constantly it is a drum machine. Three or more of them in a row is the staccato version, each landing like a drumbeat and none of them carrying an argument.",
-      "sounds": "“That's not a small detail. It's the whole design. Deliberately. From the start.”",
-      "human": "“That detail was deliberate, and it shaped the rest of the design.”",
-      "data": "The related trick is the rhetorical self-answer — posing a question nobody asked and answering it immediately: 'The result? Devastating.' 'The reality? Nobody knows.' 'Here's the best part: it's free.' All of them buy suspense on credit and then pay out something ordinary.",
-      "source": "Bloomberry, AI sentence patterns",
-      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
+      "what": "Real informal writing carries traces of being made by hand; a repeated or misspelled word or a comma in the wrong place. AI text has none, because it doesn’t type on a keyboard, get distracted, or transpose letters. The same applies to unwavering house style across a long document, where a person’s capitalisation and list punctuation usually drift.",
+      "sounds": "Two thousand words of prose with flawless commas, consistent capitalisation, and every word spelled correctly.",
+      "human": "“Sorry! sent that too fast, I meant Thursday not Tuesday.”",
+      "data": "Take this one gently. Linguistics experts shown research abstracts picked out the AI-written ones only 38.9% of the time, worse than guessing, and they erred towards calling AI text human. Careful writers exist, and a clean document proves nothing on its own.",
+      "source": "study summary",
+      "url": "https://www.reddit.com/r/science/comments/16g2kpt/ai_vs_human_writing_experts_fooled_almost_62_of/"
      }
     }
    },
    "down": {
-    "2": {
-     "clue": "The formal name for a list of exactly three items. One is good writing; four in a row is AI keeping time",
-     "answer": "TRICOLON",
-     "note": {
-      "what": "Three-part lists are genuinely powerful — 'friends, Romans, countrymen'. The tell is not their existence but their regularity. Models fall into the rhythm every paragraph, because three-item lists are statistically the most common shape in persuasive prose. The numbered version does the same thing out loud — “first”, “second”, “third” laid over material that has no sequence in it.",
-      "sounds": "“It's about speed, scale and simplicity — clarity, focus and momentum — people, process and product.”",
-      "human": "“It has to be fast. That's the only thing that matters here.”",
-      "data": "Try counting instead of reading. Human paragraphs are lumpy: one list of two, one of five, one sentence with no list at all. If every paragraph in a piece contains a group of three, you are looking at a metronome rather than a mind.",
-      "source": null,
-      "url": null
-     }
-    },
-    "3": {
-     "clue": "The long punctuation stroke — like these — that the internet decided was proof of AI, on rather thin evidence (2 words, 6)",
-     "answer": "EMDASH",
-     "note": {
-      "what": "The most famous tell and one of the least reliable. Yes, some models use it more than most people do. But the rate varies wildly between models, respectable human writers are dash addicts, and the whole habit may be an accident of training on old books.",
-      "sounds": "A paragraph with four of them — one per sentence — each one pivoting mid-thought — which is a lot.",
-      "human": "Commas and full stops, mostly. Two or three dashes in a whole article is normal.",
-      "data": "The numbers, in full: GPT-4.1 runs at 10.62 per thousand words against a matched human baseline of 3.23. But Claude used only 2 in 948 words in one head-to-head test while Gemini used none, and Mark Twain's Huckleberry Finn runs at 10.13 — statistically the same as GPT-4.1. Any threshold that convicts ChatGPT also convicts Twain. Likely cause: models are trained heavily on late-1800s books, which used about 30% more dashes than we do — English dash use peaked around 1860 and has been falling ever since. The baseline also moves between varieties of the language: one Nigerian English corpus runs about ten times below the general rate, so a writer's background shifts the number before any AI is involved. (Sean Goedecke.)",
-      "source": "Slop Detector's em-dash measurement",
-      "url": "https://slopdetector.org/blog/em-dash-ai-tell-data"
-     }
-    },
-    "4": {
-     "clue": "Two words for giving every side equal weight regardless of what the evidence actually says",
-     "answer": "FALSEBALANCE",
-     "note": {
-      "what": "Even-handedness is a safe output, so a model will set a well-supported finding beside a fringe objection and award them the same paragraph length. The tell is the refusal to conclude: “both perspectives have merit”, “reasonable people disagree”, “the answer likely lies somewhere in between”. Real analysis weighs and then says which way it came down.",
-      "sounds": "“While some argue the bypass will reduce congestion, others believe it will not. Both views merit consideration.”",
-      "human": "“The traffic modelling says congestion drops 8%. The objectors dispute the modelling but have not produced any of their own.”",
-      "data": "Look for the missing verdict. A person who has read the material usually cannot resist telling you which side they found more convincing, and an even split across every contested point is a stylistic decision rather than a finding.",
-      "source": null,
-      "url": null
-     }
-    },
-    "5": {
-     "clue": "Noun for emotional and personal distance: the register of “It could be observed that …” where a person would simply say what they think",
+    "1": {
+     "clue": "Emotional distance or lack of investment; AI’s default emotional register",
      "answer": "DETACHMENT",
      "note": {
-      "what": "Third-person constructions bury the actor. “One might consider”, “it is often argued”, “there are those who suggest”: each removes the subject, so no one can be held to the claim. The habit comes from academic and institutional prose in the training data, and it survives because a sentence with nobody in it can never be wrong.",
+      "what": "Writing in the third person to avoid claiming personal stakes, feelings, or a point of view. Models often default to a neutral, mildly positive tone, even when summarising emotionally charged material. It avoids strongly negative points of view, showing less variation in emotion across a piece than human writing does.",
       "sounds": "“It could be argued that further consideration of the timetable may be warranted.”",
-      "human": "“I think the timetable is wrong and I'd like to change it before term starts.”",
+      "human": "“I think the timetable is wrong and I’d like to change it before term starts.”",
       "data": "The actor test: for each sentence, ask who did the thing. If a whole paragraph passes without naming a person, a team or an organisation, the prose has been written to be unattributable — the same weakness as vague attribution to “experts” and “studies”.",
       "source": null,
       "url": null
      }
     },
-    "6": {
-     "clue": "Technical term for variation in sentence length. The quality human writing has and AI writing conspicuously lacks",
-     "answer": "BURSTINESS",
-     "note": {
-      "what": "Human prose lurches. A forty-word sentence, then four words. Then a sentence that goes on too long because the writer got interested. AI prose clusters tightly around fifteen to twenty-five words, paragraph after paragraph, and reads like a treadmill even when every sentence is fine. Tone flattens the same way length does: identically polite about a data breach, a birthday and a bereavement, because nothing in the text knows which is which.",
-      "sounds": "Three consecutive sentences of almost identical length, each one balanced, each one closing neatly. Nothing wrong with any of them. Nothing alive in them either.",
-      "human": "Real writing has an uneven pulse. Some sentences are too long. Some aren't.",
-      "data": "You can feel this without counting, which makes it one of the most useful tells for a non-expert. It is also the reason perfect grammar is suspicious: no typos, no fragments, no risks, no sentence that starts one way and changes its mind.",
-      "source": null,
-      "url": null
-     }
-    },
-    "7": {
-     "clue": "Three words, the transition that spends a clause announcing that a fact deserves your attention rather than spending it on the fact",
-     "answer": "WORTHNOTING",
-     "note": {
-      "what": "Connective tissue with nothing on either side of it. A writer who has found something genuinely surprising states it; the surprise does the work. This phrasing instead instructs you to be interested, which is why it clusters so thickly around unremarkable material — 'it bears mentioning', 'notably', 'interestingly', 'crucially', 'it is important to note'. The adverb form of the same move is elsewhere in this series, under the eleven-letter one usually preceded by 'more'. AI produces these because they cost almost nothing and make a heap of facts feel like an argument that is going somewhere.",
-      "sounds": "“It’s worth noting that the deadline has moved to the 14th.”",
-      "human": "“The deadline has moved to the 14th.”",
-      "data": "This is the cleanest deletion test in the puzzle, because the phrase is detachable by design. Cross out the whole clause up to 'that' and read what is left. If the sentence has lost a fact, the phrase was carrying one; it almost never has. Try it on a paragraph rather than a sentence — the tell is not one instance but three of them pointing at things nobody would otherwise have queried.",
-      "source": null,
-      "url": null
-     }
-    },
-    "8": {
-     "clue": "Two words for a bogus span whose two ends are not ends of anything: “from innovation to cultural transformation”",
-     "answer": "FALSERANGE",
-     "note": {
-      "what": "A real range has a scale: from Monday to Friday, from ten pounds to fifty. The AI version borrows the grammar of a spectrum and fills it with two abstractions that do not sit on one, so it sounds comprehensive while listing two things. The habit belongs to the same family as ornate container nouns, where the sentence describes a shape rather than a fact.",
-      "sounds": "“Our work spans everything from grassroots engagement to systemic change.”",
-      "human": "“We run a Tuesday drop-in and we lobbied the county council twice last year.”",
-      "data": "Deletion test: replace “from A to B” with “A and B”. If the sentence loses nothing but a little grandeur, there was never a range — and if the two items would not fit on the same axis, no rewrite will save it.",
-      "source": null,
-      "url": null
-     }
-    },
-    "9": {
-     "clue": "The formal research name for the 'it's not X — it's Y' sentence: the single most cited tell in AI writing",
-     "answer": "NEGATIVEPARALLELISM",
-     "note": {
-      "what": "This is the modern research term for the tic; 'antithesis' is the ancient name for the innocent version. AI produces it about three times as often as people because opening with a negation is cheap — it buys a beat of fluent, confident text before any claim has to be made. It performs insight without incurring the cost of having any. The same move works as an opening, swapping a modest framing for a grander one: “This isn't a time-management problem — it's a values problem.”",
-      "sounds": "“This isn't a technology problem — it's a trust problem.” Variants: 'not just X, but Y'; 'not because X, but because Y'; 'the question isn't X, the question is Y'.",
-      "human": "“People don't trust it. That's the actual obstacle.”",
-      "data": "The best evidence in the whole field. In a 24-billion-word news corpus, 'not just X, but Y' rose 45% between 2015 and 2025 — while 'not only X, but Y', which means exactly the same thing, rose about 1%. Two identical constructions, one of which suddenly took off. Meanwhile its use in corporate communications more than quadrupled from 2023 to 2025, and variants appeared in roughly 6% of messages in a large leaked set of real ChatGPT conversations.",
-      "source": "The Atlantic on negative parallelism",
-      "url": "https://www.theatlantic.com/technology/2026/07/ai-chatbot-writing-tic-negative-parallelism/687892/"
-     }
-    },
-    "11": {
-     "clue": "Two words for a subject that cannot act but is handed a verb anyway: “The decision carries weight.”",
-     "answer": "ABSTRACTNOUN",
-     "note": {
-      "what": "Ideas do not carry, drive, transform or demand. When they are given those verbs the sentence sounds forceful while the actual cause — a person, a committee, a deadline — goes unnamed. The wider fault is misplaced agency, which shows up in technical writing too: a query that “hit” nineteen seconds when it took nineteen seconds, adoption that “moved out”, a lateral that “rides” an index.",
-      "sounds": "“This realisation transformed how the team approached the problem.”",
-      "human": "“After Dan pointed out the duplicate records, we stopped merging the two spreadsheets by hand.”",
-      "data": "One engineer's collection of these misfires suggests, as speculation rather than finding, that training which rewards the active voice produces a kind of flat world where objects are as agentic as people. No frequency data exists for the habit; it is documented by example only.",
-      "source": "Jesse Duffield",
-      "url": "https://jesseduffield.com/AI-isms-go-deeper/"
-     }
-    },
-    "12": {
-     "clue": "Two words for the closer so universal it would fit any article ever written: “The best investment is in the people around you.”",
-     "answer": "FORTUNECOOKIE",
-     "note": {
-      "what": "Where the resolution closer asserts that matters are settled, this one steps back and blesses the whole human condition. The test is portability: paste the final sentence onto an article about pension reform, then onto one about badgers, and see whether either notices. Nothing in it belongs to the piece it ends. Its siblings are the announced conclusion, which tells you it has arrived rather than arriving, and the minted maxim built from an abstract noun and a two-word predicate: “Clarity is not a luxury.”",
-      "sounds": "“In the end, the tools matter less than the people who use them.”",
-      "human": "“If the licence renews in March we keep the tool. If not, everything moves to the spreadsheet, which nobody wants.”",
-      "data": "The fortune-cookie closer completes the published dozen of cadence detectors. Human endings tend to be slightly unsatisfying, because real situations are unresolved at the moment of writing.",
-      "source": "Bloomberry, AI sentence patterns",
-      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
-     }
-    },
-    "15": {
-     "clue": "Grammatical name for an -ing verb form. AI trails whole clauses of them off the end of sentences to imply importance: “highlighting its significance”",
-     "answer": "PARTICIPLE",
-     "note": {
-      "what": "This is the grammar of a summary written by someone who has not read the thing. The clause asserts that something matters while naming no actor, no mechanism and no consequence, and it can be deleted without loss in almost every case. Watch for the stock set: reflecting broader trends, underscoring the need, showcasing its potential, contributing to the development of, paving the way for.",
-      "sounds": "“The council approved the scheme, reflecting a broader shift towards sustainable transport and underscoring its commitment to residents.”",
-      "human": "“The council approved the scheme by seven votes to four. Two councillors who voted against cited the loss of parking on Mill Road.”",
-      "data": "Several of these participles are measured outliers in their own right: across 15.1 million medical abstracts, “showcasing” ran at 10.7 times its expected 2024 rate and “underscoring” appears on the verified list of words that both spiked in human writing and are over-produced by ChatGPT.",
-      "source": "Kobak et al., Science Advances",
-      "url": "https://www.science.org/doi/10.1126/sciadv.adt3813"
-     }
-    },
-    "16": {
-     "clue": "Statistical measure of how surprising the next word in a sentence is. AI keeps it low, always choosing the safest option",
-     "answer": "PERPLEXITY",
-     "note": {
-      "what": "This is the engine underneath most of the other tells. A model picks the most probable next word, so its prose is smooth, predictable and slightly generic — it never reaches for the odd word, the wrong-but-better word, or the private joke.",
-      "sounds": "“In today's rapidly evolving digital landscape, businesses must adapt to remain competitive.” Every word is the most likely next word.",
-      "human": "“Everything's changed since Christmas and half our suppliers have vanished.”",
-      "data": "It is also the source of the cruellest false positive. Detection software flags low perplexity as AI-like — but simple, careful, predictable English is exactly what people write when English is not their first language. The software is not detecting AI. It is detecting plainness.",
-      "source": "Liang et al., Patterns",
-      "url": "https://www.sciencedirect.com/science/article/pii/S2666389923001307"
-     }
-    },
-    "19": {
-     "clue": "Rhetorical term for beginning several consecutive sentences with exactly the same words: “They assume users will pay. They assume developers will build.”",
+    "2": {
+     "clue": "Rhetorical device for starting multiple sentences or phrases with the same words. “It was amazing. It was joyous. It was impactful.”",
      "answer": "ANAPHORA",
      "note": {
-      "what": "Deliberate repetition is one of the oldest tools in English, which is why nobody notices when a model reaches for it by default. A language model is an engine for continuing patterns, so once it has produced one sentence opening it becomes the single most probable way to open the next one. The result reads like a template with the variables filled in, and it usually arrives in threes, alongside the rule-of-three cadence.",
+      "what": "Deliberate repetition is one of the oldest tools in English, often used in speeches, poetry, and advertising; it can make an idea memorable and build emotional force. An anaphora is a convenient template for creating momentum and rhythm. But AI prose reveals itself when this device is used in excess and in place of meaningful content. Models love patterns, so once it has produced a sentence, the single most probable way to open the next one is to use the same structure. The result reads like a template with the variables filled in, and it usually arrives in threes, alongside the rule-of-three cadence.",
       "sounds": "“We believe in transparency. We believe in accountability. We believe in doing better.”",
       "human": "“We publish the figures every quarter, including the bad ones. Last year we got the staffing forecast badly wrong.”",
       "data": "Test: cover everything except the first three words of each sentence in a paragraph. If the stubs are identical, a person would almost certainly have varied one of them out of boredom.",
@@ -534,16 +328,64 @@ window.PUZZLES = [
       "url": null
      }
     },
-    "20": {
-     "clue": "Two words promising that the best or worst part is still coming, generally before a fairly ordinary number",
-     "answer": "THEKICKER",
+    "4": {
+     "clue": "FORTUNE _________, a crisp folded biscuit containing a slip with a short prediction, proverb, or piece of advice",
+     "answer": "COOKIE",
      "note": {
-      "what": "The phrase does the work a good fact would have done. It instructs the reader to be startled by whatever follows, which means the writer either does not trust the material or has not checked whether it is startling. Its relatives run to a dozen: “here's the deal”, “here's where it gets interesting”, “here's what most people miss”, “here's the uncomfortable part”, “and it gets worse”, “but wait”. Close relatives include “but here's the thing”, “here's the best part” and the instruction to admire what you have just read: “let that sink in”.",
-      "sounds": "“Costs rose 4% last year. And here's the kicker: nobody noticed.”",
-      "human": "“Costs rose 4% and it took eleven months for anyone to raise it.”",
-      "data": "Deletion test again, with a twist: cut the announcement and see whether the following sentence still lands. If it does, the announcement was stealing its credit; if it does not, the sentence was never a kicker. The published set of twelve cadence detectors lists this build-up among the shapes worth watching. (Bloomberry.)",
+      "what": "Vague wisdom disguised as insight, used as a closer so universal it would fit any article: “The best investment is in the people around you.” It can sound uplifting and profound while applying to almost any person, subject, or situation. AI often ends a passage with a tidy moral encouragement or “big takeaway” like this. It makes writing feel complete and supportive without requiring a concrete conclusion.",
+      "sounds": "“Embrace change to unlock your potential.”",
+      "human": "“Test the new booking system with two staff members before using it across the team.”",
+      "data": "The fortune-cookie closer completes the published dozen of cadence detectors. Human endings tend to be slightly unsatisfying, because real situations are unresolved at the moment of writing.",
       "source": "Bloomberry, AI sentence patterns",
       "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
+     }
+    },
+    "5": {
+     "clue": "FALSE ________, a span of “from X to Y” with no real scale between them",
+     "answer": "FALSERANGE",
+     "note": {
+      "what": "In legitimate use, “from X to Y” implies a real scale with meaningful points in between; “from small to large,” “from 2010 to 2020.” In a false range, X and Y are simply two loosely related items dropped in as endpoints of a non-existent spectrum. It’s a template that sounds comprehensive and sweeping without requiring the model to commit to a specific claim. The habit belongs to the same family as ornate container nouns such as realm, landscape, and tapestry that give an idea grandiosity rather than stating a concrete fact.",
+      "sounds": "“Our work spans everything from grassroots engagement to systemic change.”",
+      "human": "“We run a Tuesday drop-in and we lobbied the county council twice last year.”",
+      "data": "Deletion test: replace “from A to B” with “A and B”. If the sentence loses nothing but a little grandeur, there was never a range — and if the two items would not fit on the same axis, no rewrite will save it.",
+      "source": null,
+      "url": null
+     }
+    },
+    "7": {
+     "clue": "The formal name for the “rule of three”: three words, phrases, or clauses with a similar grammatical shape or rhythm",
+     "answer": "TRICOLON",
+     "note": {
+      "what": "‘Friends, Romans, countrymen’, three-part lists are genuinely powerful and a long-established human rhetorical tool. AI can lean on this pattern because it offers a ready-made way to make a point sound polished. However a comparison of 12 models found tricolon overuse in only four, and cautioned that many examples were just ordinary lists rather than deliberate rhetoric. What to look out for is unnecessary repetition, along with density. It becomes noticeable when several appear close together or replace concrete thought.",
+      "sounds": "“It’s about speed, scale and simplicity — clarity, focus and momentum — people, process and product.”",
+      "human": "“It has to be fast. That’s the only thing that matters here.”",
+      "data": "Try counting instead of reading. Human paragraphs are lumpy: one list of two, one of five, one sentence with no list at all. If every paragraph in a piece contains a group of three, you are looking at a metronome rather than a mind.",
+      "source": null,
+      "url": null
+     }
+    },
+    "9": {
+     "clue": "NEGATIVE __________, a rhetorical pattern of ‘it’s not X — it’s Y’; the single most cited tell in AI writing",
+     "answer": "PARALLELISM",
+     "note": {
+      "what": "The formula initially sounds insightful because it creates contrast and implies that the writer has corrected a common misunderstanding. But it’s one of the better-supported and widely recognised AI-style patterns. It’s estimated variants such as “not just X, but Y” occur roughly three times as often in AI writing as in human writing, and it appears across major chatbot families to different degrees. It may be favoured because contrast sounds nuanced and authoritative to human evaluators, while it gives a next-token model an easy path from a safe, basic claim to a more impressive one. Variants include ‘not just X, but Y’; ‘not because X, but because Y’; ‘the question isn’t X, the question is Y’.",
+      "sounds": "“This isn’t a technology problem — it’s a trust problem.”",
+      "human": "“People don’t trust it. That’s the actual obstacle.”",
+      "data": "The best evidence in the whole field. In a 24-billion-word news corpus, 'not just X, but Y' rose 45% between 2015 and 2025 — while 'not only X, but Y', which means exactly the same thing, rose about 1%. Two identical constructions, one of which suddenly took off. Meanwhile its use in corporate communications more than quadrupled from 2023 to 2025, and variants appeared in roughly 6% of messages in a large leaked set of real ChatGPT conversations.",
+      "source": "The Atlantic on negative parallelism",
+      "url": "https://www.theatlantic.com/technology/2026/07/ai-chatbot-writing-tic-negative-parallelism/687892/"
+     }
+    },
+    "10": {
+     "clue": "The long punctuation stroke — like these — used for a dramatic pause",
+     "answer": "EMDASH",
+     "note": {
+      "what": "The most famous AI tell. It lets a model extend a sentence after it has started, insert a clarification, pivot to a contrast, or give a final phrase extra weight—without deciding early whether a full stop, colon, brackets, or a new sentence would work better. This type of punctuation mark was used heavily (by humans) when typewriters were used but fell out of favour when we moved to computer keyboards.",
+      "sounds": "A paragraph with four of them — one per sentence — each one pivoting mid-thought — which is a lot.",
+      "human": "Commas and full stops, mostly. Two or three dashes in a whole article is normal.",
+      "data": "The numbers, in full: GPT-4.1 runs at 10.62 per thousand words against a matched human baseline of 3.23. But Claude used only 2 in 948 words in one head-to-head test while Gemini used none, and Mark Twain's Huckleberry Finn runs at 10.13 — statistically the same as GPT-4.1. Any threshold that convicts ChatGPT also convicts Twain. Likely cause: models are trained heavily on late-1800s books, which used about 30% more dashes than we do — English dash use peaked around 1860 and has been falling ever since. The baseline also moves between varieties of the language: one Nigerian English corpus runs about ten times below the general rate, so a writer's background shifts the number before any AI is involved. (Sean Goedecke.)",
+      "source": "Slop Detector's em-dash measurement",
+      "url": "https://slopdetector.org/blog/em-dash-ai-tell-data"
      }
     }
    }

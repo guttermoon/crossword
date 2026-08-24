@@ -2,7 +2,11 @@
  * — asked in the paper's own voice: a late edition spins in off the press with
  * the headline, and you answer it yes or no.
  *
- *   AskPaper.open({ headline, question, yes, no }, onYes)
+ *   AskPaper.open({ headline, question, yes, no, danger }, onYes, onNo)
+ *
+ * onNo is optional and fires for every way of saying no — the button, Escape,
+ * or a click off the paper. A question that only acts on yes can leave it out
+ * and nothing changes; a question that has to record the refusal needs it.
  */
 (function (global) {
   'use strict';
@@ -14,7 +18,7 @@
     return node;
   }
 
-  function open(options, onYes) {
+  function open(options, onYes, onNo) {
     var opts = options || {};
     var opener = document.activeElement;
 
@@ -39,8 +43,13 @@
     sheet.appendChild(question);
 
     var acts = el('div', 'paperbox__acts');
-    var yes = el('button', 'paperbox__btn paperbox__btn--yes', opts.yes || 'Yes');
+    var yes = el('button', 'paperbox__btn', opts.yes || 'Yes');
     yes.type = 'button';
+    // Red marks the answer you cannot take back. Wiping a grid is one; being
+    // counted is not, and dressing it in the warning colour would also make
+    // agreeing louder than declining, which is the one thing a question about
+    // consent must not do.
+    if (opts.danger !== false) yes.classList.add('paperbox__btn--yes');
     var no = el('button', 'paperbox__btn', opts.no || 'No');
     no.type = 'button';
     acts.appendChild(yes);
@@ -50,16 +59,23 @@
     back.appendChild(sheet);
     document.body.appendChild(back);
 
-    function close() {
+    // Every exit runs through one place, so no answer can be given twice and
+    // none can be given without being reported.
+    var answered = false;
+    function answer(said) {
+      if (answered) return;
+      answered = true;
       document.removeEventListener('keydown', onKey, true);
       if (back.parentNode) back.parentNode.removeChild(back);
       if (opener && opener.focus) opener.focus();
+      if (said && onYes) onYes();
+      if (!said && onNo) onNo();
     }
 
     function onKey(event) {
       if (event.key === 'Escape') {
         event.preventDefault();
-        close();
+        answer(false);
         return;
       }
       if (event.key !== 'Tab') return;
@@ -76,13 +92,14 @@
     }
 
     yes.addEventListener('click', function () {
-      close();
-      if (onYes) onYes();
+      answer(true);
     });
-    no.addEventListener('click', close);
+    no.addEventListener('click', function () {
+      answer(false);
+    });
     // Clicking off the paper is the same as saying no.
     back.addEventListener('mousedown', function (event) {
-      if (event.target === back) close();
+      if (event.target === back) answer(false);
     });
     document.addEventListener('keydown', onKey, true);
 

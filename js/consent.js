@@ -72,7 +72,7 @@
     global.AskPaper.open(
       {
         brand: 'Notice',
-        headline: 'Count me in?',
+        headline: 'Cookies?',
         question: 'May we count this visit? It tells us which puzzles people ' +
           'play and where they give up. Nothing is sold on, and no advertising ' +
           'follows you around afterwards.',

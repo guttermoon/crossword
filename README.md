@@ -206,8 +206,32 @@ js/app.js           builds the page from GAZETTE and PUZZLES
 data/puzzles.js     puzzle content — 3 puzzles, 38 clues, 38 footnotes
 data/gazette.js     front matter and sources
 fonts/              Shrikhand, Inter, Courier Prime, Libre Franklin (SIL OFL)
+print/booklet.pdf   the whole thing as a fold-and-staple booklet
+scripts/            the build steps: analytics config, the copy doc, the booklet
 dgc penguin official.png/.svg   the mark as supplied, kept as the source art
 ```
+
+## The booklet
+
+`print/booklet.pdf` is the page as something you can print, fold and staple —
+A4 landscape sheets, two A5 pages to a side, imposed so the stack reads in order
+once it is folded down the middle. Print it double-sided, **flipping on the
+short edge**; the sheets are landscape, so their short edges are the left and
+right sides, and flipping there puts the back of a leaf behind its own front.
+Flip on the long edge instead and every second page comes out upside down.
+
+Rebuild it with:
+
+```
+node scripts/build-booklet.js     # print/booklet.html, from the same data
+node scripts/make-booklet.js      # print at A5, impose onto A4, write the PDF
+```
+
+The first step needs the site served locally (`python3 -m http.server 8010`) so
+the fonts and the mark resolve. Both steps read `data/gazette.js` and
+`data/puzzles.js`, so the booklet cannot drift from the site. The grids print
+empty and numbered by the same rules `js/grid.js` numbers them by; the answers
+and their footnotes go at the back, where a puzzle book puts them.
 
 Colours and fonts are CSS custom properties at the top of `css/paper.css`. The
 body is set in a typewriter face and the instruction blocks and labels in a

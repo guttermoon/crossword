@@ -2,7 +2,7 @@
 
 An article on how writing habits differ by generation and by machine, and three
 interactive crosswords under it: the words, the sentence shapes, and the chatbot
-manners it forgot to delete. 52 clues, each carrying a footnote — what the habit
+manners it forgot to delete. 38 clues, each carrying a footnote — what the habit
 is, what it sounds like, and what a person writes instead. The studies behind
 them are listed at the foot of the page.
 
@@ -203,7 +203,7 @@ js/grid.js          numbering and word spans derived from the grid; validation
 js/askpaper.js      the spinning-newspaper confirm used by Start Over
 js/crossword.js     the engine: cursor, keyboard, check/reveal, footnotes, autosave
 js/app.js           builds the page from GAZETTE and PUZZLES
-data/puzzles.js     puzzle content — 3 puzzles, 52 clues, 52 footnotes
+data/puzzles.js     puzzle content — 3 puzzles, 38 clues, 38 footnotes
 data/gazette.js     front matter and sources
 fonts/              Shrikhand, Inter, Courier Prime, Libre Franklin (SIL OFL)
 dgc penguin official.png/.svg   the mark as supplied, kept as the source art

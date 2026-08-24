@@ -32,7 +32,7 @@ _Not shown on the page, but used for the browser tab and the footer:_
 
 BRAND: The Dead Good Club Funnies
 
-KICKER: Saturday Edition &middot; Three puzzles &middot; 64 clues
+KICKER: Saturday Edition &middot; Three puzzles &middot; 52 clues
 
 FOOTER LEFT: Saturday Edition
 
@@ -482,313 +482,169 @@ ISSUE: No. 2
 
 TITLE: The Shapes
 
-BLURB: The sentence patterns. Not what the words are, but what shape they keep making — the false contrasts, the lists of three, the questions nobody asked, the tidy closing lines that resolve nothing.
+BLURB: Just as words can be overused, there are also certain <strong>shapes</strong> that turn up repeatedly in AI writing. These sentence patterns and rhetorical flourishes can sometimes be spotted before even reading the text. Models use these patterns, often in marketing copy, as a way to write for scannability and deliver gravitas. Because they are safe ways to make a point sound clear without taking much stylistic risk, these patterns result in prose built from familiar templates: the “It’s not X, it’s Y” set up; an em dash used to add drama, or a rhetorical question immediately answered by the writer. None of these forms proves something was written by AI, but repeated use can make a piece feel overly symmetrical and performative.
 
-FAMOUS ONES: NEGATIVEPARALLELISM, EMDASH, TRICOLON, RHETORICALSELFANSWER, FRAGMENT
+FAMOUS ONES: NEGATIVEPARALLELISM, EMDASH, TRICOLON
 
 ### The Shapes — across
 
-#### P2 · 1 across
-
-ANSWER _(fixed)_: JUST
-
-CLUE: Small adverb that turns the most cited AI sentence into its most cited variant: “not ___ X, but Y”
-
-WHAT: One word is doing a surprising amount of work here. Inserting it converts an outright denial into a modest upgrade, which is safer and therefore commoner: the model no longer has to reject X, only to promise something better. This variant is why the tell is so often missed by people watching for the plain negation.
-
-SOUNDS: “This is not just a software update, but a new way of working.”
-
-INSTEAD: “The update changes how the rota is approved. Everything else stays.”
-
-#### P2 · 10 across
-
-ANSWER _(fixed)_: RHETORICALSELFANSWER
-
-CLUE: Name for posing a question no one asked and answering it instantly: 'The result? Devastating.'
-
-WHAT: The shortest way to fake momentum. A real writer earns a reveal by building to it; this device skips the building and keeps the reveal. Because it is so cheap, models produce it constantly, and it is the easiest tell to teach someone in one sentence. It comes as a stock of question fragments — “The result?”, “The reality?”, “The catch?”, “The truth?”, “The worst part?” — and in a longer form that parks an empty question-word phrase in front of the real subject: “What this really means is …”.
-
-SOUNDS: “The catch? There isn't one. The best part? It's free.”
-
-INSTEAD: “There's no catch, and it costs nothing.”
-
-#### P2 · 13 across
-
-ANSWER _(fixed)_: DRAMATICCOUNTDOWN
-
-CLUE: Name for the 'Not X. Not Y. Just Z.' pattern — two things denied before the real point is unveiled
-
-WHAT: An escalation of negative parallelism, built for maximum theatre. Each denial narrows the field, so by the time the answer arrives it feels like a discovery. Nothing has actually been established; the reader has simply been made to wait.
-
-SOUNDS: “Not a bug. Not a feature. A fundamental design flaw.”
-
-INSTEAD: “It's a design flaw, and it's been there since the first version.”
-
-#### P2 · 14 across
-
-ANSWER _(fixed)_: TYPO
-
-CLUE: Small slip of the fingers. Two thousand words of informal writing without a single one is a weak signal — and a cruel thing to accuse anyone over
-
-WHAT: Real informal writing carries traces of being made: a repeated word, a sentence that changes direction halfway, a comma in the wrong place, an abandoned clause. AI text has none, because there was no moment of composition to leave a mark. The same applies to unwavering house style across a long document, where a person's capitalisation and list punctuation usually drift.
-
-SOUNDS: Two thousand words of chatty prose with flawless commas, consistent capitalisation and not one repeated word.
-
-INSTEAD: “Sorry — sent that too fast, I meant Thursday not Tuesday.”
-
-#### P2 · 17 across
-
-ANSWER _(fixed)_: GENERICOPENER
-
-CLUE: Two words for the throat-clearing first sentence that would fit any subject on earth: “In today's rapidly evolving landscape …”
-
-WHAT: An opening line that contains no information is the most reliable single sign that nobody chose the subject. The model has to start somewhere, and the era-scale platitude is the highest-probability opening in its training data, so it functions as a warm-up lap. Siblings: “in an era where”, “in an increasingly connected world”, “as technology continues to evolve”, “in the modern workplace”. Its cousins open the same lap from a different angle: a question flung at a reader who never agreed to answer one (“What if everything you know about sleep is wrong?”), a speculative “imagine” or “what if”, and the confiding observer pose — “I've been thinking about this a lot lately.”
-
-SOUNDS: “In today's fast-paced digital environment, effective communication has never been more important.”
-
-INSTEAD: “The rota went out four days late again, so two shifts were uncovered on Saturday.”
-
-#### P2 · 18 across
-
-ANSWER _(fixed)_: TWAIN
-
-CLUE: American author of Huckleberry Finn, whose punctuation habits would fail every AI detector ever built
-
-WHAT: He is in this puzzle as a warning. Huckleberry Finn contains 10.13 em dashes per thousand words; GPT-4.1 produces 10.62. On the internet's favourite test they are indistinguishable. Emily Dickinson built an entire style out of dashes and would score worse than both.
-
-SOUNDS: Any dash-heavy human writer, accused on the basis of punctuation alone.
-
-INSTEAD: Nothing. Leave them alone.
-
-#### P2 · 21 across
-
-ANSWER _(fixed)_: IMPERATIVE
-
-CLUE: Grammatical mood used for commands. It is the third beat of the motivational three-step: short claim, expansion, instruction
-
-WHAT: The pattern runs: a mild truism, a line of encouragement, then an order. Nobody has asked to be coached, which is what makes the ending jar in a work email or a school newsletter. Because a model has no relationship with the reader, the instruction is always generic, and often faintly bossy: “start today”, “do the work”, “choose growth”, “show up for yourself”.
-
-SOUNDS: “Most people wait for permission. You don't need it. Start now.”
-
-INSTEAD: “If you want the training budget, email Priya before the 14th. She signs it off.”
-
-#### P2 · 22 across
-
-ANSWER _(fixed)_: SENSORY
-
-CLUE: Adjective for detail about smell, light and sound, dropped in to fake a scene: “The aroma of fresh coffee filled the room.”
-
-WHAT: Descriptive detail earns its place when it is specific, surprising or consequential. The AI version is a stock backdrop: streaming sunlight, distant traffic, the smell of rain, the hum of a laptop. Nothing in it could only have happened in that room on that day, which is precisely what a person's memory supplies without being asked.
-
-SOUNDS: “Sunlight streamed through the window as the team gathered, the aroma of fresh coffee filling the air.”
-
-INSTEAD: “We met in the room with the broken blind, so half the table could not see the screen.”
-
-#### P2 · 23 across
-
-ANSWER _(fixed)_: HEDGE
-
-CLUE: Garden-boundary word, also the name for a qualifying caveat bolted to the front of a confident generalisation: “While individual cases vary, the evidence consistently suggests …”
-
-WHAT: The caveat performs nuance and the second half withdraws it. Nothing is specified: not the evidence, not the exception, not the degree of confidence, not who is affected. Models produce the pair because being simultaneously careful and assertive is what raters reward, and because a real limitation would require a real number. Siblings: “it is worth noting”, “while not universal”, “though results may differ”, “generally speaking”, “in most cases”.
-
-SOUNDS: “While every school is different, research consistently shows that parental engagement is key.”
-
-INSTEAD: “At this school, the children whose parents came to the October evening did better in the March tests. We do not know why.”
-
-#### P2 · 24 across
-
-ANSWER _(fixed)_: CIRCULAR
-
-CLUE: Adjective for a sentence that arrives back where it set off: “Effective communication is about communicating effectively.”
-
-WHAT: Padding of this kind appears when a model must produce a paragraph on a topic it has nothing to add to. The definition restates the term, the example restates the definition, and the word count rises without a single new fact. It is the mechanism behind fractal summaries as well, where each section explains that it is about the thing named in its heading.
-
-SOUNDS: “Sustainability means adopting practices that are sustainable over the long term.”
-
-INSTEAD: “We cut the van fleet from nine to four and moved deliveries to Tuesdays and Fridays.”
-
-#### P2 · 25 across
+#### P2 · 3 across
 
 ANSWER _(fixed)_: FRAGMENT
 
 CLUE: Grammatical term for an incomplete sentence. Used as an entire paragraph. For emphasis. Like this
 
-WHAT: Manufactured drama, and described as the most common and least discussed tic of all. A very short sentence or a phrase with no verb is set on its own line so it feels weighty. Used once by a good writer it lands; used constantly it is a drum machine. Three or more of them in a row is the staccato version, each landing like a drumbeat and none of them carrying an argument.
+WHAT: Short, punchy sentences can be effective when used deliberately. They imitate spoken rhythm and turn a longer point into a sequence of skimmable beats. Using these can also help neurodivergent readers by cutting down cognitive load and making text processing faster. But, AI often uses fragments for pace and emphasis. Specifically, several very short lines or fragments in a row, often combined with manufactured suspense or negative parallelism is commonly seen in AI prose.
 
-SOUNDS: “That's not a small detail. It's the whole design. Deliberately. From the start.”
+SOUNDS: “That’s not a small detail. It’s the whole design. Deliberately. From the start.”
 
 INSTEAD: “That detail was deliberate, and it shaped the rest of the design.”
 
+#### P2 · 6 across
+
+ANSWER _(fixed)_: JUST
+
+CLUE: Small adverb that turns the most cited AI sentence into its most cited variant: “not ___ X, but Y”
+
+WHAT: There is meaningful evidence that this pattern is unusually common in AI text. Pangram researchers estimate the construction occurs roughly three times as often in AI writing as in human writing. Those figures should be treated as estimates from particular datasets, not a universal detection rule.
+
+SOUNDS: “This is not just a software update, but a new way of working.”
+
+INSTEAD: “The update changes how the rota is approved. Everything else stays.”
+
+#### P2 · 8 across
+
+ANSWER _(fixed)_: HYPOPHORA
+
+CLUE: Another word for ‘rhetorical self-answer’: ‘The result? Devastating.’
+
+WHAT: AI often produces rhetorical self-answers in its writing where a question is posed and then immediately answered. Questions make prose feel conversational and create a neat transition into an explanation, but it becomes an AI-ish tic when the question exists only to tee up an obvious answer. Language models can lean on it as a reliable structure for engagement, emphasis, and orderly explanation. It comes as a stock of question fragments “The result?”, “The reality?”, “The catch?”, “The truth?”, “The worst part?”
+
+SOUNDS: “The catch? There isn’t one. The best part? It’s free.”
+
+INSTEAD: “There’s no catch, and it costs nothing.”
+
+#### P2 · 11 across
+
+ANSWER _(fixed)_: COUNTDOWN
+
+CLUE: Dramatic _______. The build-up before the point, as in the ‘Not X. Not Y. It’s Z.’ pattern
+
+WHAT: Two things denied before the real point is unveiled. It gives an ordinary claim the rhythm of a revelation. The first two fragments create tension by ruling things out; the third “unveils” the answer. An AI-writing trope, but also an established human advertising and slogan technique. Models often default to punchy, highly reusable structures learned from persuasive marketing copy and this template is easy to complete, reads as confident, and produces a tidy ending without requiring much evidence or specificity.
+
+SOUNDS: “Not a bug. Not a feature. A fundamental design flaw.”
+
+INSTEAD: “It’s a design flaw, and it’s been there since the first version.”
+
+#### P2 · 12 across
+
+ANSWER _(fixed)_: SENSORY
+
+CLUE: Relating to the five senses, a descriptive word used to make writing more vivid
+
+WHAT: These types of words by themselves are not AI tells. Models can differ: certain Gemini models use more visual and concrete sensory language than human writers, while several other models used less. Each is different, but the distinction is that AI has no body or firsthand sensations. It can produce phrases such as “the crisp sea air” or “the warm glow of sunlight” because it has learned common textual associations, not because it smelled the air or felt the warmth. That can make its descriptions feel clichéd and generic.
+
+SOUNDS: “Sunlight streamed through the window as the team gathered, the aroma of fresh coffee filling the air.”
+
+INSTEAD: “We met in the room with the broken blind, so half the table could not see the screen.”
+
+#### P2 · 13 across
+
+ANSWER _(fixed)_: TYPOS
+
+CLUE: Small mistakes in typed text. The lack of these is the tell
+
+WHAT: Real informal writing carries traces of being made by hand; a repeated or misspelled word or a comma in the wrong place. AI text has none, because it doesn’t type on a keyboard, get distracted, or transpose letters. The same applies to unwavering house style across a long document, where a person’s capitalisation and list punctuation usually drift.
+
+SOUNDS: Two thousand words of prose with flawless commas, consistent capitalisation, and every word spelled correctly.
+
+INSTEAD: “Sorry! sent that too fast, I meant Thursday not Tuesday.”
+
 ### The Shapes — down
 
-#### P2 · 2 down
-
-ANSWER _(fixed)_: TRICOLON
-
-CLUE: The formal name for a list of exactly three items. One is good writing; four in a row is AI keeping time
-
-WHAT: Three-part lists are genuinely powerful — 'friends, Romans, countrymen'. The tell is not their existence but their regularity. Models fall into the rhythm every paragraph, because three-item lists are statistically the most common shape in persuasive prose. The numbered version does the same thing out loud — “first”, “second”, “third” laid over material that has no sequence in it.
-
-SOUNDS: “It's about speed, scale and simplicity — clarity, focus and momentum — people, process and product.”
-
-INSTEAD: “It has to be fast. That's the only thing that matters here.”
-
-#### P2 · 3 down
-
-ANSWER _(fixed)_: EMDASH
-
-CLUE: The long punctuation stroke — like these — that the internet decided was proof of AI, on rather thin evidence (2 words, 6)
-
-WHAT: The most famous tell and one of the least reliable. Yes, some models use it more than most people do. But the rate varies wildly between models, respectable human writers are dash addicts, and the whole habit may be an accident of training on old books.
-
-SOUNDS: A paragraph with four of them — one per sentence — each one pivoting mid-thought — which is a lot.
-
-INSTEAD: Commas and full stops, mostly. Two or three dashes in a whole article is normal.
-
-#### P2 · 4 down
-
-ANSWER _(fixed)_: FALSEBALANCE
-
-CLUE: Two words for giving every side equal weight regardless of what the evidence actually says
-
-WHAT: Even-handedness is a safe output, so a model will set a well-supported finding beside a fringe objection and award them the same paragraph length. The tell is the refusal to conclude: “both perspectives have merit”, “reasonable people disagree”, “the answer likely lies somewhere in between”. Real analysis weighs and then says which way it came down.
-
-SOUNDS: “While some argue the bypass will reduce congestion, others believe it will not. Both views merit consideration.”
-
-INSTEAD: “The traffic modelling says congestion drops 8%. The objectors dispute the modelling but have not produced any of their own.”
-
-#### P2 · 5 down
+#### P2 · 1 down
 
 ANSWER _(fixed)_: DETACHMENT
 
-CLUE: Noun for emotional and personal distance: the register of “It could be observed that …” where a person would simply say what they think
+CLUE: Emotional distance or lack of investment; AI’s default emotional register
 
-WHAT: Third-person constructions bury the actor. “One might consider”, “it is often argued”, “there are those who suggest”: each removes the subject, so no one can be held to the claim. The habit comes from academic and institutional prose in the training data, and it survives because a sentence with nobody in it can never be wrong.
+WHAT: Writing in the third person to avoid claiming personal stakes, feelings, or a point of view. Models often default to a neutral, mildly positive tone, even when summarising emotionally charged material. It avoids strongly negative points of view, showing less variation in emotion across a piece than human writing does.
 
 SOUNDS: “It could be argued that further consideration of the timetable may be warranted.”
 
-INSTEAD: “I think the timetable is wrong and I'd like to change it before term starts.”
+INSTEAD: “I think the timetable is wrong and I’d like to change it before term starts.”
 
-#### P2 · 6 down
-
-ANSWER _(fixed)_: BURSTINESS
-
-CLUE: Technical term for variation in sentence length. The quality human writing has and AI writing conspicuously lacks
-
-WHAT: Human prose lurches. A forty-word sentence, then four words. Then a sentence that goes on too long because the writer got interested. AI prose clusters tightly around fifteen to twenty-five words, paragraph after paragraph, and reads like a treadmill even when every sentence is fine. Tone flattens the same way length does: identically polite about a data breach, a birthday and a bereavement, because nothing in the text knows which is which.
-
-SOUNDS: Three consecutive sentences of almost identical length, each one balanced, each one closing neatly. Nothing wrong with any of them. Nothing alive in them either.
-
-INSTEAD: Real writing has an uneven pulse. Some sentences are too long. Some aren't.
-
-#### P2 · 7 down
-
-ANSWER _(fixed)_: WORTHNOTING
-
-CLUE: Three words, the transition that spends a clause announcing that a fact deserves your attention rather than spending it on the fact
-
-WHAT: Connective tissue with nothing on either side of it. A writer who has found something genuinely surprising states it; the surprise does the work. This phrasing instead instructs you to be interested, which is why it clusters so thickly around unremarkable material — 'it bears mentioning', 'notably', 'interestingly', 'crucially', 'it is important to note'. The adverb form of the same move is elsewhere in this series, under the eleven-letter one usually preceded by 'more'. AI produces these because they cost almost nothing and make a heap of facts feel like an argument that is going somewhere.
-
-SOUNDS: “It’s worth noting that the deadline has moved to the 14th.”
-
-INSTEAD: “The deadline has moved to the 14th.”
-
-#### P2 · 8 down
-
-ANSWER _(fixed)_: FALSERANGE
-
-CLUE: Two words for a bogus span whose two ends are not ends of anything: “from innovation to cultural transformation”
-
-WHAT: A real range has a scale: from Monday to Friday, from ten pounds to fifty. The AI version borrows the grammar of a spectrum and fills it with two abstractions that do not sit on one, so it sounds comprehensive while listing two things. The habit belongs to the same family as ornate container nouns, where the sentence describes a shape rather than a fact.
-
-SOUNDS: “Our work spans everything from grassroots engagement to systemic change.”
-
-INSTEAD: “We run a Tuesday drop-in and we lobbied the county council twice last year.”
-
-#### P2 · 9 down
-
-ANSWER _(fixed)_: NEGATIVEPARALLELISM
-
-CLUE: The formal research name for the 'it's not X — it's Y' sentence: the single most cited tell in AI writing
-
-WHAT: This is the modern research term for the tic; 'antithesis' is the ancient name for the innocent version. AI produces it about three times as often as people because opening with a negation is cheap — it buys a beat of fluent, confident text before any claim has to be made. It performs insight without incurring the cost of having any. The same move works as an opening, swapping a modest framing for a grander one: “This isn't a time-management problem — it's a values problem.”
-
-SOUNDS: “This isn't a technology problem — it's a trust problem.” Variants: 'not just X, but Y'; 'not because X, but because Y'; 'the question isn't X, the question is Y'.
-
-INSTEAD: “People don't trust it. That's the actual obstacle.”
-
-#### P2 · 11 down
-
-ANSWER _(fixed)_: ABSTRACTNOUN
-
-CLUE: Two words for a subject that cannot act but is handed a verb anyway: “The decision carries weight.”
-
-WHAT: Ideas do not carry, drive, transform or demand. When they are given those verbs the sentence sounds forceful while the actual cause — a person, a committee, a deadline — goes unnamed. The wider fault is misplaced agency, which shows up in technical writing too: a query that “hit” nineteen seconds when it took nineteen seconds, adoption that “moved out”, a lateral that “rides” an index.
-
-SOUNDS: “This realisation transformed how the team approached the problem.”
-
-INSTEAD: “After Dan pointed out the duplicate records, we stopped merging the two spreadsheets by hand.”
-
-#### P2 · 12 down
-
-ANSWER _(fixed)_: FORTUNECOOKIE
-
-CLUE: Two words for the closer so universal it would fit any article ever written: “The best investment is in the people around you.”
-
-WHAT: Where the resolution closer asserts that matters are settled, this one steps back and blesses the whole human condition. The test is portability: paste the final sentence onto an article about pension reform, then onto one about badgers, and see whether either notices. Nothing in it belongs to the piece it ends. Its siblings are the announced conclusion, which tells you it has arrived rather than arriving, and the minted maxim built from an abstract noun and a two-word predicate: “Clarity is not a luxury.”
-
-SOUNDS: “In the end, the tools matter less than the people who use them.”
-
-INSTEAD: “If the licence renews in March we keep the tool. If not, everything moves to the spreadsheet, which nobody wants.”
-
-#### P2 · 15 down
-
-ANSWER _(fixed)_: PARTICIPLE
-
-CLUE: Grammatical name for an -ing verb form. AI trails whole clauses of them off the end of sentences to imply importance: “highlighting its significance”
-
-WHAT: This is the grammar of a summary written by someone who has not read the thing. The clause asserts that something matters while naming no actor, no mechanism and no consequence, and it can be deleted without loss in almost every case. Watch for the stock set: reflecting broader trends, underscoring the need, showcasing its potential, contributing to the development of, paving the way for.
-
-SOUNDS: “The council approved the scheme, reflecting a broader shift towards sustainable transport and underscoring its commitment to residents.”
-
-INSTEAD: “The council approved the scheme by seven votes to four. Two councillors who voted against cited the loss of parking on Mill Road.”
-
-#### P2 · 16 down
-
-ANSWER _(fixed)_: PERPLEXITY
-
-CLUE: Statistical measure of how surprising the next word in a sentence is. AI keeps it low, always choosing the safest option
-
-WHAT: This is the engine underneath most of the other tells. A model picks the most probable next word, so its prose is smooth, predictable and slightly generic — it never reaches for the odd word, the wrong-but-better word, or the private joke.
-
-SOUNDS: “In today's rapidly evolving digital landscape, businesses must adapt to remain competitive.” Every word is the most likely next word.
-
-INSTEAD: “Everything's changed since Christmas and half our suppliers have vanished.”
-
-#### P2 · 19 down
+#### P2 · 2 down
 
 ANSWER _(fixed)_: ANAPHORA
 
-CLUE: Rhetorical term for beginning several consecutive sentences with exactly the same words: “They assume users will pay. They assume developers will build.”
+CLUE: Rhetorical device for starting multiple sentences or phrases with the same words. “It was amazing. It was joyous. It was impactful.”
 
-WHAT: Deliberate repetition is one of the oldest tools in English, which is why nobody notices when a model reaches for it by default. A language model is an engine for continuing patterns, so once it has produced one sentence opening it becomes the single most probable way to open the next one. The result reads like a template with the variables filled in, and it usually arrives in threes, alongside the rule-of-three cadence.
+WHAT: Deliberate repetition is one of the oldest tools in English, often used in speeches, poetry, and advertising; it can make an idea memorable and build emotional force. An anaphora is a convenient template for creating momentum and rhythm. But AI prose reveals itself when this device is used in excess and in place of meaningful content. Models love patterns, so once it has produced a sentence, the single most probable way to open the next one is to use the same structure. The result reads like a template with the variables filled in, and it usually arrives in threes, alongside the rule-of-three cadence.
 
 SOUNDS: “We believe in transparency. We believe in accountability. We believe in doing better.”
 
 INSTEAD: “We publish the figures every quarter, including the bad ones. Last year we got the staffing forecast badly wrong.”
 
-#### P2 · 20 down
+#### P2 · 4 down
 
-ANSWER _(fixed)_: THEKICKER
+ANSWER _(fixed)_: COOKIE
 
-CLUE: Two words promising that the best or worst part is still coming, generally before a fairly ordinary number
+CLUE: FORTUNE _________, a crisp folded biscuit containing a slip with a short prediction, proverb, or piece of advice
 
-WHAT: The phrase does the work a good fact would have done. It instructs the reader to be startled by whatever follows, which means the writer either does not trust the material or has not checked whether it is startling. Its relatives run to a dozen: “here's the deal”, “here's where it gets interesting”, “here's what most people miss”, “here's the uncomfortable part”, “and it gets worse”, “but wait”. Close relatives include “but here's the thing”, “here's the best part” and the instruction to admire what you have just read: “let that sink in”.
+WHAT: Vague wisdom disguised as insight, used as a closer so universal it would fit any article: “The best investment is in the people around you.” It can sound uplifting and profound while applying to almost any person, subject, or situation. AI often ends a passage with a tidy moral encouragement or “big takeaway” like this. It makes writing feel complete and supportive without requiring a concrete conclusion.
 
-SOUNDS: “Costs rose 4% last year. And here's the kicker: nobody noticed.”
+SOUNDS: “Embrace change to unlock your potential.”
 
-INSTEAD: “Costs rose 4% and it took eleven months for anyone to raise it.”
+INSTEAD: “Test the new booking system with two staff members before using it across the team.”
+
+#### P2 · 5 down
+
+ANSWER _(fixed)_: FALSERANGE
+
+CLUE: FALSE ________, a span of “from X to Y” with no real scale between them
+
+WHAT: In legitimate use, “from X to Y” implies a real scale with meaningful points in between; “from small to large,” “from 2010 to 2020.” In a false range, X and Y are simply two loosely related items dropped in as endpoints of a non-existent spectrum. It’s a template that sounds comprehensive and sweeping without requiring the model to commit to a specific claim. The habit belongs to the same family as ornate container nouns such as realm, landscape, and tapestry that give an idea grandiosity rather than stating a concrete fact.
+
+SOUNDS: “Our work spans everything from grassroots engagement to systemic change.”
+
+INSTEAD: “We run a Tuesday drop-in and we lobbied the county council twice last year.”
+
+#### P2 · 7 down
+
+ANSWER _(fixed)_: TRICOLON
+
+CLUE: The formal name for the “rule of three”: three words, phrases, or clauses with a similar grammatical shape or rhythm
+
+WHAT: ‘Friends, Romans, countrymen’, three-part lists are genuinely powerful and a long-established human rhetorical tool. AI can lean on this pattern because it offers a ready-made way to make a point sound polished. However a comparison of 12 models found tricolon overuse in only four, and cautioned that many examples were just ordinary lists rather than deliberate rhetoric. What to look out for is unnecessary repetition, along with density. It becomes noticeable when several appear close together or replace concrete thought.
+
+SOUNDS: “It’s about speed, scale and simplicity — clarity, focus and momentum — people, process and product.”
+
+INSTEAD: “It has to be fast. That’s the only thing that matters here.”
+
+#### P2 · 9 down
+
+ANSWER _(fixed)_: PARALLELISM
+
+CLUE: NEGATIVE __________, a rhetorical pattern of ‘it’s not X — it’s Y’; the single most cited tell in AI writing
+
+WHAT: The formula initially sounds insightful because it creates contrast and implies that the writer has corrected a common misunderstanding. But it’s one of the better-supported and widely recognised AI-style patterns. It’s estimated variants such as “not just X, but Y” occur roughly three times as often in AI writing as in human writing, and it appears across major chatbot families to different degrees. It may be favoured because contrast sounds nuanced and authoritative to human evaluators, while it gives a next-token model an easy path from a safe, basic claim to a more impressive one. Variants include ‘not just X, but Y’; ‘not because X, but because Y’; ‘the question isn’t X, the question is Y’.
+
+SOUNDS: “This isn’t a technology problem — it’s a trust problem.”
+
+INSTEAD: “People don’t trust it. That’s the actual obstacle.”
+
+#### P2 · 10 down
+
+ANSWER _(fixed)_: EMDASH
+
+CLUE: The long punctuation stroke — like these — used for a dramatic pause
+
+WHAT: The most famous AI tell. It lets a model extend a sentence after it has started, insert a clarification, pivot to a contrast, or give a final phrase extra weight—without deciding early whether a full stop, colon, brackets, or a new sentence would work better. This type of punctuation mark was used heavily (by humans) when typewriters were used but fell out of favour when we moved to computer keyboards.
+
+SOUNDS: A paragraph with four of them — one per sentence — each one pivoting mid-thought — which is a lot.
+
+INSTEAD: Commas and full stops, mostly. Two or three dashes in a whole article is normal.
 
 ## No. 3 — The Chat-Back
 

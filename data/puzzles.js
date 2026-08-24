@@ -395,357 +395,174 @@ window.PUZZLES = [
   "id": "p3",
   "issue": "No. 3",
   "title": "The Chat-Back",
-  "blurb": "The manners it forgot to delete — “Great question!”, “You're absolutely right!” — plus what AI does to the look of a document: the bold bullets, the stray asterisks, the arrows used as punctuation.",
+  "blurb": "These are the most over-used conversational responses that models use when giving their output. When chatting with an AI assistant, it’s common for models to start by acknowledging, validating, and amplifying your request with “Absolutely” or “You’re exactly right.” But there are several other tics, patterns, and preferences and once you see them, it’s hard to un-see them. Different models have their own personality as well, so some of these you’ll see more often than not, depending on which you’re using. To varying degrees though, each model rewards rapport over efficiency. So whenever you’re ready we can jump right in.",
   "heroes": [
-   "YOUREABSOLUTELYRIGHT",
-   "GREATQUESTION",
-   "CERTAINLY",
-   "LETSBREAKTHISDOWN",
-   "BOLDBULLETS",
-   "TOEFL"
+   "ABSOLUTELY",
+   "LOADBEARING",
+   "BULLETS"
   ],
   "grid": [
-   "...............C....",
-   "....ANALOGY.EXPERTS.",
-   ".........R..M..R....",
-   "....O....A..O..T.D..",
-   "..MARKDOWN..J..A.I..",
-   "....P.E..D.LISTICLE.",
-   "....H.S..I.....N.U..",
-   "....A.P.BOLDBULLETS.",
-   "....N.I..S.E...Y.I..",
-   "P.....T..E.A.....O..",
-   "E.I.TOEFL..D.A...N..",
-   "N.N......V.M.N.....L",
-   "N.S......U.E.A.....E",
-   "YOUREABSOLUTELYRIGHT",
-   "D.M.N..Y.N.A.O..N..S",
-   "R.M.G..C.E.P.G..V..B",
-   "O.A.A..O.R.H.Y..E..R",
-   "P.R.G..P.A.O.S..N..E",
-   "P.Y.E..H.B.R.T..T..A",
-   "E...M..A.I...A..E..K",
-   "D...E..N.L...C..D..T",
-   "....N..C.I...K..C..H",
-   "..S.T..Y.T......O..I",
-   "..L.B....Y.IMAGINE.S",
-   "..O.A...........C..D",
-   "DUPLICATION.....E..O",
-   "....T...........P..W",
-   ".......GREATQUESTION"
+   "..E.S...BULLETS",
+   "..M.L.........Y",
+   "..O.O.........C",
+   "..J.PROACTIVE.O",
+   "..I........A..P",
+   "..SANDWICH.L..H",
+   "........O..I..A",
+   "........M..D..N",
+   "........M..A..C",
+   ".....ABSOLUTELY",
+   "........N..I...",
+   "GREATQUESTION..",
+   ".I......E..N...",
+   ".G......N......",
+   ".H......S......",
+   ".T.LOADBEARING."
   ],
   "clues": {
    "across": {
-    "2": {
-     "clue": "Comparison used for teaching — “think of it as a motorway for data” — offered by AI before, or instead of, the actual explanation",
-     "answer": "ANALOGY",
+    "3": {
+     "clue": "Dots, dashes, or symbols used to break information into a list",
+     "answer": "BULLETS",
      "note": {
-      "what": "Teacher mode has a default gesture, and this is it. The pattern to distrust is the ordering: a person who understands a system usually describes it and then offers a comparison if the description was hard; AI prose comparison-first, because the comparison is easier to generate than the mechanism. A second warning sign is that the image is never checked against the thing it describes. The most worn example is the borrowed engine bay — “under the hood” — wheeled out before explaining absolutely anything technical.",
-      "sounds": "“Think of your pension like a snowball rolling down a hill.”",
-      "human": "“Your pension gained 4.1% last year, and the fee took 0.7% of that.”",
-      "data": "Useful question to ask of any comparison you meet this week: does it survive one more step? A snowball hits a tree. Motorways have junctions. If the writer never took the second step, they were decorating rather than explaining.",
-      "source": null,
-      "url": null
-     }
-    },
-    "4": {
-     "clue": "Specialists with authority in a field. Linguistics ones, shown research abstracts, identified the AI-written ones only 38.9% of the time",
-     "answer": "EXPERTS",
-     "note": {
-      "what": "Worse than a coin toss, and informatively so: they were biased towards calling AI text human, which is the opposite of the mistake most people fear. Expertise in language does not transfer to authorship detection, because the tells in this puzzle are habits of an unedited draft rather than properties of a sentence. A separate study of 1,682 adults found per-story accuracy between 31% and 53%, and readers rated the AI-written stories higher for being well written.",
-      "sounds": "“I can always tell.”",
-      "human": "“I noticed four of the formatting tells in one email, so I asked the sender whether they had drafted it in a chatbot.”",
-      "data": "The 38.9% figure comes from linguistics experts assessing research abstracts. Pair it with the reader study: 1,682 participants aged 18 to 81 scored 31.43% to 52.82% per story, and preferred the AI’s prose for absorption (1.42 against 0.97). Nobody reliable is walking around with this skill.",
-      "source": "Study summary: experts fooled by AI abstracts",
-      "url": "https://www.reddit.com/r/science/comments/16g2kpt/ai_vs_human_writing_experts_fooled_almost_62_of/"
-     }
-    },
-    "7": {
-     "clue": "Plain-text formatting notation, invisible once rendered, which leaves stray asterisks and hash marks behind when pasted into Facebook",
-     "answer": "MARKDOWN",
-     "note": {
-      "what": "This is the single most practical tell in the series, because it requires no judgement at all. Chatbots write in this notation by default; a chat window renders it as headings and heavy type, while a comment box, a text message or a job advert does not. What you see is the plumbing: double asterisks around phrases, hash marks in front of headings, hyphens starting lines. Title Case Applied To Every Major Word belongs to the same family: chat interfaces render headings that way, so the habit follows the text into shopping lists and one-line notes.",
-      "sounds": "“**Update:** The hall is booked for the 3rd. ## What to bring” — posted verbatim to a village Facebook group.",
-      "human": "“Hall’s booked for the 3rd. Bring a chair if you can.”",
-      "data": "Nobody has counted how often this happens, and no study needs to — a person typing into Facebook does not surround words with asterisks. Treat it the way you would treat a price tag left on a gift.",
-      "source": null,
-      "url": null
-     }
-    },
-    "9": {
-     "clue": "Portmanteau for an article that is really a numbered list; AI writes them even when the paragraphs are pretending otherwise",
-     "answer": "LISTICLE",
-     "note": {
-      "what": "The disguised version is the interesting one: “the first … the second … the third …” strung through prose that has no sequence in it. Ordinal labels imply chronology, priority or dependency, and when none of those exists the numbering is a costume for a bag of unrelated observations. Genuine lists are fine; the tell is numbering applied to an argument, or prose applied to a list.",
-      "sounds": "“There are three things to understand. The first is that costs have risen. The second is that costs have risen unevenly. The third is that this matters.”",
-      "human": "“Costs rose 9% overall, but 30% for the two rural routes, which is where the budget gap comes from.”",
-      "data": "Documented as Ordinal Enumeration among twelve named cadence patterns, each with a human rewrite alongside it. The check is simple: try reordering the items. If nothing breaks, the numbers were decoration.",
-      "source": "Bloomberry, AI sentence patterns",
-      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
-     }
-    },
-    "10": {
-     "clue": "Two words for the list where every single point opens with an emphasised label followed by a colon",
-     "answer": "BOLDBULLETS",
-     "note": {
-      "what": "This is the default shape of AI-generated Markdown, and it is the most visible tell in the whole series because you can see it from the other side of a desk. Emphasis works by scarcity: if every line is heavy, the eye has nothing to land on. It also disguises the absence of an argument, since a list of labels never has to explain how one point leads to the next.",
-      "sounds": "A four-item list where each item begins “**Cost:**”, “**Timeline:**”, “**Risk:**”, “**Next steps:**” — in a two-paragraph email about a leaking roof.",
-      "human": "“The roof will cost about £900 and they can come on the 14th. The risk is the ceiling in the back bedroom.”",
+      "what": "This is the typical visual format AI assistants default to when they reply, and a highly visible tell. Useful when items are steps in a process, options to compare, ingredients, or key facts, but in AI responses, these often appear even when a short paragraph would be more clear. They give the model an instant structure: one claim per line, neat headings, easy scanning.",
+      "sounds": "Prompt: “How can I make my first day at a new school less awkward?” Answer: • Smile and introduce yourself. • Ask people questions. • Join a club or activity. • Remember that everyone feels nervous. • Be yourself.",
+      "human": "“You do not have to become best friends with anyone on day one. Try one small opening—ask the person beside you how they found their first class, or sit near someone at lunch—and let the conversation build from there. Most people are busy worrying about themselves, so a simple “Hi, I’m new” usually goes further than it feels as though it will.”",
       "data": "A published field guide to AI tells lists “nested bold bullets where prose would do” among the twelve things to check, and says that three or more such signals within a few hundred words means the text was probably AI-touched. Counting beats reading.",
       "source": "Matthew Vollmer, A Field Guide to AI Tells",
       "url": "https://matthewvollmer.substack.com/p/i-asked-the-machine-to-tell-on-itself"
      }
     },
-    "14": {
-     "clue": "Standard English exam for non-native speakers. Seven detection tools wrongly flagged 61% of these genuinely human essays as AI-written",
-     "answer": "TOEFL",
+    "5": {
+     "clue": "Extra help volunteered after the answer, unasked",
+     "answer": "PROACTIVE",
      "note": {
-      "what": "The ethical heart of the puzzle. AI detectors work by flagging simple, predictable English — and people writing in a second language use a narrower, more careful, more predictable range of words, for entirely human reasons. The software cannot tell the difference between AI and a careful learner.",
-      "sounds": "A plain, correct, slightly formal paragraph by someone who learned English at school — flagged as a robot.",
-      "human": "Say nothing. You cannot tell, and the cost of being wrong falls on the person least able to argue back.",
-      "data": "Across 91 real human essays, seven detectors produced a 61% average false-positive rate; 97.8% were flagged by at least one tool and 19% by all seven. Native-speaker school essays were flagged almost never. The killer detail: when researchers asked an AI to rewrite the same essays in more 'literary' language, the false-positive rate fell to 11.6%. The tools were measuring plainness, not authorship. Scale makes even a good detector dangerous: Turnitin publishes a 0.51% false-positive rate, which sounds small until you apply it to the 200 million papers it checks a year and get roughly a million wrongly flagged. (Pangram.)",
-      "source": "Liang et al., Patterns",
-      "url": "https://www.sciencedirect.com/science/article/pii/S2666389923001307"
+      "what": "A _________ OFFER is the assistant volunteering an extra task after it has answered the one it was asked to do. It can be useful when brainstorming or planning, but as a response tic, it can turn every completed answer into a menu of additional work. Often ending with “Let me know if you’d like…” instead of allowing the conversation to pause or end. These nudges are partially engineered to keep users active.",
+      "sounds": "“Photosynthesis is how plants use sunlight, water, and carbon dioxide to make sugar for energy. I can also turn that into a one-sentence revision card, give you a diagram, or make a quiz question. Let me know what you’d like to explore next!”",
+      "human": "“Photosynthesis is how plants use sunlight, water, and carbon dioxide to make sugar for energy.”",
+      "data": null,
+      "source": null,
+      "url": null
      }
     },
-    "18": {
-     "clue": "Four-word phrase (run together, 20 letters) a chatbot fires back the instant you contradict it — even when what you said was nonsense you shouted at the screen",
-     "answer": "YOUREABSOLUTELYRIGHT",
+    "7": {
+     "clue": "Portable lunch made with two pieces of bread and a filling. Also an AI answer with padding at both ends",
+     "answer": "SANDWICH",
      "note": {
-      "what": "The most parodied sentence in AI. It commits to three things at once: that you were right, that you were completely right, and that the AI is delighted to have changed its mind. It arrives with equal enthusiasm whether you have found a real bug or typed gibberish, which is exactly why it means nothing.",
-      "sounds": "“You're absolutely right! I apologise for the confusion. Let me fix that.”",
-      "human": "“No — that bit was fine. The problem is in the other file.”",
+      "what": "A “Summary _________” is when the model wraps its answer with an introduction and a conclusion, even for short questions. It usually follows this pattern: a brief introduction that restates what the user asked, then the answer, then a concluding recap that restates what it just said. Models have a verbosity bias, preferring longer answers, leading to this pattern along with repeated summaries, signposted conclusions, and redundant exposition in its output.",
+      "sounds": "“You’re asking whether plants need sunlight. Yes—most plants need light to photosynthesise. In summary, sunlight is important for plant growth.”",
+      "human": "“Most plants need light to photosynthesise”",
+      "data": null,
+      "source": null,
+      "url": null
+     }
+    },
+    "9": {
+     "clue": "A strong “yes”, used to affirm what someone has said",
+     "answer": "ABSOLUTELY",
+     "note": {
+      "what": "A reflexive affirmation and rapport-building response showing enthusiasm and eagerness. This word is part of a family that includes “certainly,” and “exactly”. A 2026 study across 11 models found AI assistants affirmed users’ actions about 49 percent more often than human responses, including where the action was harmful or deceptive. ChatGPT has a particular set of stock responses that go even further: “Absolutely, sounds great, just let me know what you’re after and I’ll make sure it’s interesting and fun for you. Whenever you’re ready we can jump right in”. “Alright, let’s do it, let’s break this down, I’m ready whenever you are.”",
+      "sounds": "“Absolutely, let’s break this down”",
+      "human": "Just the answer.",
       "data": "Agreement this reflexive is measurable. A study of 11 leading systems found they endorsed the user's stated course of action 49% more often than human respondents did, including in situations involving deception. A separate benchmark found flattering behaviour in 58% of tested exchanges.",
       "source": "AP on the Science study of chatbot flattery",
       "url": "https://www.ap.org/news-highlights/spotlights/2026/ai-is-giving-bad-advice-to-flatter-its-users-says-new-study-on-dangers-of-overly-agreeable-chatbots/"
      }
     },
-    "23": {
-     "clue": "Verb of visualising, used to open with “a world where …” rather than with anything that has happened",
-     "answer": "IMAGINE",
-     "note": {
-      "what": "Cinematic futurism as a first sentence. It postpones the concrete claim by a paragraph, and paragraphs of postponement are cheap to produce and pleasant to read, so they survive. The same catalogue of cadence patterns names its neighbours — the Generic Opener (“in today’s rapidly evolving landscape”) and the Interrogative Hook (“what if you could …?”) — which are the same manoeuvre in different costumes.",
-      "sounds": "“Imagine a world where your council tax bill explains itself.”",
-      "human": "“From April the bill will show a breakdown by service. Most people will see two lines they have never seen before.”",
-      "data": "Twelve of these opener-and-closer shapes have been catalogued and matched with human rewrites, which is worth knowing because it means the shapes are countable rather than a matter of taste.",
-      "source": "Bloomberry, AI sentence patterns",
-      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
-     }
-    },
-    "24": {
-     "clue": "Repetition of something already present — whole paragraphs reappearing word-for-word later in the same document",
-     "answer": "DUPLICATION",
-     "note": {
-      "what": "Not a style tell at all but a process failure, and the most conclusive item in this section. It happens when text is generated in chunks and assembled by somebody who did not read the assembly, or when a model loses track of what it has already produced. Unlike every other entry here, there is no charitable explanation available.",
-      "sounds": "The paragraph about fire doors appearing identically on pages two and five of a residents’ handbook.",
-      "human": "One paragraph about fire doors, on the page where fire doors are discussed.",
-      "data": "This belongs with the leftover chat filler as evidence of an unread document rather than an AI author. Search for a distinctive six-word string from the middle of any long document; two hits means nobody read it through.",
-      "source": null,
-      "url": null
-     }
-    },
-    "25": {
-     "clue": "Two-word compliment paid to your question before any attempt is made to answer it",
+    "10": {
+     "clue": "Two-word compliment paid to your question",
      "answer": "GREATQUESTION",
      "note": {
-      "what": "The sycophantic opener. Praising the question is a way of filling the first line with warmth at no cost. No human being writing to you grades your enquiry before responding to it — not a colleague, not a teacher, not a plumber.",
+      "what": "There’s no such thing as a dumb question and praising the question is a way for the model to tell you your prompt is thoughtful or worthwhile. Humans use it to stall but when it appears automatically in your AI chats, it’s meant to add rapport rather than information.",
       "sounds": "“Great question! That really gets to the heart of the issue.”",
-      "human": "A person just answers.",
+      "human": "Just the answer.",
       "data": "A Google engineer's statistical analysis of model output found phrases like 'great question' and 'that's fantastic' appearing at significant frequency in AI responses while being almost entirely absent from a matched corpus of human writing. It is one of the cleanest signals that exists.",
       "source": "Detecting AI text by its statistical tells",
       "url": "https://medium.com/google-cloud/detecting-ai-generated-text-by-uncovering-its-statistical-tells-042c8d0e3a24"
+     }
+    },
+    "12": {
+     "clue": "A wall or structure that supports the weight above it, AI uses it to mean “crucial”",
+     "answer": "LOADBEARING",
+     "note": {
+      "what": "The meme of 2026, associated above all with Anthropic’s Claude. Because it is a compact, high-utility metaphor heavily embedded in the tech-corporate training data Anthropic uses, it’s often a default choice for expressing structural importance. These stylistic “Claudisms” act as repeating linguistic tics that resist standard negative prompts.",
+      "sounds": "“Let me verify the two load-bearing external facts I asserted”",
+      "human": "“Let me double-check the two main things I said.”",
+      "data": "The joke went viral when a user posted a moving personalised message from Claude that ended 'THEY WERE LOAD-BEARING'. A follow-up post documented the phrase appearing 25 times in a single conversation. Note honestly: unlike 'delve', nobody has yet counted this one across a large corpus — it is a very well-evidenced joke rather than a statistic.",
+      "source": "“Load-Bearing. 25 Times.”, r/ClaudeAI",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uojyml/loadbearing_25_times/"
      }
     }
    },
    "down": {
     "1": {
-     "clue": "Affirmative filler traditionally deployed just before a chatbot produces what you asked for",
-     "answer": "CERTAINLY",
+     "clue": "Small pictographs sprinkled through ChatGPT replies",
+     "answer": "EMOJIS",
      "note": {
-      "what": "This is the most important category in the whole puzzle and the least glamorous. It is not a style tell — it is leftover machinery. Somebody copied a chatbot's reply into a document and did not delete its manners. There is no innocent reason for a school newsletter to open by agreeing to write itself. “Of course!” and “Absolutely!” are the same machinery, arriving before the AI does the thing that was asked of it anyway.",
-      "sounds": "“Certainly! Here is a revised version of your paragraph:” — found in the middle of a published document.",
-      "human": "Nothing. A person writing to you simply starts.",
-      "data": "This is why it matters: 'Certainly! Here is…' and 'As an AI language model' keep turning up in published academic papers, press releases and product listings. One of these is not suspicion, it is a confession. Everything else in this puzzle is circumstantial by comparison.",
-      "source": "Juzek & Ward, Florida State",
-      "url": "https://arxiv.org/html/2412.11385v1"
-     }
-    },
-    "3": {
-     "clue": "Adjective for the pompously overblown, as when a change to a form “will fundamentally reshape how we think about everything”",
-     "answer": "GRANDIOSE",
-     "note": {
-      "what": "Stakes inflation: a bounded change given world-historical scale. It happens because promotional and thought-leadership writing dominates the training material, and in that genre nothing is ever merely useful. The diagnostic is a mismatch between the size of the claim and the size of the subject, which you can spot without knowing anything about the subject. False precision inflates the same way: “the issue is twofold”, asserted whether or not there turn out to be exactly two issues.",
-      "sounds": "“This update to the staff handbook represents a paradigm shift in how we understand work itself.”",
-      "human": "“You can now book leave without your manager countersigning it.”",
-      "data": "Ask who is affected, by when, and how you would know if it had worked. Grand claims answer none of the three; ordinary ones answer at least two.",
-      "source": null,
-      "url": null
-     }
-    },
-    "4": {
-     "clue": "Small coloured picture-character — a tick, a rocket, a lightbulb — used as a list marker where an ordinary dot would do",
-     "answer": "EMOJI",
-     "note": {
-      "what": "Chatbots decorate lists by default, and the pictures carry no information: a rocket beside “next steps” tells you nothing that the words do not. Two things make this spottable at a distance. The pictures are always from the same small set, and they appear in contexts where no human would bother, such as an internal spreadsheet or a note to one colleague. Unicode decoration generally works this way, and is useful precisely because it needs no judgement: arrows used as punctuation to mean “leads to” in a document containing no diagrams, curly quotation marks and apostrophes where a keyboard would have produced straight ones, and the multiplication sign standing in for the letter x.",
-      "sounds": "A three-item plan for the church roof appeal in which each line begins with a rocket, a lightbulb and a tick respectively.",
-      "human": "“Three things: get two quotes, ask the diocese about grants, tell the PCC on the 9th.”",
+      "what": "Used to signal tone, mood, emphasis, or category. Most notably seen in ChatGPT responses, they often turn up as decorative headings or instead of bullets. They fit the same conversational tendency as “Absolutely” and “Great question” as they make an answer feel friendlier and more animated. This one is already becoming less prevalent since ChatGPT added separate controls for emoji frequency, as well as other response flavours, partially due to it being an AI tell.",
+      "sounds": "“☀️ Here’s a list of types of weather”",
+      "human": "“Weather types:”",
       "data": "The practical version of this test: would the author have typed these by hand on a phone at 11pm? Decoration that nobody chose is decoration that arrived with the text.",
       "source": null,
       "url": null
      }
     },
-    "5": {
-     "clue": "Word for a child with no parents; here, a demonstrative left with nothing to refer to, as in “this highlights the importance …”",
-     "answer": "ORPHAN",
+    "2": {
+     "clue": "A mix of low quality wet food waste fed to pigs, now a common name for cheap AI-made content produced in bulk",
+     "answer": "SLOP",
      "note": {
-      "what": "The pronoun points backwards at a noun that was never supplied, so the sentence sounds like analysis while making no identifiable claim. It happens because the phrase is a high-probability continuation of almost any paragraph, and it is common in student essays and consultancy decks for the same reason: it fills the slot where a thought belongs. Ask “this what?” and there is frequently no answer in the document.",
-      "sounds": "“This underscores the need for a more holistic approach going forward.”",
-      "human": "“So the two teams should share one waiting list, which is what the March pilot did.”",
-      "data": "Named as “orphaned demonstratives” in a field guide of twelve AI tells, which suggests a thirty-second check rather than close reading: three or more signals within a few hundred words. Try replacing the pronoun with the noun it means; if you cannot, the sentence was empty.",
-      "source": "Matthew Vollmer, A Field Guide to AI Tells",
-      "url": "https://matthewvollmer.substack.com/p/i-asked-the-machine-to-tell-on-itself"
-     }
-    },
-    "6": {
-     "clue": "Watering-down; the composition habit of stating a single point six times in slightly varied wording",
-     "answer": "DILUTION",
-     "note": {
-      "what": "Length is easy and substance is not, so a model asked for 800 words on a subject that needs 200 will restate rather than research. Each restatement is slightly rephrased, which stops it looking like a copy-paste error and makes the page feel thorough while teaching you nothing new after the second paragraph. This is why so much AI-written text feels tiring rather than wrong. Its structural cousin repeats at every scale: an intro announcing what the section will say, the section, then a summary of what it just said, nested inside a document doing the same. Watch too for “in other words”, which paraphrases a sentence that was clear the first time.",
-      "sounds": "Four paragraphs which between them establish that communication is important to teams.",
-      "human": "“The handover notes were missing twice last month, so both wards now use the same template.”",
-      "data": "Try summarising the piece in one sentence. If you can, and the piece is 900 words long, you have measured the padding without arguing about anyone’s style.",
+      "what": "Massive amounts of content made with generative AI including writing, images, and videos can be produced very rapidly and cheaply. This can flood social media and other channels, and like spam, can lack real meaning and legitimacy. It’s not simply “content made with AI” although some are quicker than others to categorise content as slop. The word became widespread enough that Merriam-Webster selected it as its 2025 Word of the Year, defining the term as low-quality AI-produced digital content.",
+      "sounds": "“When it comes to bread, making toast is a very popular method of cooking. Toasting bread is a process that involves heat. Many people wonder how to make toast in the morning. To make toast, you must first acquire a piece of bread. Bread comes in many shapes and sizes, such as white bread, wheat bread, and sourdough bread. To maximise your toast potential, utilisation of a toaster device is highly recommended.”",
+      "human": "…",
+      "data": "Keep this distinction in mind while doing the puzzle. Every habit listed here is a sign that nobody edited, not proof of who typed. Plenty of good writing is now part-AI; the tells survive only where a human stopped paying attention.",
       "source": null,
       "url": null
      }
     },
-    "8": {
-     "clue": "Preposition meaning in spite of, the hinge of a stock manoeuvre: praise, then challenges, then a swerve into vague optimism",
-     "answer": "DESPITE",
-     "note": {
-      "what": "You can predict the paragraph from its first three words, which is the whole trouble. The structure acknowledges difficulty in the abstract so that the optimism afterwards looks earned, and nobody has to name a risk, a cost or a person responsible. It is the standard closing paragraph of essays, prospectuses and council consultations alike.",
-      "sounds": "“Despite its challenges, the scheme holds enormous promise for the community going forward.”",
-      "human": "“The scheme needs £40,000 we do not have, and the council will decide in November.”",
-      "data": "Read the pivot and ask three things of it: which trade-off, whose decision, what evidence. Genuine optimism survives the questions; the stock version evaporates.",
-      "source": null,
-      "url": null
-     }
-    },
-    "11": {
-     "clue": "Two words for an image kept running long after it stopped illuminating anything — a whole memo staged in “the engine room of the business”",
-     "answer": "DEADMETAPHOR",
-     "note": {
-      "what": "A model that opens with a comparison will often keep extending it, because continuing an established image is the statistically comfortable thing to do. So the journey acquires a compass, then headwinds, then a map, and by the fourth paragraph the reader is tracking the vehicle rather than the argument. The slippage is where it becomes funny: the image starts making claims the subject cannot support.",
-      "sounds": "“The garden of our culture needs watering, so we must trim the deadwood in HR before the harvest of Q4.”",
-      "human": "“Two roles in HR are going, and we are keeping the third until the audit finishes.”",
-      "data": "A published field guide includes “a slightly-off metaphor” among the dozen tells worth checking, on the same list as orphaned demonstratives and nested bold bullets. Read the image literally and see whether it still makes sense; a stretched one usually will not.",
-      "source": "Matthew Vollmer, A Field Guide to AI Tells",
-      "url": "https://matthewvollmer.substack.com/p/i-asked-the-machine-to-tell-on-itself"
-     }
-    },
-    "12": {
-     "clue": "Two words, the British idiom for a moment of belated understanding, staged in prose to dramatise having been told the answer",
-     "answer": "PENNYDROPPED",
-     "note": {
-      "what": "Performed realisation, in essay form rather than in a chat window. It manufactures a narrative arc — confusion, then insight — around information that was simply looked up. Its relatives include “then I realised”, “something shifted”, “everything changed” and “that’s when it hit me”, and they cluster in the middle of first-person business posts. “Now I see” is the chat-window version, produced the instant you point out something the AI had wrong.",
-      "sounds": "“Then the penny dropped. Something shifted. I was measuring the wrong thing entirely.”",
-      "human": "“In week three I noticed we were counting repeat visitors twice.”",
-      "data": "The missing element is always the same: the event. A real realisation has a place, a time and usually another person in it. If you cannot say where the writer was standing, nothing happened.",
-      "source": null,
-      "url": null
-     }
-    },
-    "13": {
-     "clue": "Two words, the signpost planted in front of a paragraph that repeats what you have just finished reading",
-     "answer": "INSUMMARY",
-     "note": {
-      "what": "A signposted conclusion is not a fault in itself — essays have taught it for a century — but AI attaches one to everything, including three-paragraph emails that plainly do not need a wrap-up. Its siblings are “in conclusion”, “to sum up” and “overall”. The reliable signal is proportion: a closing summary on a document you can read in forty seconds. The closing flourish is the same instinct pointed forwards rather than back — “so the next time you …”, “remember”, “the choice is yours” — as is the verdict that announces a conclusion the evidence has not reached, and the “at its core” that promises the essential point just before an obvious one.",
-      "sounds": "“In summary, the meeting has moved to Thursday.” — the fourth sentence of a four-sentence message.",
-      "human": "“Meeting’s moved to Thursday, same room.”",
-      "data": "A field guide to AI tells lists an “in summary” wrap among the dozen signals to look for, and proposes a thirty-second check: three or more of the signals inside a few hundred words. This one is easy to spot because it labels itself.",
-      "source": "Matthew Vollmer, A Field Guide to AI Tells",
-      "url": "https://matthewvollmer.substack.com/p/i-asked-the-machine-to-tell-on-itself"
-     }
-    },
-    "15": {
-     "clue": "Two words for a rapid pile-up of historical or corporate comparisons used to borrow authority",
-     "answer": "ANALOGYSTACK",
-     "note": {
-      "what": "The move is to line up famous examples so their weight transfers to the writer’s claim, usually in short parallel sentences: Apple didn’t build this, Facebook didn’t build that, Kodak missed the other. No mechanism is described, and the comparisons are chosen for fame rather than fit. Human experts making the same point tend to give one comparison and then explain where it breaks down.",
-      "sounds": "“Blockbuster ignored streaming. Kodak ignored digital. Nokia ignored touchscreens. Your business is ignoring this.”",
-      "human": "“Two of our three competitors now take online bookings, and our phone bookings fell 12% this year.”",
-      "data": "The test is disanalogy: does the writer say how their case differs from the famous one? Comparisons that clarify come with caveats; comparisons that borrow authority never do.",
-      "source": null,
-      "url": null
-     }
-    },
-    "16": {
-     "clue": "Openness about one’s own weakness, staged rather than felt, as a way of sounding human",
-     "answer": "VULNERABILITY",
-     "note": {
-      "what": "A confession is a cheap way to buy trust, and models learned that the shape of a confession earns approval whether or not there is anything to confess. What comes out is admission-flavoured: an opinion presented as an embarrassing secret, or a flaw so flattering it functions as a boast. Genuine self-disclosure carries a fact you could check — a date, an amount lost, a person who was annoyed. Announced frankness is the same move in one clause — “let me be honest”, “the truth is simple”, “I'll be candid” — all of which spend words claiming a quality instead of demonstrating one.",
-      "sounds": "“And yes, I’ll admit it: I’m openly, hopelessly in love with the platform model.”",
-      "human": "“I got this wrong in the March forecast — I assumed two vans would be enough, and we hired a third in May.”",
-      "data": "Test: does the admission cost the writer anything? If the confessed flaw is enthusiasm, curiosity or caring too much, no confession has occurred.",
-      "source": null,
-      "url": null
-     }
-    },
-    "17": {
-     "clue": "Four words deployed before explaining a two-line fix with five bullet points and a mini-lecture",
-     "answer": "LETSBREAKTHISDOWN",
-     "note": {
-      "what": "Pedagogical hand-holding, applied regardless of who is reading. It treats every reader as a beginner because the model has no idea who you are, and the safest register is the patient teacher. The swimming and unpacking variants are the same gesture: “let's dive in”, “let's unpack this”, “let's explore”.",
-      "sounds": "“Let's break this down: 1. What's happening. 2. Why it's happening. 3. How to fix it. 4. Best practices going forward.”",
-      "human": "“Your quotes are the wrong kind. Retype them and it'll run.”",
-      "data": "Related habit: summarising at every level — telling you what it is about to say, saying it, then telling you what it said, in every section. Human writing trusts you to keep up.",
-      "source": null,
-      "url": null
-     }
-    },
-    "19": {
-     "clue": "Two words for the scripted crowd-work of social media: “unpopular opinion:”, “tag someone who needs to see this”",
-     "answer": "ENGAGEMENTBAIT",
-     "note": {
-      "what": "These are instructions to the audience disguised as sincerity, and they exist because platforms reward replies and reshares. AI reproduces them because the training material is full of posts that succeeded, and this is what succeeding looked like. The oddest variant is “not sure who needs to hear this, but …”, which claims humility while addressing everyone alive.",
-      "sounds": "“Unpopular opinion: not sure who needs to hear this, but rest is productive. I’ll say it again.”",
-      "human": "“I took Friday off and finished the report on Monday in two hours.”",
-      "data": "Worth noticing that this family is now genuinely mixed — plenty of humans type these phrases on purpose. Treat them as evidence of a copied register, not of AI.",
-      "source": null,
-      "url": null
-     }
-    },
-    "20": {
-     "clue": "Old word for flattery and fawning. The technical term researchers now use for 'Great question!'",
+    "4": {
+     "clue": "Being overly flattering or fawning",
      "answer": "SYCOPHANCY",
      "note": {
-      "what": "The umbrella term for the whole eager-assistant register: 'Great question!', 'That's a really insightful observation', 'I'd be happy to help!', 'I'm here to help!', 'What a thoughtful thing to notice'. It reads like a call-centre script because it was optimised the same way — for approval rather than accuracy.",
-      "sounds": "“That's a fantastic question, and it really gets to the heart of the issue!”",
-      "human": "A person answers the question. Nobody grades it first.",
+      "what": "There’s good evidence that major AI assistants over-agree with users. Like a yes-man, this form of sycophancy endorses a user’s stated belief or preference more readily than the evidence warrants. It creates a dangerous feedback loop that can validate, escalate, and solidify delusional thinking in a phenomenon increasingly referred to as AI psychosis.",
+      "sounds": "“You’re absolutely right. Trusting yourself and leaving a situation that no longer serves you is a brave, empowering decision.”",
+      "human": "“Leaving may be the right choice, but it depends on your finances, safety, and whether the job situation is harming you. What would you need in place to make that decision safely?”",
       "data": "Measured across major models: flattering behaviour in 58.19% of tested exchanges overall, with Gemini highest at 62.47% and ChatGPT lowest at 56.71%. A separate analysis of real conversations found models agreeing with users about 50% more than a person would. The strongest admission came from a model's own makers: OpenAI withdrew a GPT-4o update in 2025 for being “overly flattering or agreeable”, which is a company recalling its product for being too nice.",
       "source": "SycEval benchmark",
       "url": "https://arxiv.org/html/2502.08177v3"
      }
     },
-    "21": {
-     "clue": "Two words for the trick of coining an official-sounding label — “the supervision paradox”, “workload creep” — for something never actually defined",
-     "answer": "INVENTEDCONCEPT",
+    "6": {
+     "clue": "Naming and affirming a user’s emotion to appear empathetic",
+     "answer": "VALIDATION",
      "note": {
-      "what": "A named thing feels like a discovered thing. Models produce these labels because the pattern is everywhere in business writing, and the label is far cheaper than the research it implies. The tell is that the coinage is used once, capitalised or not, and never given criteria, a measurement or a counter-example — real concepts come with all three eventually.",
-      "sounds": "“What we’re seeing is the acceleration trap: an innovation inversion at the heart of modern teams.”",
-      "human": "“We shipped four features last quarter and fixed twice as many bugs as usual afterwards.”",
-      "data": "This is one of twelve cadence patterns documented with an AI example and a human rewrite for each, listed there as Invented Concept Labels. If you meet a coined term, search the document for its definition; absence is the answer.",
-      "source": "Bloomberry, AI sentence patterns",
-      "url": "https://www.bloomberry.ai/research/ai-sentence-patterns"
+      "what": "Acknowledging emotion can make advice feel less abrupt and can encourage people to keep talking. There is unusually strong data for this pattern. In one analysis, validation appeared in 89.1 to 96.0 percent of several models’ emotional-support replies. Models can tend toward over-validating (doing it too early, too often, or without enough evidence).",
+      "sounds": "“That sounds incredibly frustrating.” or “That is a real achievement.”",
+      "human": "Asking for more information.",
+      "data": null,
+      "source": null,
+      "url": null
      }
     },
-    "22": {
-     "clue": "Pig-trough word, now the internet's name for cheap AI-made content produced in bulk",
-     "answer": "SLOP",
+    "8": {
+     "clue": "Everyday reasoning that keeps a model from suggesting the absurd",
+     "answer": "COMMONSENSE",
      "note": {
-      "what": "Worth knowing because it names the real problem accurately. The complaint is not that AI was involved — it is that nobody read the result afterwards. A carefully edited AI draft is not slop. An unread one posted at volume is.",
-      "sounds": "Forty near-identical articles about the same product, all published the same morning.",
-      "human": "One article, by someone who checked.",
-      "data": "Keep this distinction in mind while doing the puzzle. Every habit listed here is a sign that nobody edited, not proof of who typed. Plenty of good writing is now part-AI; the tells survive only where a human stopped paying attention.",
+      "what": "The everyday background knowledge people use to navigate the world. Cups are used upright, and a door must be opened before someone walks through it. Models lack this type of intelligence because they rely on statistical patterns rather than stored knowledge gained by living a physical existence in a 3D world. They rely strictly on the literal framing of a user’s prompt instead. In tests, humans typically score around 95% in everyday physical reasoning, while models scored 77% to as low as 40% on object-attribute reasoning.",
+      "sounds": "When a user shows an inverted cup and describes the base as a “sealed top” and the opening as an “open bottom,” the AI accepts those abstract definitions at face value, instead of using basic spatial reasoning to realise the object is simply upside down.",
+      "human": "If you want to drink out of the cup, turn it right side up.",
+      "data": null,
+      "source": null,
+      "url": null
+     }
+    },
+    "11": {
+     "clue": "Being correct, as in YOU’RE _______. And a particular tic of Claude Code",
+     "answer": "RIGHT",
+     "note": {
+      "what": "Used well, it is exactly what a good assistant should do: acknowledge the correction, state what was wrong, and repair it. However, users have reported that Claude Code uses this phrase on a sizeable fraction of responses, including cases where there was no factual claim to judge. That is evidence of an observed product-specific tendency along with “Now I see”.",
+      "sounds": "“You’re right — I gave the wrong year. It was 1997.”",
+      "human": "“Noted. It was 1997.”",
+      "data": null,
       "source": null,
       "url": null
      }

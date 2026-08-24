@@ -17,7 +17,7 @@ Three things to know before you start:
 
 Each clue also carries two things this page does not show: a paragraph of
 research (`data`) and a citation (`source`/`url`). They are still in the file
-and the sources are all listed under "Where the numbers come from". Say the word
+and the sources are all listed under "Into the Rabbit Hole: What the Data Shows". Say the word
 and I will add them to this doc too.
 
 ## Front matter
@@ -32,11 +32,11 @@ _Not shown on the page, but used for the browser tab and the footer:_
 
 BRAND: The Dead Good Club Funnies
 
-KICKER: Saturday Edition &middot; Three puzzles &middot; 52 clues
+KICKER: Saturday Edition &middot; Three puzzles &middot; 38 clues
 
 FOOTER LEFT: Saturday Edition
 
-FOOTER RIGHT: Three puzzles &middot; 76 clues
+FOOTER RIGHT: The Dead Good Club Funnies
 
 ### The article, left column
 
@@ -244,7 +244,7 @@ EXAMPLE 37: Because I have a feeling this one is going to be divisive.
 
 ### The source list at the foot
 
-HEADING: Where the numbers come from
+HEADING: Into the Rabbit Hole: What the Data Shows
 
 SOURCE 1: <a href="https://www.science.org/doi/10.1126/sciadv.adt3813">Kobak et al., <em>Science Advances</em></a> &mdash; 15.1m PubMed abstracts; &ldquo;delves&rdquo; at 28&times; its expected rate; at least 13.5% of 2024 abstracts LLM-processed.
 
@@ -275,8 +275,6 @@ SOURCE 13: <a href="https://www.bloomberry.ai/research/ai-sentence-patterns">Blo
 SOURCE 14: <a href="https://www.reddit.com/r/ClaudeAI/comments/1uojyml/loadbearing_25_times/">&ldquo;Load-Bearing. 25 Times.&rdquo;</a> and <a href="https://jesseduffield.com/AI-isms-go-deeper/">Jesse Duffield on AI-isms</a> &mdash; the load-bearing meme, and why AI hands agency to inert things.
 
 SOURCE 15: <a href="https://www.pangram.com/blog/all-about-false-positives-in-ai-detectors">Pangram on false positives</a> &mdash; Turnitin's published 0.51% error rate, and what that means at scale.
-
-COLOPHON: Set by hand, footnoted by research. Print it, argue with it, send it to your mother.
 
 ## The words the interface uses
 
@@ -652,323 +650,155 @@ ISSUE: No. 3
 
 TITLE: The Chat-Back
 
-BLURB: The manners it forgot to delete — “Great question!”, “You're absolutely right!” — plus what AI does to the look of a document: the bold bullets, the stray asterisks, the arrows used as punctuation.
+BLURB: These are the most over-used conversational responses that models use when giving their output. When chatting with an AI assistant, it’s common for models to start by acknowledging, validating, and amplifying your request with “Absolutely” or “You’re exactly right.” But there are several other tics, patterns, and preferences and once you see them, it’s hard to un-see them. Different models have their own personality as well, so some of these you’ll see more often than not, depending on which you’re using. To varying degrees though, each model rewards rapport over efficiency. So whenever you’re ready we can jump right in.
 
-FAMOUS ONES: YOUREABSOLUTELYRIGHT, GREATQUESTION, CERTAINLY, LETSBREAKTHISDOWN, BOLDBULLETS, TOEFL
+FAMOUS ONES: ABSOLUTELY, LOADBEARING, BULLETS
 
 ### The Chat-Back — across
 
-#### P3 · 2 across
+#### P3 · 3 across
 
-ANSWER _(fixed)_: ANALOGY
+ANSWER _(fixed)_: BULLETS
 
-CLUE: Comparison used for teaching — “think of it as a motorway for data” — offered by AI before, or instead of, the actual explanation
+CLUE: Dots, dashes, or symbols used to break information into a list
 
-WHAT: Teacher mode has a default gesture, and this is it. The pattern to distrust is the ordering: a person who understands a system usually describes it and then offers a comparison if the description was hard; AI prose comparison-first, because the comparison is easier to generate than the mechanism. A second warning sign is that the image is never checked against the thing it describes. The most worn example is the borrowed engine bay — “under the hood” — wheeled out before explaining absolutely anything technical.
+WHAT: This is the typical visual format AI assistants default to when they reply, and a highly visible tell. Useful when items are steps in a process, options to compare, ingredients, or key facts, but in AI responses, these often appear even when a short paragraph would be more clear. They give the model an instant structure: one claim per line, neat headings, easy scanning.
 
-SOUNDS: “Think of your pension like a snowball rolling down a hill.”
+SOUNDS: Prompt: “How can I make my first day at a new school less awkward?” Answer: • Smile and introduce yourself. • Ask people questions. • Join a club or activity. • Remember that everyone feels nervous. • Be yourself.
 
-INSTEAD: “Your pension gained 4.1% last year, and the fee took 0.7% of that.”
+INSTEAD: “You do not have to become best friends with anyone on day one. Try one small opening—ask the person beside you how they found their first class, or sit near someone at lunch—and let the conversation build from there. Most people are busy worrying about themselves, so a simple “Hi, I’m new” usually goes further than it feels as though it will.”
 
-#### P3 · 4 across
+#### P3 · 5 across
 
-ANSWER _(fixed)_: EXPERTS
+ANSWER _(fixed)_: PROACTIVE
 
-CLUE: Specialists with authority in a field. Linguistics ones, shown research abstracts, identified the AI-written ones only 38.9% of the time
+CLUE: Extra help volunteered after the answer, unasked
 
-WHAT: Worse than a coin toss, and informatively so: they were biased towards calling AI text human, which is the opposite of the mistake most people fear. Expertise in language does not transfer to authorship detection, because the tells in this puzzle are habits of an unedited draft rather than properties of a sentence. A separate study of 1,682 adults found per-story accuracy between 31% and 53%, and readers rated the AI-written stories higher for being well written.
+WHAT: A _________ OFFER is the assistant volunteering an extra task after it has answered the one it was asked to do. It can be useful when brainstorming or planning, but as a response tic, it can turn every completed answer into a menu of additional work. Often ending with “Let me know if you’d like…” instead of allowing the conversation to pause or end. These nudges are partially engineered to keep users active.
 
-SOUNDS: “I can always tell.”
+SOUNDS: “Photosynthesis is how plants use sunlight, water, and carbon dioxide to make sugar for energy. I can also turn that into a one-sentence revision card, give you a diagram, or make a quiz question. Let me know what you’d like to explore next!”
 
-INSTEAD: “I noticed four of the formatting tells in one email, so I asked the sender whether they had drafted it in a chatbot.”
+INSTEAD: “Photosynthesis is how plants use sunlight, water, and carbon dioxide to make sugar for energy.”
 
 #### P3 · 7 across
 
-ANSWER _(fixed)_: MARKDOWN
+ANSWER _(fixed)_: SANDWICH
 
-CLUE: Plain-text formatting notation, invisible once rendered, which leaves stray asterisks and hash marks behind when pasted into Facebook
+CLUE: Portable lunch made with two pieces of bread and a filling. Also an AI answer with padding at both ends
 
-WHAT: This is the single most practical tell in the series, because it requires no judgement at all. Chatbots write in this notation by default; a chat window renders it as headings and heavy type, while a comment box, a text message or a job advert does not. What you see is the plumbing: double asterisks around phrases, hash marks in front of headings, hyphens starting lines. Title Case Applied To Every Major Word belongs to the same family: chat interfaces render headings that way, so the habit follows the text into shopping lists and one-line notes.
+WHAT: A “Summary _________” is when the model wraps its answer with an introduction and a conclusion, even for short questions. It usually follows this pattern: a brief introduction that restates what the user asked, then the answer, then a concluding recap that restates what it just said. Models have a verbosity bias, preferring longer answers, leading to this pattern along with repeated summaries, signposted conclusions, and redundant exposition in its output.
 
-SOUNDS: “**Update:** The hall is booked for the 3rd. ## What to bring” — posted verbatim to a village Facebook group.
+SOUNDS: “You’re asking whether plants need sunlight. Yes—most plants need light to photosynthesise. In summary, sunlight is important for plant growth.”
 
-INSTEAD: “Hall’s booked for the 3rd. Bring a chair if you can.”
+INSTEAD: “Most plants need light to photosynthesise”
 
 #### P3 · 9 across
 
-ANSWER _(fixed)_: LISTICLE
+ANSWER _(fixed)_: ABSOLUTELY
 
-CLUE: Portmanteau for an article that is really a numbered list; AI writes them even when the paragraphs are pretending otherwise
+CLUE: A strong “yes”, used to affirm what someone has said
 
-WHAT: The disguised version is the interesting one: “the first … the second … the third …” strung through prose that has no sequence in it. Ordinal labels imply chronology, priority or dependency, and when none of those exists the numbering is a costume for a bag of unrelated observations. Genuine lists are fine; the tell is numbering applied to an argument, or prose applied to a list.
+WHAT: A reflexive affirmation and rapport-building response showing enthusiasm and eagerness. This word is part of a family that includes “certainly,” and “exactly”. A 2026 study across 11 models found AI assistants affirmed users’ actions about 49 percent more often than human responses, including where the action was harmful or deceptive. ChatGPT has a particular set of stock responses that go even further: “Absolutely, sounds great, just let me know what you’re after and I’ll make sure it’s interesting and fun for you. Whenever you’re ready we can jump right in”. “Alright, let’s do it, let’s break this down, I’m ready whenever you are.”
 
-SOUNDS: “There are three things to understand. The first is that costs have risen. The second is that costs have risen unevenly. The third is that this matters.”
+SOUNDS: “Absolutely, let’s break this down”
 
-INSTEAD: “Costs rose 9% overall, but 30% for the two rural routes, which is where the budget gap comes from.”
+INSTEAD: Just the answer.
 
 #### P3 · 10 across
 
-ANSWER _(fixed)_: BOLDBULLETS
-
-CLUE: Two words for the list where every single point opens with an emphasised label followed by a colon
-
-WHAT: This is the default shape of AI-generated Markdown, and it is the most visible tell in the whole series because you can see it from the other side of a desk. Emphasis works by scarcity: if every line is heavy, the eye has nothing to land on. It also disguises the absence of an argument, since a list of labels never has to explain how one point leads to the next.
-
-SOUNDS: A four-item list where each item begins “**Cost:**”, “**Timeline:**”, “**Risk:**”, “**Next steps:**” — in a two-paragraph email about a leaking roof.
-
-INSTEAD: “The roof will cost about £900 and they can come on the 14th. The risk is the ceiling in the back bedroom.”
-
-#### P3 · 14 across
-
-ANSWER _(fixed)_: TOEFL
-
-CLUE: Standard English exam for non-native speakers. Seven detection tools wrongly flagged 61% of these genuinely human essays as AI-written
-
-WHAT: The ethical heart of the puzzle. AI detectors work by flagging simple, predictable English — and people writing in a second language use a narrower, more careful, more predictable range of words, for entirely human reasons. The software cannot tell the difference between AI and a careful learner.
-
-SOUNDS: A plain, correct, slightly formal paragraph by someone who learned English at school — flagged as a robot.
-
-INSTEAD: Say nothing. You cannot tell, and the cost of being wrong falls on the person least able to argue back.
-
-#### P3 · 18 across
-
-ANSWER _(fixed)_: YOUREABSOLUTELYRIGHT
-
-CLUE: Four-word phrase (run together, 20 letters) a chatbot fires back the instant you contradict it — even when what you said was nonsense you shouted at the screen
-
-WHAT: The most parodied sentence in AI. It commits to three things at once: that you were right, that you were completely right, and that the AI is delighted to have changed its mind. It arrives with equal enthusiasm whether you have found a real bug or typed gibberish, which is exactly why it means nothing.
-
-SOUNDS: “You're absolutely right! I apologise for the confusion. Let me fix that.”
-
-INSTEAD: “No — that bit was fine. The problem is in the other file.”
-
-#### P3 · 23 across
-
-ANSWER _(fixed)_: IMAGINE
-
-CLUE: Verb of visualising, used to open with “a world where …” rather than with anything that has happened
-
-WHAT: Cinematic futurism as a first sentence. It postpones the concrete claim by a paragraph, and paragraphs of postponement are cheap to produce and pleasant to read, so they survive. The same catalogue of cadence patterns names its neighbours — the Generic Opener (“in today’s rapidly evolving landscape”) and the Interrogative Hook (“what if you could …?”) — which are the same manoeuvre in different costumes.
-
-SOUNDS: “Imagine a world where your council tax bill explains itself.”
-
-INSTEAD: “From April the bill will show a breakdown by service. Most people will see two lines they have never seen before.”
-
-#### P3 · 24 across
-
-ANSWER _(fixed)_: DUPLICATION
-
-CLUE: Repetition of something already present — whole paragraphs reappearing word-for-word later in the same document
-
-WHAT: Not a style tell at all but a process failure, and the most conclusive item in this section. It happens when text is generated in chunks and assembled by somebody who did not read the assembly, or when a model loses track of what it has already produced. Unlike every other entry here, there is no charitable explanation available.
-
-SOUNDS: The paragraph about fire doors appearing identically on pages two and five of a residents’ handbook.
-
-INSTEAD: One paragraph about fire doors, on the page where fire doors are discussed.
-
-#### P3 · 25 across
-
 ANSWER _(fixed)_: GREATQUESTION
 
-CLUE: Two-word compliment paid to your question before any attempt is made to answer it
+CLUE: Two-word compliment paid to your question
 
-WHAT: The sycophantic opener. Praising the question is a way of filling the first line with warmth at no cost. No human being writing to you grades your enquiry before responding to it — not a colleague, not a teacher, not a plumber.
+WHAT: There’s no such thing as a dumb question and praising the question is a way for the model to tell you your prompt is thoughtful or worthwhile. Humans use it to stall but when it appears automatically in your AI chats, it’s meant to add rapport rather than information.
 
 SOUNDS: “Great question! That really gets to the heart of the issue.”
 
-INSTEAD: A person just answers.
+INSTEAD: Just the answer.
+
+#### P3 · 12 across
+
+ANSWER _(fixed)_: LOADBEARING
+
+CLUE: A wall or structure that supports the weight above it, AI uses it to mean “crucial”
+
+WHAT: The meme of 2026, associated above all with Anthropic’s Claude. Because it is a compact, high-utility metaphor heavily embedded in the tech-corporate training data Anthropic uses, it’s often a default choice for expressing structural importance. These stylistic “Claudisms” act as repeating linguistic tics that resist standard negative prompts.
+
+SOUNDS: “Let me verify the two load-bearing external facts I asserted”
+
+INSTEAD: “Let me double-check the two main things I said.”
 
 ### The Chat-Back — down
 
 #### P3 · 1 down
 
-ANSWER _(fixed)_: CERTAINLY
+ANSWER _(fixed)_: EMOJIS
 
-CLUE: Affirmative filler traditionally deployed just before a chatbot produces what you asked for
+CLUE: Small pictographs sprinkled through ChatGPT replies
 
-WHAT: This is the most important category in the whole puzzle and the least glamorous. It is not a style tell — it is leftover machinery. Somebody copied a chatbot's reply into a document and did not delete its manners. There is no innocent reason for a school newsletter to open by agreeing to write itself. “Of course!” and “Absolutely!” are the same machinery, arriving before the AI does the thing that was asked of it anyway.
+WHAT: Used to signal tone, mood, emphasis, or category. Most notably seen in ChatGPT responses, they often turn up as decorative headings or instead of bullets. They fit the same conversational tendency as “Absolutely” and “Great question” as they make an answer feel friendlier and more animated. This one is already becoming less prevalent since ChatGPT added separate controls for emoji frequency, as well as other response flavours, partially due to it being an AI tell.
 
-SOUNDS: “Certainly! Here is a revised version of your paragraph:” — found in the middle of a published document.
+SOUNDS: “☀️ Here’s a list of types of weather”
 
-INSTEAD: Nothing. A person writing to you simply starts.
+INSTEAD: “Weather types:”
 
-#### P3 · 3 down
-
-ANSWER _(fixed)_: GRANDIOSE
-
-CLUE: Adjective for the pompously overblown, as when a change to a form “will fundamentally reshape how we think about everything”
-
-WHAT: Stakes inflation: a bounded change given world-historical scale. It happens because promotional and thought-leadership writing dominates the training material, and in that genre nothing is ever merely useful. The diagnostic is a mismatch between the size of the claim and the size of the subject, which you can spot without knowing anything about the subject. False precision inflates the same way: “the issue is twofold”, asserted whether or not there turn out to be exactly two issues.
-
-SOUNDS: “This update to the staff handbook represents a paradigm shift in how we understand work itself.”
-
-INSTEAD: “You can now book leave without your manager countersigning it.”
-
-#### P3 · 4 down
-
-ANSWER _(fixed)_: EMOJI
-
-CLUE: Small coloured picture-character — a tick, a rocket, a lightbulb — used as a list marker where an ordinary dot would do
-
-WHAT: Chatbots decorate lists by default, and the pictures carry no information: a rocket beside “next steps” tells you nothing that the words do not. Two things make this spottable at a distance. The pictures are always from the same small set, and they appear in contexts where no human would bother, such as an internal spreadsheet or a note to one colleague. Unicode decoration generally works this way, and is useful precisely because it needs no judgement: arrows used as punctuation to mean “leads to” in a document containing no diagrams, curly quotation marks and apostrophes where a keyboard would have produced straight ones, and the multiplication sign standing in for the letter x.
-
-SOUNDS: A three-item plan for the church roof appeal in which each line begins with a rocket, a lightbulb and a tick respectively.
-
-INSTEAD: “Three things: get two quotes, ask the diocese about grants, tell the PCC on the 9th.”
-
-#### P3 · 5 down
-
-ANSWER _(fixed)_: ORPHAN
-
-CLUE: Word for a child with no parents; here, a demonstrative left with nothing to refer to, as in “this highlights the importance …”
-
-WHAT: The pronoun points backwards at a noun that was never supplied, so the sentence sounds like analysis while making no identifiable claim. It happens because the phrase is a high-probability continuation of almost any paragraph, and it is common in student essays and consultancy decks for the same reason: it fills the slot where a thought belongs. Ask “this what?” and there is frequently no answer in the document.
-
-SOUNDS: “This underscores the need for a more holistic approach going forward.”
-
-INSTEAD: “So the two teams should share one waiting list, which is what the March pilot did.”
-
-#### P3 · 6 down
-
-ANSWER _(fixed)_: DILUTION
-
-CLUE: Watering-down; the composition habit of stating a single point six times in slightly varied wording
-
-WHAT: Length is easy and substance is not, so a model asked for 800 words on a subject that needs 200 will restate rather than research. Each restatement is slightly rephrased, which stops it looking like a copy-paste error and makes the page feel thorough while teaching you nothing new after the second paragraph. This is why so much AI-written text feels tiring rather than wrong. Its structural cousin repeats at every scale: an intro announcing what the section will say, the section, then a summary of what it just said, nested inside a document doing the same. Watch too for “in other words”, which paraphrases a sentence that was clear the first time.
-
-SOUNDS: Four paragraphs which between them establish that communication is important to teams.
-
-INSTEAD: “The handover notes were missing twice last month, so both wards now use the same template.”
-
-#### P3 · 8 down
-
-ANSWER _(fixed)_: DESPITE
-
-CLUE: Preposition meaning in spite of, the hinge of a stock manoeuvre: praise, then challenges, then a swerve into vague optimism
-
-WHAT: You can predict the paragraph from its first three words, which is the whole trouble. The structure acknowledges difficulty in the abstract so that the optimism afterwards looks earned, and nobody has to name a risk, a cost or a person responsible. It is the standard closing paragraph of essays, prospectuses and council consultations alike.
-
-SOUNDS: “Despite its challenges, the scheme holds enormous promise for the community going forward.”
-
-INSTEAD: “The scheme needs £40,000 we do not have, and the council will decide in November.”
-
-#### P3 · 11 down
-
-ANSWER _(fixed)_: DEADMETAPHOR
-
-CLUE: Two words for an image kept running long after it stopped illuminating anything — a whole memo staged in “the engine room of the business”
-
-WHAT: A model that opens with a comparison will often keep extending it, because continuing an established image is the statistically comfortable thing to do. So the journey acquires a compass, then headwinds, then a map, and by the fourth paragraph the reader is tracking the vehicle rather than the argument. The slippage is where it becomes funny: the image starts making claims the subject cannot support.
-
-SOUNDS: “The garden of our culture needs watering, so we must trim the deadwood in HR before the harvest of Q4.”
-
-INSTEAD: “Two roles in HR are going, and we are keeping the third until the audit finishes.”
-
-#### P3 · 12 down
-
-ANSWER _(fixed)_: PENNYDROPPED
-
-CLUE: Two words, the British idiom for a moment of belated understanding, staged in prose to dramatise having been told the answer
-
-WHAT: Performed realisation, in essay form rather than in a chat window. It manufactures a narrative arc — confusion, then insight — around information that was simply looked up. Its relatives include “then I realised”, “something shifted”, “everything changed” and “that’s when it hit me”, and they cluster in the middle of first-person business posts. “Now I see” is the chat-window version, produced the instant you point out something the AI had wrong.
-
-SOUNDS: “Then the penny dropped. Something shifted. I was measuring the wrong thing entirely.”
-
-INSTEAD: “In week three I noticed we were counting repeat visitors twice.”
-
-#### P3 · 13 down
-
-ANSWER _(fixed)_: INSUMMARY
-
-CLUE: Two words, the signpost planted in front of a paragraph that repeats what you have just finished reading
-
-WHAT: A signposted conclusion is not a fault in itself — essays have taught it for a century — but AI attaches one to everything, including three-paragraph emails that plainly do not need a wrap-up. Its siblings are “in conclusion”, “to sum up” and “overall”. The reliable signal is proportion: a closing summary on a document you can read in forty seconds. The closing flourish is the same instinct pointed forwards rather than back — “so the next time you …”, “remember”, “the choice is yours” — as is the verdict that announces a conclusion the evidence has not reached, and the “at its core” that promises the essential point just before an obvious one.
-
-SOUNDS: “In summary, the meeting has moved to Thursday.” — the fourth sentence of a four-sentence message.
-
-INSTEAD: “Meeting’s moved to Thursday, same room.”
-
-#### P3 · 15 down
-
-ANSWER _(fixed)_: ANALOGYSTACK
-
-CLUE: Two words for a rapid pile-up of historical or corporate comparisons used to borrow authority
-
-WHAT: The move is to line up famous examples so their weight transfers to the writer’s claim, usually in short parallel sentences: Apple didn’t build this, Facebook didn’t build that, Kodak missed the other. No mechanism is described, and the comparisons are chosen for fame rather than fit. Human experts making the same point tend to give one comparison and then explain where it breaks down.
-
-SOUNDS: “Blockbuster ignored streaming. Kodak ignored digital. Nokia ignored touchscreens. Your business is ignoring this.”
-
-INSTEAD: “Two of our three competitors now take online bookings, and our phone bookings fell 12% this year.”
-
-#### P3 · 16 down
-
-ANSWER _(fixed)_: VULNERABILITY
-
-CLUE: Openness about one’s own weakness, staged rather than felt, as a way of sounding human
-
-WHAT: A confession is a cheap way to buy trust, and models learned that the shape of a confession earns approval whether or not there is anything to confess. What comes out is admission-flavoured: an opinion presented as an embarrassing secret, or a flaw so flattering it functions as a boast. Genuine self-disclosure carries a fact you could check — a date, an amount lost, a person who was annoyed. Announced frankness is the same move in one clause — “let me be honest”, “the truth is simple”, “I'll be candid” — all of which spend words claiming a quality instead of demonstrating one.
-
-SOUNDS: “And yes, I’ll admit it: I’m openly, hopelessly in love with the platform model.”
-
-INSTEAD: “I got this wrong in the March forecast — I assumed two vans would be enough, and we hired a third in May.”
-
-#### P3 · 17 down
-
-ANSWER _(fixed)_: LETSBREAKTHISDOWN
-
-CLUE: Four words deployed before explaining a two-line fix with five bullet points and a mini-lecture
-
-WHAT: Pedagogical hand-holding, applied regardless of who is reading. It treats every reader as a beginner because the model has no idea who you are, and the safest register is the patient teacher. The swimming and unpacking variants are the same gesture: “let's dive in”, “let's unpack this”, “let's explore”.
-
-SOUNDS: “Let's break this down: 1. What's happening. 2. Why it's happening. 3. How to fix it. 4. Best practices going forward.”
-
-INSTEAD: “Your quotes are the wrong kind. Retype them and it'll run.”
-
-#### P3 · 19 down
-
-ANSWER _(fixed)_: ENGAGEMENTBAIT
-
-CLUE: Two words for the scripted crowd-work of social media: “unpopular opinion:”, “tag someone who needs to see this”
-
-WHAT: These are instructions to the audience disguised as sincerity, and they exist because platforms reward replies and reshares. AI reproduces them because the training material is full of posts that succeeded, and this is what succeeding looked like. The oddest variant is “not sure who needs to hear this, but …”, which claims humility while addressing everyone alive.
-
-SOUNDS: “Unpopular opinion: not sure who needs to hear this, but rest is productive. I’ll say it again.”
-
-INSTEAD: “I took Friday off and finished the report on Monday in two hours.”
-
-#### P3 · 20 down
-
-ANSWER _(fixed)_: SYCOPHANCY
-
-CLUE: Old word for flattery and fawning. The technical term researchers now use for 'Great question!'
-
-WHAT: The umbrella term for the whole eager-assistant register: 'Great question!', 'That's a really insightful observation', 'I'd be happy to help!', 'I'm here to help!', 'What a thoughtful thing to notice'. It reads like a call-centre script because it was optimised the same way — for approval rather than accuracy.
-
-SOUNDS: “That's a fantastic question, and it really gets to the heart of the issue!”
-
-INSTEAD: A person answers the question. Nobody grades it first.
-
-#### P3 · 21 down
-
-ANSWER _(fixed)_: INVENTEDCONCEPT
-
-CLUE: Two words for the trick of coining an official-sounding label — “the supervision paradox”, “workload creep” — for something never actually defined
-
-WHAT: A named thing feels like a discovered thing. Models produce these labels because the pattern is everywhere in business writing, and the label is far cheaper than the research it implies. The tell is that the coinage is used once, capitalised or not, and never given criteria, a measurement or a counter-example — real concepts come with all three eventually.
-
-SOUNDS: “What we’re seeing is the acceleration trap: an innovation inversion at the heart of modern teams.”
-
-INSTEAD: “We shipped four features last quarter and fixed twice as many bugs as usual afterwards.”
-
-#### P3 · 22 down
+#### P3 · 2 down
 
 ANSWER _(fixed)_: SLOP
 
-CLUE: Pig-trough word, now the internet's name for cheap AI-made content produced in bulk
+CLUE: A mix of low quality wet food waste fed to pigs, now a common name for cheap AI-made content produced in bulk
 
-WHAT: Worth knowing because it names the real problem accurately. The complaint is not that AI was involved — it is that nobody read the result afterwards. A carefully edited AI draft is not slop. An unread one posted at volume is.
+WHAT: Massive amounts of content made with generative AI including writing, images, and videos can be produced very rapidly and cheaply. This can flood social media and other channels, and like spam, can lack real meaning and legitimacy. It’s not simply “content made with AI” although some are quicker than others to categorise content as slop. The word became widespread enough that Merriam-Webster selected it as its 2025 Word of the Year, defining the term as low-quality AI-produced digital content.
 
-SOUNDS: Forty near-identical articles about the same product, all published the same morning.
+SOUNDS: “When it comes to bread, making toast is a very popular method of cooking. Toasting bread is a process that involves heat. Many people wonder how to make toast in the morning. To make toast, you must first acquire a piece of bread. Bread comes in many shapes and sizes, such as white bread, wheat bread, and sourdough bread. To maximise your toast potential, utilisation of a toaster device is highly recommended.”
 
-INSTEAD: One article, by someone who checked.
+INSTEAD: …
+
+#### P3 · 4 down
+
+ANSWER _(fixed)_: SYCOPHANCY
+
+CLUE: Being overly flattering or fawning
+
+WHAT: There’s good evidence that major AI assistants over-agree with users. Like a yes-man, this form of sycophancy endorses a user’s stated belief or preference more readily than the evidence warrants. It creates a dangerous feedback loop that can validate, escalate, and solidify delusional thinking in a phenomenon increasingly referred to as AI psychosis.
+
+SOUNDS: “You’re absolutely right. Trusting yourself and leaving a situation that no longer serves you is a brave, empowering decision.”
+
+INSTEAD: “Leaving may be the right choice, but it depends on your finances, safety, and whether the job situation is harming you. What would you need in place to make that decision safely?”
+
+#### P3 · 6 down
+
+ANSWER _(fixed)_: VALIDATION
+
+CLUE: Naming and affirming a user’s emotion to appear empathetic
+
+WHAT: Acknowledging emotion can make advice feel less abrupt and can encourage people to keep talking. There is unusually strong data for this pattern. In one analysis, validation appeared in 89.1 to 96.0 percent of several models’ emotional-support replies. Models can tend toward over-validating (doing it too early, too often, or without enough evidence).
+
+SOUNDS: “That sounds incredibly frustrating.” or “That is a real achievement.”
+
+INSTEAD: Asking for more information.
+
+#### P3 · 8 down
+
+ANSWER _(fixed)_: COMMONSENSE
+
+CLUE: Everyday reasoning that keeps a model from suggesting the absurd
+
+WHAT: The everyday background knowledge people use to navigate the world. Cups are used upright, and a door must be opened before someone walks through it. Models lack this type of intelligence because they rely on statistical patterns rather than stored knowledge gained by living a physical existence in a 3D world. They rely strictly on the literal framing of a user’s prompt instead. In tests, humans typically score around 95% in everyday physical reasoning, while models scored 77% to as low as 40% on object-attribute reasoning.
+
+SOUNDS: When a user shows an inverted cup and describes the base as a “sealed top” and the opening as an “open bottom,” the AI accepts those abstract definitions at face value, instead of using basic spatial reasoning to realise the object is simply upside down.
+
+INSTEAD: If you want to drink out of the cup, turn it right side up.
+
+#### P3 · 11 down
+
+ANSWER _(fixed)_: RIGHT
+
+CLUE: Being correct, as in YOU’RE _______. And a particular tic of Claude Code
+
+WHAT: Used well, it is exactly what a good assistant should do: acknowledge the correction, state what was wrong, and repair it. However, users have reported that Claude Code uses this phrase on a sizeable fraction of responses, including cases where there was no factual claim to judge. That is evidence of an observed product-specific tendency along with “Now I see”.
+
+SOUNDS: “You’re right — I gave the wrong year. It was 1997.”
+
+INSTEAD: “Noted. It was 1997.”
 

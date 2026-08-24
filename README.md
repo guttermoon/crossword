@@ -127,7 +127,7 @@ Two data files, and nothing else needs touching.
           sounds: '“This report showcases our commitment to sustainability.”',
           human:  '“This report shows what we did about our emissions.”',
           // kept in the file, not shown on the page — the sources are listed
-          // together under "Where the numbers come from"
+          // together under "Into the Rabbit Hole: What the Data Shows"
           data:   'A number, or a test the reader can apply.',
           source: 'Kobak et al., Science Advances',
           url:    'https://…',

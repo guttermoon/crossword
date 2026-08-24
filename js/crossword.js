@@ -469,7 +469,7 @@
     // Two fields are deliberately not rendered: note.data, the trailing
     // paragraph of numbers and tests, and note.source/note.url, the citation.
     // Both are still in data/puzzles.js, and every study cited there is listed
-    // under "Where the numbers come from" at the foot of the page.
+    // under "Into the Rabbit Hole: What the Data Shows" at the foot of the page.
 
     return panel;
   };

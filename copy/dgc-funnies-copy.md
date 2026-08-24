@@ -36,7 +36,7 @@ KICKER: Saturday Edition &middot; Three puzzles &middot; 38 clues
 
 FOOTER LEFT: Saturday Edition
 
-FOOTER RIGHT: Dead Good Club Funnies
+FOOTER RIGHT: The Dead Good Club Funnies
 
 ### The article, left column
 

@@ -17,7 +17,7 @@ Three things to know before you start:
 
 Each clue also carries two things this page does not show: a paragraph of
 research (`data`) and a citation (`source`/`url`). They are still in the file
-and the sources are all listed under "Where the numbers come from". Say the word
+and the sources are all listed under "Into the Rabbit Hole: What the Data Shows". Say the word
 and I will add them to this doc too.
 
 ## Front matter
@@ -36,7 +36,7 @@ KICKER: Saturday Edition &middot; Three puzzles &middot; 38 clues
 
 FOOTER LEFT: Saturday Edition
 
-FOOTER RIGHT: Three puzzles &middot; 76 clues
+FOOTER RIGHT: Dead Good Club Funnies
 
 ### The article, left column
 
@@ -244,7 +244,7 @@ EXAMPLE 37: Because I have a feeling this one is going to be divisive.
 
 ### The source list at the foot
 
-HEADING: Where the numbers come from
+HEADING: Into the Rabbit Hole: What the Data Shows
 
 SOURCE 1: <a href="https://www.science.org/doi/10.1126/sciadv.adt3813">Kobak et al., <em>Science Advances</em></a> &mdash; 15.1m PubMed abstracts; &ldquo;delves&rdquo; at 28&times; its expected rate; at least 13.5% of 2024 abstracts LLM-processed.
 
@@ -275,8 +275,6 @@ SOURCE 13: <a href="https://www.bloomberry.ai/research/ai-sentence-patterns">Blo
 SOURCE 14: <a href="https://www.reddit.com/r/ClaudeAI/comments/1uojyml/loadbearing_25_times/">&ldquo;Load-Bearing. 25 Times.&rdquo;</a> and <a href="https://jesseduffield.com/AI-isms-go-deeper/">Jesse Duffield on AI-isms</a> &mdash; the load-bearing meme, and why AI hands agency to inert things.
 
 SOURCE 15: <a href="https://www.pangram.com/blog/all-about-false-positives-in-ai-detectors">Pangram on false positives</a> &mdash; Turnitin's published 0.51% error rate, and what that means at scale.
-
-COLOPHON: Set by hand, footnoted by research. Print it, argue with it, send it to your mother.
 
 ## The words the interface uses
 

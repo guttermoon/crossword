@@ -39,6 +39,42 @@
     if (global.EasyEyes) head.appendChild(global.EasyEyes.build());
 
     head.appendChild(rich('p', 'masthead__sub', g.standfirst));
+
+    // A short way past the article for a reader who came for the crosswords.
+    // A link rather than a button: it goes to a place on the page, so it
+    // belongs in the address bar and on the right-click menu the way any other
+    // destination does, and it works before any of this script has run.
+    var jump = el('a', 'jump');
+    jump.href = '#puzzles';
+    jump.appendChild(el('span', 'jump__label', 'Jump to the puzzles'));
+    var chevron = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    chevron.setAttribute('viewBox', '0 0 24 24');
+    chevron.setAttribute('aria-hidden', 'true');
+    chevron.setAttribute('focusable', 'false');
+    chevron.setAttribute('class', 'icon jump__arrow');
+    chevron.innerHTML = '<path d="M6 9l6 6 6-6"/>';
+    jump.appendChild(chevron);
+
+    // The href is the fallback and it is always valid. What it cannot allow for
+    // is that the strip of puzzle cards shrinks to a single line as it pins
+    // itself to the top of the window — the label goes, the cards become chips.
+    // That happens while the browser is still scrolling, so everything below
+    // rises by however much the strip lost and the jump overshoots: measured at
+    // 95px on a wide screen and 240px on a phone, enough to bury the first
+    // puzzle's title behind the strip. Landing on the strip instead is stable,
+    // because its own top is where it was whether it is collapsed or not.
+    jump.addEventListener('click', function (event) {
+      var strip = document.querySelector('.picker');
+      if (!strip || event.defaultPrevented) return;
+      event.preventDefault();
+      strip.scrollIntoView({ block: 'start' });
+      if (global.history && global.history.replaceState) {
+        global.history.replaceState(null, '', '#puzzles');
+      }
+    });
+
+    head.appendChild(jump);
+
     return head;
   }
 

@@ -107,6 +107,7 @@ body {
 /* Everything that used to be tan is now the same paper, one shade lighter. */
 .stamp:hover,
 .clue__btn:hover,
+.jump:hover,
 .clue.is-active {
   background-color: var(--newsprint-light);
 }
@@ -123,7 +124,8 @@ body {
 .picker__card.is-current::after,
 .stamp:hover::after,
 .stamp:active::after,
-.clue__btn:hover::after {
+.clue__btn:hover::after,
+.jump:hover::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -140,7 +142,8 @@ body {
 /* Small surfaces take less of it — at full strength a button goes muddy. */
 .stamp:hover::after,
 .stamp:active::after,
-.clue__btn:hover::after {
+.clue__btn:hover::after,
+.jump:hover::after {
   opacity: var(--scan-strength-soft);
 }
 
@@ -156,7 +159,9 @@ body {
 .tells > *,
 .picker__card > *,
 .stamp__label,
-.clue__btn-label {
+.clue__btn-label,
+.jump__label,
+.jump__arrow {
   position: relative;
   z-index: 1;
 }
@@ -252,6 +257,42 @@ body {
 }
 
 .masthead__sub em { color: var(--ink); }
+
+/* The way past the article. Built like the toolbar's stamps, one size down,
+   because it does the same kind of job and should not read as a new species of
+   control. Centred by the masthead's own text-align, being inline. */
+.jump {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 16px;
+  padding: 4px 12px;
+  font-family: var(--font-cond);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  border: var(--rule-thick);
+  border-radius: var(--radius-btn);
+}
+
+.jump:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+/* The chevron is a hair below the cap height of the label beside it. */
+.jump__arrow {
+  width: 12px;
+  height: 12px;
+  margin-top: 1px;
+}
+
+/* Landing at the top of the puzzles would put the first one under the strip
+   that pins itself there, so the jump stops short of it — the same allowance
+   the picker's own cards make. */
+#puzzles { scroll-margin-top: 70px; }
 
 .skip {
   position: absolute;
@@ -1198,7 +1239,7 @@ html.easy-eyes .notesheet li {
   .clue, .clue.is-active, .clue.is-crossing { background-color: #fff; }
   .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel,
   .progress, .puzzle__toggle, .video__frame,
-  .easy-eyes-switch { display: none !important; }
+  .easy-eyes-switch, .jump { display: none !important; }
   /* The film cannot play on paper, so it prints as its address. */
   .video__url {
     display: block;

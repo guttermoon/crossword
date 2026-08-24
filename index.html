@@ -29,9 +29,11 @@
 <a class="skip" href="#puzzles">Skip to the puzzles</a>
 
 <main class="sheet">
-  <a class="dgc" href="https://deadgoodclub.com/">
+  <!-- rel goes with target: without noopener the page being opened can reach
+       back through window.opener and navigate this one. -->
+  <a class="dgc" href="https://deadgoodclub.com/" target="_blank" rel="noopener">
     <img class="dgc__mark" src="img/dgc-logo.webp" width="900" height="220"
-         alt="The Dead Good Club">
+         alt="The Dead Good Club (opens in a new tab)">
   </a>
 
   <!-- The masthead and intro panels are inserted here from data/gazette.js. -->

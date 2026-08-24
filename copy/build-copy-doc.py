@@ -47,7 +47,7 @@ w("_Not shown on the page, but used for the browser tab and the footer:_\n\n")
 w("BRAND: %s\n\n" % gaz['brand'])
 w("KICKER: %s\n\n" % gaz['kicker'])
 w("FOOTER LEFT: Saturday Edition\n\n")
-w("FOOTER RIGHT: Dead Good Club Funnies\n\n")
+w("FOOTER RIGHT: The Dead Good Club Funnies\n\n")
 
 w("### The article, left column\n\n")
 for i, block in enumerate(gaz['brief']['blocks'], 1):

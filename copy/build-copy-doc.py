@@ -33,7 +33,7 @@ Three things to know before you start:
 
 Each clue also carries two things this page does not show: a paragraph of
 research (`data`) and a citation (`source`/`url`). They are still in the file
-and the sources are all listed under "Where the numbers come from". Say the word
+and the sources are all listed under "Into the Rabbit Hole: What the Data Shows". Say the word
 and I will add them to this doc too.
 
 """)
@@ -47,7 +47,7 @@ w("_Not shown on the page, but used for the browser tab and the footer:_\n\n")
 w("BRAND: %s\n\n" % gaz['brand'])
 w("KICKER: %s\n\n" % gaz['kicker'])
 w("FOOTER LEFT: Saturday Edition\n\n")
-w("FOOTER RIGHT: Three puzzles &middot; 76 clues\n\n")
+w("FOOTER RIGHT: The Dead Good Club Funnies\n\n")
 
 w("### The article, left column\n\n")
 for i, block in enumerate(gaz['brief']['blocks'], 1):
@@ -82,7 +82,9 @@ w("### The source list at the foot\n\n")
 w("HEADING: %s\n\n" % gaz['sources']['heading'])
 for i, item in enumerate(gaz['sources']['items'], 1):
     w("SOURCE %d: %s\n\n" % (i, item))
-w("COLOPHON: %s\n\n" % gaz['sources']['colophon'])
+# The line under the source list is optional, and there is not one at present.
+if gaz['sources'].get('colophon'):
+    w("COLOPHON: %s\n\n" % gaz['sources']['colophon'])
 
 # ------------------------------------------------------------------- interface
 w("""## The words the interface uses

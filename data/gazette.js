@@ -5,7 +5,7 @@
  */
 window.GAZETTE = {
   "brand": "The Dead Good Club Funnies",
-  "kicker": "Saturday Edition &middot; Three puzzles &middot; 52 clues",
+  "kicker": "Saturday Edition &middot; Three puzzles &middot; 38 clues",
   "title": "How to puzzle out AI writing",
   "titleLines": [
     "How to puzzle out",
@@ -217,7 +217,7 @@ window.GAZETTE = {
     ]
   },
   "sources": {
-    "heading": "Where the numbers come from",
+    "heading": "Into the Rabbit Hole: What the Data Shows",
     "items": [
       "<a href=\"https://www.science.org/doi/10.1126/sciadv.adt3813\">Kobak et al., <em>Science Advances</em></a> &mdash; 15.1m PubMed abstracts; &ldquo;delves&rdquo; at 28&times; its expected rate; at least 13.5% of 2024 abstracts LLM-processed.",
       "<a href=\"https://arxiv.org/html/2412.11385v1\">Juzek &amp; Ward, Florida State</a> &mdash; a 6,697% rise in &ldquo;delves&rdquo; 2020&ndash;2024, and the entropy experiment showing human raters trained the tic in.",
@@ -234,7 +234,6 @@ window.GAZETTE = {
       "<a href=\"https://www.bloomberry.ai/research/ai-sentence-patterns\">Bloomberry's twelve cadence patterns</a> and <a href=\"https://matthewvollmer.substack.com/p/i-asked-the-machine-to-tell-on-itself\">Vollmer's field guide</a> &mdash; the named shapes and the thirty-second check.",
       "<a href=\"https://www.reddit.com/r/ClaudeAI/comments/1uojyml/loadbearing_25_times/\">&ldquo;Load-Bearing. 25 Times.&rdquo;</a> and <a href=\"https://jesseduffield.com/AI-isms-go-deeper/\">Jesse Duffield on AI-isms</a> &mdash; the load-bearing meme, and why AI hands agency to inert things.",
       "<a href=\"https://www.pangram.com/blog/all-about-false-positives-in-ai-detectors\">Pangram on false positives</a> &mdash; Turnitin's published 0.51% error rate, and what that means at scale."
-    ],
-    "colophon": "Set by hand, footnoted by research. Print it, argue with it, send it to your mother."
+    ]
   }
 };

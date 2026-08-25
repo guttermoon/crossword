@@ -134,21 +134,32 @@ add('<section class="leaf"><h2>' + esc(c.heading) + '</h2><p>' + c.intro + '</p>
 });
 add('</section>');
 
-/* One puzzle per section: the grid, then the clues. */
+/* Each puzzle is a spread: the grid on the left-hand page and its clues on the
+ * right-hand one, so you can read a clue and fill it in without turning
+ * anything. The grid page is forced onto a verso, which is what makes the pair
+ * face each other once the booklet is folded; the blurb moves across to the
+ * clue page, because the grid needs the height more than the prose does. */
 PUZZLES.forEach((puzzle) => {
-  add('<section class="leaf puzzle">' +
+  add('<section class="leaf gridPage">' +
     '<h2><span class="no">' + esc(puzzle.issue) + '</span> ' + esc(puzzle.title) + '</h2>' +
-    '<p class="blurb">' + puzzle.blurb + '</p>' +
     gridHtml(puzzle.grid) +
     '<p class="heroes"><span>Famous ones in here</span> ' +
       esc((puzzle.heroes || []).join(', ').toLowerCase()) + '</p>' +
-    clueList(puzzle, 'across') + clueList(puzzle, 'down') +
     '</section>');
+
+  add('<section class="leaf cluePage">' +
+    '<h3 class="cluesFor">' + esc(puzzle.issue) + ' &mdash; ' + esc(puzzle.title) + '</h3>' +
+    '<p class="blurb">' + puzzle.blurb + '</p>' +
+    '<div class="twocol">' +
+    clueList(puzzle, 'across') + clueList(puzzle, 'down') +
+    '</div></section>');
 });
 
 /* The answers, and the footnote each one carries. */
 add('<section class="leaf"><h2>The answers, and why</h2>' +
-  '<p>Every entry, with the note the website shows once you solve it.</p></section>');
+  '<p>Every entry, with the note the website shows once you solve it &mdash; ' +
+  'what the habit is, what it sounds like, and what someone would have ' +
+  'written instead.</p></section>');
 PUZZLES.forEach((puzzle) => {
   add('<section class="leaf"><h3 class="ansHead">' + esc(puzzle.issue) + ' &mdash; ' + esc(puzzle.title) + '</h3>');
   answersFor(puzzle).forEach(({ num, direction, entry }) => {

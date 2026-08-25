@@ -147,10 +147,14 @@ h3 {
 .pts li { margin-bottom: 2pt; }
 .pts ul { margin: 2pt 0; padding-left: 12pt; }
 
+/* The AI specimen runs to forty paragraphs, so it will always break over a
+   page and no rule about keeping it together can change that. A box would draw
+   its bottom edge wherever the break fell and open again on the next page,
+   which reads as a mistake. A rule down the side simply carries on. */
 .specimen {
   margin: 0 0 8pt;
-  padding: 6pt 8pt;
-  border: 0.7pt solid var(--ink);
+  padding: 0 0 0 8pt;
+  border-left: 2pt solid var(--ink);
   font-size: 7.8pt;
 }
 
@@ -159,7 +163,33 @@ h3 {
 
 /* ------------------------------------------------------------------- grids */
 
-.blurb { font-size: 8pt; }
+/* The grid must land on an even page so its clues face it. CSS has
+   break-before: left for that and Chromium ignores it, so the parity is
+   measured and corrected in scripts/make-booklet.js instead. */
+.gridPage { break-before: page; }
+
+.gridPage h2 { margin-bottom: 6pt; }
+
+.cluesFor {
+  margin: 0 0 5pt;
+  padding-bottom: 4pt;
+  border-bottom: 3pt double var(--ink);
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 10pt;
+  text-transform: uppercase;
+}
+
+/* Clues are short lines, so two narrow columns fit far more of them on the page
+   than one wide one — and the whole point is that they all land opposite the
+   grid rather than running onto a page you have to turn to. */
+.twocol {
+  column-count: 2;
+  column-gap: 7mm;
+  column-rule: 0.5pt solid var(--ink);
+}
+
+.blurb { font-size: 7.4pt; margin-bottom: 7pt; }
 
 .grid {
   display: grid;

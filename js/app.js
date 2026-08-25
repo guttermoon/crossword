@@ -58,7 +58,16 @@
 
     var jump = el('a', 'jump');
     jump.href = '#puzzles';
+    // Named in full whichever label is showing, so what a screen reader hears
+    // does not shrink with the button. Both spellings of the name contain the
+    // short one, so saying "puzzles" at a voice-control still presses it.
+    jump.setAttribute('aria-label', 'Jump to the puzzles');
     jump.appendChild(el('span', 'jump__label', 'Jump to the puzzles'));
+    // What the button is called once it is pinned to the top of a phone. Two
+    // full labels will not go across 375px at any size worth reading, and the
+    // strip has already been introduced by then — the same trade the picker
+    // makes when it pins and drops its own label.
+    jump.appendChild(el('span', 'jump__short', 'Puzzles'));
     jump.appendChild(marker('<path d="M6 9l6 6 6-6"/>'));
 
     // The href is the fallback and it is always valid. What it cannot allow for
@@ -93,7 +102,9 @@
     booklet.target = '_blank';
     booklet.rel = 'noopener';
     booklet.setAttribute('type', 'application/pdf');
+    booklet.setAttribute('aria-label', 'Print the booklet (opens in a new tab)');
     booklet.appendChild(el('span', 'jump__label', 'Print the booklet'));
+    booklet.appendChild(el('span', 'jump__short', 'Booklet'));
     // An arrow leaving a box, rather than the chevron beside it: two buttons the
     // same size and shape need something other than their labels to tell them
     // apart, and this one says the link goes somewhere else.
@@ -101,9 +112,26 @@
       '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/>'));
     acts.appendChild(booklet);
 
-    head.appendChild(acts);
+    /* The strip is a sibling of the masthead rather than the last thing inside
+     * it, so that on a phone it can pin itself to the top of the window and
+     * follow you down the article. `position: sticky` only sticks within the
+     * box of its parent, and the masthead's box ends an inch below these
+     * buttons — inside it the strip would come unstuck almost as soon as it
+     * caught. Out here its parent is the sheet, which is the whole page.
+     *
+     * The gap above it and the rule below it come out too, as elements of their
+     * own: the gap because it doubles as the mark for where the strip belongs
+     * (a strip pinned to the top cannot be asked where it would otherwise be),
+     * and the rule because it closes the masthead and so has to stay behind
+     * when the strip leaves. Together they hold exactly the space the strip's
+     * old margin and the masthead's old padding and border held. */
+    var block = document.createDocumentFragment();
+    block.appendChild(head);
+    block.appendChild(el('div', 'masthead__gap'));
+    block.appendChild(acts);
+    block.appendChild(el('div', 'masthead__end'));
 
-    return head;
+    return block;
   }
 
   /* A YouTube film, without YouTube on the page until it is asked for. The
@@ -267,23 +295,39 @@
    * never intersecting, so never reported. You landed on puzzle 3 with the full
    * strip sitting across the page. Reading the position once a frame while
    * scrolling is one rect on one element and cannot miss a jump. */
-  function stickWhenPassed(nav) {
+  function stickWhenPassed(nav, acts) {
     var sentinel = el('div', 'picker__sentinel');
     nav.parentNode.insertBefore(sentinel, nav);
+
+    // The gap above the buttons is an element, so it can say where they belong
+    // once they are pinned somewhere else. Its bottom edge is their top edge.
+    var gap = acts && acts.previousElementSibling;
 
     var waiting = false;
 
     function measure() {
       waiting = false;
-      nav.classList.toggle('is-stuck', sentinel.getBoundingClientRect().top < 0);
+      var pinned = sentinel.getBoundingClientRect().top < 0;
+      nav.classList.toggle('is-stuck', pinned);
       // What the pinned strip actually costs, so the toolbar under it can sit
       // flush. Guessing at it left a sliver of the page showing through between
       // the two, and the guess was wrong by a different amount on each screen.
-      if (nav.classList.contains('is-stuck')) {
+      if (pinned) {
         // Rounded down, not up: a fraction of a pixel of overlap hides behind
         // the strip, where a fraction of a gap shows the page sliding through.
         document.documentElement.style.setProperty(
           '--pin-strip', Math.floor(nav.getBoundingClientRect().height) + 'px');
+      }
+
+      /* On a phone the two buttons hold the top of the window while you read —
+       * and stand down the moment the puzzle strip arrives to take it, since
+       * both want the same nought pixels and the strip is the better thing to
+       * have there once you are among the puzzles. Both decisions are made
+       * here, off one measurement, so there is no frame in which the two bars
+       * are both up. */
+      if (gap) {
+        acts.classList.toggle('is-stuck', gap.getBoundingClientRect().bottom <= 0);
+        acts.classList.toggle('is-handed-over', pinned);
       }
     }
 
@@ -626,7 +670,7 @@
 
     if (picker) {
       trackCurrent(picker);
-      stickWhenPassed(picker);
+      stickWhenPassed(picker, sheet.querySelector('.masthead__acts'));
     }
 
     // The grid pins below both bars, so it needs the second one's height too.

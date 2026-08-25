@@ -27,7 +27,7 @@
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
-const { PDFDocument, degrees } = require(
+const { PDFDocument, StandardFonts, rgb } = require(
   '/tmp/claude-0/-home-user-crossword/c3341319-e84c-5557-acec-a651ed84e61b/scratchpad/pdfwork/node_modules/pdf-lib');
 
 const ROOT = path.join(__dirname, '..');
@@ -112,8 +112,9 @@ const url = process.argv[2] || 'http://localhost:8010/print/booklet.html';
   fs.writeFileSync(PAGES_PDF, await print());
   await browser.close();
   if (problems.length) console.warn('page errors:', problems);
-  console.log('spread: ' + beforeCount + ' pages before the first grid' +
-    (shifted ? ', one blank inserted so it starts on an even page' : ', already even'));
+  console.log('spread: first grid on page ' + (beforeCount + (shifted ? 2 : 1)) +
+    ' of ' + beforeCount + ' preceding' +
+    (shifted ? ' plus one blank inserted to make it even' : ', which was already odd'));
   if (overflow.length) {
     console.warn('  !! a spread page overruns, so the pairing will slip:');
     overflow.forEach((o) => console.warn('     ' + o));
@@ -139,9 +140,36 @@ const url = process.argv[2] || 'http://localhost:8010/print/booklet.html';
   while (order.length < padded - 1) order.push(0);
   order.push(count);
 
+  /* Page numbers are stamped here rather than set in CSS, because Chromium
+   * does not support the @page margin boxes that would carry them — and here
+   * is where the page's number in the finished booklet is actually known.
+   *
+   * They sit on the outer edge, which alternates: an odd page falls on the
+   * right of an open booklet and an even one on the left. The cover, the back
+   * cover and the blanks go unnumbered, the way a book leaves them. */
+  const folio = await book.embedFont(StandardFonts.Helvetica);
+  const FOLIO_SIZE = 7.5;
+  const EDGE = 34;                                 // 12mm, the page's own margin
+
+  function number(sheet, position, slot) {
+    if (position === 1 || position === padded) return;
+    if (!order[position - 1]) return;
+    const label = String(position);
+    const w = folio.widthOfTextAtSize(label, FOLIO_SIZE);
+    const recto = position % 2 === 1;
+    sheet.drawText(label, {
+      x: recto ? (slot + 1) * halfW - EDGE - w : slot * halfW + EDGE,
+      y: EDGE - 8,
+      size: FOLIO_SIZE,
+      font: folio,
+      color: rgb(0.11, 0.09, 0.08),
+    });
+  }
+
   function side(pairs) {
     const sheet = book.addPage([A4_LONG, A4_SHORT]);
     pairs.forEach((position, slot) => {
+      number(sheet, position, slot);
       const num = order[position - 1] || 0;
       if (!num) return;                            // a padded blank
       const p = embedded[num - 1];

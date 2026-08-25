@@ -91,6 +91,42 @@ add('<section class="leaf cover">' +
   '<p class="issue">' + GAZETTE.kicker + '</p>' +
   '</section>');
 
+/* How to build the thing, inside the front cover — the first page anyone sees
+ * after the cover, and the first sheet out of the printer. */
+add('<section class="leaf howto">' +
+  '<h2>How to make this</h2>' +
+  '<p class="lead">Eight sheets of A4, folded once and stapled. Ten minutes, ' +
+  'and the only thing that catches people out is step two.</p>' +
+  '<ol class="steps">' +
+  '<li><b>Print all 16 sides</b> onto 8 sheets of A4, double-sided, at 100% ' +
+  'scale &mdash; not &ldquo;fit to page&rdquo;, which shrinks the squares.</li>' +
+  '<li><b>Flip on the short edge.</b> The sheets are landscape, so their short ' +
+  'edges are the left and right sides. Flip on the long edge instead and every ' +
+  'other page comes out upside down. If your printer offers &ldquo;booklet&rdquo; ' +
+  'or &ldquo;2-up&rdquo;, turn it off: the pages are already in the right order.</li>' +
+  '<li><b>Check the first sheet.</b> The cover should be on the right-hand ' +
+  'half, this page on the back of it. If it is not, the flip setting is wrong.</li>' +
+  '<li><b>Keep the sheets in order</b> and stack them face up, sheet one on top.</li>' +
+  '<li><b>Fold the whole stack in half</b> at once, along the middle. Crease it ' +
+  'with something flat.</li>' +
+  '<li><b>Staple twice along the fold</b>, about a third of the way in from ' +
+  'each end. A long-arm stapler reaches; an ordinary one will if you open it ' +
+  'flat and press on a rubber.</li>' +
+  '</ol>' +
+  '<div class="dia">' +
+    '<svg viewBox="0 0 210 148" aria-hidden="true">' +
+      '<rect x="1" y="1" width="208" height="146" fill="none" ' +
+        'stroke="currentColor" stroke-width="1.4"/>' +
+      '<line x1="105" y1="1" x2="105" y2="147" stroke="currentColor" ' +
+        'stroke-width="1" stroke-dasharray="5 4"/>' +
+      '<rect x="101" y="44" width="8" height="3" fill="currentColor"/>' +
+      '<rect x="101" y="101" width="8" height="3" fill="currentColor"/>' +
+    '</svg>' +
+    '<p>The fold runs down the middle of the landscape sheet. The two marks ' +
+    'are where the staples go.</p>' +
+  '</div>' +
+  '</section>');
+
 /* The article. */
 add('<section class="leaf"><h2>' + esc(GAZETTE.title) + '</h2>');
 (GAZETTE.brief.blocks || []).forEach((block) => {
@@ -180,8 +216,8 @@ add('<section class="leaf"><h2>' + esc(GAZETTE.sources.heading) + '</h2><ol clas
 add('<section class="leaf back">' +
   '<img class="mark" src="../img/dgc-logo.webp" alt="">' +
   '<p class="url">crosswords.deadgoodclub.com</p>' +
-  '<p class="fold">Print double-sided, flip on the <b>short edge</b>. ' +
-  'Fold the stack in half and staple twice along the fold.</p>' +
+  '<p class="fold">Play them on screen, where every clue carries its ' +
+  'footnote. Assembly instructions are inside the front cover.</p>' +
   '</section>');
 
 /* ------------------------------------------------------------------- write */

@@ -101,3 +101,37 @@ h1 {
   border-top: 1pt solid var(--ink);
   color: var(--red);
 }
+
+/* ---------------------------------------------------- the back of the sheet */
+
+.check { break-before: page; text-align: center; }
+
+.check h2 {
+  margin: 0 0 14pt;
+  padding-bottom: 7pt;
+  border-bottom: 4pt double var(--ink);
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 20pt;
+  text-transform: uppercase;
+}
+
+.verdict {
+  max-width: 165mm;
+  margin: 0 auto 10pt;
+  font-family: var(--font-cond);
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+.verdict.yes b { color: var(--ink); }
+.verdict.no { color: var(--red); }
+.verdict.no b { color: var(--red); }
+
+.check .foot {
+  max-width: 150mm;
+  margin: 8pt auto 0;
+  padding-top: 6pt;
+  border-top: 1pt solid var(--ink);
+  font-size: 8.5pt;
+}

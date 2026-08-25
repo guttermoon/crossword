@@ -190,7 +190,7 @@ const html = `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<title>Dead Good Club Crossword Puzzles</title>
+<title>The Dead Good Club Crossword Puzzles</title>
 <link rel="stylesheet" href="../css/fonts.css">
 <link rel="stylesheet" href="booklet.css">
 </head>
@@ -213,7 +213,7 @@ const instructions = `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<title>Dead Good Club Crossword Puzzles — how to print</title>
+<title>The Dead Good Club Crossword Puzzles — how to print</title>
 <link rel="stylesheet" href="../css/fonts.css">
 <link rel="stylesheet" href="instructions.css">
 </head>
@@ -258,6 +258,23 @@ const instructions = `<!DOCTYPE html>
         and every answer with its footnote at the back.</p>
     </div>
   </div>
+</div>
+
+<!-- The back of the instruction sheet. It cannot be left blank: without a
+     second side, a double-sided job prints the first booklet side here and the
+     whole pairing is wrong from the start. So rather than waste it, it is the
+     one check worth making before eight more sheets go through. -->
+<div class="sheet check">
+  <h2>Is this the back of the instructions?</h2>
+  <p class="verdict yes"><b>Yes, this side.</b> Your printer is flipping the way
+    it should. Carry on: recycle this sheet, keep the other eight in order, fold
+    them together and staple twice along the fold.</p>
+  <p class="verdict no"><b>No &mdash; the cover is here instead?</b> Then the
+    printer flipped on the long edge rather than the short one, and every second
+    page of the booklet will be upside down. Change the setting to flip on the
+    short edge and print it again.</p>
+  <p class="foot">The sheets are landscape, so their short edges are the two you
+    would call the sides.</p>
 </div>
 </body>
 </html>

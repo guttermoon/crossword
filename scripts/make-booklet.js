@@ -1,4 +1,5 @@
-/* Turns print/booklet.html into a saddle-stitch booklet: print/booklet.pdf.
+/* Turns print/booklet.html into a saddle-stitch booklet, as
+ * print/The Dead Good Club Crossword Puzzles.pdf.
  *
  *   node scripts/build-booklet.js && node scripts/make-booklet.js
  *
@@ -33,7 +34,7 @@ const { PDFDocument, StandardFonts, rgb } = require(
 const ROOT = path.join(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'print');
 const PAGES_PDF = path.join(OUT_DIR, 'booklet-pages.pdf');
-const BOOKLET_PDF = path.join(OUT_DIR, 'booklet.pdf');
+const BOOKLET_PDF = path.join(OUT_DIR, 'The Dead Good Club Crossword Puzzles.pdf');
 
 // A4 landscape, in PDF points (1pt = 1/72in). A5 is exactly half of it.
 const A4_LONG = 841.89;
@@ -211,17 +212,18 @@ const url = process.argv[2] || 'http://localhost:8010/print/booklet.html';
     const bytes = await sheet.pdf({ printBackground: true, preferCSSPageSize: true });
     await browser2.close();
 
+    // Both sides of it: the instructions, and on the back the one check worth
+    // making before eight more sheets go through the printer.
     const src = await PDFDocument.load(bytes);
-    const [copied] = await book.copyPages(src, [0]);
-    book.insertPage(0, copied);
-    book.insertPage(1, [A4_LONG, A4_SHORT]);   // its blank back
+    const faces = await book.copyPages(src, src.getPageIndices());
+    faces.forEach((face, i) => book.insertPage(i, face));
   }
 
   /* What a reader sees in the title bar of whatever opens this, and what a
    * download manager or a library catalogue files it under. Chromium puts the
    * source document's title on the pages PDF; this one is rebuilt from
    * scratch, so it carries nothing unless it is told to. */
-  book.setTitle('Dead Good Club Crossword Puzzles');
+  book.setTitle('The Dead Good Club Crossword Puzzles');
   book.setAuthor('The Dead Good Club');
   book.setSubject('Three crosswords on the words, shapes and chat-back of AI writing');
   book.setCreator('crosswords.deadgoodclub.com');

@@ -1,3 +1,1 @@
-# The intermediate the booklet is imposed from — regenerate it with
-# node scripts/make-booklet.js rather than keeping a copy in the repository.
 print/booklet-pages.pdf

@@ -220,6 +220,12 @@ short edge**; the sheets are landscape, so their short edges are the left and
 right sides, and flipping there puts the back of a leaf behind its own front.
 Flip on the long edge instead and every second page comes out upside down.
 
+Nine sheets go in and eight come out. The first is an instruction sheet that
+says all of the above on its face and asks to be recycled; it cannot be a page
+of the booklet, because anything in front of the cover would put the cover on a
+left-hand page and every spread out by one. Its back is deliberately blank, so
+a double-sided job does not print the first booklet side behind it.
+
 Rebuild it with:
 
 ```

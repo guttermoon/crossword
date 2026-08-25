@@ -192,6 +192,31 @@ const url = process.argv[2] || 'http://localhost:8010/print/booklet.html';
   }
   plan.forEach(([, left, right]) => side([left, right]));
 
+  /* ---- 3. the instruction sheet, in front of the eight ----
+   *
+   * It cannot be a page of the booklet: a page before the cover would put the
+   * cover on a left-hand page and every spread out by one. So it is its own
+   * sheet, and it is followed by a blank one — without that, a double-sided
+   * job would print the first booklet side on the back of the instructions and
+   * the pairing would be wrong from the start. Nine sheets go in, eight come
+   * out, and the sheet says so on its face. */
+  {
+    const browser2 = await chromium.launch();
+    const sheet = await browser2.newPage();
+    await sheet.goto(url.replace(/booklet\.html$/, 'instructions.html'),
+      { waitUntil: 'networkidle' });
+    await sheet.evaluate(() => document.fonts.ready);
+    // The size comes from the sheet's own @page rule; Playwright's width and
+    // height take px, in, cm or mm and would only be a second place to keep it.
+    const bytes = await sheet.pdf({ printBackground: true, preferCSSPageSize: true });
+    await browser2.close();
+
+    const src = await PDFDocument.load(bytes);
+    const [copied] = await book.copyPages(src, [0]);
+    book.insertPage(0, copied);
+    book.insertPage(1, [A4_LONG, A4_SHORT]);   // its blank back
+  }
+
   /* What a reader sees in the title bar of whatever opens this, and what a
    * download manager or a library catalogue files it under. Chromium puts the
    * source document's title on the pages PDF; this one is rebuilt from

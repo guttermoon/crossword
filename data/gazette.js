@@ -36,11 +36,15 @@ window.GAZETTE = {
       },
       {
         "type": "p",
-        "html": "It’s important to understand the author though and be kind about how you go about identifying AI writing. After all, AI learned how to write from humans. All of its patterns and tropes came from us. And just because you suspect writing of being generated, does not mean it was or that a human didn’t put work into it."
+        "html": "So what are these different styles and patterns AI learned from? Beyond the individual writer’s style there are several influences, some of which are discussed below. These are listed not only so you can better identify AI writing, but also so you can better understand the author, if they are human."
       },
       {
         "type": "p",
-        "html": "A particular form of corporate word salad emerged out of Silicon Valley in the 2010s and has shown no sign of going away. By “corporate word salad” I mean the overuse of buzzwords and empty phrases such as “synergy”, “bandwidth” and “pivot”."
+        "html": "It’s important to take a beat sometimes and attempt to understand the author and their influences and to be kind about how you go about identifying AI writing. After all, AI learned how to write from humans. All of its patterns and tropes came from us. And just because you suspect writing of being generated, does not mean it was or that a human didn’t put work into it."
+      },
+      {
+        "type": "p",
+        "html": "One example where you could easily mix up human for AI writing stems from a particular flavour of corporate jargon or word salad that emerged out of Silicon Valley in the 2010s and has shown no sign of going away. By “corporate word salad” I mean the overuse of buzzwords and empty phrases such as “synergy”, “bandwidth” and “pivot”."
       },
       {
         "type": "p",

@@ -161,6 +161,7 @@ body {
 .stamp__label,
 .clue__btn-label,
 .jump__label,
+.jump__short,
 .jump__arrow {
   position: relative;
   z-index: 1;
@@ -212,11 +213,18 @@ body {
 
 /* --------------------------------------------------------------------- masthead */
 
-.masthead {
-  border-bottom: var(--rule-double);
-  padding-bottom: 16px;
-  margin-bottom: 30px;
-  text-align: center;
+/* The masthead ends at the standfirst. What used to be its bottom padding, its
+   rule and its bottom margin are now the gap and the closing rule either side
+   of the button strip, which lives between the two as a sibling so that it can
+   pin itself to the top of a phone. The spacing is unchanged: 16px above the
+   buttons, 16px below them, the rule, then 30px. */
+.masthead { text-align: center; }
+
+.masthead__gap { height: 16px; }
+
+.masthead__end {
+  border-top: var(--rule-double);
+  margin: 16px 0 30px;
 }
 
 /* A rule opens the page where the publication line used to sit. */
@@ -272,8 +280,11 @@ body {
   grid-template-columns: repeat(2, minmax(max-content, 1fr));
   gap: 8px;
   width: fit-content;
-  margin: 16px auto 0;
+  margin: 0 auto;
 }
+
+/* The short names the buttons take once they are pinned. */
+.jump__short { display: none; }
 
 /* Two of them at the width of the longer need 385px, and the page's own margins
    take the rest of a narrow window. `max-content` above means they hold that
@@ -988,6 +999,13 @@ body {
   text-transform: uppercase;
 }
 
+/* The publication sits on the right of the footer, and on a narrow screen it is
+   too long for the half of the line it gets and wraps. Its second line has to
+   come back to the right edge with the first, or the name reads as ragged type
+   that has drifted in from the left rather than as the right-hand end of a
+   footer. Above 520px it is one line and this changes nothing. */
+.colophon > :last-child { text-align: right; }
+
 /* A word in the colophon that happens to be pressable — set as the type around
    it is, not as a button, because it is a footnote to the footer. */
 .colophon__link {
@@ -1128,6 +1146,61 @@ body {
 /* ------------------------------------------------------------------ responsive */
 
 @media (max-width: 860px) {
+  /* The two buttons hold the top of the window on the way down the article, so
+     that the way to the puzzles and the way to the booklet are never further
+     than the top of the screen. It is `sticky`, not `fixed`: the strip keeps
+     its place in the page, so nothing jumps as it catches or lets go. */
+  .sheet > .masthead__acts {
+    position: sticky;
+    top: 0;
+    /* Over the article, under the puzzle strip. Everything in the sheet shares
+       a z-index of 3 and so paints in document order, which would put every
+       paragraph below the masthead on top of a strip pinned over them. */
+    z-index: 25;
+  }
+
+  /* Pinned it is a bar rather than two buttons on nothing: full bleed to the
+     edges of the sheet, an opaque ground so the article does not read through
+     it, and the same thick rule under it that the puzzle strip pins with.
+     The buttons split the width, which keeps them matched the way `fit-content`
+     keeps them matched when they are standing in the page. */
+  .masthead__acts.is-stuck {
+    width: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-left: calc(var(--sheet-pad) * -1);
+    margin-right: calc(var(--sheet-pad) * -1);
+    /* The ground goes right across; the buttons on it stop at 400px, which is
+       about the width the pair has when it is standing in the page. Without the
+       cap a tablet gets two 370px buttons carrying one word each, which reads
+       as a mistake rather than as a decision. The bar is bled out to the edges
+       of the sheet, so its own width is the containing block plus both of the
+       sheet's paddings — that is what the second term adds back. */
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-inline: max(var(--sheet-pad),
+                        calc((100% + 2 * var(--sheet-pad) - 400px) / 2));
+    background: var(--paper);
+    border-bottom: var(--rule-thick);
+  }
+
+  .masthead__acts.is-stuck .jump__label { display: none; }
+  .masthead__acts.is-stuck .jump__short { display: inline; }
+
+  /* Handing over: the puzzle strip pins to the same nought pixels, and once you
+     are among the puzzles it is the better thing to have there. `visibility`
+     rather than `display`, so the strip keeps its place in the page — take it
+     out of the flow from up here and everything below it lurches up 46px. */
+  .masthead__acts.is-handed-over { visibility: hidden; }
+
+  /* The asterisk explains itself by turning as it folds down to the plus, and
+     on a phone that turn is easy to scroll straight past — one flourish, in a
+     corner, while a thumb is moving. So here the mark skips the performance and
+     states the case: a minus while the head is open, a plus once it is shut.
+     The same four spokes, two more of them drawn back into the middle. */
+  .puzzle__head .mark__arm--a45 { transform: rotate(45deg) scaleX(0); }
+  .puzzle__head .mark__arm--a135 { transform: rotate(135deg) scaleX(0); }
+  .puzzle__head:not(.is-collapsed) .mark__arm--a90 { transform: rotate(90deg) scaleX(0); }
+
   /* Pinned, the three puzzles go three across in one row — names only, no
      counts — so the strip costs a single line and the controls sit under it. */
   .picker.is-stuck { padding: 5px var(--sheet-pad) 6px; }
@@ -1285,7 +1358,7 @@ html.easy-eyes .notesheet li {
   .clue, .clue.is-active, .clue.is-crossing { background-color: #fff; }
   .toolbar, .cluebar, .clue__actions, .skip, .picker, .picker__sentinel,
   .progress, .puzzle__toggle, .video__frame,
-  .easy-eyes-switch, .jump { display: none !important; }
+  .easy-eyes-switch, .jump, .masthead__gap { display: none !important; }
   /* The film cannot play on paper, so it prints as its address. */
   .video__url {
     display: block;

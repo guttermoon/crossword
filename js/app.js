@@ -93,7 +93,7 @@
     booklet.target = '_blank';
     booklet.rel = 'noopener';
     booklet.setAttribute('type', 'application/pdf');
-    booklet.appendChild(el('span', 'jump__label', 'Open the booklet'));
+    booklet.appendChild(el('span', 'jump__label', 'Print the booklet'));
     // An arrow leaving a box, rather than the chevron beside it: two buttons the
     // same size and shape need something other than their labels to tell them
     // apart, and this one says the link goes somewhere else.

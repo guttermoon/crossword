@@ -350,11 +350,14 @@ body {
 
 .brief {
   display: grid;
-  /* Not a guess: the two columns were 2,479px and 3,585px at 58/42, and this is
-     the split where they come out level. Measured at every width from 980px up,
-     the article and the callout end within 65px of each other — a fifth of one
-     screen out of a column three thousand pixels tall. */
-  grid-template-columns: minmax(0, 44.2fr) minmax(0, 55.8fr);
+  /* Even, and not as a default: the split is measured, and the article has since
+     grown enough paragraphs that it comes out even at half and half. Swept in
+     half-point steps at every width from 980px to 1920px, the article and the
+     callout now end within 35px of each other at the worst width and 14px on
+     average — a tenth of one screen out of columns three thousand pixels tall.
+     Re-measure when the article next changes length; the old 44.2/55.8 was
+     right for a shorter one and is 570px out for this one. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(20px, 3vw, 38px);
   align-items: start;
   padding-bottom: 26px;
@@ -1315,11 +1318,11 @@ html.easy-eyes .clue__btn:hover {
    narrower, so the article column loses about a quarter of its height. The
    callout barely moves, because most of it is the AI specimen — forty-odd
    fragments already one line each, and a line is a line whatever it is set in.
-   At 44.2/55.8 that left the callout overrunning the article by some 400px.
-   Measured the same way as the ratio above: at 37/63 the two ends land within
-   60px of each other at every width from 1100px up. */
+   So the article can afford to be narrower here than it is on the page proper.
+   Swept the same way: at 44.5/55.5 the two ends land within 100px of each other
+   at the worst width and 76px on average. */
 html.easy-eyes .brief {
-  grid-template-columns: minmax(0, 37fr) minmax(0, 63fr);
+  grid-template-columns: minmax(0, 44.5fr) minmax(0, 55.5fr);
 }
 
 /* On a phone the clue is read in the bar at the foot of the screen rather than

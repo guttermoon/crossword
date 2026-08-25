@@ -95,8 +95,8 @@ add('<section class="leaf cover">' +
  * after the cover, and the first sheet out of the printer. */
 add('<section class="leaf howto">' +
   '<h2>How to make this</h2>' +
-  '<p class="lead">Eight sheets of A4, folded once and stapled. Ten minutes, ' +
-  'and the only thing that catches people out is step two.</p>' +
+  '<p class="lead">Eight sheets of A4, folded once and stapled. The only ' +
+  'thing that catches people out is step two.</p>' +
   '<ol class="steps">' +
   '<li><b>Print all 16 sides</b> onto 8 sheets of A4, double-sided, at 100% ' +
   'scale &mdash; not &ldquo;fit to page&rdquo;, which shrinks the squares.</li>' +
@@ -226,7 +226,7 @@ const html = `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<title>${esc(GAZETTE.brand)} — booklet</title>
+<title>Dead Good Club Crossword Puzzles</title>
 <link rel="stylesheet" href="../css/fonts.css">
 <link rel="stylesheet" href="booklet.css">
 </head>

@@ -113,10 +113,13 @@
     // does not set any.
     if (!config().posthogKey) return;
 
-    // The way back to the question, shown only where there is one to ask.
+    // The way back to the question, shown only where there is one to ask —
+    // the word and the separator in front of it together, so the footer never
+    // shows a dot with nothing after it.
     var again = document.getElementById('cookie-choice');
     if (again) {
-      again.hidden = false;
+      var line = document.getElementById('cookie-choice-line') || again;
+      line.hidden = false;
       again.addEventListener('click', ask);
     }
 

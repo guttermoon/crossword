@@ -259,14 +259,29 @@ body {
 .masthead__sub em { color: var(--ink); }
 
 /* The two ways on from the masthead: down to the puzzles, or off with the
-   booklet. Side by side, and wrapping onto two lines rather than shrinking when
-   there is no room for both. */
+   booklet. Two equal columns rather than a flex row, because a pair of buttons
+   offering a choice between them should look like a pair — one wider than the
+   other reads as the more important of the two, which neither is.
+
+   `width: fit-content` with `1fr` columns is what makes them match: sizing a
+   grid under a max-content constraint gives every fr column the width of the
+   widest one's content, so the shorter label sits in a box the length of the
+   longer one and the strip is still only as wide as it needs to be. */
 .masthead__acts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(max-content, 1fr));
   gap: 8px;
-  margin-top: 16px;
+  width: fit-content;
+  margin: 16px auto 0;
+}
+
+/* Two of them at the width of the longer need 385px, and the page's own margins
+   take the rest of a narrow window. `max-content` above means they hold that
+   width rather than squeezing the labels onto two lines, so below the point
+   where both fit on a line they go one above the other — each still the width
+   of the other, which is the whole point of the arrangement. */
+@media (max-width: 460px) {
+  .masthead__acts { grid-template-columns: minmax(max-content, 1fr); }
 }
 
 /* Built like the toolbar's stamps, one size down, because they do the same kind
@@ -275,6 +290,9 @@ body {
   position: relative;
   display: inline-flex;
   align-items: center;
+  /* The cell is as wide as the longer label, so the shorter one has room to
+     spare either side of it and should sit in the middle of it. */
+  justify-content: center;
   gap: 5px;
   padding: 4px 12px;
   font-family: var(--font-cond);

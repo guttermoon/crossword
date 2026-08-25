@@ -206,14 +206,15 @@ js/app.js           builds the page from GAZETTE and PUZZLES
 data/puzzles.js     puzzle content — 3 puzzles, 38 clues, 38 footnotes
 data/gazette.js     front matter and sources
 fonts/              Shrikhand, Inter, Courier Prime, Libre Franklin (SIL OFL)
-print/booklet.pdf   the whole thing as a fold-and-staple booklet
+print/*.pdf         the whole thing as a fold-and-staple booklet
 scripts/            the build steps: analytics config, the copy doc, the booklet
 dgc penguin official.png/.svg   the mark as supplied, kept as the source art
 ```
 
 ## The booklet
 
-`print/booklet.pdf` is the page as something you can print, fold and staple —
+`print/The Dead Good Club Crossword Puzzles.pdf` is the page as something you
+can print, fold and staple —
 A4 landscape sheets, two A5 pages to a side, imposed so the stack reads in order
 once it is folded down the middle. Print it double-sided, **flipping on the
 short edge**; the sheets are landscape, so their short edges are the left and
@@ -223,8 +224,11 @@ Flip on the long edge instead and every second page comes out upside down.
 Nine sheets go in and eight come out. The first is an instruction sheet that
 says all of the above on its face and asks to be recycled; it cannot be a page
 of the booklet, because anything in front of the cover would put the cover on a
-left-hand page and every spread out by one. Its back is deliberately blank, so
-a double-sided job does not print the first booklet side behind it.
+left-hand page and every spread out by one. Its back cannot be blank &mdash; without a second
+side, a double-sided job prints the first booklet side there and the pairing is
+wrong from the start &mdash; so it carries the one check worth making: if the
+cover has landed on the back of the instructions, the printer flipped the wrong
+way.
 
 Rebuild it with:
 

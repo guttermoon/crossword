@@ -258,15 +258,24 @@ body {
 
 .masthead__sub em { color: var(--ink); }
 
-/* The way past the article. Built like the toolbar's stamps, one size down,
-   because it does the same kind of job and should not read as a new species of
-   control. Centred by the masthead's own text-align, being inline. */
+/* The two ways on from the masthead: down to the puzzles, or off with the
+   booklet. Side by side, and wrapping onto two lines rather than shrinking when
+   there is no room for both. */
+.masthead__acts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* Built like the toolbar's stamps, one size down, because they do the same kind
+   of job and should not read as a new species of control. */
 .jump {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  margin-top: 16px;
   padding: 4px 12px;
   font-family: var(--font-cond);
   font-size: 11px;

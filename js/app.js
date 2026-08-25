@@ -44,16 +44,22 @@
     // A link rather than a button: it goes to a place on the page, so it
     // belongs in the address bar and on the right-click menu the way any other
     // destination does, and it works before any of this script has run.
+    function marker(path) {
+      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+      svg.setAttribute('class', 'icon jump__arrow');
+      svg.innerHTML = path;
+      return svg;
+    }
+
+    var acts = el('div', 'masthead__acts');
+
     var jump = el('a', 'jump');
     jump.href = '#puzzles';
     jump.appendChild(el('span', 'jump__label', 'Jump to the puzzles'));
-    var chevron = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    chevron.setAttribute('viewBox', '0 0 24 24');
-    chevron.setAttribute('aria-hidden', 'true');
-    chevron.setAttribute('focusable', 'false');
-    chevron.setAttribute('class', 'icon jump__arrow');
-    chevron.innerHTML = '<path d="M6 9l6 6 6-6"/>';
-    jump.appendChild(chevron);
+    jump.appendChild(marker('<path d="M6 9l6 6 6-6"/>'));
 
     // The href is the fallback and it is always valid. What it cannot allow for
     // is that the strip of puzzle cards shrinks to a single line as it pins
@@ -73,7 +79,29 @@
       }
     });
 
-    head.appendChild(jump);
+    acts.appendChild(jump);
+
+    // The booklet, for anyone who would rather do this on paper. It opens in a
+    // tab rather than saving on the spot, so it can be looked at before anyone
+    // commits to nine sheets of paper; every browser's viewer has a save button
+    // of its own a click away. rel goes with target, or the page being opened
+    // could reach back through window.opener and navigate this one. The path is
+    // encoded because the file's name has spaces in it.
+    var booklet = el('a', 'jump');
+    booklet.href = 'print/' +
+      encodeURIComponent('The Dead Good Club Crossword Puzzles.pdf');
+    booklet.target = '_blank';
+    booklet.rel = 'noopener';
+    booklet.setAttribute('type', 'application/pdf');
+    booklet.appendChild(el('span', 'jump__label', 'Open the booklet'));
+    // An arrow leaving a box, rather than the chevron beside it: two buttons the
+    // same size and shape need something other than their labels to tell them
+    // apart, and this one says the link goes somewhere else.
+    booklet.appendChild(marker(
+      '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/>'));
+    acts.appendChild(booklet);
+
+    head.appendChild(acts);
 
     return head;
   }

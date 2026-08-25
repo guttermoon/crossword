@@ -7,6 +7,25 @@
   var STORAGE_PREFIX = 'crossword/v1/';
   var SAVE_DELAY = 400;
 
+  /* Whether this reader is using a finger.
+   *
+   * It matters because of the on-screen keyboard. On a desktop the text input
+   * behind the grid can hold focus all day and nobody notices; on a phone,
+   * focusing it throws a keyboard over the bottom half of the screen. So a tap
+   * meant to read a clue was answering with a keyboard, and the grid it had just
+   * selected a word in was underneath it.
+   *
+   * Not a media query and not a coarse-pointer test: both of those describe the
+   * machine, and what matters is which thing the reader picked up. Set on the
+   * way down in the capture phase, so it is already true by the time the tap
+   * reaches the square it landed on. */
+  var TOUCHING = false;
+  if (global.document) {
+    global.document.addEventListener('pointerdown', function (event) {
+      if (event.pointerType === 'touch') TOUCHING = true;
+    }, true);
+  }
+
   /* Identifies the grid a save belongs to, so replacing a puzzle's content while
    * keeping its id discards the old fill instead of restoring it into new squares. */
   function signature(rows) {
@@ -142,9 +161,27 @@
       if (!target) return;
       event.preventDefault();
       var index = Number(target.dataset.index);
-      var direction = self.direction;
-      if (index === self.activeIndex) direction = self.flip(direction);
-      self.select(index, direction);
+      var already = index === self.activeIndex;
+      var awake = document.activeElement === self.input;
+
+      // This puzzle is the one being worked on from the moment it is touched,
+      // not from the moment the keyboard comes up — the bar at the foot of the
+      // screen reads the clue off whichever puzzle is current, and on a phone
+      // the first tap no longer focuses anything.
+      self.onActive(self);
+
+      /* A finger, with the keyboard down. The first tap on a square chooses the
+       * word and puts its clue in the bar; it takes a second tap on the same
+       * square to call the keyboard up — and that tap only does that, because
+       * turning the word around at the same moment would be two answers to one
+       * press. Once the keyboard is up, taps go back to behaving as they always
+       * have: a repeat tap turns the word around. */
+      if (TOUCHING && !awake) {
+        self.select(index, self.direction, { focus: already });
+        return;
+      }
+
+      self.select(index, already ? self.flip(self.direction) : self.direction);
     });
 
     input.addEventListener('focus', function () {
@@ -324,7 +361,7 @@
         button.setAttribute('aria-label', label + ' ' + scope[1].toLowerCase());
         button.addEventListener('click', function () {
           handler(scope[0]);
-          self.input.focus();
+          self.refocus();
         });
         box.appendChild(button);
       });
@@ -383,7 +420,7 @@
     var self = this;
     function wipe() {
       self.clearAll();
-      self.input.focus();
+      self.refocus();
     }
     if (!global.AskPaper) {
       if (global.confirm('Erase everything you have filled in for this puzzle?')) wipe();
@@ -624,6 +661,16 @@
     return id ? this.layout.byId[id] : null;
   };
 
+  /* Hands the cursor back after a button press, without the button becoming a
+   * way of summoning the keyboard. On a desktop that is simply "focus the
+   * input" — you pressed Check, you want to carry on typing. Under a finger it
+   * only gives back what was already there. */
+  Crossword.prototype.refocus = function () {
+    if (!TOUCHING || document.activeElement === this.input) {
+      this.input.focus({ preventScroll: true });
+    }
+  };
+
   Crossword.prototype.select = function (index, direction, options) {
     var opts = options || {};
     var cell = this.layout.cells[index];
@@ -636,7 +683,19 @@
     this.activeIndex = index;
     this.direction = wanted;
     this.paint();
-    if (opts.focus !== false) this.input.focus({ preventScroll: true });
+
+    /* Raising the keyboard is a decision, not a side effect of moving the
+     * cursor. `focus: true` asks for it, `focus: false` refuses it, and left
+     * unsaid it means "leave the keyboard as you found it" — which on a desktop
+     * is focused anyway, and on a phone means a clue you are only reading stays
+     * readable. Every other way of moving about the grid goes through here, so
+     * the clue list and the bar's own arrows behave the same way as the squares
+     * without knowing anything about it. */
+    var wake = opts.focus;
+    if (wake === undefined) {
+      wake = !TOUCHING || document.activeElement === this.input;
+    }
+    if (wake) this.input.focus({ preventScroll: true });
     this.positionInput();
 
     var entry = this.activeEntry();

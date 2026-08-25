@@ -677,14 +677,14 @@
       var active = getActive();
       if (active) {
         active.jumpEntry(-1);
-        active.input.focus();
+        active.refocus();
       }
     });
     next.addEventListener('click', function () {
       var active = getActive();
       if (active) {
         active.jumpEntry(1);
-        active.input.focus();
+        active.refocus();
       }
     });
 

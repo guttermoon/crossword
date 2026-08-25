@@ -50,14 +50,74 @@ const url = process.argv[2] || 'http://localhost:8010/print/booklet.html';
   await page.goto(url, { waitUntil: 'networkidle' });
   // Web fonts have to be in before anything is measured for pagination.
   await page.evaluate(() => document.fonts.ready);
-  await page.pdf({
-    path: PAGES_PDF,
+
+  const print = () => page.pdf({
     format: 'A5',
     printBackground: true,
     preferCSSPageSize: true,
   });
+
+  /* A grid and its clues have to face each other, which means the grid must
+   * fall on an even page: a folded booklet opens on an even leaf on the left
+   * and the odd one following it on the right.
+   *
+   * CSS has `break-before: left` for exactly this and Chromium ignores it —
+   * both keywords paginate identically to a plain page break, checked. So the
+   * position is measured instead: print only what comes before the first grid
+   * and count the pages, which says precisely where the grid would start. */
+  const beforeCount = await (async () => {
+    await page.evaluate(() => {
+      const first = document.querySelector('.gridPage');
+      if (!first) return;
+      let n = first;
+      while (n) { const next = n.nextElementSibling; n.remove(); n = next; }
+    });
+    const pdf = await print();
+    return (await PDFDocument.load(pdf)).getPageCount();
+  })();
+
+  // Reload, since measuring emptied the document.
+  await page.goto(url, { waitUntil: 'networkidle' });
+  await page.evaluate(() => document.fonts.ready);
+
+  // An even run before it leaves the grid starting on an odd page, so one blank
+  // leaf goes in front to push the whole sequence over. Every spread after it
+  // is two pages, so correcting the first corrects them all.
+  const shifted = beforeCount % 2 === 0;
+  if (shifted) {
+    await page.evaluate(() => {
+      const first = document.querySelector('.gridPage');
+      const blank = document.createElement('section');
+      blank.className = 'leaf';
+      blank.innerHTML = '&nbsp;';
+      first.parentNode.insertBefore(blank, first);
+    });
+  }
+
+  /* Neither half of a spread may run over, or the pairing slips by a page.
+   *
+   * Measured at the width the paper actually gives them: the grid sizes its
+   * squares from the width of its container, so asking a full-size browser
+   * window how tall it is answers a question about the screen. */
+  const MM = 96 / 25.4;
+  await page.setViewportSize({ width: Math.round(124 * MM), height: Math.round(185 * MM) });
+  const overflow = await page.evaluate((mm) => {
+    const limit = 185 * mm;                     // the A5 content box, in CSS px
+    return [...document.querySelectorAll('.gridPage, .cluePage')]
+      .filter((n) => n.scrollHeight > limit + 1)
+      .map((n) => (n.querySelector('h2, h3') || n).textContent.trim().slice(0, 28) +
+        ' — ' + Math.round(n.scrollHeight / limit * 100) + '% of a page');
+  }, MM);
+
+  fs.writeFileSync(PAGES_PDF, await print());
   await browser.close();
   if (problems.length) console.warn('page errors:', problems);
+  console.log('spread: ' + beforeCount + ' pages before the first grid' +
+    (shifted ? ', one blank inserted so it starts on an even page' : ', already even'));
+  if (overflow.length) {
+    console.warn('  !! a spread page overruns, so the pairing will slip:');
+    overflow.forEach((o) => console.warn('     ' + o));
+  }
 
   /* ---- 2. impose them onto A4 landscape sheets ---- */
   const pagesPdf = await PDFDocument.load(fs.readFileSync(PAGES_PDF));

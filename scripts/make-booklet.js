@@ -192,6 +192,15 @@ const url = process.argv[2] || 'http://localhost:8010/print/booklet.html';
   }
   plan.forEach(([, left, right]) => side([left, right]));
 
+  /* What a reader sees in the title bar of whatever opens this, and what a
+   * download manager or a library catalogue files it under. Chromium puts the
+   * source document's title on the pages PDF; this one is rebuilt from
+   * scratch, so it carries nothing unless it is told to. */
+  book.setTitle('Dead Good Club Crossword Puzzles');
+  book.setAuthor('The Dead Good Club');
+  book.setSubject('Three crosswords on the words, shapes and chat-back of AI writing');
+  book.setCreator('crosswords.deadgoodclub.com');
+
   const bytes = await book.save();
   fs.writeFileSync(BOOKLET_PDF, bytes);
 

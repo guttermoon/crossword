@@ -70,7 +70,11 @@ window.GAZETTE = {
       },
       {
         "type": "p",
-        "html": "But once we started moving to smaller and smaller keyboards, it just became too much of a hassle to use the em dash, some opting to just use a hyphen “-” instead, some dropping it entirely. If you had to write an em dash right now, would you know how? Probably not, and this is exactly why humans don’t naturally use it when writing today, but an AI doesn’t have this hurdle of a physical keyboard, so it leans towards the trends in writing that can be seen more prominently over the course of time opposed to the last 30 or 40 years."
+        "html": "But once we started moving to smaller and smaller keyboards, it just became too much of a hassle to use the em dash, some opting to just use a hyphen “-” instead, some dropping it entirely."
+      },
+      {
+        "type": "p",
+        "html": "If you had to write an em dash right now, would you know how? Probably not, and this is exactly why humans don’t naturally use it when writing today. AI doesn’t have this hurdle of a physical keyboard though, so it leans towards the trends in writing that can be seen more prominently over the course of time opposed to the last 30 or 40 years."
       },
       {
         "type": "quote",
@@ -78,7 +82,7 @@ window.GAZETTE = {
       },
       {
         "type": "p",
-        "html": "These types of shifts in writing habits can be seen generationally as well. You may have heard that “old people” use two spaces after a full stop. This too is a reaction of moving from <strong>typewriters to computers where varied and proportional fonts became available</strong>. On a typewriter, each letter is the same width, so two spaces were needed to visually separate sentences. Modern digital fonts adjust spacing automatically now, eliminating the need for two spaces."
+        "html": "These types of shifts in writing habits can be seen generationally as well. You may have heard that “old people” use two spaces after a full stop. This too is a reaction of moving from typewriters to computers where varied and proportional fonts became available. On a typewriter, each letter is the same width, so two spaces were needed to visually separate sentences. Modern digital fonts adjust spacing automatically now, eliminating the need for two spaces."
       },
       {
         "type": "p",

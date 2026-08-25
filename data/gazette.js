@@ -32,15 +32,19 @@ window.GAZETTE = {
       },
       {
         "type": "p",
-        "html": "It’s also worth noting that new forms of detecting AI writing are being rolled out. In addition to tools like <a href=\"https://www.pangram.com/\">Pangram</a> being used widely in schools to detect AI writing, <a href=\"https://www.anthropic.com/news/claude-text-watermark\">Claude models</a> will now generate text that contains a watermark or invisible, machine-readable signature embedded directly into generated text. The intent is to comply with new laws (like Article 50 of the EU AI Act) and to help readers have more transparency about whether something was machine-made."
+        "html": "It’s worth noting that new forms of detecting AI writing are increasingly being rolled out. In addition to tools like <a href=\"https://www.pangram.com/\">Pangram</a> being used widely in schools to detect AI writing, <a href=\"https://www.anthropic.com/news/claude-text-watermark\">Claude models</a> will now generate text that contains a watermark or invisible, machine-readable signature embedded directly into generated text. The intent is to comply with new laws (like Article 50 of the EU AI Act) and to help readers have more transparency about whether something was machine-made."
       },
       {
         "type": "p",
-        "html": "So what are these different styles and patterns AI learned from? Beyond the individual writer’s style there are several influences, some of which are discussed below. These are listed not only so you can better identify AI writing, but also so you can better understand the author, if they are human."
+        "html": "But before you go hunting for AI tells, it’s important to take a beat and attempt to understand the author and their influences. Be kind in how you engage with someone, whether you think they used AI or not. Everyone is at a different level of English and AI literacy, and in fact it’s common for non-native English speakers to have their work flagged as AI, perhaps due to the use of translation tools."
       },
       {
         "type": "p",
-        "html": "It’s important to take a beat sometimes and attempt to understand the author and their influences and to be kind about how you go about identifying AI writing. After all, AI learned how to write from humans. All of its patterns and tropes came from us. And just because you suspect writing of being generated, does not mean it was or that a human didn’t put work into it."
+        "html": "And remember, AI learned how to write from humans. All of its patterns and tropes came from us. And just because you suspect writing of being generated, does not mean it was or that a human didn’t put work into it."
+      },
+      {
+        "type": "p",
+        "html": "So what are these different styles and patterns AI learned from? Beyond the individual writer’s style there are several influences, some of which are discussed below. These are listed not only so you can better identify AI writing, but also so you can better understand the author and their influences, if they are human."
       },
       {
         "type": "p",
@@ -58,7 +62,7 @@ window.GAZETTE = {
       },
       {
         "type": "p",
-        "html": "This word salad demonstrates how ways of communicating can be influenced and homogenised by workplace culture. And it’s worth keeping in mind, not every time you see the word “synergy” does it automatically mean AI wrote it."
+        "html": "This word salad demonstrates how ways of communication can be influenced and homogenised by workplace culture. So keep in mind, seeing the word “synergy” doesn’t automatically mean AI wrote it."
       },
       {
         "type": "p",

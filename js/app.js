@@ -81,21 +81,24 @@
 
     acts.appendChild(jump);
 
-    // The booklet, for anyone who would rather do this on paper. A plain link
-    // with `download`, so the browser saves it under the name the file already
-    // has rather than opening a viewer and leaving them to work out the rest.
-    // The path is encoded because that name has spaces in it.
+    // The booklet, for anyone who would rather do this on paper. It opens in a
+    // tab rather than saving on the spot, so it can be looked at before anyone
+    // commits to nine sheets of paper; every browser's viewer has a save button
+    // of its own a click away. rel goes with target, or the page being opened
+    // could reach back through window.opener and navigate this one. The path is
+    // encoded because the file's name has spaces in it.
     var booklet = el('a', 'jump');
     booklet.href = 'print/' +
       encodeURIComponent('The Dead Good Club Crossword Puzzles.pdf');
-    booklet.setAttribute('download', '');
+    booklet.target = '_blank';
+    booklet.rel = 'noopener';
     booklet.setAttribute('type', 'application/pdf');
-    booklet.appendChild(el('span', 'jump__label', 'Download the booklet'));
-    // An arrow coming down into a tray, rather than the chevron beside it: two
-    // buttons the same size and shape need something other than their labels to
-    // tell them apart at a glance.
+    booklet.appendChild(el('span', 'jump__label', 'Open the booklet'));
+    // An arrow leaving a box, rather than the chevron beside it: two buttons the
+    // same size and shape need something other than their labels to tell them
+    // apart, and this one says the link goes somewhere else.
     booklet.appendChild(marker(
-      '<path d="M12 3v11m0 0l-4-4m4 4l4-4M4 19h16"/>'));
+      '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/>'));
     acts.appendChild(booklet);
 
     head.appendChild(acts);

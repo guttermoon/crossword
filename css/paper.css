@@ -386,6 +386,47 @@ body {
 .brief__col strong { color: var(--ink); }
 .brief__col a { color: var(--red-deep); }
 
+/* --- links that leave the site --- */
+
+/* Drawn here rather than borrowing .icon, which is a block — right inside the
+   flex buttons it was written for, and enough on its own to put every one of
+   these arrows on a line of its own in the middle of a paragraph.
+
+   Sized in em, so it grows and shrinks with Easy Eyes and with the smaller type
+   of the sources list without being told either time. The stroke is heavier
+   than the full-size icons carry, because at three quarters of a lower-case
+   letter a 1.7 goes grey. A word joiner in the markup keeps the arrow on the
+   same line as the word it belongs to. */
+.newtab__arrow {
+  display: inline-block;
+  width: 0.78em;
+  height: 0.78em;
+  margin-left: 0.2em;
+  vertical-align: -0.05em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Said out loud, never drawn: the arrow carries this for anyone who can see it.
+   Clipped rather than hidden, because `display: none` and `visibility: hidden`
+   take it out of the accessibility tree along with the page — which is the one
+   place it is meant to exist. */
+.newtab__note {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* The article opens on a dropped capital, the same one the puzzle blurbs use. */
 .brief__col > p:first-of-type::first-letter {
   font-weight: 700;
@@ -1313,16 +1354,14 @@ html.easy-eyes .clue__btn:hover {
   background-color: #f2eee4;
 }
 
-/* The two columns are balanced by a measured ratio, and Easy Eyes invalidates
-   the measurement: it swaps the typewriter face for Helvetica, which is much
-   narrower, so the article column loses about a quarter of its height. The
-   callout barely moves, because most of it is the AI specimen — forty-odd
-   fragments already one line each, and a line is a line whatever it is set in.
-   So the article can afford to be narrower here than it is on the page proper.
-   Swept the same way: at 44.5/55.5 the two ends land within 100px of each other
-   at the worst width and 76px on average. */
+/* Easy Eyes takes the two columns apart and puts the callout under the article.
+   Reading in two narrow columns is the thing Easy Eyes exists to make easier —
+   a reader who has asked for a plainer face and more air has not asked to be
+   given half the width to have it in. Balancing the two heights, which is what
+   the ratio on .brief is for, stops being a question the moment they are not
+   side by side. */
 html.easy-eyes .brief {
-  grid-template-columns: minmax(0, 44.5fr) minmax(0, 55.5fr);
+  grid-template-columns: minmax(0, 1fr);
 }
 
 /* On a phone the clue is read in the bar at the foot of the screen rather than

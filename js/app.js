@@ -13,10 +13,56 @@
   }
 
   /* GAZETTE strings are first-party copy carrying inline <em>/<strong>/<a>. */
+  /* Every link that leaves this site opens in a tab of its own.
+   *
+   * The reason is the puzzles: a half-solved grid lives in the page, and a
+   * citation followed in the same tab takes it with it. The sources list is
+   * eighteen links that a reader is meant to go and check, which is eighteen
+   * chances to lose a crossword.
+   *
+   * `rel` goes with `target` — without it the page being opened can reach back
+   * through `window.opener` and navigate this one.
+   *
+   * A tab that opens unasked is disorienting if you cannot see it happen, so it
+   * is announced twice over: an arrow leaving a box for anyone reading the page,
+   * and the words for anyone hearing it. Same-page links (#puzzles) and anything
+   * relative are left alone — they are not going anywhere.
+   */
+  function markOutward(node) {
+    var here = global.location && global.location.host;
+    node.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (!/^https?:/i.test(href)) return;
+      if (here && a.host === here) return;             // our own pages, in place
+
+      a.target = '_blank';
+      a.rel = (a.rel ? a.rel + ' ' : '') + 'noopener';
+
+      a.appendChild(el('span', 'newtab__note', ' (opens in a new tab)'));
+
+      // A word joiner, so the line never breaks between the last word of the
+      // link and the arrow that belongs to it and leaves the arrow stranded on
+      // a line of its own.
+      a.appendChild(document.createTextNode('⁠'));
+
+      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+      svg.setAttribute('class', 'newtab__arrow');
+      // The same arrow leaving a box that the booklet button carries, since it
+      // is saying the same thing.
+      svg.innerHTML = '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0' +
+        ' 01-1-1V7a1 1 0 011-1h5"/>';
+      a.appendChild(svg);
+    });
+  }
+
   function rich(tag, className, html) {
     var node = document.createElement(tag);
     if (className) node.className = className;
     node.innerHTML = html || '';
+    markOutward(node);
     return node;
   }
 

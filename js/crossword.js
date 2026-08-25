@@ -7,6 +7,25 @@
   var STORAGE_PREFIX = 'crossword/v1/';
   var SAVE_DELAY = 400;
 
+  /* Whether this reader is using a finger.
+   *
+   * It matters because of the on-screen keyboard. On a desktop the text input
+   * behind the grid can hold focus all day and nobody notices; on a phone,
+   * focusing it throws a keyboard over the bottom half of the screen. So a tap
+   * meant to read a clue was answering with a keyboard, and the grid it had just
+   * selected a word in was underneath it.
+   *
+   * Not a media query and not a coarse-pointer test: both of those describe the
+   * machine, and what matters is which thing the reader picked up. Set on the
+   * way down in the capture phase, so it is already true by the time the tap
+   * reaches the square it landed on. */
+  var TOUCHING = false;
+  if (global.document) {
+    global.document.addEventListener('pointerdown', function (event) {
+      if (event.pointerType === 'touch') TOUCHING = true;
+    }, true);
+  }
+
   /* Identifies the grid a save belongs to, so replacing a puzzle's content while
    * keeping its id discards the old fill instead of restoring it into new squares. */
   function signature(rows) {
@@ -142,9 +161,27 @@
       if (!target) return;
       event.preventDefault();
       var index = Number(target.dataset.index);
-      var direction = self.direction;
-      if (index === self.activeIndex) direction = self.flip(direction);
-      self.select(index, direction);
+      var already = index === self.activeIndex;
+      var awake = document.activeElement === self.input;
+
+      // This puzzle is the one being worked on from the moment it is touched,
+      // not from the moment the keyboard comes up — the bar at the foot of the
+      // screen reads the clue off whichever puzzle is current, and on a phone
+      // the first tap no longer focuses anything.
+      self.onActive(self);
+
+      /* A finger, with the keyboard down. The first tap on a square chooses the
+       * word and puts its clue in the bar; it takes a second tap on the same
+       * square to call the keyboard up — and that tap only does that, because
+       * turning the word around at the same moment would be two answers to one
+       * press. Once the keyboard is up, taps go back to behaving as they always
+       * have: a repeat tap turns the word around. */
+      if (TOUCHING && !awake) {
+        self.select(index, self.direction, { focus: already });
+        return;
+      }
+
+      self.select(index, already ? self.flip(self.direction) : self.direction);
     });
 
     input.addEventListener('focus', function () {
@@ -295,6 +332,11 @@
     reveal: '<path d="M1 8s2.8-4.5 7-4.5S15 8 15 8s-2.8 4.5-7 4.5S1 8 1 8z"/>'
       + '<circle cx="8" cy="8" r="1.9"/>',
     restart: '<path d="M13.5 8a5.5 5.5 0 1 1-1.9-4.2"/><path d="M13.6 1.6v2.6H11"/>',
+    // A bulb with its two bands, drawn in the same open line as the others. The
+    // rays are left off: at 16px they close the shape up into a blob.
+    hint: '<path d="M8 1.6a4.4 4.4 0 0 0-2.6 7.9c.5.4.8 1 .8 1.6v.4h3.6v-.4c0-.6'
+      + '.3-1.2.8-1.6A4.4 4.4 0 0 0 8 1.6z"/><path d="M6.4 13h3.2"/>'
+      + '<path d="M6.9 14.6h2.2"/>',
   };
 
   function icon(name) {
@@ -324,7 +366,7 @@
         button.setAttribute('aria-label', label + ' ' + scope[1].toLowerCase());
         button.addEventListener('click', function () {
           handler(scope[0]);
-          self.input.focus();
+          self.refocus();
         });
         box.appendChild(button);
       });
@@ -340,12 +382,18 @@
         this.reveal.bind(this))
     );
 
-    // The same three things a phone has room for, drawn rather than spelled out.
-    // They act on the word you are in, which is the scope that matters when the
-    // grid is under your thumb; letter and puzzle stay on the wider layout.
+    /* The same three things a phone has room for, drawn rather than spelled out.
+     * They act on the word you are in, which is the scope that matters when the
+     * grid is under your thumb; letter and puzzle stay on the wider layout.
+     *
+     * A hint rather than a check. Check marks the letters you have got wrong,
+     * which means it has nothing to say about an empty word and nothing to say
+     * about a right one — on a phone, where you meet it with a word you are
+     * stuck on, it reads as a button that does nothing. A hint is what you want
+     * at that moment anyway. */
     var phone = el('div', 'toolbar__phone');
     [
-      ['check', 'Check this word', function () { self.check('word'); }],
+      ['hint', 'Give me a letter of this word', function () { self.hint(); }],
       ['reveal', 'Show me this word', function () { self.reveal('word'); }],
       ['restart', 'Start this puzzle over', function () { self.askStartOver(); }],
     ].forEach(function (spec) {
@@ -383,7 +431,7 @@
     var self = this;
     function wipe() {
       self.clearAll();
-      self.input.focus();
+      self.refocus();
     }
     if (!global.AskPaper) {
       if (global.confirm('Erase everything you have filled in for this puzzle?')) wipe();
@@ -624,6 +672,16 @@
     return id ? this.layout.byId[id] : null;
   };
 
+  /* Hands the cursor back after a button press, without the button becoming a
+   * way of summoning the keyboard. On a desktop that is simply "focus the
+   * input" — you pressed Check, you want to carry on typing. Under a finger it
+   * only gives back what was already there. */
+  Crossword.prototype.refocus = function () {
+    if (!TOUCHING || document.activeElement === this.input) {
+      this.input.focus({ preventScroll: true });
+    }
+  };
+
   Crossword.prototype.select = function (index, direction, options) {
     var opts = options || {};
     var cell = this.layout.cells[index];
@@ -636,7 +694,19 @@
     this.activeIndex = index;
     this.direction = wanted;
     this.paint();
-    if (opts.focus !== false) this.input.focus({ preventScroll: true });
+
+    /* Raising the keyboard is a decision, not a side effect of moving the
+     * cursor. `focus: true` asks for it, `focus: false` refuses it, and left
+     * unsaid it means "leave the keyboard as you found it" — which on a desktop
+     * is focused anyway, and on a phone means a clue you are only reading stays
+     * readable. Every other way of moving about the grid goes through here, so
+     * the clue list and the bar's own arrows behave the same way as the squares
+     * without knowing anything about it. */
+    var wake = opts.focus;
+    if (wake === undefined) {
+      wake = !TOUCHING || document.activeElement === this.input;
+    }
+    if (wake) this.input.focus({ preventScroll: true });
     this.positionInput();
 
     var entry = this.activeEntry();
@@ -874,6 +944,34 @@
 
   Crossword.prototype.reveal = function (scope) {
     this.revealCells(this.scopeIndices(scope));
+  };
+
+  /* A way in, rather than the answer: one square of the word you are in, picked
+   * at random from the ones still to get. Random, so it gives you a foothold
+   * somewhere in the word rather than always the square under the cursor, and
+   * one at a time, so how much of a hand you take is up to you — press it again
+   * for another. Reveal is next to it for anyone who wants the lot.
+   *
+   * "Still to get" is anything not already correct, so a wrong letter is one of
+   * the squares it can put right. It goes through revealCells, which means a
+   * hinted square counts as given away in the progress count, the same as any
+   * other letter you did not work out. */
+  Crossword.prototype.hint = function () {
+    var self = this;
+    var entry = this.activeEntry();
+    if (!entry) return;
+
+    var open = entry.cells.filter(function (index) {
+      return !self.isCorrect(index);
+    });
+    if (!open.length) {
+      // Nothing to give. Said rather than shown, because the word is visibly
+      // full and a button that appears to do nothing has already been the bug.
+      this.announcer.textContent = 'That word is already filled in.';
+      return;
+    }
+
+    this.revealCells([open[Math.floor(Math.random() * open.length)]]);
   };
 
   /* Fills the given squares in and marks them as given away. It does not move

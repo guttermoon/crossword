@@ -341,13 +341,57 @@
    * never intersecting, so never reported. You landed on puzzle 3 with the full
    * strip sitting across the page. Reading the position once a frame while
    * scrolling is one rect on one element and cannot miss a jump. */
+  /* A strip that shrinks when it pins takes its lost height out of the page,
+   * and everything below it jumps up by that much under the reader's eye — 309px
+   * on a phone for the puzzle strip, 85px on a wide screen, 22px for the pair of
+   * masthead buttons. Sticky keeps a box in the flow, and a box that changes
+   * size changes the flow.
+   *
+   * So each of them gets a shim directly after it, empty until its strip pins
+   * and then exactly as tall as the strip just lost. The two together are the
+   * same height whichever state they are in, and nothing below moves at all.
+   *
+   * After the strip, not before it: a shim in front would push the strip's place
+   * in the page down by its own height, and sticky engages at the place a thing
+   * would otherwise be — so the strip would carry on scrolling with the page
+   * for another 309px while already wearing its pinned face.
+   */
+  function shimFor(strip) {
+    var shim = el('div', 'shim');
+    strip.parentNode.insertBefore(shim, strip.nextSibling);
+
+    var natural = 0;
+
+    // The height with nothing holding it up. Read with the class off and the
+    // shim flat, so it is the real thing rather than whatever is on screen now,
+    // and read again on resize because both heights are widths in disguise.
+    function remember() {
+      var was = strip.classList.contains('is-stuck');
+      if (was) strip.classList.remove('is-stuck');
+      shim.style.height = '';
+      natural = strip.getBoundingClientRect().height;
+      if (was) strip.classList.add('is-stuck');
+    }
+
+    remember();
+    global.addEventListener('resize', remember);
+
+    return function (pinned) {
+      shim.style.height = pinned
+        ? Math.max(0, natural - strip.getBoundingClientRect().height) + 'px'
+        : '';
+    };
+  }
+
   function stickWhenPassed(nav, acts) {
     var sentinel = el('div', 'picker__sentinel');
     nav.parentNode.insertBefore(sentinel, nav);
+    var holdNav = shimFor(nav);
 
     // The gap above the buttons is an element, so it can say where they belong
     // once they are pinned somewhere else. Its bottom edge is their top edge.
     var gap = acts && acts.previousElementSibling;
+    var holdActs = acts && shimFor(acts);
 
     var waiting = false;
 
@@ -355,6 +399,7 @@
       waiting = false;
       var pinned = sentinel.getBoundingClientRect().top < 0;
       nav.classList.toggle('is-stuck', pinned);
+      holdNav(pinned);
       // What the pinned strip actually costs, so the toolbar under it can sit
       // flush. Guessing at it left a sliver of the page showing through between
       // the two, and the guess was wrong by a different amount on each screen.
@@ -374,6 +419,7 @@
       if (gap) {
         acts.classList.toggle('is-stuck', gap.getBoundingClientRect().bottom <= 0);
         acts.classList.toggle('is-handed-over', pinned);
+        holdActs(acts.classList.contains('is-stuck'));
       }
     }
 

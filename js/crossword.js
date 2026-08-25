@@ -332,6 +332,11 @@
     reveal: '<path d="M1 8s2.8-4.5 7-4.5S15 8 15 8s-2.8 4.5-7 4.5S1 8 1 8z"/>'
       + '<circle cx="8" cy="8" r="1.9"/>',
     restart: '<path d="M13.5 8a5.5 5.5 0 1 1-1.9-4.2"/><path d="M13.6 1.6v2.6H11"/>',
+    // A bulb with its two bands, drawn in the same open line as the others. The
+    // rays are left off: at 16px they close the shape up into a blob.
+    hint: '<path d="M8 1.6a4.4 4.4 0 0 0-2.6 7.9c.5.4.8 1 .8 1.6v.4h3.6v-.4c0-.6'
+      + '.3-1.2.8-1.6A4.4 4.4 0 0 0 8 1.6z"/><path d="M6.4 13h3.2"/>'
+      + '<path d="M6.9 14.6h2.2"/>',
   };
 
   function icon(name) {
@@ -377,12 +382,18 @@
         this.reveal.bind(this))
     );
 
-    // The same three things a phone has room for, drawn rather than spelled out.
-    // They act on the word you are in, which is the scope that matters when the
-    // grid is under your thumb; letter and puzzle stay on the wider layout.
+    /* The same three things a phone has room for, drawn rather than spelled out.
+     * They act on the word you are in, which is the scope that matters when the
+     * grid is under your thumb; letter and puzzle stay on the wider layout.
+     *
+     * A hint rather than a check. Check marks the letters you have got wrong,
+     * which means it has nothing to say about an empty word and nothing to say
+     * about a right one — on a phone, where you meet it with a word you are
+     * stuck on, it reads as a button that does nothing. A hint is what you want
+     * at that moment anyway. */
     var phone = el('div', 'toolbar__phone');
     [
-      ['check', 'Check this word', function () { self.check('word'); }],
+      ['hint', 'Give me a letter of this word', function () { self.hint(); }],
       ['reveal', 'Show me this word', function () { self.reveal('word'); }],
       ['restart', 'Start this puzzle over', function () { self.askStartOver(); }],
     ].forEach(function (spec) {
@@ -933,6 +944,34 @@
 
   Crossword.prototype.reveal = function (scope) {
     this.revealCells(this.scopeIndices(scope));
+  };
+
+  /* A way in, rather than the answer: one square of the word you are in, picked
+   * at random from the ones still to get. Random, so it gives you a foothold
+   * somewhere in the word rather than always the square under the cursor, and
+   * one at a time, so how much of a hand you take is up to you — press it again
+   * for another. Reveal is next to it for anyone who wants the lot.
+   *
+   * "Still to get" is anything not already correct, so a wrong letter is one of
+   * the squares it can put right. It goes through revealCells, which means a
+   * hinted square counts as given away in the progress count, the same as any
+   * other letter you did not work out. */
+  Crossword.prototype.hint = function () {
+    var self = this;
+    var entry = this.activeEntry();
+    if (!entry) return;
+
+    var open = entry.cells.filter(function (index) {
+      return !self.isCorrect(index);
+    });
+    if (!open.length) {
+      // Nothing to give. Said rather than shown, because the word is visibly
+      // full and a button that appears to do nothing has already been the bug.
+      this.announcer.textContent = 'That word is already filled in.';
+      return;
+    }
+
+    this.revealCells([open[Math.floor(Math.random() * open.length)]]);
   };
 
   /* Fills the given squares in and marks them as given away. It does not move

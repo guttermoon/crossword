@@ -1354,14 +1354,25 @@ html.easy-eyes .clue__btn:hover {
   background-color: #f2eee4;
 }
 
-/* Easy Eyes takes the two columns apart and puts the callout under the article.
-   Reading in two narrow columns is the thing Easy Eyes exists to make easier —
-   a reader who has asked for a plainer face and more air has not asked to be
-   given half the width to have it in. Balancing the two heights, which is what
-   the ratio on .brief is for, stops being a question the moment they are not
-   side by side. */
-html.easy-eyes .brief {
-  grid-template-columns: minmax(0, 1fr);
+/* The two columns are balanced by a measured ratio, and Easy Eyes invalidates
+   the measurement: it swaps the typewriter face for Helvetica, which is much
+   narrower, so the article column loses about a quarter of its height. The
+   callout barely moves, because most of it is the AI specimen — forty-odd
+   fragments already one line each, and a line is a line whatever it is set in.
+   So the article can afford to be narrower here than it is on the page proper.
+   Swept the same way: at 44.5/55.5 the two ends land within 100px of each other
+   at the worst width and 76px on average.
+
+   Behind a min-width, and that is the whole point of the rule being here rather
+   than a plain `html.easy-eyes .brief` further up. Narrow screens put the two
+   panels one above the other, and a ratio between two columns that are not side
+   by side is not a ratio — but `html.easy-eyes .brief` outweighs the `.brief`
+   in the phone block, so an unguarded version of this quietly held the page in
+   two columns on a phone whenever Easy Eyes was on. */
+@media (min-width: 861px) {
+  html.easy-eyes .brief {
+    grid-template-columns: minmax(0, 44.5fr) minmax(0, 55.5fr);
+  }
 }
 
 /* On a phone the clue is read in the bar at the foot of the screen rather than

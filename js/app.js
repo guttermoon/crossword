@@ -449,13 +449,19 @@
     return box;
   }
 
-  /* A mark in the corner of a panel is easy to scroll straight past, so the
-   * first time one comes on screen it performs itself: it folds down to the
-   * plus and opens back out to the asterisk. The eye goes to the movement, and
-   * what it sees is the thing the button does.
+  /* A mark in the corner of a panel is easy to scroll straight past, so every
+   * time one comes on screen it performs itself: it folds down to the plus and
+   * opens back out to the asterisk. The eye goes to the movement, and what it
+   * sees is the thing the button does.
    *
-   * It has to come back. The mark reports whether the head is open, and leaving
-   * it as a plus over an open head would be a lie told to catch attention.
+   * Every time, not the first time. Watching once meant that scrolling down the
+   * page early used all three of them up, and coming back to a puzzle later —
+   * which is when you actually want to know the head folds away — got nothing.
+   * So the observer stays connected and plays again on each crossing back in.
+   *
+   * It has to come back to the asterisk. The mark reports whether the head is
+   * open, and leaving it as a plus over an open head would be a lie told to
+   * catch attention.
    *
    * A crossing is exactly what an observer is for — unlike the picker's pinning
    * a few functions down, which needs a position and so reads the scroll. An
@@ -468,17 +474,30 @@
     var still = global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)');
     if (still && still.matches) return;
 
-    var watch = new IntersectionObserver(function (entries, self) {
+    var playing = false;
+
+    var watch = new IntersectionObserver(function (entries) {
       if (!entries.some(function (e) { return e.isIntersecting; })) return;
-      self.disconnect();
+      // Already mid-turn. Scrolling a mark in and out and in again inside those
+      // 620ms would otherwise restart it halfway and read as a stutter.
+      if (playing) return;
       // Folded already, by a reader who got here before the mark did: it is a
       // plus, and has nothing to demonstrate.
       if (head.classList.contains('is-collapsed')) return;
+      playing = true;
       head.classList.add('is-hinting');
       global.setTimeout(function () {
         head.classList.remove('is-hinting');
+        playing = false;
       }, 620);
-    }, { threshold: 1 });
+    }, {
+      threshold: 1,
+      /* Clear of the pinned puzzle strip, which is 45px on a wide screen and 37
+       * on a phone. The viewport is the observer's idea of what you can see and
+       * it knows nothing about a bar sitting over the top of it, so without this
+       * a mark re-entering from the top performs itself underneath the strip. */
+      rootMargin: '-56px 0px 0px 0px',
+    });
 
     watch.observe(button);
   }

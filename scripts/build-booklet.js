@@ -88,43 +88,7 @@ add('<section class="leaf cover">' +
   '<img class="mark" src="../img/dgc-logo.webp" alt="">' +
   '<h1>' + (GAZETTE.titleLines || [GAZETTE.title]).map((l) => '<span>' + esc(l) + '</span>').join('') + '</h1>' +
   '<p class="standfirst">' + esc(GAZETTE.standfirst) + '</p>' +
-  '<p class="issue">' + GAZETTE.kicker + '</p>' +
-  '</section>');
-
-/* How to build the thing, inside the front cover — the first page anyone sees
- * after the cover, and the first sheet out of the printer. */
-add('<section class="leaf howto">' +
-  '<h2>How to make this</h2>' +
-  '<p class="lead">Eight sheets of A4, folded once and stapled. The only ' +
-  'thing that catches people out is step two.</p>' +
-  '<ol class="steps">' +
-  '<li><b>Print all 16 sides</b> onto 8 sheets of A4, double-sided, at 100% ' +
-  'scale &mdash; not &ldquo;fit to page&rdquo;, which shrinks the squares.</li>' +
-  '<li><b>Flip on the short edge.</b> The sheets are landscape, so their short ' +
-  'edges are the left and right sides. Flip on the long edge instead and every ' +
-  'other page comes out upside down. If your printer offers &ldquo;booklet&rdquo; ' +
-  'or &ldquo;2-up&rdquo;, turn it off: the pages are already in the right order.</li>' +
-  '<li><b>Check the first sheet.</b> The cover should be on the right-hand ' +
-  'half, this page on the back of it. If it is not, the flip setting is wrong.</li>' +
-  '<li><b>Keep the sheets in order</b> and stack them face up, sheet one on top.</li>' +
-  '<li><b>Fold the whole stack in half</b> at once, along the middle. Crease it ' +
-  'with something flat.</li>' +
-  '<li><b>Staple twice along the fold</b>, about a third of the way in from ' +
-  'each end. A long-arm stapler reaches; an ordinary one will if you open it ' +
-  'flat and press on a rubber.</li>' +
-  '</ol>' +
-  '<div class="dia">' +
-    '<svg viewBox="0 0 210 148" aria-hidden="true">' +
-      '<rect x="1" y="1" width="208" height="146" fill="none" ' +
-        'stroke="currentColor" stroke-width="1.4"/>' +
-      '<line x1="105" y1="1" x2="105" y2="147" stroke="currentColor" ' +
-        'stroke-width="1" stroke-dasharray="5 4"/>' +
-      '<rect x="101" y="44" width="8" height="3" fill="currentColor"/>' +
-      '<rect x="101" y="101" width="8" height="3" fill="currentColor"/>' +
-    '</svg>' +
-    '<p>The fold runs down the middle of the landscape sheet. The two marks ' +
-    'are where the staples go.</p>' +
-  '</div>' +
+  '<p class="issue">Saturday Edition</p>' +
   '</section>');
 
 /* The article. */
@@ -216,8 +180,8 @@ add('<section class="leaf"><h2>' + esc(GAZETTE.sources.heading) + '</h2><ol clas
 add('<section class="leaf back">' +
   '<img class="mark" src="../img/dgc-logo.webp" alt="">' +
   '<p class="url">crosswords.deadgoodclub.com</p>' +
-  '<p class="fold">Play them on screen, where every clue carries its ' +
-  'footnote. Assembly instructions are inside the front cover.</p>' +
+  '<p class="fold">Play them on screen, where every clue opens its footnote ' +
+  'the moment you solve it.</p>' +
   '</section>');
 
 /* ------------------------------------------------------------------- write */
@@ -238,4 +202,64 @@ ${parts.join('\n')}
 
 fs.mkdirSync(path.join(ROOT, 'print'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, 'print', 'booklet.html'), html);
-console.log('wrote print/booklet.html');
+
+/* The instructions are not a page of the booklet. They come first, and a page
+ * in front of the cover would push it onto a left-hand page and put every
+ * spread out by one. So they are their own A4 sheet, printed ahead of the
+ * eight and thrown away once the thing is folded — which is why the sheet says
+ * so, twice. Landscape, like the sheets that follow, so a printer is never
+ * asked to change paper size halfway through a job. */
+const instructions = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Dead Good Club Crossword Puzzles — how to print</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="instructions.css">
+</head>
+<body>
+<div class="sheet">
+  <p class="bin">This sheet is not part of the booklet &mdash; recycle it once you have folded the rest</p>
+  <h1>How to print and fold this</h1>
+  <div class="cols">
+    <ol class="steps">
+      <li><b>Print every page after this one</b> &mdash; 16 sides onto 8 sheets
+        of A4, double-sided, at 100% scale. Not &ldquo;fit to page&rdquo;, which
+        shrinks the squares.</li>
+      <li><b>Flip on the short edge.</b> The sheets are landscape, so their short
+        edges are the left and right sides. Flip on the long edge instead and
+        every other page comes out upside down. If your printer offers
+        &ldquo;booklet&rdquo; or &ldquo;2-up&rdquo;, turn it off: these pages are
+        already in the right order.</li>
+      <li><b>Check the first sheet.</b> The cover belongs on the right-hand half,
+        with page 2 on the back of it. If it is not there, the flip setting is
+        the thing to change.</li>
+      <li><b>Put this sheet in the recycling</b> and keep the other eight in the
+        order they came out, stacked face up with sheet one on top.</li>
+      <li><b>Fold all eight at once</b> down the middle, and crease the fold with
+        something flat.</li>
+      <li><b>Staple twice along the fold</b>, about a third of the way in from
+        each end. A long-arm stapler reaches the middle; an ordinary one will if
+        you open it flat and press down onto a rubber.</li>
+    </ol>
+    <div class="dia">
+      <svg viewBox="0 0 210 148" aria-hidden="true">
+        <rect x="1" y="1" width="208" height="146" fill="none"
+          stroke="currentColor" stroke-width="1.4"/>
+        <line x1="105" y1="1" x2="105" y2="147" stroke="currentColor"
+          stroke-width="1" stroke-dasharray="5 4"/>
+        <rect x="101" y="44" width="8" height="3" fill="currentColor"/>
+        <rect x="101" y="101" width="8" height="3" fill="currentColor"/>
+      </svg>
+      <p>The fold runs down the middle of the landscape sheet. The two marks are
+        where the staples go.</p>
+      <p class="last">32 pages. Three crosswords, their clues on the facing page,
+        and every answer with its footnote at the back.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+`;
+fs.writeFileSync(path.join(ROOT, 'print', 'instructions.html'), instructions);
+console.log('wrote print/booklet.html and print/instructions.html');

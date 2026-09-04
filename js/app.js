@@ -556,12 +556,39 @@
     button.appendChild(mark());
     head.appendChild(button);
 
-    button.addEventListener('click', function () {
+    function toggle() {
       // The mark stays put and changes shape; the head's own class drives it.
       var collapsed = head.classList.toggle('is-collapsed');
       button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
       button.setAttribute('aria-label',
         (collapsed ? 'Show' : 'Hide') + ' the introduction to ' + label);
+    }
+
+    button.addEventListener('click', toggle);
+
+    /* On a phone the whole panel is the target, not the mark in its corner. A
+     * 30px button is a small thing to hit with a thumb, and once the panel is
+     * folded it is a bar with one word and a plus on it — every part of which
+     * looks like the thing you press.
+     *
+     * The button stays exactly where it was and keeps its own handler: it is
+     * what carries the label and the aria-expanded a screen reader reads, and
+     * what a keyboard tabs to. This is the panel agreeing to answer as well,
+     * which is why a press that landed on the button has to bow out here or the
+     * two of them would toggle it twice and leave it where it started.
+     *
+     * Wide screens keep the mark alone. There the panel is a column of running
+     * copy beside the grid, and a stray click in a paragraph you were reading
+     * should not fold it away. */
+    head.addEventListener('click', function (event) {
+      if (!global.matchMedia || !global.matchMedia('(max-width: 860px)').matches) return;
+      // Anything with a job of its own — the mark, a link in the copy.
+      if (event.target.closest('button, a')) return;
+      // A press that ends a selection is someone letting go of text they were
+      // choosing, not someone asking for the panel to shut.
+      var picked = global.getSelection && global.getSelection();
+      if (picked && !picked.isCollapsed) return;
+      toggle();
     });
 
     hint(head, button);

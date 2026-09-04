@@ -1272,6 +1272,17 @@ body {
     text-overflow: ellipsis;
   }
 
+  /* The whole panel folds here, not just the mark in its corner, so it has to
+     feel like something you press. The tap flash is turned off and answered
+     with the page's own paler grey instead — a blue rectangle the size of a
+     panel is the browser's idea of feedback, not ours. */
+  .puzzle__head {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .puzzle__head:active { background-color: var(--newsprint-light); }
+
   .brief { grid-template-columns: minmax(0, 1fr); }
   /* The blurb drops below the title, but the control keeps its corner. */
   .puzzle__head { grid-template-columns: minmax(0, 1fr) auto; gap: 14px; }

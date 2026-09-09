@@ -28,7 +28,7 @@ window.PUZZLES = [
    "..TAPESTRY.W.E.",
    "..L.O...S.DELVE",
    "..Y.R...C..R.E.",
-   "....T...O....R.",
+   "....T..MOAT..R.",
    "....A...R..K.A.",
    "GROUNDBREAKING.",
    ".E..T......C.E.",
@@ -87,7 +87,19 @@ window.PUZZLES = [
       "url": "https://www.science.org/doi/10.1126/sciadv.adt3813"
      }
     },
-    "11": {
+    "10": {
+     "clue": "Water round a castle; in business writing, whatever is supposed to stop a rival copying you",
+     "answer": "MOAT",
+     "note": {
+      "what": "A metaphor borrowed from castles by investors and repeated until it stopped meaning anything in particular. Like ‘synergy’ and ‘leverage’ it names an advantage without describing one — a company is said to have a moat, and the reader is left to picture the water rather than ask what the advantage actually is. It is common in the strategy, venture and analyst writing models are trained on, and it fits a template: “our moat is [noun]”.",
+      "sounds": "“Our data moat gives us a defensible position in the category.”",
+      "human": "“We have more customer records than anyone else, and that is hard to copy.”",
+      "data": "Worth trying: ask what the moat is made of. If the answer is another abstract noun — data, brand, network — the sentence has still not said anything a competitor could not also claim.",
+      "source": null,
+      "url": null
+     }
+    },
+    "12": {
      "clue": "Adjective taken from the ceremony of digging the first sod for a new building, now applied as a marketing term to almost everything that’s new",
      "answer": "GROUNDBREAKING",
      "note": {
@@ -99,7 +111,7 @@ window.PUZZLES = [
       "url": "https://arxiv.org/html/2412.11385v1"
      }
     },
-    "13": {
+    "14": {
      "clue": "Word for two things working better together than either could achieve alone (and the most over used term in corporate business)",
      "answer": "SYNERGY",
      "note": {
@@ -173,7 +185,7 @@ window.PUZZLES = [
       "url": null
      }
     },
-    "10": {
+    "11": {
      "clue": "Someone who kicks a ball. In writing, a verbal drumroll for the best or most unbelievable part of a tale",
      "answer": "KICKER",
      "note": {
@@ -185,7 +197,7 @@ window.PUZZLES = [
       "url": null
      }
     },
-    "12": {
+    "13": {
      "clue": "A kingdom, often used figuratively to mean an area of knowledge, work, or discussion",
      "answer": "REALM",
      "note": {

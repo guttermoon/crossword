@@ -88,7 +88,7 @@ window.PUZZLES = [
      }
     },
     "10": {
-     "clue": "Water round a castle; in business writing, whatever is supposed to stop a rival copying you",
+     "clue": "Water around a castle; or the thing that makes it hard for competitors to copy you, as popularized by Warren Buffett",
      "answer": "MOAT",
      "note": {
       "what": "A metaphor borrowed from castles by investors and repeated until it stopped meaning anything in particular. Like ‘synergy’ and ‘leverage’ it names an advantage without describing one — a company is said to have a moat, and the reader is left to picture the water rather than ask what the advantage actually is. It is common in the strategy, venture and analyst writing models are trained on, and it fits a template: “our moat is [noun]”.",

@@ -91,9 +91,9 @@ window.PUZZLES = [
      "clue": "Water around a castle; or the thing that makes it hard for competitors to copy you, as popularized by Warren Buffett",
      "answer": "MOAT",
      "note": {
-      "what": "A metaphor borrowed from castles by investors and repeated until it stopped meaning anything in particular. Like ‘synergy’ and ‘leverage’ it names an advantage without describing one — a company is said to have a moat, and the reader is left to picture the water rather than ask what the advantage actually is. It is common in the strategy, venture and analyst writing models are trained on, and it fits a template: “our moat is [noun]”.",
-      "sounds": "“Our data moat gives us a defensible position in the category.”",
-      "human": "“We have more customer records than anyone else, and that is hard to copy.”",
+      "what": "A vocabulary cliché born from the tech-industry and easy to throw into a headline to make a LinkedIn post feel like it has more gravitas. The word “moat” has exploded in frequency, transitioning from a niche financial term into one of the most prominent clichés in recent corporate and professional writing.",
+      "sounds": "“Is taste the new moat?”",
+      "human": "“Is good taste now the hard thing to copy?”",
       "data": "Worth trying: ask what the moat is made of. If the answer is another abstract noun — data, brand, network — the sentence has still not said anything a competitor could not also claim.",
       "source": null,
       "url": null

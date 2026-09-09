@@ -28,7 +28,7 @@ window.PUZZLES = [
    "..TAPESTRY.W.E.",
    "..L.O...S.DELVE",
    "..Y.R...C..R.E.",
-   "....T...O....R.",
+   "....T..MOAT..R.",
    "....A...R..K.A.",
    "GROUNDBREAKING.",
    ".E..T......C.E.",
@@ -87,7 +87,19 @@ window.PUZZLES = [
       "url": "https://www.science.org/doi/10.1126/sciadv.adt3813"
      }
     },
-    "11": {
+    "10": {
+     "clue": "Water around a castle; or the thing that makes it hard for competitors to copy you, as popularized by Warren Buffett",
+     "answer": "MOAT",
+     "note": {
+      "what": "A vocabulary cliché born from the tech-industry and easy to throw into a headline to make a LinkedIn post feel like it has more gravitas. The word “moat” has exploded in frequency, transitioning from a niche financial term into one of the most prominent clichés in recent corporate and professional writing.",
+      "sounds": "“Is taste the new moat?”",
+      "human": "“Having good taste might be the thing that sets you apart from the competition”",
+      "data": "Worth trying: ask what the moat is made of. If the answer is another abstract noun — data, brand, network — the sentence has still not said anything a competitor could not also claim.",
+      "source": null,
+      "url": null
+     }
+    },
+    "12": {
      "clue": "Adjective taken from the ceremony of digging the first sod for a new building, now applied as a marketing term to almost everything that’s new",
      "answer": "GROUNDBREAKING",
      "note": {
@@ -99,7 +111,7 @@ window.PUZZLES = [
       "url": "https://arxiv.org/html/2412.11385v1"
      }
     },
-    "13": {
+    "14": {
      "clue": "Word for two things working better together than either could achieve alone (and the most over used term in corporate business)",
      "answer": "SYNERGY",
      "note": {
@@ -173,7 +185,7 @@ window.PUZZLES = [
       "url": null
      }
     },
-    "10": {
+    "11": {
      "clue": "Someone who kicks a ball. In writing, a verbal drumroll for the best or most unbelievable part of a tale",
      "answer": "KICKER",
      "note": {
@@ -185,7 +197,7 @@ window.PUZZLES = [
       "url": null
      }
     },
-    "12": {
+    "13": {
      "clue": "A kingdom, often used figuratively to mean an area of knowledge, work, or discussion",
      "answer": "REALM",
      "note": {

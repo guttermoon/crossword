@@ -93,7 +93,7 @@ window.PUZZLES = [
      "note": {
       "what": "A vocabulary cliché born from the tech-industry and easy to throw into a headline to make a LinkedIn post feel like it has more gravitas. The word “moat” has exploded in frequency, transitioning from a niche financial term into one of the most prominent clichés in recent corporate and professional writing.",
       "sounds": "“Is taste the new moat?”",
-      "human": "“Is good taste now the hard thing to copy?”",
+      "human": "“Having good taste might be the thing that sets you apart from the competition”",
       "data": "Worth trying: ask what the moat is made of. If the answer is another abstract noun — data, brand, network — the sentence has still not said anything a competitor could not also claim.",
       "source": null,
       "url": null

@@ -363,3 +363,15 @@ Entries are deliberately one-per-habit: a trope's sibling phrases live in that
 entry's footnote rather than becoming entries of their own. Adding or removing a
 word means rebuilding the grid, since the survivors lose the crossings that held
 them.
+
+## Licence
+
+Four kinds of thing, licensed separately — the split is set out in
+[LICENSE-CONTENT.md](LICENSE-CONTENT.md).
+
+| | |
+| --- | --- |
+| The code | MIT — [LICENSE](LICENSE) |
+| The writing and the puzzles | CC BY-NC-SA 4.0 |
+| The fonts | SIL OFL 1.1 — [fonts/OFL.txt](fonts/OFL.txt) |
+| The Dead Good Club mark | All rights reserved — replace it with your own |

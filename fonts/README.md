@@ -2,7 +2,8 @@
 
 Latin-subset WOFF2 files, self-hosted so the page renders identically offline and
 makes no third-party requests. All four families are licensed under the
-[SIL Open Font License 1.1](https://openfontlicense.org/).
+[SIL Open Font License 1.1](https://openfontlicense.org/), whose full text
+travels with them in [OFL.txt](OFL.txt).
 
 | File | Family | Designer / source |
 | --- | --- | --- |

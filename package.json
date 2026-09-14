@@ -1,0 +1,15 @@
+{
+  "name": "dgc-funnies",
+  "private": true,
+  "description": "The Dead Good Club Funnies — an article on spotting AI-generated writing, with three interactive crosswords",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "python3 -m http.server 8010",
+    "build": "node scripts/build-analytics-config.js",
+    "booklet": "node scripts/build-booklet.js && node scripts/make-booklet.js"
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1",
+    "playwright": "1.56.1"
+  }
+}

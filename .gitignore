@@ -1,1 +1,9 @@
+# Installed by `npm install`, for the booklet scripts only. The site itself has
+# no dependencies and needs none of this to run.
+node_modules/
+
+# The A5 pages on their way to becoming the booklet; `npm run booklet` writes
+# this, then imposes it onto the A4 sheets that are committed.
 print/booklet-pages.pdf
+
+.DS_Store

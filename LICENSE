@@ -1,26 +1,20 @@
-MIT License
+Copyright (c) 2026 The Dead Good Club. All rights reserved.
 
-Copyright (c) 2026 The Dead Good Club
+This repository is published so that the work can be read: the code, the
+writing, the puzzles and how they were put together. It is a sample of work on
+public view, not a template.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+No licence to use, copy, modify, publish, distribute or create derivative works
+is granted. If you want to use any part of it, ask — the answer may well be yes.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Two things in here are not ours to reserve:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+  The fonts in fonts/ are third-party software under the SIL Open Font License
+  1.1, and that licence governs them however this repository is licensed. Its
+  full text is in fonts/OFL.txt.
 
----
+  vendor/easy-eyes/ is the club's own Easy Eyes component, included here as
+  published.
 
-This licence covers the code only. The writing, the puzzles, the fonts and the
-club's mark are covered separately — see LICENSE-CONTENT.md.
+The Dead Good Club name and mark, including img/dgc-logo.webp and the artwork in
+the repository root, are the club's and are not licensed for any use.

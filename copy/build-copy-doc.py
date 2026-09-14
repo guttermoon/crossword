@@ -2,14 +2,18 @@
 """Every word on the page, pulled from the files that hold it."""
 import json, re, io, os
 
+# Paths are relative to the repository, not to whoever is running this, so the
+# script works from a clone rather than from one machine.
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 def load(path, var):
     src = open(path, encoding='utf-8').read()
     start = src.index('=', src.index(var)) + 1
     body = src[start:].strip().rstrip(';').strip()
     return json.loads(body)
 
-gaz = load('data/gazette.js', 'window.GAZETTE')
-puz = load('data/puzzles.js', 'window.PUZZLES')
+gaz = load(os.path.join(ROOT, 'data', 'gazette.js'), 'window.GAZETTE')
+puz = load(os.path.join(ROOT, 'data', 'puzzles.js'), 'window.PUZZLES')
 
 out = io.StringIO()
 w = out.write
@@ -143,8 +147,9 @@ for pz in puz:
                 w("INSTEAD: %s\n\n" % note['human'])
 
 text = out.getvalue()
-os.makedirs('/home/user/crossword/copy', exist_ok=True)
-path = '/home/user/crossword/copy/dgc-funnies-copy.md'
+out_dir = os.path.join(ROOT, 'copy')
+os.makedirs(out_dir, exist_ok=True)
+path = os.path.join(out_dir, 'dgc-funnies-copy.md')
 open(path, 'w', encoding='utf-8').write(text)
 
 words = len(re.findall(r"[A-Za-z0-9'’-]+", text))

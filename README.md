@@ -2,7 +2,7 @@
 
 An article on how writing habits differ by generation and by machine, and three
 interactive crosswords under it: the words, the sentence shapes, and the chatbot
-manners it forgot to delete. 38 clues, each carrying a footnote — what the habit
+manners it forgot to delete. 39 clues, each carrying a footnote — what the habit
 is, what it sounds like, and what a person writes instead. The studies behind
 them are listed at the foot of the page.
 
@@ -13,12 +13,22 @@ from the supplied art in the repository root, which is 10,630px and 644KB. It
 is black on white rather than on transparency, so it is multiplied into the
 paper rather than sitting on a white patch a shade brighter than the page.
 
-Plain HTML, CSS and JavaScript — no build step, no dependencies, no network
-calls. Open `index.html` directly, or serve the folder:
+Plain HTML, CSS and JavaScript. The site itself has no framework, no bundler and
+no runtime dependencies — open `index.html` and it works, offline:
 
 ```sh
-python3 -m http.server 8000    # then open http://localhost:8000
+python3 -m http.server 8010    # then open http://localhost:8010
 ```
+
+Two things sit beside it. Deploys run `scripts/build-analytics-config.js`, which
+writes the analytics key from the environment into `js/analytics-config.js`; with
+no key set it writes an empty one and the page never mentions cookies. And the
+booklet scripts use Playwright and pdf-lib, declared in `package.json` and
+installed with `npm install` — neither is needed to serve or edit the page.
+
+Nothing is fetched on load. The only outbound calls are made after you ask for
+them: the analytics library, once consent is given, and the YouTube embed, once
+the film is pressed.
 
 ## Playing
 
@@ -78,22 +88,41 @@ height into the custom property the one below it pins at, because a guess at
 those heights left a sliver of the page showing through between them, and the
 guess was wrong by a different amount on every screen. The three puzzles go
 three across in a single line, names only, and under them the controls as three
-drawings — check this word,
-show me this word, start over — with the count of entries solved on the end.
+drawings — a hint, show me this
+word, start over — with the count of entries solved on the end.
 Eight labelled buttons do not fit a small screen, and a row that has to be
 swiped sideways is a row whose right-hand half nobody finds. They act on the
 word you are in, which is the scope that matters with the grid under your thumb;
 letter and puzzle stay on the wider layout.
 
-The clue list stands down. Fifty-odd clues under a grid is a wall of type to be
-scrolled past rather than read. Instead a bar sits at the foot of the window
+The clue list stands down. A dozen-odd clues under a grid is a wall of type to
+be scrolled past rather than read. Instead a bar sits at the foot of the window
 carrying the clue for the word you are in, all of it, however many lines that
-takes — 138px for the longest of the 76, and the page reserves exactly the
-height the bar is currently using rather than a guess. Chevrons step through the
+takes, and the page reserves exactly the height the bar is currently using
+rather than a guess. Chevrons step through the
 entries. **Why?**, or the clue itself, opens a sheet with the clue whole,
 its note, and **Show me the word**, which is the clue list's job brought to
 where your thumb is. Escape, or a tap off the sheet, closes it, and reading one
 there counts as read the same as opening it in the list.
+
+A tap on a square picks the word and puts its clue in the bar. It takes a second
+tap on the same square to raise the keyboard, and that second tap only raises it
+— reading a clue and typing a letter are different intentions and should not be
+the same gesture. Once the keyboard is up, taps behave as they do with a mouse,
+a repeat tap turning the word around. Nothing else on the page summons it: the
+clue list, the bar's arrows and the three drawn controls all leave a closed
+keyboard closed and an open one open.
+
+Pinching the grid keeps the clue bar. `position: fixed` is fixed to the layout
+viewport, which a pinch does not move, so zooming into a corner of a grid used to
+leave the bar pinned several hundred pixels below the last row you could see;
+`js/pinch.js` puts it at the foot of the visual viewport instead and scales it by
+the reciprocal of the zoom, so it stays the size it was.
+
+The panel above each grid folds away on a tap anywhere in it, not only on the
+mark in its corner, and the mark itself is a minus rather than an asterisk here:
+the asterisk explains itself by turning as it folds, and that turn is easy to
+scroll straight past on a phone.
 
 The phone rules are `@media screen and (max-width: 860px)` rather than plain
 `max-width`: a printed page is about 816px wide and would otherwise match, and
@@ -154,8 +183,8 @@ squares where it differs from `answer` take either letter, and the entry counts
 as solved with either. `UTILISE` carries `also: 'UTILIZE'` — it is the word the
 research counted, but an American solver typing the Z is not wrong, and without
 this Check would paint a red slash through a square they had right. **Reveal**
-always writes the answer as set, never the variant. It is the only one of the 76
-answers where British and American English part company.
+always writes the answer as set, never the variant. It is the only answer in the
+three puzzles where British and American English part company.
 
 **`data/gazette.js`** — the masthead, the article that opens the page, the
 callout beside it and the source list. These strings carry inline markup
@@ -203,13 +232,38 @@ js/grid.js          numbering and word spans derived from the grid; validation
 js/askpaper.js      the spinning-newspaper confirm used by Start Over
 js/crossword.js     the engine: cursor, keyboard, check/reveal, footnotes, autosave
 js/app.js           builds the page from GAZETTE and PUZZLES
-data/puzzles.js     puzzle content — 3 puzzles, 38 clues, 38 footnotes
+data/puzzles.js     puzzle content — 3 puzzles, 39 clues, 39 footnotes
 data/gazette.js     front matter and sources
 fonts/              Shrikhand, Inter, Courier Prime, Libre Franklin (SIL OFL)
 print/*.pdf         the whole thing as a fold-and-staple booklet
 scripts/            the build steps: analytics config, the copy doc, the booklet
+vendor/easy-eyes/   the club's readable-theme switch, kept unmodified
+copy/               every word on the page, pulled into one markdown file
+package.json        the booklet's two dev dependencies and the scripts that use them
 dgc penguin official.png/.svg   the mark as supplied, kept as the source art
 ```
+
+## Reading and privacy
+
+**Easy Eyes** sits under the headline: a switch that calms body text only —
+running copy inside `<main>` becomes Helvetica, ragged-left, no text-shadow,
+roomier line-height, and the paper's grain and scan texture come off. Headlines,
+grids and page chrome are left alone. The choice is kept in `localStorage` and
+re-applied from an inline snippet in `<head>`, before first paint, so the page
+never flashes the other theme. The switch and its stylesheet are the club's own,
+kept unmodified in `vendor/easy-eyes/`; everything this page adds on top lives in
+the `html.easy-eyes` block at the foot of `css/paper.css`.
+
+**Analytics** are PostHog on the EU cloud, and nothing loads until the reader
+says yes. The question is asked in the same spinning newspaper the Start Over
+confirmation uses. A no is remembered and never asked again; a yes can be taken
+back from **Cookies** in the footer, which appears only once there is a choice
+to revisit. Session recording and autocapture are both off. With no key
+configured the whole thing stays quiet: no question, no library, no cookie.
+
+Nothing else leaves the page. The fonts are self-hosted, the club's mark is
+served from this repository, and the film loads nothing from Google until it is
+pressed.
 
 ## The booklet
 
@@ -232,13 +286,16 @@ way.
 
 Rebuild it with:
 
-```
-node scripts/build-booklet.js     # print/booklet.html, from the same data
-node scripts/make-booklet.js      # print at A5, impose onto A4, write the PDF
+```sh
+npm install                       # Playwright and pdf-lib, the first time only
+python3 -m http.server 8010 &     # the booklet reads the site over HTTP
+npm run booklet
 ```
 
-The first step needs the site served locally (`python3 -m http.server 8010`) so
-the fonts and the mark resolve. Both steps read `data/gazette.js` and
+That runs the two steps in `scripts/`: `build-booklet.js` writes
+`print/booklet.html` from the same data the site uses, and `make-booklet.js`
+prints it at A5, imposes those pages onto A4 and writes the PDF. The server is
+needed so the fonts and the mark resolve. Both steps read `data/gazette.js` and
 `data/puzzles.js`, so the booklet cannot drift from the site. The grids print
 empty and numbered by the same rules `js/grid.js` numbers them by; the answers
 and their footnotes go at the back, where a puzzle book puts them.

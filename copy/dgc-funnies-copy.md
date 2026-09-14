@@ -32,7 +32,7 @@ _Not shown on the page, but used for the browser tab and the footer:_
 
 BRAND: The Dead Good Club Funnies
 
-KICKER: Saturday Edition &middot; Three puzzles &middot; 38 clues
+KICKER: Saturday Edition &middot; Three puzzles &middot; 39 clues
 
 FOOTER LEFT: Saturday Edition
 
@@ -48,37 +48,43 @@ PARA 3: AI-generated writing has its own style too.
 
 PARA 4: Learning how to spot AI writing is a skill worth developing as it helps you become a better writer. It also helps you read marketing content, social media posts, emails, and articles with more discernment.
 
-PARA 5: It’s also worth noting that new forms of detecting AI writing are being rolled out. In addition to tools like <a href="https://www.pangram.com/">Pangram</a> being used widely in schools to detect AI writing, <a href="https://www.anthropic.com/news/claude-text-watermark">Claude models</a> will now generate text that contains a watermark or invisible, machine-readable signature embedded directly into generated text. The intent is to comply with new laws (like Article 50 of the EU AI Act) and to help readers have more transparency about whether something was machine-made.
+PARA 5: It’s worth noting that new forms of detecting AI writing are increasingly being rolled out. In addition to tools like <a href="https://www.pangram.com/">Pangram</a> being used widely in schools to detect AI writing, <a href="https://www.anthropic.com/news/claude-text-watermark">Claude models</a> will now generate text that contains a watermark or invisible, machine-readable signature embedded directly into generated text. The intent is to comply with new laws (like Article 50 of the EU AI Act) and to help readers have more transparency about whether something was machine-made.
 
-PARA 6: It’s important to understand the author though and be kind about how you go about identifying AI writing. After all, AI learned how to write from humans. All of its patterns and tropes came from us. And just because you suspect writing of being generated, does not mean it was or that a human didn’t put work into it.
+PARA 6: But before you go hunting for AI tells, it’s important to take a beat and attempt to understand the author and their influences. Be kind in how you engage with someone, whether you think they used AI or not. Everyone is at a different level of English and AI literacy, and in fact it’s common for non-native English speakers to have their work flagged as AI, perhaps due to the use of translation tools.
 
-PARA 7: A particular form of corporate word salad emerged out of Silicon Valley in the 2010s and has shown no sign of going away. By “corporate word salad” I mean the overuse of buzzwords and empty phrases such as “synergy”, “bandwidth” and “pivot”.
+PARA 7: And remember, AI learned how to write from humans. All of its patterns and tropes came from us. And just because you suspect writing of being generated, does not mean it was or that a human didn’t put work into it.
 
-PARA 8: This newspeak was masterfully parodied in “Weird Al” Yankovic’s <em>Mission Statement</em>, capturing both the emptiness of the words and the whiteboard visual style that was heavily used at the time.
+PARA 8: So what are these different styles and patterns AI learned from? Beyond the individual writer’s style there are several influences, some of which are discussed below. These are listed not only so you can better identify AI writing, but also so you can better understand the author and their influences, if they are human.
 
-VIDEO 9: youtube GyV_UG60dD4 — “Weird Al” Yankovic — Mission Statement
+PARA 9: One example where you could easily mix up human for AI writing stems from a particular flavour of corporate jargon or word salad that emerged out of Silicon Valley in the 2010s and has shown no sign of going away. By “corporate word salad” I mean the overuse of buzzwords and empty phrases such as “synergy”, “bandwidth” and “pivot”.
 
-VIDEO 9 CAPTION: Plays from YouTube. Nothing loads from Google until you press it.
+PARA 10: This newspeak was masterfully parodied in “Weird Al” Yankovic’s <em>Mission Statement</em>, capturing both the emptiness of the words and the whiteboard visual style that was heavily used at the time.
 
-PARA 10: This word salad demonstrates how ways of communicating can be influenced and homogenised by workplace culture. And it’s worth keeping in mind, not every time you see the word “synergy” does it automatically mean AI wrote it.
+VIDEO 11: youtube GyV_UG60dD4 — “Weird Al” Yankovic — Mission Statement
 
-PARA 11: Another trope, the em dash “—” is one of the most recognisable tells of AI writing. In all of our literature, essays, and scientific documents that were written before the move from typewriters to computers during the mid-1980s to the early 1990s, you will see the em dash used heavily. <strong>Mark Twain used more em dashes than GPT-4.1</strong> (10.13 vs 10.62 per 1,000 words) according to the <a href="https://slopdetector.org/blog/em-dash-ai-tell-data">Slop Detector</a>.
+VIDEO 11 CAPTION: Plays from YouTube. Nothing loads from Google until you press it.
 
-PARA 12: But once we started moving to smaller and smaller keyboards, it just became too much of a hassle to use the em dash, some opting to just use a hyphen “-” instead, some dropping it entirely. If you had to write an em dash right now, would you know how? Probably not, and this is exactly why humans don’t naturally use it when writing today, but an AI doesn’t have this hurdle of a physical keyboard, so it leans towards the trends in writing that can be seen more prominently over the course of time opposed to the last 30 or 40 years.
+PARA 12: This word salad demonstrates how ways of communication can be influenced and homogenised by workplace culture. So keep in mind, seeing the word “synergy” doesn’t automatically mean AI wrote it.
 
-QUOTE 13: To type an em dash (—), <strong>use Option + Shift + Hyphen on a Mac</strong>. On Windows, press <strong>Alt + 0151</strong> on a numeric keypad, or press <strong>Windows Key + Period (.)</strong> This is opposed to just hitting a <strong>hyphen key twice</strong> on a traditional keyboard.
+PARA 13: Another trope, the em dash “—” is one of the most recognisable tells of AI writing. In all of our literature, essays, and scientific documents that were written before the move from typewriters to computers during the mid-1980s to the early 1990s, you will see the em dash used heavily. <strong>Mark Twain used more em dashes than GPT-4.1</strong> (10.13 vs 10.62 per 1,000 words) according to the <a href="https://slopdetector.org/blog/em-dash-ai-tell-data">Slop Detector</a>.
 
-PARA 14: These types of shifts in writing habits can be seen generationally as well. You may have heard that “old people” use two spaces after a full stop. This too is a reaction of moving from <strong>typewriters to computers where varied and proportional fonts became available</strong>. On a typewriter, each letter is the same width, so two spaces were needed to visually separate sentences. Modern digital fonts adjust spacing automatically now, eliminating the need for two spaces.
+PARA 14: But once we started moving to smaller and smaller keyboards, it just became too much of a hassle to use the em dash, some opting to just use a hyphen “-” instead, some dropping it entirely.
 
-PARA 15: Have a look at the examples to learn more about how writing has shifted generationally.
+PARA 15: If you had to write an em dash right now, would you know how? Probably not, and this is exactly why humans don’t naturally use it when writing today. AI doesn’t have this hurdle of a physical keyboard though, so it leans towards the trends in writing that can be seen more prominently over the course of time opposed to the last 30 or 40 years.
 
-PARA 16: You can probably get a clear sense how the AI writing is different, just by looking at the shape the writing takes. These are exaggerated examples though and out in the wild it can be harder to spot. A 2026 study published in August, <a href="https://www.cambridge.org/core/journals/judgment-and-decision-making/article/bot-or-not-can-people-tell-the-difference-between-stories-written-by-a-human-or-by-an-ai-system/45E6DC0BB90AA648654D5AE243F6C667">Bot or not: Can people tell the difference between stories written by a human or by an AI system?</a>, found participants failed to reliably spot AI text, identifying true origins at rates between 39.4% and 52% (no better than random chance), and most of them thought the AI’s writing was the <em>better</em> writing.
+QUOTE 16: To type an em dash (—), <strong>use Option + Shift + Hyphen on a Mac</strong>. On Windows, press <strong>Alt + 0151</strong> on a numeric keypad, or press <strong>Windows Key + Period (.)</strong> This is opposed to just hitting a <strong>hyphen key twice</strong> on a traditional keyboard.
 
-PARA 17: It also swings the other way, a famous study published in <a href="https://www.cell.com/patterns/fulltext/S2666-3899(23)00130-7"><em>Patterns</em></a> by Stanford researchers found that popular AI detectors falsely accused non-native English speakers, flagging 61.3% of genuine human-written TOEFL essays as machine-generated.
+PARA 17: These types of shifts in writing habits can be seen generationally as well. You may have heard that “old people” use two spaces after a full stop. This too is a reaction of moving from typewriters to computers where varied and proportional fonts became available. On a typewriter, each letter is the same width, so two spaces were needed to visually separate sentences. Modern digital fonts adjust spacing automatically now, eliminating the need for two spaces.
 
-PARA 18: Below you’ll find three crossword puzzles, each “delving” into the common tropes seen in AI writing. 1. The <strong>words</strong> you’ll see time and again, 2. the overall <strong>shape</strong> of the writing, 3. the types of responses you’ll get when interacting with AI (the <strong>chat-back</strong>).
+PARA 18: Have a look at the examples to learn more about how writing has shifted generationally.
 
-PARA 19: Any single habit in these puzzles, if seen out in the wild, does not mean it was AI. But when you start noticing several tropes crowded into the same paragraph, then you know something is up.
+PARA 19: You can probably get a clear sense how the AI writing is different, just by looking at the shape the writing takes. These are exaggerated examples though and out in the wild it can be harder to spot. A 2026 study published in August, <a href="https://www.cambridge.org/core/journals/judgment-and-decision-making/article/bot-or-not-can-people-tell-the-difference-between-stories-written-by-a-human-or-by-an-ai-system/45E6DC0BB90AA648654D5AE243F6C667">Bot or not: Can people tell the difference between stories written by a human or by an AI system?</a>, found participants failed to reliably spot AI text, identifying true origins at rates between 39.4% and 52% (no better than random chance), and most of them thought the AI’s writing was the <em>better</em> writing.
+
+PARA 20: It also swings the other way, a famous study published in <a href="https://www.cell.com/patterns/fulltext/S2666-3899(23)00130-7"><em>Patterns</em></a> by Stanford researchers found that popular AI detectors falsely accused non-native English speakers, flagging 61.3% of genuine human-written TOEFL essays as machine-generated.
+
+PARA 21: Below you’ll find three crossword puzzles, each “delving” into the common tropes seen in AI writing. 1. The <strong>words</strong> you’ll see time and again, 2. the overall <strong>shape</strong> of the writing, 3. the types of responses you’ll get when interacting with AI (the <strong>chat-back</strong>).
+
+PARA 22: Any single habit in these puzzles, if seen out in the wild, does not mean it was AI. But when you start noticing several tropes crowded into the same paragraph, then you know something is up.
 
 ### The callout, right column
 
@@ -364,7 +370,19 @@ SOUNDS: “In this article we delve into the intricacies of remote work.”
 
 INSTEAD: “This article looks at remote work.”
 
-#### P1 · 11 across
+#### P1 · 10 across
+
+ANSWER _(fixed)_: MOAT
+
+CLUE: Water around a castle; or the thing that makes it hard for competitors to copy you, as popularized by Warren Buffett
+
+WHAT: A vocabulary cliché born from the tech-industry and easy to throw into a headline to make a LinkedIn post feel like it has more gravitas. The word “moat” has exploded in frequency, transitioning from a niche financial term into one of the most prominent clichés in recent corporate and professional writing.
+
+SOUNDS: “Is taste the new moat?”
+
+INSTEAD: “Having good taste might be the thing that sets you apart from the competition”
+
+#### P1 · 12 across
 
 ANSWER _(fixed)_: GROUNDBREAKING
 
@@ -376,7 +394,7 @@ SOUNDS: “Our groundbreaking new feature is a game-changer for productivity.”
 
 INSTEAD: “You can export to a spreadsheet now, which people have asked for since 2021.”
 
-#### P1 · 13 across
+#### P1 · 14 across
 
 ANSWER _(fixed)_: SYNERGY
 
@@ -450,7 +468,7 @@ SOUNDS: “We leverage AI to optimise workflows.”
 
 INSTEAD: “We use AI to speed up scheduling.”
 
-#### P1 · 10 down
+#### P1 · 11 down
 
 ANSWER _(fixed)_: KICKER
 
@@ -462,7 +480,7 @@ SOUNDS: “Costs rose 4% last year. And here’s the kicker: nobody noticed.”
 
 INSTEAD: “Costs rose 4% and it took eleven months for anyone to raise it.”
 
-#### P1 · 12 down
+#### P1 · 13 down
 
 ANSWER _(fixed)_: REALM
 

@@ -27,9 +27,8 @@
 
 const fs = require('fs');
 const path = require('path');
-const { chromium } = require('/opt/node22/lib/node_modules/playwright');
-const { PDFDocument, StandardFonts, rgb } = require(
-  '/tmp/claude-0/-home-user-crossword/c3341319-e84c-5557-acec-a651ed84e61b/scratchpad/pdfwork/node_modules/pdf-lib');
+const { chromium } = require('playwright');
+const { PDFDocument, StandardFonts, rgb } = require('pdf-lib');
 
 const ROOT = path.join(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'print');

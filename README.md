@@ -366,12 +366,12 @@ them.
 
 ## Licence
 
-Four kinds of thing, licensed separately — the split is set out in
-[LICENSE-CONTENT.md](LICENSE-CONTENT.md).
+Copyright (c) 2026 The Dead Good Club. All rights reserved — see
+[LICENSE](LICENSE).
 
-| | |
-| --- | --- |
-| The code | MIT — [LICENSE](LICENSE) |
-| The writing and the puzzles | CC BY-NC-SA 4.0 |
-| The fonts | SIL OFL 1.1 — [fonts/OFL.txt](fonts/OFL.txt) |
-| The Dead Good Club mark | All rights reserved — replace it with your own |
+The source is here to be read, not taken: this is a sample of work on public
+view rather than a template. Want to use part of it? Ask.
+
+The fonts are the exception. They are third-party, under the
+[SIL Open Font License 1.1](fonts/OFL.txt), which governs them whatever the rest
+of this repository says.
